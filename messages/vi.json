@@ -1,0 +1,113 @@
+{
+  "Navbar": {
+    "home": "Trang chủ",
+    "become_employee": "Trở thành thợ",
+    "find_employee": "Tìm thợ",
+    "language": "Ngôn ngữ"
+  },
+  "Banner": {
+    "banner1": {
+      "text1": "Nền tảng đặt thợ",
+      "text2": "Đa ngành nghề",
+      "button": "Tìm hiểu ngay"
+    },
+    "banner2": {
+      "text1": "Làm Việc Mọi Lúc, Mọi Nơi",
+      "text2": "Tăng thu nhập không giới hạn!",
+      "button": "Đăng ký ngay"
+    },
+    "banner3": {
+      "text1": "Nhanh Chóng, Dễ dàng, Chuyên nghiệp",
+      "button": "Đặt thợ"
+    }
+  }, 
+  "ServicesVuaTho":{
+    "title":"Dịch vụ đa ngành nghề ấn tượng",
+    "text":"Đã ra đời tại Việt Nam với tinh thần “Nâng Tầm Thợ Nghề” và “Tiện ích cho tất cả mọi người”",
+    "electric":"Điện",
+    "heal":"Y tế tại nhà",
+    "osin":"Giúp việc nhà",
+    "electrical":"Điện lạnh",
+    "water_electric":"Điện nước",
+    "repair_home":"Sửa chữa nhà"
+  }, 
+  "ToTheMoon":{
+    "title":"Phát triển không ngừng",
+    "text1":"Chúng tôi không ngừng thử nghiệm và phát triển để mang đến nhiều dịch vụ đa dạng hơn nữa cho thị trường Việt Nam trong thời gian tới.",
+    "text2":"Chúng tôi luôn luôn lắng nghe ý kiến của người dùng và chắc chắn không ngừng hoàn thiện để mang lại trải nghiệm trên ứng dụng Vua Thợ tốt nhất."
+  },
+  "WithVuaTho":{
+    "title":"Đồng hành",
+    "title1":"cùng Vua Thợ",
+    "text":"Với Vua Thợ, bạn không chỉ tìm thấy các dịch vụ tiện ích mà còn được đồng hành cùng một cộng đồng đam mê và sáng tạo. Hãy bắt đầu cuộc hành trình với Vua Thợ ngay hôm nay vì cuộc sống tốt đẹp hơn."
+  },
+  "Benefit": {
+    "customer": {
+      "title": "Lợi ích của khách",
+      "button": "Tìm thợ",
+      "list": {
+        "text1": "Đặt thợ mọi lúc mọi nơi.",
+        "text2": "Đa dạng ngành nghề thợ gì cũng có.",
+        "text3": "Giá cả và thanh toán minh bạch giữa khách và thợ.",
+        "text4": "Quy trình sửa chuyên nghiệp và dễ dàng trao đổi thông tin cùng thợ.",
+        "text5": "Hệ thống đánh giá thợ công khai."
+      }
+    },
+    "employee": {
+      "title": "Lợi ích của thợ",
+      "button": "Trở thành thợ",
+      "list": {
+        "text1": "Làm việc mọi lúc, mọi nơi, tăng thu nhập không giới hạn!",
+        "text2": "Cơ hội trúng Wave RSX liền tay!",
+        "text3": "Giới thiệu thợ ngay nhận quà liền tay.",
+        "text4": "Tham gia cộng đồng thợ đẳng cấp.",
+        "text5": "Nâng cao tay nghề với các khóa đào tạo hàng đầu.",
+        "text6": "Tìm việc, kết nối với khách hàng một cách nhanh chóng."
+      }
+    }
+  },
+  "Download": {
+    "download": "Tải ứng dụng",
+    "download_now": "Tải ứng dụng ngay để tối ưu trải nghiệm",
+    "slogan":"Thợ nào cũng có",
+    "book_now":"Ứng dụng gọi thợ tận nơi",
+    "download_appstore":"Tải từ",
+    "download_chplay":"Tải từ"
+  },
+  "Footer": {
+    "company": "CÔNG TY TNHH Công Nghệ VUA THỢ",
+    "address": "Địa chỉ: 57 Song Hành, P. An Phú, TP. Thủ Đức,",
+    "location": "TP. HCM, Việt Nam.",
+    "policies": "Điều khoản chính sách",
+    "privacy": "Thông tin bảo mật",
+    "contact": "LIÊN LẠC VỚI CHÚNG TÔI",
+    "our_partner": "ĐỐI TÁC CỦA CHÚNG TÔI",
+    "about_vuatho":"Về Vua Thợ",
+    "about_us":"Về chúng tôi",
+    "faq":"Câu hỏi thường gặp",
+    "become_worker":"Hướng dẫn đăng ký thành thợ",
+    "contact_with_vuatho":"Hợp tác cùng Vua Thợ",
+    "guides":"Điều khoản và Điều kiện",
+    "private_infomation":"Chính sách bảo mật",
+    "contact_us":"Liên hệ"
+  },
+  "NotFound": {
+    "text":"Không tìm thấy trang bạn cần tìm !",
+    "button":"VỀ TRANG CHỦ"
+  },
+  "Card":{
+    "SubCard1":{
+      "text":"Việc gì khó",
+      "text1":"có Vua Thợ"
+    },
+    "SubCard2":{
+      "text":"Sửa chữa",
+      "text1":"Điện Nước",
+      "text2":"tại nhà"
+    },
+    "SubCard3":{
+      "text":"Giúp việc nhà",
+      "text1":"nhanh chóng"
+    }
+  }
+}

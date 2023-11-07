@@ -1,0 +1,32 @@
+.swiper-home {
+  .swiper-button-prev,
+  .swiper-button-next {
+    height: 40px;
+    width: 40px;
+    border-radius: 50%;
+    background: rgba(0, 0, 0, 0.1);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .swiper-button-prev::after,
+  .swiper-button-next::after {
+    font-size: 14px;
+    color: #ffffff;
+  }
+
+  .swiper-pagination {
+    .swiper-pagination-bullet {
+      width: 8px;
+      height: 8px;
+      background-color: #ccc;
+      border-radius: 50%;
+
+      &.swiper-pagination-bullet-active {
+        width: 20px;
+        border-radius: 8px;
+      }
+    }
+  }
+}

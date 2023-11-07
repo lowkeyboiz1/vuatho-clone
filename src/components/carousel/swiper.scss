@@ -1,0 +1,12 @@
+.swiper-services {
+
+  .swiper-pagination {
+    @apply bg-white/10 py-3 rounded-full backdrop-blur-md mb-5;
+    .swiper-pagination-bullet {
+        @apply bg-primary-yellow h-4 w-4;
+      &.swiper-pagination-bullet-active {
+        @apply bg-primary-yellow;
+      }
+    }
+  }
+}

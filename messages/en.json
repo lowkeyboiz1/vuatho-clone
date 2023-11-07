@@ -1,0 +1,113 @@
+{
+  "Navbar": {
+    "home": "Home",
+    "become_employee": "Become worker",
+    "find_employee": "Find worker",
+    "language": "Language"
+  },
+  "Banner": {
+    "banner1": {
+      "text1": "",
+      "text2": "Multi-services platform",
+      "button": "View more"
+    },
+    "banner2": {
+      "text1": "Work anytime, anywhere",
+      "text2": "and increase your income limitlessly",
+      "button": "Register now"
+    },
+    "banner3": {
+      "text1": "Fast, Easy, Professional",
+      "button": "Book now"
+    }
+  },
+  "ServicesVuaTho":{
+    "title": "Impressive Multi-Industry Services",
+    "text": "Born in Vietnam with the spirit of 'Elevating the Craftsmen' and 'Convenience for Everyone'",
+    "electric": "Electric",
+    "heal": "Home Healthcare",
+    "osin": "Domestic Help",
+    "electrical": "Electrical and Refrigeration",
+    "water_electric": "Electricity and Water",
+    "repair_home": "Home Repair"
+  },
+  "ToTheMoon": {
+    "title": "Unceasing Growth",
+    "text1": "We continuously experiment and develop to bring a wider range of services to the Vietnamese market in the near future.",
+    "text2": "We are committed to always listening to the community's feedback and relentlessly improving to provide you with the best service experience."
+  },
+  "WithVuaTho": {
+    "title": "Companionship",
+    "title1": "with Vua Tho",
+    "text": "With Vua Tho, you not only find convenient services but also accompany a passionate and creative community. Start your journey with Vua Tho today for a better life."
+  },
+  "Benefit": {
+    "customer": {
+      "title": "Client benefits",
+      "button": "Book now",
+      "list": {
+        "text1": "Book workers anytime, anywhere",
+        "text2": "Diverse types of workers are available",
+        "text3": "Transparent pricing and payment between customers and workers",
+        "text4": "Professional repair processes and easy communication with workers",
+        "text5": "Public worker rating system"
+      }
+    },
+    "employee": {
+      "title": "Worker benefits",
+      "button": "Apply now",
+      "list": {
+        "text1": "Work anytime, anywhere, unlimited income potential!",
+        "text2": "Get a chance to win a Wave RSX!",
+        "text3": "Big rewards for referral program",
+        "text4": "Join the biggest community for workers",
+        "text5": "Enhance your skills with top-notch training courses",
+        "text6": "Find jobs and connect with customers quickly"
+      }
+    }
+  },
+  "Download": {
+    "download": "Download app",
+    "download_now": "Download the app now to optimize your experience",
+    "slogan":"All workers in one",
+    "book_now":"Nearby worker on-site App",
+    "download_appstore":"Download on the",
+    "download_chplay":"GET IT ON"
+  },
+  "Footer": {
+    "company": "VUA THO COMPANY",
+    "address": "Address: 57 Song Hanh, An Phu Ward, Thu Duc City,",
+    "location": "Ho Chi Minh City, Vietnam.",
+    "policies": "Policy Terms",
+    "privacy": "Privacy Policy",
+    "contact": "CONTACT US",
+    "our_partner": "OUR PARTNER",
+    "about_vuatho":"About Vua Tho",
+    "about_us":"About Us",
+    "faq":"FAQ",
+    "become_worker":"Worker Registration Guide",
+    "contact_with_vuatho":"Contact with Vua Tho",
+    "guides":"Terms and Conditions",
+    "private_infomation":"Privacy Policy",
+    "contact_us":"Contact Us"
+  },
+  "NotFound": {
+    "text":"Page Not Found !",
+    "button":"Back to home"
+  },
+  "Card":{
+    "SubCard1":{
+        "text":"What is difficult",
+        "text1":"has Vua Tho"
+    },
+    "SubCard2":{
+        "text":"Repair",
+        "text1":"Electricity and Water",
+        "text2":"at home"
+    },
+    "SubCard3":{
+        "text":"Household chores",
+        "text1":"quickly"
+    }
+}
+}
