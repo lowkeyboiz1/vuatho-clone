@@ -3,9 +3,19 @@ import Link from 'next/link'
 import { useTranslations } from 'next-intl'
 import { useLocale } from 'next-intl'
 
-import { InstaIcon } from '@/components/Icons'
+import {
+  FacebookIcon,
+  InstaIcon,
+  LinkedinIcon,
+  TiktokIcon,
+  YoutubeIcon,
+} from '@/components/Icons'
 
-import { Facebook, Youtube } from 'iconsax-react'
+import {
+  Call as PhoneIcon,
+  Sms as MailIcon,
+  Location as LocationIcon,
+} from 'iconsax-react'
 import { AndroidBtn, IosBtn } from '@/components/DownloadApps'
 
 function Footer() {
@@ -26,93 +36,135 @@ function Footer() {
     ],
   }
 
-  const listLogo = [
-    { id: 1, url: 'logo-stml1.png' },
-    { id: 2, url: 'logo-dmgg1.png' },
-    { id: 3, url: 'logo-nt571.png' },
-    { id: 4, url: 'vuamaylanh1.png' },
+  const partnerList = [
+    { id: 1, url: '/partner/sieuthimaylanh.png' },
+    { id: 2, url: '/partner/dienmaygiagoc.png' },
+    { id: 3, url: '/partner/maylanhmitsu.png' },
+    { id: 4, url: '/partner/vuamaylanh.png' },
+  ]
+
+  const socialNetworkList = [
+    {
+      id: 'Facebook',
+      icon: <FacebookIcon size={20} />,
+      link: 'https://www.facebook.com/vuathovietnam',
+    },
+    {
+      id: 'Tiktok',
+      icon: <TiktokIcon size={20} />,
+      link: '	https://www.tiktok.com/@vuatho.com',
+    },
+    {
+      id: 'Youtube',
+      icon: <YoutubeIcon size={24} />,
+      link: 'https://www.youtube.com/@Vuatho.official/',
+    },
+    {
+      id: 'Instagram',
+      icon: <InstaIcon size={24} />,
+      link: 'https://www.instagram.com/vuatho.official/',
+    },
+    {
+      id: 'Linkedin',
+      icon: <LinkedinIcon size={20} />,
+      link: 'https://www.linkedin.com/company/vuatho-vn/',
+    },
   ]
 
   return (
-    <footer className='bg-[#F4F4F4] py-10'>
-      <div className='bg-[#F4F4F4]'>
-        <div className='ct-container-70 overflow-hidden flex justify-between items-start py-6 2xl:py-12'>
-          <div className='w-full'>
-            <Image
-              src='/logo/textLogo.webp'
-              alt='Logo footer'
-              width={256}
-              height={176}
-              quality={100}
-              className='h-[60px] xl:h-[46px] 3xl:h-[80px] w-auto object-contain'
-            />
-            <div className='flex flex-col md:flex-row items-start justify-between w-full mt-6 gap-[20px]'>
-              <div className='space-y-7'>
-                <h2 className='text-[2.4rem] font-semibold'>{t('company')}</h2>
-                <div className='space-y-2'>
-                  <h6 className='text-[1.6rem]'>
-                    Hotline: <span className='text-[2rem]'>38 786 688</span>
-                  </h6>
-                  <h6 className='text-[1.7rem]'>Email: info@vuatho.com</h6>
-                  <h6 className='text-[1.7rem]'>
-                    {t('address')}
-                    <br />
-                    {t('location')}
-                  </h6>
-                </div>
-              </div>
-              <div className='space-y-4'>
-                <h4 className='text-[2rem] pb-2 font-semibold'>{t('about_vuatho')}</h4>
-                <div className='flex flex-col gap-2'>
-                  {listSubFooter.info.map((i) => (
-                    <Link href={i.url} key={i.title}>
-                      <p className='text-[1.8rem] font-normal hover:text-primary-blue'>
-                        {i.title}
-                      </p>
-                    </Link>
-                  ))}
-                </div>
-              </div>
-              <div className='space-y-4'>
-                <h4 className='text-[2rem] font-semibold'>{t('contact_with_vuatho')}</h4>
-                <div className='flex flex-col gap-2'>
-                  {listSubFooter.policy.map((i) => (
-                    <Link href={i.url} key={i.title}>
-                      <p className='text-[1.8rem] font-normal hover:text-primary-blue'>
-                        {i.title}
-                      </p>
-                    </Link>
-                  ))}
-                </div>
-              </div>
-              <div className='space-y-4 w-full md:w-auto mt-10 md:mt-0'>
-                <h4 className='text-[2rem] pb-2 font-semibold'>{td('download')}</h4>
-                <div className='gap-2 flex md:flex-col flex-row'>
-                  <AndroidBtn />
-                  <IosBtn />
-                </div>
-              </div>
-            </div>
-
-            <div className='mt-40 w-full'>
-              <span className='block xl:hidden text-[3rem] font-semibold mb-10 xl:mb-5 text-center'>
-                {t('our_partner')}
-              </span>
-              <div className='flex items-center justify-between gap-10 w-full'>
-                <span className='text-[2.4rem] hidden xl:flex font-semibold w-[24%] flex-shrink-0'>
-                  {t('our_partner')}
+    <footer className='bg-[#fff]/20 divide-y-2 divide-base-gray'>
+      <div className='ct-container-70 space-y-10 backdrop-blur-lg pt-10 pb-20'>
+        <div className='flex justify-between items-center'>
+          <Image
+            src='/logo/textLogo.webp'
+            alt='Logo footer'
+            width={256}
+            height={176}
+            quality={100}
+            className='h-[60px] 3xl:h-[80px] w-auto object-contain'
+          />
+          <div className='flex gap-4 items-center'>
+            {socialNetworkList.map((e) => (
+              <Link
+                key={e.id}
+                href={e.link}
+                target='blank'
+                title={e.id}
+                className='h-20 aspect-square w-fit bg-primary-blue-2 flex-center rounded-full'
+              >
+                {e.icon}
+              </Link>
+            ))}
+          </div>
+        </div>
+        <div className='grid grid-cols-8 md:gap-6 gap-10 '>
+          <div className='xl:col-span-3 md:col-span-4 col-span-8 space-y-4'>
+            <h5 className='text-[2rem] font-semibold'>Liên hệ</h5>
+            <div className='space-y-1.5'>
+              <p className='flex gap-4'>
+                <PhoneIcon className='text-primary-blue' variant='Bold' />{' '}
+                <span className='text-[1.7rem] font-light'>3878 6688</span>
+              </p>
+              <p className='flex gap-4'>
+                <MailIcon className='text-primary-blue' variant='Bold' />{' '}
+                <span className='text-[1.7rem] font-light'>info@vuatho.com</span>
+              </p>
+              <p className='flex gap-4'>
+                <LocationIcon className='text-primary-blue' variant='Bold' />{' '}
+                <span className='text-[1.7rem] font-light'>
+                  {t('address')}
+                  <br />
+                  {t('location')}
                 </span>
-                <div className='flex items-center justify-center md:justify-between w-full gap-10 xl:gap-0 flex-wrap md:flex-nowrap'>
-                  {listLogo.map((item) => (
-                    <div
-                      key={item.id}
-                      className='relative w-[44%] md:w-[160px] h-auto flex items-center justify-center md:block'
-                    >
-                      <Image width={194} height={64} src={`/images/${item.url}`} alt='' />
-                    </div>
-                  ))}
-                </div>
-              </div>
+              </p>
+            </div>
+          </div>
+          <div className='md:col-span-2 col-span-4 space-y-4'>
+            <h5 className='text-[2rem] font-semibold'>{t('about_vuatho')}</h5>
+            <div className='flex flex-col gap-2'>
+              {listSubFooter.info.map((i) => (
+                <Link href={i.url} key={i.title} title={i.title}>
+                  <p className='text-[1.8rem] font-light hover:text-primary-blue'>
+                    {i.title}
+                  </p>
+                </Link>
+              ))}
+            </div>
+          </div>
+          <div className='md:col-span-2 col-span-4 space-y-4'>
+            <h5 className='text-[2rem] font-semibold'>{t('contact_with_vuatho')}</h5>
+            <div className='flex flex-col gap-2'>
+              {listSubFooter.policy.map((i) => (
+                <Link href={i.url} key={i.title} title={i.title}>
+                  <p className='text-[1.8rem] font-light hover:text-primary-blue'>
+                    {i.title}
+                  </p>
+                </Link>
+              ))}
+            </div>
+          </div>
+          <div className='xl:col-span-1 md:col-span-3 col-span-8 space-y-4 w-full md:w-auto mt-10 md:mt-0'>
+            <h5 className='text-[2rem] font-semibold'>{td('download')}</h5>
+            <div className='gap-2 flex md:flex-col flex-row'>
+              <AndroidBtn />
+              <IosBtn />
+            </div>
+          </div>
+          <div className='xl:col-span-8 md:col-span-5 col-span-8 flex xl:flex-row flex-col xl:justify-between xl:items-center xl:mt-20 xl:gap-0 gap-4'>
+            <h5 className='text-[2rem] font-semibold min-w-fit text-left'>
+              {t('our_partner')}
+            </h5>
+            <div className='xl:flex grid grid-cols-2 xl:justify-end items-center w-full xl:gap-20 gap-10'>
+              {partnerList.map((item) => (
+                <Image
+                  key={`partner-${item.id}`}
+                  alt={`partner-${item.id}`}
+                  width={194}
+                  height={64}
+                  src={item.url}
+                  className='xl:h-16 h-20 w-auto object-contain'
+                />
+              ))}
             </div>
           </div>
         </div>
@@ -124,38 +176,20 @@ function Footer() {
 
 const SubFooter = () => {
   return (
-    <div className='border-t-[1px] border-[#CFCDCD] w-full overflow-hidden py-6 bg-[#F4F4F4]'>
-      <div className='ct-container-70 flex justify-between items-center text-[1.4rem] flex-col md:flex-row gap-[10px] md:gap-2'>
-        {/* <Image src={'/daThongBao1.png'} alt='' width={138} height={50} /> */}
-        <div className='flex gap-10 items-center'>
-          <a href='https://www.facebook.com/vuathovietnam' target='_blank' className=''>
-            <Facebook
-              size={32}
-              variant='Bold'
-              className='text-[#0866ff] duration-200 cursor-pointer  hover:scale-125'
-            />
-          </a>
-          <a
-            href='https://www.youtube.com/@Vuatho.official/'
-            target='_blank'
-            className=''
-          >
-            <Youtube
-              size={38}
-              variant='Bold'
-              className='text-[#ff0000] duration-200 cursor-pointer hover:scale-125'
-            />
-          </a>
-          <a
-            href='https://www.instagram.com/vuatho.official/'
-            target='_blank'
-            className=''
-          >
-            <InstaIcon className={' duration-200 cursor-pointer hover:scale-125'} />
-          </a>
-        </div>
-        <p className='text-[1.8rem]'>© 2023. All rights reserved.</p>
-      </div>
+    <div className='ct-container-70 md:flex grid grid-cols-2 justify-between items-center text-[1.4rem] flex-col md:flex-row gap-[10px] md:gap-2 py-10'>
+      <Image
+        alt='bo cong thuong'
+        src='/daThongBao1.png'
+        width={188}
+        height={71}
+        className='md:h-auto h-32 w-auto object-contain'
+      />
+      <p className='text-[1.6rem] md:text-[1.8rem] text-baseBlack'>
+        Công ty TNHH CN Vua Thợ
+      </p>
+      <p className='text-[1.8rem] text-baseBlack col-span-2 md:text-left text-center'>
+        © 2023. All rights reserved.
+      </p>
     </div>
   )
 }

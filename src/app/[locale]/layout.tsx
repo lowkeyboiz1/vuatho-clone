@@ -23,7 +23,6 @@ const lexend = Lexend({
 })
 
 export default async function RootLayout({ children, params }: any) {
-  
   const { locale } = params
 
   const locales = ['en', 'vi']
@@ -34,7 +33,7 @@ export default async function RootLayout({ children, params }: any) {
     return redirect(`/vi/${locale}`)
   }
 
-  let messages;
+  let messages
 
   try {
     messages = (await import(`../../../messages/${locale}.json`)).default
@@ -43,7 +42,7 @@ export default async function RootLayout({ children, params }: any) {
   }
 
   return (
-    <html lang={locale} className={lexend.className}>
+    <html lang={locale} className={lexend.className + ' overflow-x-hidden'}>
       <body className='!overflow-x-hidden'>
         <NextTopLoader height={3} zIndex={9999999} />
         <NextIntlClientProvider locale={locale} messages={messages}>

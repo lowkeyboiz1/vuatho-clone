@@ -14,6 +14,7 @@ export const MoonIcon = ({ className }: { className?: any }) => (
     />
   </svg>
 )
+
 export const SunIcon = ({ className }: { className?: any }) => (
   <svg
     aria-hidden='true'
@@ -31,10 +32,58 @@ export const SunIcon = ({ className }: { className?: any }) => (
   </svg>
 )
 
-export const FacebookIcon = ({ className }: { className?: any }) => (
+export const VietnamIcon = () => (
   <svg
-    width='24px'
-    height='24px'
+    width='24'
+    height='24'
+    viewBox='0 0 24 24'
+    fill='none'
+    xmlns='http://www.w3.org/2000/svg'
+    className='w-[32px] h-[32px]'
+  >
+    <path
+      d='M23.5861 19.8621H0.413812C0.185297 19.8621 0 19.6768 0 19.4483V4.55174C0 4.32322 0.185297 4.13792 0.413812 4.13792H23.5862C23.8147 4.13792 24 4.32322 24 4.55174V19.4483C24 19.6768 23.8147 19.8621 23.5861 19.8621Z'
+      fill='#FF4B55'
+    />
+    <path
+      d='M12.1931 7.31111L13.2998 10.6294L16.7976 10.6565C16.9932 10.658 17.0743 10.9076 16.917 11.0238L14.1031 13.1017L15.1582 16.4367C15.2172 16.6232 15.0049 16.7775 14.8457 16.6638L12 14.6297L9.15423 16.6638C8.99514 16.7775 8.7828 16.6232 8.84177 16.4367L9.89687 13.1017L7.08302 11.0238C6.92566 10.9076 7.0068 10.658 7.20236 10.6565L10.7002 10.6294L11.8069 7.31111C11.8688 7.12558 12.1312 7.12558 12.1931 7.31111Z'
+      fill='#FFE15A'
+    />
+  </svg>
+)
+
+export const EngIcon = () => (
+  <svg
+    xmlns='http://www.w3.org/2000/svg'
+    viewBox='0 0 60 30'
+    className='w-[32px] h-[32px]'
+  >
+    <clipPath id='s'>
+      <path d='M0,0 v30 h60 v-30 z' />
+    </clipPath>
+    <clipPath id='t'>
+      <path d='M30,15 h30 v15 z v15 h-30 z h-30 v-15 z v-15 h30 z' />
+    </clipPath>
+    <g clipPath='url(#s)'>
+      <path d='M0,0 v30 h60 v-30 z' fill='#012169' />
+      <path d='M0,0 L60,30 M60,0 L0,30' stroke='#fff' strokeWidth='6' />
+      <path
+        d='M0,0 L60,30 M60,0 L0,30'
+        clipPath='url(#t)'
+        stroke='#C8102E'
+        strokeWidth='4'
+      />
+      <path d='M30,0 v30 M0,15 h60' stroke='#fff' strokeWidth='10' />
+      <path d='M30,0 v30 M0,15 h60' stroke='#C8102E' strokeWidth='6' />
+    </g>
+  </svg>
+)
+
+//social network icon
+export const FacebookIcon = ({ size }: { size?: number }) => (
+  <svg
+    height={size || '24'}
+    width={size || '24'}
     viewBox='0 0 32 32'
     fill='none'
     xmlns='http://www.w3.org/2000/svg'
@@ -42,7 +91,7 @@ export const FacebookIcon = ({ className }: { className?: any }) => (
     <g clipPath='url(#clip0_17_24)'>
       <path
         d='M32 16C32 7.16344 24.8366 0 16 0C7.16344 0 0 7.16344 0 16C0 23.9859 5.85094 30.6053 13.5 31.8056V20.625H9.4375V16H13.5V12.475C13.5 8.465 15.8888 6.25 19.5434 6.25C21.2934 6.25 23.125 6.5625 23.125 6.5625V10.5H21.1075C19.12 10.5 18.5 11.7334 18.5 13V16H22.9375L22.2281 20.625H18.5V31.8056C26.1491 30.6053 32 23.9859 32 16Z'
-        fill='#1877F2'
+        fill='#3748A0'
       />
       <path
         d='M22.2281 20.625L22.9375 16H18.5V13C18.5 11.7347 19.12 10.5 21.1075 10.5H23.125V6.5625C23.125 6.5625 21.2941 6.25 19.5434 6.25C15.8888 6.25 13.5 8.465 13.5 12.475V16H9.4375V20.625H13.5V31.8056C15.1566 32.0648 16.8434 32.0648 18.5 31.8056V20.625H22.2281Z'
@@ -97,14 +146,13 @@ export const TelegramIcon = ({ className }: { className?: any }) => (
   </svg>
 )
 
-export const TiktokIcon = ({ className }: { className?: any }) => (
+export const TiktokIcon = ({ size }: { size?: number }) => (
   <svg
-    width='24px'
-    height='24px'
+    height={size || '24'}
+    width={size || '24'}
     viewBox='0 0 32 32'
     fill='none'
     xmlns='http://www.w3.org/2000/svg'
-    className={className}
   >
     <path
       d='M22.902 11.5513C24.9599 13.0275 27.4808 13.8961 30.2035 13.8961V8.63817C29.6882 8.63828 29.1742 8.58435 28.6701 8.47717V12.6159C25.9476 12.6159 23.4271 11.7473 21.3687 10.2712V21.0012C21.3687 26.3689 17.0328 30.7199 11.6845 30.7199C9.68898 30.7199 7.83418 30.1145 6.2934 29.0761C8.05195 30.8806 10.5044 32 13.2176 32C18.5662 32 22.9023 27.6489 22.9023 22.2811V11.5513H22.902V11.5513ZM24.7936 6.24668C23.7419 5.09366 23.0515 3.60359 22.902 1.95625V1.27997H21.449C21.8147 3.37373 23.0623 5.16251 24.7936 6.24668ZM9.67618 24.9571C9.08861 24.1839 8.77109 23.2382 8.77252 22.2657C8.77252 19.8107 10.7557 17.8202 13.2025 17.8202C13.6585 17.8201 14.1117 17.8901 14.5463 18.0285V12.653C14.0384 12.5832 13.5259 12.5535 13.0136 12.5644V16.7484C12.5787 16.6101 12.1252 16.5398 11.6691 16.5402C9.22238 16.5402 7.23928 18.5305 7.23928 20.9858C7.23928 22.7219 8.23056 24.2249 9.67618 24.9571Z'
@@ -112,7 +160,7 @@ export const TiktokIcon = ({ className }: { className?: any }) => (
     />
     <path
       d='M21.3686 10.2711C23.427 11.7472 25.9475 12.6158 28.67 12.6158V8.47706C27.1503 8.1522 25.805 7.35522 24.7935 6.24668C23.0621 5.1624 21.8147 3.37362 21.4489 1.27997H17.6321V22.2808C17.6235 24.7291 15.6437 26.7115 13.2022 26.7115C11.7634 26.7115 10.4853 26.0232 9.67577 24.9571C8.23025 24.2249 7.23897 22.7218 7.23897 20.9859C7.23897 18.5308 9.22207 16.5403 11.6688 16.5403C12.1376 16.5403 12.5894 16.6136 13.0133 16.7485V12.5645C7.75895 12.6735 3.5332 16.982 3.5332 22.2809C3.5332 24.9261 4.58551 27.3241 6.29342 29.0762C7.8342 30.1145 9.689 30.72 11.6846 30.72C17.0329 30.72 21.3687 26.3687 21.3687 21.0012V10.2711H21.3686Z'
-      fill='black'
+      fill='#3748A0'
     />
     <path
       d='M28.6701 8.47707V7.35798C27.2997 7.36007 25.9562 6.97492 24.7935 6.24658C25.8228 7.37742 27.1781 8.15716 28.6701 8.47707ZM21.4489 1.27998C21.414 1.07988 21.3872 0.878468 21.3687 0.676285V0H16.0987V21.0011C16.0903 23.449 14.1106 25.4314 11.6688 25.4314C10.952 25.4314 10.2752 25.2606 9.6758 24.9572C10.4853 26.0233 11.7635 26.7114 13.2022 26.7114C15.6435 26.7114 17.6236 24.7292 17.6321 22.281V1.27998H21.4489ZM13.0135 12.5645V11.3732C12.5732 11.3128 12.1292 11.2825 11.6847 11.2827C6.33589 11.2826 2 15.6339 2 21.0011C2 24.366 3.70408 27.3316 6.29356 29.076C4.58565 27.324 3.53334 24.9259 3.53334 22.2808C3.53334 16.982 7.75898 12.6735 13.0135 12.5645Z'
@@ -121,19 +169,18 @@ export const TiktokIcon = ({ className }: { className?: any }) => (
   </svg>
 )
 
-export const YoutubeIcon = ({ className }: { className?: any }) => (
+export const YoutubeIcon = ({ size }: { size?: number }) => (
   <svg
-    width='24px'
-    height='24px'
+    height={size || '28'}
+    width={size || '28'}
     viewBox='0 0 32 32'
     fill='none'
     xmlns='http://www.w3.org/2000/svg'
-    className={className}
   >
     <g clipPath='url(#clip0_17_47)'>
       <path
         d='M31.3627 8.24728C31.1817 7.5665 30.8252 6.94517 30.3287 6.44549C29.8322 5.9458 29.2132 5.58528 28.5336 5.40001C26.0317 4.72728 16.0317 4.72728 16.0317 4.72728C16.0317 4.72728 6.03174 4.72728 3.52992 5.40001C2.85031 5.58528 2.23128 5.9458 1.73479 6.44549C1.23829 6.94517 0.881746 7.5665 0.700829 8.24728C0.0317384 10.76 0.0317383 16 0.0317383 16C0.0317383 16 0.0317384 21.24 0.700829 23.7527C0.881746 24.4335 1.23829 25.0548 1.73479 25.5545C2.23128 26.0542 2.85031 26.4147 3.52992 26.6C6.03174 27.2727 16.0317 27.2727 16.0317 27.2727C16.0317 27.2727 26.0317 27.2727 28.5336 26.6C29.2132 26.4147 29.8322 26.0542 30.3287 25.5545C30.8252 25.0548 31.1817 24.4335 31.3627 23.7527C32.0317 21.24 32.0317 16 32.0317 16C32.0317 16 32.0317 10.76 31.3627 8.24728Z'
-        fill='#FF0302'
+        fill='#3748A0'
       />
       <path d='M12.759 20.7582V11.2419L21.1227 16L12.759 20.7582Z' fill='#FEFEFE' />
     </g>
@@ -145,141 +192,84 @@ export const YoutubeIcon = ({ className }: { className?: any }) => (
   </svg>
 )
 
-export const VietnamIcon = () => (
-  <svg
-    width='24'
-    height='24'
-    viewBox='0 0 24 24'
-    fill='none'
-    xmlns='http://www.w3.org/2000/svg'
-    className='w-[32px] h-[32px]'
-  >
-    <path
-      d='M23.5861 19.8621H0.413812C0.185297 19.8621 0 19.6768 0 19.4483V4.55174C0 4.32322 0.185297 4.13792 0.413812 4.13792H23.5862C23.8147 4.13792 24 4.32322 24 4.55174V19.4483C24 19.6768 23.8147 19.8621 23.5861 19.8621Z'
-      fill='#FF4B55'
-    />
-    <path
-      d='M12.1931 7.31111L13.2998 10.6294L16.7976 10.6565C16.9932 10.658 17.0743 10.9076 16.917 11.0238L14.1031 13.1017L15.1582 16.4367C15.2172 16.6232 15.0049 16.7775 14.8457 16.6638L12 14.6297L9.15423 16.6638C8.99514 16.7775 8.7828 16.6232 8.84177 16.4367L9.89687 13.1017L7.08302 11.0238C6.92566 10.9076 7.0068 10.658 7.20236 10.6565L10.7002 10.6294L11.8069 7.31111C11.8688 7.12558 12.1312 7.12558 12.1931 7.31111Z'
-      fill='#FFE15A'
-    />
-  </svg>
-)
-export const EngIcon = () => (
-  <svg
-    xmlns='http://www.w3.org/2000/svg'
-    viewBox='0 0 60 30'
-    className='w-[32px] h-[32px]'
-  >
-    <clipPath id='s'>
-      <path d='M0,0 v30 h60 v-30 z' />
-    </clipPath>
-    <clipPath id='t'>
-      <path d='M30,15 h30 v15 z v15 h-30 z h-30 v-15 z v-15 h30 z' />
-    </clipPath>
-    <g clipPath='url(#s)'>
-      <path d='M0,0 v30 h60 v-30 z' fill='#012169' />
-      <path d='M0,0 L60,30 M60,0 L0,30' stroke='#fff' strokeWidth='6' />
+export const LinkedinIcon = ({ size }: { size?: number }) => {
+  return (
+    <svg
+      height={size || '24'}
+      width={size || '24'}
+      viewBox='0 0 176 176'
+      xmlns='http://www.w3.org/2000/svg'
+    >
+      <g id='Layer_2' data-name='Layer 2'>
+        <g id='linkedin'>
+          <rect id='background' fill='#3748A0' height='176' rx='24' width='176' />
+          <g id='icon' fill='#fff'>
+            <path d='m63.4 48a15 15 0 1 1 -15-15 15 15 0 0 1 15 15z' />
+            <path d='m60 73v66.27a3.71 3.71 0 0 1 -3.71 3.73h-15.81a3.71 3.71 0 0 1 -3.72-3.72v-66.28a3.72 3.72 0 0 1 3.72-3.72h15.81a3.72 3.72 0 0 1 3.71 3.72z' />
+            <path d='m142.64 107.5v32.08a3.41 3.41 0 0 1 -3.42 3.42h-17a3.41 3.41 0 0 1 -3.42-3.42v-31.09c0-4.64 1.36-20.32-12.13-20.32-10.45 0-12.58 10.73-13 15.55v35.86a3.42 3.42 0 0 1 -3.37 3.42h-16.42a3.41 3.41 0 0 1 -3.41-3.42v-66.87a3.41 3.41 0 0 1 3.41-3.42h16.42a3.42 3.42 0 0 1 3.42 3.42v5.78c3.88-5.82 9.63-10.31 21.9-10.31 27.18 0 27.02 25.38 27.02 39.32z' />
+          </g>
+        </g>
+      </g>
+    </svg>
+  )
+}
+
+export const InstaIcon = ({ size }: { size?: number }) => {
+  return (
+    <svg
+      xmlns='http://www.w3.org/2000/svg'
+      viewBox='0 0 48 48'
+      height={size || '30'}
+      width={size || '30'}
+    >
+      <radialGradient
+        id='yOrnnhliCrdS2gy~4tD8ma'
+        cx='19.38'
+        cy='42.035'
+        r='44.899'
+        gradientUnits='userSpaceOnUse'
+      >
+        <stop offset='0' stopColor='#3748A0' />
+        <stop offset='.328' stopColor='#3748A0' />
+        <stop offset='.348' stopColor='#3748A0' />
+        <stop offset='.504' stopColor='#3748A0' />
+        <stop offset='.643' stopColor='#3748A0' />
+        <stop offset='.761' stopColor='#3748A0' />
+        <stop offset='.841' stopColor='#3748A0' />
+      </radialGradient>
       <path
-        d='M0,0 L60,30 M60,0 L0,30'
-        clipPath='url(#t)'
-        stroke='#C8102E'
-        strokeWidth='4'
+        fill='url(#yOrnnhliCrdS2gy~4tD8ma)'
+        d='M34.017,41.99l-20,0.019c-4.4,0.004-8.003-3.592-8.008-7.992l-0.019-20	c-0.004-4.4,3.592-8.003,7.992-8.008l20-0.019c4.4-0.004,8.003,3.592,8.008,7.992l0.019,20	C42.014,38.383,38.417,41.986,34.017,41.99z'
       />
-      <path d='M30,0 v30 M0,15 h60' stroke='#fff' strokeWidth='10' />
-      <path d='M30,0 v30 M0,15 h60' stroke='#C8102E' strokeWidth='6' />
-    </g>
-  </svg>
-)
+      <radialGradient
+        id='yOrnnhliCrdS2gy~4tD8mb'
+        cx='11.786'
+        cy='5.54'
+        r='29.813'
+        gradientTransform='matrix(1 0 0 .6663 0 1.849)'
+        gradientUnits='userSpaceOnUse'
+      >
+        <stop offset='0' stopColor='#4168c9' />
+        <stop offset='.999' stopColor='#4168c9' stopOpacity='0' />
+      </radialGradient>
+      <path
+        fill='url(#yOrnnhliCrdS2gy~4tD8mb)'
+        d='M34.017,41.99l-20,0.019c-4.4,0.004-8.003-3.592-8.008-7.992l-0.019-20	c-0.004-4.4,3.592-8.003,7.992-8.008l20-0.019c4.4-0.004,8.003,3.592,8.008,7.992l0.019,20	C42.014,38.383,38.417,41.986,34.017,41.99z'
+      />
+      <path
+        fill='#fff'
+        d='M24,31c-3.859,0-7-3.14-7-7s3.141-7,7-7s7,3.14,7,7S27.859,31,24,31z M24,19c-2.757,0-5,2.243-5,5	s2.243,5,5,5s5-2.243,5-5S26.757,19,24,19z'
+      />
+      <circle cx='31.5' cy='16.5' r='1.5' fill='#fff' />
+      <path
+        fill='#fff'
+        d='M30,37H18c-3.859,0-7-3.14-7-7V18c0-3.86,3.141-7,7-7h12c3.859,0,7,3.14,7,7v12	C37,33.86,33.859,37,30,37z M18,13c-2.757,0-5,2.243-5,5v12c0,2.757,2.243,5,5,5h12c2.757,0,5-2.243,5-5V18c0-2.757-2.243-5-5-5H18z'
+      />
+    </svg>
+  )
+}
+/////
 
-export const FacebookIcon1 = ({ height, width }: { height?: number; width?: number }) => {
-  return (
-    <svg
-      width={width || 50}
-      height={height || 50}
-      viewBox='0 0 50 50'
-      fill='none'
-      xmlns='http://www.w3.org/2000/svg'
-    >
-      <rect width={width || 50} height={height || 50} fill='url(#pattern0)' />
-      <defs>
-        <pattern
-          id='pattern0'
-          patternContentUnits='objectBoundingBox'
-          width='1'
-          height='1'
-        >
-          <use xlinkHref='#image0_975_39182' transform='scale(0.02)' />
-        </pattern>
-        <image
-          id='image0_975_39182'
-          width={width || 50}
-          height={height || 50}
-          xlinkHref='data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADIAAAAyCAYAAAAeP4ixAAADHElEQVRogd2azUsVURiHH8ePQhKLyuhLLpVprWojUQRlq4KCFu1atGjZsj8gCBUhwk3RMghcuIgoykWRBNrHQpIWBqJkEHSxpISC/I433onb9c7cOWfOvffYD87CO3Pe9/fMOXO+xircaT1wDDgMHAAywGZgg2b4AcwAU8B74C0wDPxy6MFaDcAl4KkaWjEsUueZxpBYZdcOoBf4aWE+qkisXo1dctUD3cC8Q4D8Mq856ksFcwL4WEKA/CK5TroEkAHhGrBURoiwLGnu1INSHdBXAYD80qderCEGPIAIy4ANTDXQ7xFEWPrVW2J1eQgRlq5CEIVeotPAE9MmTKBXwGPgBZDVWb5OZ/4mYCewB7ieoAud0a4WqU3AtOMnKMuR4wbA3xPEnFavkbrlGGLQYumRBETK7agAB4FlhxAfgI2GECYgy+p5le45bo1zFhAmICvq+R/tBhYdQoynmI1NQBbVOzVa+aLp+FxEDzRRnKp079IKrMu5z2TSq1bv3eEPY4671YUiBrYCLx3lGguDNjuGWNGdYpzuO87XHAAdqTpRYc3EXKtPMRBEqUNA2h0Hpcg+vMnx+yhqF5A2x0EroTYBafkPQFoEpNEDI2nVGFTqGMaxGmpSxJsELkdcy8bUy8YcKsjA02NraM5y7B61TRijK5Ze5qRrzZbAkK32W9abDfQs1hfZTgVTga5UfVGrpY9xARnxBEKWLs2WdUcCPdr3Qbbvh2i4Stc9n3VpbaJvwMOI+68CXyOubQFuFPh9F3DKAuILsD38447jZXUmJnHGcS7xTqDB71o8CV+0yvvrNdgib8KgQU6CgkeRnqszyt7QGmqRobhnfAhYWAMgC+r1r4K8JKNxzeWROpMsWmVeee5xiwya7PllcpzwEGTCYuL+863ik0cg4mWvKUSofboTrDTIpHpJpSb92lQpEMm9LS1EqFpd6CX9fuICZFlz1rqCyNUR4F0ZQCTH0VIA5KpG/5snblSzBZnQ2GlOd4wlY/lZ3ZPkn8SYgEjdRxrL9ZmwseQT83ngpq6BZJMUJbkmu1K5V+qkPyAEfgNTIKMC57Ey6QAAAABJRU5ErkJggg=='
-        />
-      </defs>
-    </svg>
-  )
-}
-
-export const LinkInIcon1 = ({ height, width }: { height?: number; width?: number }) => {
-  return (
-    <svg
-      width={width || 50}
-      height={height || 44}
-      viewBox='0 0 50 44'
-      fill='none'
-      xmlns='http://www.w3.org/2000/svg'
-      xmlnsXlink='http://www.w3.org/1999/xlink'
-    >
-      <rect width={width || 50} height={height || 44} fill='url(#pattern0)' />
-      <defs>
-        <pattern
-          id='pattern0'
-          patternContentUnits='objectBoundingBox'
-          width='1'
-          height='1'
-        >
-          <use xlinkHref='#image0_975_39183' transform='scale(0.02 0.0227273)' />
-        </pattern>
-        <image
-          id='image0_975_39183'
-          width={width || 50}
-          height={height || 44}
-          xlinkHref='data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADIAAAAsCAYAAAAn4+taAAACY0lEQVRoge2az0sVURTHP/7ITCIx8iEtihCjRaHhItGFCkEIFSUSbYKW7qJluPEvSBGEBCH6DwIFo7cTlGpRiyLbBEXQwkXhr35QkRw8E8Mw9868eV7fHXsfmMXcOfPu/c7cc+ecc18NOzQAPcBR/OIn8Az4mmZUp4B3wF9Pjw3gShohRY9FBMc60Jwk5E8OhMhxySaiVo88cChJyL6gPsW0ewp8BM4BfT6LNs3JT8DZiO0Q8K1CPnItq5BBg/3dPAn5bLEv+CjE5Ozrlnts1yqGSUgHcNxwrT9PQqT9gcZgYSQWm9i74aXHtvxKfLMMTIeWX3H0k76JCKiE4+6Zs+cO29SaB97HtEveciF0/lxzhiiyKHRpm0QHj4CXwBZwUNOHAeC2ZWEpiVJf5XjEbtxgN6lLddKHTILBmXKnVlKsVQ6/gMvAYsJvfAdGgSPAzaz9ufSRiRQiAuSJ31FRmXApxBbmxLEKzPkoJECmzA194leBAxbbYtZOXPqI0KkrViHU9groBX7E2L/J2pHrNzITESGcB24Z7D9k7cilkLbI9yaMKdfx0tlPWK6ZPoBrWTtzKaTFci0aVZeNSyG28k3Tbne2b4LGqhDfqArxjaoQ3/gvcnZTnHQm5jwuDTXdj+4+JdZyS6FGs7M8cB14rOM8Boxo9PAEWHGdj7igQ4uHC7rFMQyczqOQi8B9YFZ3o99Kmzj7pgeDS8Oq2gShfqvW2F4DX0TIQ3/H/g956i/05DBQpylzUWsCjWhuMKUb877Ve39rxTOcpMmOwJjWA9qBe0B38BeOvCEzSQoYktcsAVvbWNiQaHG0+QIAAAAASUVORK5CYII='
-        />
-      </defs>
-    </svg>
-  )
-}
-export const YoutubeIcon1 = ({ height, width }: { height?: number; width?: number }) => {
-  return (
-    <svg
-      width={width || 50}
-      height={height || 50}
-      viewBox='0 0 50 50'
-      fill='none'
-      xmlns='http://www.w3.org/2000/svg'
-    >
-      <rect width={width || 50} height={height || 50} fill='url(#pattern0)' />
-      <defs>
-        <pattern
-          id='pattern0'
-          patternContentUnits='objectBoundingBox'
-          width='1'
-          height='1'
-        >
-          <use xlinkHref='#image0_975_39184' transform='scale(0.02 0.0277778)' />
-        </pattern>
-        <image
-          id='image0_975_39184'
-          width={width || 50}
-          height={height || 50}
-          xlinkHref='data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADIAAAAkCAYAAADLsGk3AAABp0lEQVRYhd2ZvUoDQRDHf14Cgl9N0EbwI5A3SGXhs/gCorW1jZ3Y5BEszDuYUsRWm6BioYJnQGKiCH4xx6zcgeESspe73R8MLMcxM//NZm6YnSKdGWAZqACzwDywoGuxOSDQZ4aSvvcfr8BX7HkX+AZ6QF+tq+/JugPcA29D5JpgE2gAZ+rwpyDW1ZwamuNAZGebBUo8zZqac4Iy0HJIhLFTPcZ/7Dgowth2XMi1w0Ikd6RqrQB3o1aEgrEqZbPuuAihLkJqBUhkXGoipOq2hohqoF9sW3wCTzkIqYiQRYsO+3pUD4APi37TiDRcWiyFL7GA68DJhEqwaOAxIyEG6YsuMhYiGqLgWQpBu+Mt4CEjIVHc3gSEGKTJ2wfeLQsRDfZ3Zgikmzi2HDsXIYYN4NxG7GDEwIXGm6PlzZ/dm/LrzQfRhxblSoYOz5Yrkcy39oBdYNqy70GEIiS06FAGdm1gyW6eqYSBTvJsUc5BhNARITc5BLbNbaBHwXXavoyD1szC+QGdaRoPc9vL8TmKeyjpQNi1X6OllTKBF9cKcZy86PHj6g34BZh3jnv8NS69AAAAAElFTkSuQmCC'
-        />
-      </defs>
-    </svg>
-  )
-}
 export const CheckIcon1 = ({
   height,
   width,
@@ -382,62 +372,6 @@ export const CheckIcon2 = ({
   )
 }
 
-export const InstaIcon = ({ className }: { className: any }) => {
-  return (
-    <svg
-      xmlns='http://www.w3.org/2000/svg'
-      viewBox='0 0 48 48'
-      width='36px'
-      height='36px'
-      className={className}
-    >
-      <radialGradient
-        id='yOrnnhliCrdS2gy~4tD8ma'
-        cx='19.38'
-        cy='42.035'
-        r='44.899'
-        gradientUnits='userSpaceOnUse'
-      >
-        <stop offset='0' stopColor='#fd5' />
-        <stop offset='.328' stopColor='#ff543f' />
-        <stop offset='.348' stopColor='#fc5245' />
-        <stop offset='.504' stopColor='#e64771' />
-        <stop offset='.643' stopColor='#d53e91' />
-        <stop offset='.761' stopColor='#cc39a4' />
-        <stop offset='.841' stopColor='#c837ab' />
-      </radialGradient>
-      <path
-        fill='url(#yOrnnhliCrdS2gy~4tD8ma)'
-        d='M34.017,41.99l-20,0.019c-4.4,0.004-8.003-3.592-8.008-7.992l-0.019-20	c-0.004-4.4,3.592-8.003,7.992-8.008l20-0.019c4.4-0.004,8.003,3.592,8.008,7.992l0.019,20	C42.014,38.383,38.417,41.986,34.017,41.99z'
-      />
-      <radialGradient
-        id='yOrnnhliCrdS2gy~4tD8mb'
-        cx='11.786'
-        cy='5.54'
-        r='29.813'
-        gradientTransform='matrix(1 0 0 .6663 0 1.849)'
-        gradientUnits='userSpaceOnUse'
-      >
-        <stop offset='0' stopColor='#4168c9' />
-        <stop offset='.999' stopColor='#4168c9' stopOpacity='0' />
-      </radialGradient>
-      <path
-        fill='url(#yOrnnhliCrdS2gy~4tD8mb)'
-        d='M34.017,41.99l-20,0.019c-4.4,0.004-8.003-3.592-8.008-7.992l-0.019-20	c-0.004-4.4,3.592-8.003,7.992-8.008l20-0.019c4.4-0.004,8.003,3.592,8.008,7.992l0.019,20	C42.014,38.383,38.417,41.986,34.017,41.99z'
-      />
-      <path
-        fill='#fff'
-        d='M24,31c-3.859,0-7-3.14-7-7s3.141-7,7-7s7,3.14,7,7S27.859,31,24,31z M24,19c-2.757,0-5,2.243-5,5	s2.243,5,5,5s5-2.243,5-5S26.757,19,24,19z'
-      />
-      <circle cx='31.5' cy='16.5' r='1.5' fill='#fff' />
-      <path
-        fill='#fff'
-        d='M30,37H18c-3.859,0-7-3.14-7-7V18c0-3.86,3.141-7,7-7h12c3.859,0,7,3.14,7,7v12	C37,33.86,33.859,37,30,37z M18,13c-2.757,0-5,2.243-5,5v12c0,2.757,2.243,5,5,5h12c2.757,0,5-2.243,5-5V18c0-2.757-2.243-5-5-5H18z'
-      />
-    </svg>
-  )
-}
-
 export const Binoculars = ({ className }: { className?: any }) => {
   return (
     <svg
@@ -448,7 +382,7 @@ export const Binoculars = ({ className }: { className?: any }) => {
       xmlns='http://www.w3.org/2000/svg'
       className={className}
     >
-      <g clip-path='url(#clip0_7663_25637)'>
+      <g clipPath='url(#clip0_7663_25637)'>
         <path
           d='M2.41602 25.887C2.41602 29.7884 5.59005 32.9625 9.49149 32.9625C13.3929 32.9625 16.5669 29.7884 16.5669 25.887C16.5669 21.9856 13.3929 18.8115 9.49149 18.8115C5.59005 18.8114 2.41602 21.9855 2.41602 25.887ZM15.3984 25.887C15.3984 29.1441 12.7486 31.7939 9.49157 31.7939C6.23457 31.7939 3.5846 29.1441 3.5846 25.887C3.5846 22.6299 6.23449 19.9801 9.49149 19.9801C12.7485 19.9801 15.3984 22.6298 15.3984 25.887Z'
           fill='#405AB7'
@@ -511,7 +445,7 @@ export const GigEconomy = ({ className }: { className?: any }) => {
       xmlns='http://www.w3.org/2000/svg'
       className={className}
     >
-      <g clip-path='url(#clip0_7663_25519)'>
+      <g clipPath='url(#clip0_7663_25519)'>
         <path
           d='M38.9748 9.79789L37.526 9.24016C37.3136 8.46695 37.006 7.72492 36.6085 7.02695L37.239 5.60719C37.344 5.37094 37.2926 5.09445 37.1098 4.91156L35.0886 2.89047C34.9057 2.70773 34.6293 2.65641 34.3929 2.76125L32.9727 3.39203C32.2748 2.99461 31.5331 2.68719 30.7602 2.47477L30.2024 1.02547C30.1096 0.784219 29.8777 0.625 29.6191 0.625H26.7608C26.5022 0.625 26.2704 0.784219 26.1775 1.02547L25.6196 2.47477C24.8468 2.68711 24.105 2.99461 23.4071 3.39203L21.9868 2.76125C21.7506 2.65617 21.474 2.70766 21.2912 2.89047L19.27 4.91164C19.0872 5.09453 19.0358 5.37101 19.1407 5.60726L19.7714 7.02742C19.374 7.72539 19.0664 8.46719 18.854 9.24008L17.405 9.79789C17.1636 9.8907 17.0045 10.1226 17.0045 10.3812V12.4078C14.3924 13.5145 12.5553 16.1043 12.5553 19.1151C12.5553 23.1295 15.8212 26.3954 19.8356 26.3954C22.57 26.3954 24.9568 24.8798 26.2011 22.6448C26.3052 22.8574 26.5207 22.9956 26.7607 22.9956H29.619C29.8775 22.9956 30.1094 22.8364 30.2023 22.5952L30.76 21.1463C31.5333 20.9338 32.2754 20.6262 32.9732 20.2288L34.3929 20.8594C34.6293 20.9644 34.9057 20.913 35.0886 20.7302L37.1097 18.709C37.2925 18.5261 37.3439 18.2496 37.239 18.0134L36.6082 16.593C37.0057 15.8952 37.3131 15.1534 37.5255 14.3805L38.9747 13.8227C39.216 13.7299 39.3752 13.498 39.3752 13.2395V10.3811C39.3753 10.1226 39.2161 9.89078 38.9748 9.79789ZM19.8357 25.1454C16.5105 25.1454 13.8054 22.4402 13.8054 19.1151C13.8054 15.79 16.5105 13.0848 19.8357 13.0848C23.1608 13.0848 25.866 15.7899 25.866 19.1151C25.866 22.4402 23.1608 25.1454 19.8357 25.1454ZM23.83 11.8104C23.83 9.40633 25.7859 7.45039 28.19 7.45039C30.594 7.45039 32.5499 9.40625 32.5499 11.8104C32.5499 14.2144 30.594 16.1702 28.19 16.1702C27.5264 16.1702 26.87 16.0167 26.2786 15.7281C25.7439 14.7152 24.9776 13.8424 24.0502 13.1818C23.9042 12.7411 23.83 12.2807 23.83 11.8104ZM38.1253 12.8104L36.7758 13.3298C36.5835 13.4037 36.44 13.5679 36.3923 13.7684C36.1857 14.6362 35.8432 15.4627 35.3741 16.2245C35.2661 16.3999 35.2514 16.6174 35.335 16.8058L35.9225 18.1286L34.5082 19.5429L33.1861 18.9556C32.9977 18.8719 32.7801 18.8866 32.6047 18.9947C31.8429 19.4638 31.0164 19.8065 30.148 20.0131C29.9475 20.0608 29.7835 20.2042 29.7094 20.3966L29.1901 21.7457H27.19L26.8826 20.947C27.0349 20.3615 27.1161 19.7476 27.1161 19.1151C27.1161 18.4756 27.0329 17.8553 26.8774 17.2641C27.3058 17.3669 27.7468 17.4202 28.19 17.4202C31.2833 17.4202 33.8 14.9037 33.8 11.8104C33.8 8.71703 31.2834 6.20039 28.19 6.20039C25.0967 6.20039 22.5801 8.71703 22.5801 11.8104C22.5801 12.0032 22.5909 12.1946 22.6102 12.3846C21.7547 12.0306 20.8177 11.8348 19.8357 11.8348C19.2929 11.8348 18.7639 11.895 18.2547 12.0082V10.8103L19.6039 10.2909C19.7963 10.217 19.9397 10.0528 19.9875 9.85242C20.194 8.98445 20.5366 8.15805 21.0058 7.39625C21.1139 7.2207 21.1285 7.0032 21.0449 6.81484L20.4575 5.49219L21.8718 4.07789L23.1945 4.66539C23.3829 4.74906 23.6003 4.73453 23.7759 4.62641C24.5377 4.15719 25.3641 3.81461 26.232 3.60812C26.4325 3.56047 26.5966 3.41703 26.6706 3.22469L27.19 1.87516H29.1901L29.7096 3.22469C29.7836 3.41703 29.9477 3.56047 30.1482 3.60812C31.0161 3.81469 31.8425 4.15727 32.6043 4.62633C32.7798 4.73453 32.9973 4.74914 33.1857 4.66539L34.5084 4.07789L35.9227 5.49211L35.3353 6.8143C35.2516 7.00266 35.2662 7.22016 35.3743 7.3957C35.8435 8.1575 36.1861 8.98406 36.3927 9.85234C36.4404 10.0528 36.5839 10.217 36.7762 10.2909L38.1254 10.8102L38.1253 12.8104ZM27.565 11.8103V8.84867C27.565 8.50351 27.8448 8.22367 28.19 8.22367C28.5351 8.22367 28.815 8.50351 28.815 8.84867V11.4495L30.6457 12.5066C30.9447 12.6791 31.0471 13.0614 30.8745 13.3603C30.7587 13.5608 30.5486 13.6729 30.3326 13.6729C30.2266 13.6729 30.1191 13.6459 30.0207 13.5891L27.8774 12.3516C27.684 12.2399 27.565 12.0336 27.565 11.8103ZM26.9904 26.7471L21.2853 30.0701C21.0939 30.1815 20.9002 30.2702 20.7016 30.3366C20.7571 30.2148 20.8035 30.0849 20.8404 29.9476C21.1483 28.7979 20.4671 27.5984 19.2893 27.2166C19.2625 27.2079 19.2353 27.2011 19.2075 27.196C17.5779 26.902 15.9649 26.3189 14.6689 25.8504C14.216 25.6866 13.7882 25.532 13.4235 25.4137C11.9183 24.9256 10.5689 25.5235 9.44723 26.173L5.30653 28.5704L4.96543 27.9677C4.77317 27.6279 4.45926 27.3832 4.08153 27.2784C3.70379 27.1738 3.30864 27.2219 2.96887 27.4143L1.36809 28.3202C0.665122 28.7181 0.416918 29.6138 0.814731 30.3168L5.52082 38.6321C5.71309 38.972 6.027 39.2167 6.40481 39.3214C6.53543 39.3577 6.66809 39.3755 6.79981 39.3755C7.04911 39.3755 7.29512 39.3113 7.51739 39.1855L9.11809 38.2795C9.45786 38.0873 9.70262 37.7734 9.80731 37.3956C9.912 37.0179 9.86379 36.6227 9.67145 36.283L9.24418 35.5281L10.0672 35.053L17.3268 36.9982C17.7405 37.1091 18.152 37.1641 18.5568 37.1641C19.3758 37.1641 20.1672 36.9385 20.8907 36.4932L31.2443 30.1179C32.2404 29.5045 32.5586 27.9628 31.912 26.8831C31.5993 26.3611 30.3202 24.808 26.9904 26.7471ZM8.60278 37.0618C8.59379 37.0942 8.56879 37.1542 8.50239 37.1918L6.90161 38.0977C6.8352 38.1352 6.77106 38.1259 6.73864 38.1168C6.70621 38.1079 6.64629 38.0828 6.60871 38.0165L1.90262 29.7011C1.8452 29.5997 1.88239 29.4655 1.98387 29.408L3.58465 28.5021C3.62145 28.4812 3.65762 28.4749 3.68801 28.4749C3.71247 28.4749 3.73325 28.479 3.74762 28.483C3.78004 28.492 3.84004 28.517 3.87762 28.5834L8.58371 36.8987C8.62121 36.9651 8.61176 37.0294 8.60278 37.0618ZM30.5889 29.0536L20.2355 35.4289C19.4433 35.9165 18.5736 36.0383 17.6506 35.7909L10.1407 33.7786C9.98067 33.7356 9.81004 33.7581 9.66645 33.841L8.62856 34.4402L5.92223 29.6583L10.0736 27.2547C11.0013 26.7176 12.0024 26.2669 13.0379 26.6028C13.3829 26.7147 13.7819 26.8589 14.2439 27.0259C15.5722 27.5061 17.2226 28.1027 18.9396 28.4177C19.471 28.6077 19.768 29.1199 19.6329 29.624C19.4894 30.1595 19.0893 30.3931 18.4456 30.3197C17.6125 30.148 16.8184 29.9214 15.9784 29.6815C15.5773 29.5669 15.1625 29.4485 14.7357 29.3341C14.4026 29.245 14.0597 29.4427 13.9703 29.7761C13.8809 30.1095 14.0788 30.4522 14.4122 30.5416C14.8291 30.6533 15.2389 30.7703 15.6351 30.8834C16.5082 31.1328 17.3329 31.3684 18.2232 31.5503C18.2272 31.5512 18.2437 31.5542 18.248 31.5549L18.9577 31.6703C20.047 31.8445 21.014 31.6744 21.9143 31.1502L27.6194 27.8273C29.1982 26.9078 30.4021 26.795 30.8396 27.5255C31.1318 28.0132 31.0029 28.7987 30.5889 29.0536ZM3.99051 30.0048C4.03614 30.3172 3.81996 30.6073 3.5077 30.653C3.19536 30.6987 2.9052 30.4825 2.8595 30.1702C2.81387 29.8579 3.02996 29.5677 3.34231 29.522C3.65465 29.4763 3.94481 29.6925 3.99051 30.0048ZM22.5795 20.5977C22.6487 21.1675 22.495 21.6887 22.1351 22.1048C21.7564 22.5426 21.1522 22.847 20.4607 22.9612V23.3266C20.4607 23.6717 20.1809 23.9516 19.8357 23.9516C19.4906 23.9516 19.2107 23.6717 19.2107 23.3266V22.9511C18.1532 22.7479 17.34 22.0424 17.0943 21.0565C17.0107 20.7216 17.2146 20.3823 17.5495 20.2988C17.8844 20.2155 18.2236 20.4191 18.3071 20.7541C18.4982 21.5205 19.2884 21.777 19.9077 21.7603C20.4489 21.7475 20.9522 21.5617 21.1897 21.287C21.3179 21.1388 21.3653 20.9676 21.3386 20.7483C21.2937 20.3787 21.0715 19.9263 19.7405 19.7079C17.7918 19.3879 17.3368 18.3741 17.2983 17.58C17.245 16.4814 18.0063 15.5624 19.1929 15.2932L19.2107 15.2892V14.9035C19.2107 14.5584 19.4906 14.2785 19.8357 14.2785C20.1809 14.2785 20.4607 14.5584 20.4607 14.9035V15.2837C21.2392 15.4457 21.985 15.9311 22.3714 16.8512C22.505 17.1695 22.3554 17.5359 22.0371 17.6695C21.7189 17.8032 21.3525 17.6534 21.2189 17.3352C20.8959 16.5659 20.1074 16.3677 19.4695 16.5122C19.005 16.6176 18.5187 16.9374 18.5469 17.5194C18.5566 17.7195 18.5824 18.2509 19.9431 18.4744C21.5535 18.7387 22.4405 19.4531 22.5795 20.5977Z'
           fill='#405AB7'
@@ -536,14 +470,14 @@ export const Agree = ({ className }: { className?: any }) => {
       xmlns='http://www.w3.org/2000/svg'
       className={className}
     >
-      <g clip-path='url(#clip0_7663_25528)'>
+      <g clipPath='url(#clip0_7663_25528)'>
         <path
           d='M4.64148 33.0869H2.99327C2.18827 33.0869 1.49976 33.6657 1.36132 34.4586L0.593118 38.8596C0.542571 39.149 0.765306 39.4139 1.05906 39.4139H11.5496C11.8434 39.4139 12.066 39.149 12.0155 38.8596L11.2473 34.4586C11.1089 33.6656 10.4205 33.0869 9.61546 33.0869H7.96726'
           stroke='#405AB7'
           stroke-width='1.5'
           stroke-miterlimit='10'
           stroke-linecap='round'
-          stroke-linejoin='round'
+          strokeLinejoin='round'
         />
         <path
           d='M7.96641 32.0454V33.8317C7.96641 34.75 7.22187 35.4946 6.30352 35.4946C5.38516 35.4946 4.64062 34.75 4.64062 33.8317V32.0454'
@@ -551,7 +485,7 @@ export const Agree = ({ className }: { className?: any }) => {
           stroke-width='1.5'
           stroke-miterlimit='10'
           stroke-linecap='round'
-          stroke-linejoin='round'
+          strokeLinejoin='round'
         />
         <path
           d='M2.92578 27.6461C2.92578 27.6461 5.46422 29.1968 9.37555 26.2412'
@@ -559,7 +493,7 @@ export const Agree = ({ className }: { className?: any }) => {
           stroke-width='1.5'
           stroke-miterlimit='10'
           stroke-linecap='round'
-          stroke-linejoin='round'
+          strokeLinejoin='round'
         />
         <path
           d='M6.30375 32.3649C4.43812 32.3649 2.92578 30.8525 2.92578 28.9869V27.646C2.92578 25.7804 4.43812 24.2681 6.30375 24.2681C8.16937 24.2681 9.68172 25.7804 9.68172 27.646V28.9869C9.68172 30.8525 8.16937 32.3649 6.30375 32.3649Z'
@@ -567,7 +501,7 @@ export const Agree = ({ className }: { className?: any }) => {
           stroke-width='1.5'
           stroke-miterlimit='10'
           stroke-linecap='round'
-          stroke-linejoin='round'
+          strokeLinejoin='round'
         />
         <path
           d='M32.0321 33.0869H30.3839C29.5789 33.0869 28.8904 33.6657 28.7519 34.4586L27.9837 38.8596C27.9333 39.149 28.1559 39.4139 28.4497 39.4139H38.9402C39.234 39.4139 39.4566 39.149 39.4061 38.8596L38.6379 34.4586C38.4995 33.6656 37.8111 33.0869 37.0061 33.0869H35.3579'
@@ -575,7 +509,7 @@ export const Agree = ({ className }: { className?: any }) => {
           stroke-width='1.5'
           stroke-miterlimit='10'
           stroke-linecap='round'
-          stroke-linejoin='round'
+          strokeLinejoin='round'
         />
         <path
           d='M35.359 32.0454V33.8317C35.359 34.75 34.6145 35.4946 33.6961 35.4946C32.7777 35.4946 32.0332 34.75 32.0332 33.8317V32.0454'
@@ -583,7 +517,7 @@ export const Agree = ({ className }: { className?: any }) => {
           stroke-width='1.5'
           stroke-miterlimit='10'
           stroke-linecap='round'
-          stroke-linejoin='round'
+          strokeLinejoin='round'
         />
         <path
           d='M30.3184 27.6461C30.3184 27.6461 32.8568 29.1968 36.7681 26.2412'
@@ -591,7 +525,7 @@ export const Agree = ({ className }: { className?: any }) => {
           stroke-width='1.5'
           stroke-miterlimit='10'
           stroke-linecap='round'
-          stroke-linejoin='round'
+          strokeLinejoin='round'
         />
         <path
           d='M33.6963 32.3649C31.8307 32.3649 30.3184 30.8525 30.3184 28.9869V27.646C30.3184 25.7804 31.8307 24.2681 33.6963 24.2681C35.562 24.2681 37.0743 25.7804 37.0743 27.646V28.9869C37.0743 30.8525 35.562 32.3649 33.6963 32.3649Z'
@@ -599,7 +533,7 @@ export const Agree = ({ className }: { className?: any }) => {
           stroke-width='1.5'
           stroke-miterlimit='10'
           stroke-linecap='round'
-          stroke-linejoin='round'
+          strokeLinejoin='round'
         />
         <path
           d='M4.64148 9.40479H2.99327C2.18827 9.40479 1.49976 9.98354 1.36132 10.7765L0.593118 15.1775C0.542571 15.4669 0.765306 15.7318 1.05906 15.7318H11.5496C11.8434 15.7318 12.066 15.4669 12.0155 15.1775L11.2473 10.7765C11.1089 9.98346 10.4205 9.40479 9.61546 9.40479H7.96726'
@@ -607,7 +541,7 @@ export const Agree = ({ className }: { className?: any }) => {
           stroke-width='1.5'
           stroke-miterlimit='10'
           stroke-linecap='round'
-          stroke-linejoin='round'
+          strokeLinejoin='round'
         />
         <path
           d='M7.96641 8.36328V10.1495C7.96641 11.0679 7.22187 11.8124 6.30352 11.8124C5.38516 11.8124 4.64062 11.068 4.64062 10.1495V8.36328'
@@ -615,7 +549,7 @@ export const Agree = ({ className }: { className?: any }) => {
           stroke-width='1.5'
           stroke-miterlimit='10'
           stroke-linecap='round'
-          stroke-linejoin='round'
+          strokeLinejoin='round'
         />
         <path
           d='M2.92578 3.964C2.92578 3.964 5.46422 5.51463 9.37555 2.55908'
@@ -623,7 +557,7 @@ export const Agree = ({ className }: { className?: any }) => {
           stroke-width='1.5'
           stroke-miterlimit='10'
           stroke-linecap='round'
-          stroke-linejoin='round'
+          strokeLinejoin='round'
         />
         <path
           d='M6.30375 8.68281C4.43812 8.68281 2.92578 7.17047 2.92578 5.30484V3.96391C2.92578 2.09828 4.43812 0.585938 6.30375 0.585938C8.16937 0.585938 9.68172 2.09828 9.68172 3.96391V5.30477C9.68172 7.17039 8.16937 8.68281 6.30375 8.68281Z'
@@ -631,7 +565,7 @@ export const Agree = ({ className }: { className?: any }) => {
           stroke-width='1.5'
           stroke-miterlimit='10'
           stroke-linecap='round'
-          stroke-linejoin='round'
+          strokeLinejoin='round'
         />
         <path
           d='M35.359 8.36328V10.1495C35.359 11.0679 34.6145 11.8124 33.6961 11.8124C32.7777 11.8124 32.0332 11.068 32.0332 10.1495V8.36328'
@@ -639,7 +573,7 @@ export const Agree = ({ className }: { className?: any }) => {
           stroke-width='1.5'
           stroke-miterlimit='10'
           stroke-linecap='round'
-          stroke-linejoin='round'
+          strokeLinejoin='round'
         />
         <path
           d='M30.3184 3.964C30.3184 3.964 32.8568 5.51463 36.7681 2.55908'
@@ -647,7 +581,7 @@ export const Agree = ({ className }: { className?: any }) => {
           stroke-width='1.5'
           stroke-miterlimit='10'
           stroke-linecap='round'
-          stroke-linejoin='round'
+          strokeLinejoin='round'
         />
         <path
           d='M33.6963 8.68281C31.8307 8.68281 30.3184 7.17047 30.3184 5.30484V3.96391C30.3184 2.09828 31.8307 0.585938 33.6963 0.585938C35.562 0.585938 37.0743 2.09828 37.0743 3.96391V5.30477C37.0743 7.17039 35.562 8.68281 33.6963 8.68281Z'
@@ -655,7 +589,7 @@ export const Agree = ({ className }: { className?: any }) => {
           stroke-width='1.5'
           stroke-miterlimit='10'
           stroke-linecap='round'
-          stroke-linejoin='round'
+          strokeLinejoin='round'
         />
         <path
           d='M33.4304 15.8184C33.8413 17.1393 34.0626 18.5437 34.0626 19.9998C34.0626 21.466 33.8382 22.8798 33.4219 24.2086'
@@ -663,7 +597,7 @@ export const Agree = ({ className }: { className?: any }) => {
           stroke-width='1.5'
           stroke-miterlimit='10'
           stroke-linecap='round'
-          stroke-linejoin='round'
+          strokeLinejoin='round'
         />
         <path
           d='M10.5449 9.59137C13.042 7.32176 16.3593 5.93848 19.9996 5.93848C23.6411 5.93848 26.9592 7.32262 29.4567 9.59355'
@@ -671,7 +605,7 @@ export const Agree = ({ className }: { className?: any }) => {
           stroke-width='1.5'
           stroke-miterlimit='10'
           stroke-linecap='round'
-          stroke-linejoin='round'
+          strokeLinejoin='round'
         />
         <path
           d='M6.57469 24.1915C6.16187 22.8677 5.93945 21.4599 5.93945 20.0001C5.93945 18.5437 6.16086 17.139 6.57188 15.8179'
@@ -679,7 +613,7 @@ export const Agree = ({ className }: { className?: any }) => {
           stroke-width='1.5'
           stroke-miterlimit='10'
           stroke-linecap='round'
-          stroke-linejoin='round'
+          strokeLinejoin='round'
         />
         <path
           d='M18.6948 34.0019C15.1426 33.6751 11.9729 32.0271 9.68164 29.5537'
@@ -687,7 +621,7 @@ export const Agree = ({ className }: { className?: any }) => {
           stroke-width='1.5'
           stroke-miterlimit='10'
           stroke-linecap='round'
-          stroke-linejoin='round'
+          strokeLinejoin='round'
         />
         <path
           d='M30.2784 29.5962C27.9983 32.0374 24.8587 33.6656 21.3418 33.9985'
@@ -695,7 +629,7 @@ export const Agree = ({ className }: { className?: any }) => {
           stroke-width='1.5'
           stroke-miterlimit='10'
           stroke-linecap='round'
-          stroke-linejoin='round'
+          strokeLinejoin='round'
         />
         <path
           d='M38.6395 10.7765C38.501 9.98346 37.8126 9.40479 37.0076 9.40479H35.3594'
@@ -703,7 +637,7 @@ export const Agree = ({ className }: { className?: any }) => {
           stroke-width='1.5'
           stroke-miterlimit='10'
           stroke-linecap='round'
-          stroke-linejoin='round'
+          strokeLinejoin='round'
         />
         <path
           d='M32.0321 9.40479H30.3839C29.5789 9.40479 28.8904 9.98354 28.7519 10.7765L27.9837 15.1775C27.9333 15.4669 28.1559 15.7318 28.4497 15.7318H38.9402C39.234 15.7318 39.4566 15.4669 39.4061 15.1775L39.0995 13.4208'
@@ -711,7 +645,7 @@ export const Agree = ({ className }: { className?: any }) => {
           stroke-width='1.5'
           stroke-miterlimit='10'
           stroke-linecap='round'
-          stroke-linejoin='round'
+          strokeLinejoin='round'
         />
         <path
           d='M17.834 20.0914L19.4805 21.738L22.1653 19.0532'
@@ -719,7 +653,7 @@ export const Agree = ({ className }: { className?: any }) => {
           stroke-width='1.5'
           stroke-miterlimit='10'
           stroke-linecap='round'
-          stroke-linejoin='round'
+          strokeLinejoin='round'
         />
         <path
           d='M14.3066 18.8291C14.8484 16.1813 17.1912 14.1895 19.9993 14.1895C23.2084 14.1895 25.81 16.791 25.81 20.0002C25.81 23.2093 23.2084 25.8109 19.9993 25.8109C17.2495 25.8109 14.9458 23.9008 14.3427 21.335'
@@ -727,7 +661,7 @@ export const Agree = ({ className }: { className?: any }) => {
           stroke-width='1.5'
           stroke-miterlimit='10'
           stroke-linecap='round'
-          stroke-linejoin='round'
+          strokeLinejoin='round'
         />
       </g>
       <defs>
@@ -749,7 +683,7 @@ export const Support = ({ className }: { className?: any }) => {
       xmlns='http://www.w3.org/2000/svg'
       className={className}
     >
-      <g clip-path='url(#clip0_7663_25502)'>
+      <g clipPath='url(#clip0_7663_25502)'>
         <path
           d='M19.9294 5.08281C20.3639 5.08281 20.7162 4.73055 20.7162 4.29602V0.786797C20.7162 0.352266 20.3639 0 19.9294 0C19.4948 0 19.1426 0.352266 19.1426 0.786797V4.29602C19.1427 4.73055 19.4949 5.08281 19.9294 5.08281Z'
           fill='#405AB7'
@@ -790,13 +724,13 @@ export const Pylogon = ({ className }: { className?: any }) => {
       width='20'
       height='22'
       viewBox='0 0 20 22'
-      fill='none'
+      fill='currentColor'
       xmlns='http://www.w3.org/2000/svg'
       className={className}
     >
       <path
         d='M18 7.5359C20.6667 9.0755 20.6667 12.9245 18 14.4641L6 21.3923C3.33333 22.9319 -1.13682e-06 21.0074 -1.00222e-06 17.9282L-3.96541e-07 4.07179C-2.61945e-07 0.992591 3.33333 -0.931906 6 0.607695L18 7.5359Z'
-        fill='#405AB7'
+        fill='currentColor'
       />
     </svg>
   )

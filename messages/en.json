@@ -68,7 +68,7 @@
   },
   "Download": {
     "download": "Download app",
-    "download_now": "Download the app now to optimize your experience",
+    "download_now": "To experience the most advanced AI technology.",
     "slogan":"All workers in one",
     "book_now":"Nearby worker on-site App",
     "download_appstore":"Download on the",
@@ -76,12 +76,12 @@
   },
   "Footer": {
     "company": "VUA THO COMPANY",
-    "address": "Address: 57 Song Hanh, An Phu Ward, Thu Duc City,",
+    "address": "57 Song Hanh, An Phu Ward, Thu Duc City,",
     "location": "Ho Chi Minh City, Vietnam.",
     "policies": "Policy Terms",
     "privacy": "Privacy Policy",
     "contact": "CONTACT US",
-    "our_partner": "OUR PARTNER",
+    "our_partner": "Our partner",
     "about_vuatho":"About Vua Tho",
     "about_us":"About Us",
     "faq":"FAQ",
@@ -109,5 +109,20 @@
         "text":"Household chores",
         "text1":"quickly"
     }
-}
+  },
+  "MainSection":{
+    "heading1":"Ứng dụng ",
+    "heading1-1":"tìm thợ, tìm việc",
+    "heading2":"Sử dụng công nghệ ",
+    "heading2-1":"trí tuệ nhân tạo AI",
+    "subHeading":"Vua thợ hỗ trợ đa ngôn ngữ, đa ngành nghề, cần là có",
+    "listCard":{
+      "title1":"Đột phá",
+      "desc1":"Cách thức hoạt động",
+      "title2":"Minh bạch",
+      "desc2":"Giao dịch và thỏa thuận",
+      "title3":"Đa dạng",
+      "desc3":"Hình thức hợp tác"
+    }
+  }
 }

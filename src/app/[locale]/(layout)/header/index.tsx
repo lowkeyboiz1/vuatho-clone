@@ -1,6 +1,6 @@
 'use client'
 
-import { useEffect, useState } from 'react'
+import { useEffect, useRef, useState } from 'react'
 import Image from 'next/image'
 import Link from 'next/link'
 import { usePathname, useRouter } from 'next/navigation'
@@ -12,12 +12,20 @@ import { AnimatePresence, motion } from 'framer-motion'
 import { Add as AddIcon, HambergerMenu as MenuIcon } from 'iconsax-react'
 const Header = () => {
   const [isHeaderVisible, setHeaderVisible] = useState(true)
+  const [transparent, setTransparent] = useState(true)
 
   useEffect(() => {
     let prevScrollPos = window.scrollY
 
     const handleScroll = () => {
       const currentScrollPos = window.scrollY
+      const check = 2
+
+      if (currentScrollPos < check) {
+        setTransparent(true)
+      } else {
+        setTransparent(false)
+      }
 
       if (currentScrollPos > prevScrollPos && currentScrollPos > 60) {
         setHeaderVisible(false)
@@ -37,7 +45,9 @@ const Header = () => {
   return (
     <>
       <motion.header
-        className={`bg-bg shadow-[4px_4px_16px_0_rgba(0,18,38,0.08)] dark:shadow-[4px_4px_16px_0_#21254F] transition fixed left-0 right-0 w-full z-[99999] ${
+        className={`${
+          transparent ? 'bg-transparent' : 'bg-white'
+        } header transition fixed left-0 right-0 w-full z-[99999] ${
           isHeaderVisible ? 'translate-y-0' : '-translate-y-[100%]'
         }`}
       >
@@ -203,7 +213,14 @@ const LinkList = ({ handleToggleMenu }: { handleToggleMenu?: any }) => {
               >
                 {link.title}
               </button>
-              <Link href={link.url} className={`md:block hidden ${isActive ? 'text-[#405AB7]' : 'hover:text-[#405AB7]/60'}`}>{link.title}</Link>
+              <Link
+                href={link.url}
+                className={`md:block hidden ${
+                  isActive ? 'text-[#405AB7]' : 'hover:text-[#405AB7]/60'
+                }`}
+              >
+                {link.title}
+              </Link>
             </motion.div>
           </div>
         )

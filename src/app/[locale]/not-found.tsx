@@ -1,8 +1,7 @@
 'use client'
 
 import Image from 'next/image'
-import { useRouter } from 'next/navigation'
-import { useLocale, useTranslations } from 'next-intl'
+import { useTranslations } from 'next-intl'
 import Link from 'next/link'
 
 export default function NotFound() {
@@ -14,7 +13,10 @@ export default function NotFound() {
           <div className='flex-center flex-col gap-10'>
             <Image src={'/images/404.png'} alt='' width={750} height={370} />
             <p className='text-[#DFE3FF] text-[4rem]'>{t('text')}</p>
-            <Link href={'/'} className='bg-[#5C6DE8] text-[#fff] text-[2.2rem] h-[40px] 13inch:h-[48px] px-10 rounded-2xl flex items-center justify-center'>
+            <Link
+              href={'/'}
+              className='bg-[#5C6DE8] text-[#fff] text-[2.2rem] h-[40px] 13inch:h-[48px] px-10 rounded-2xl flex items-center justify-center'
+            >
               {t('button')}
             </Link>
           </div>

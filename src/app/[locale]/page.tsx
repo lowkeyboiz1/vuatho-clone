@@ -4,17 +4,19 @@ import SectionBenefit from '@/app/[locale]/(sections)/benefit'
 import SectionWithVuaTho from './(sections)/withVuaTho'
 import SectionToTheMoon from './(sections)/toTheMoon'
 import SectionMultiServices from './(sections)/mulltiIndustry'
+import HeroSection from './hero/page'
 
 export default function Home() {
   return (
     <div className='pt-[64px] 3xl:pt-[80px]'>
-      <SectionBanner />
+      {/* <SectionBanner />
       <div className='mt-[80px]' />
       <SectionMultiServices />
       <SectionToTheMoon />
       <SectionBenefit />
       <SectionDownloadApp />
-      <SectionWithVuaTho />
+      <SectionWithVuaTho /> */}
+      <HeroSection />
     </div>
   )
 }
