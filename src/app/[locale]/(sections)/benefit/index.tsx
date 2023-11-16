@@ -110,7 +110,7 @@ const SectionBenefit = () => {
                       height={702}
                       width={740}
                       quality={100}
-                      className='object-contain'
+                      className='object-contain pointer-events-none'
                     />
                   </div>
                 </div>

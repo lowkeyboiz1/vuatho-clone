@@ -45,7 +45,7 @@ function SectionMultiServices() {
             className='flex gap-6 xl:gap-4 items-center flex-col xl:flex-row'
           >
             <div className='h-[82px] w-[82px] flex flex-shrink-0 rounded-full'>
-              <Image src={`/services/icon/${i.icon}`} alt='' width={82} height={82} />
+              <Image src={`/services/icon/${i.icon}`} alt='' width={82} height={82} className='pointer-events-none'/>
             </div>
             <p className='text-[2.4rem] font-semibold first-letter:uppercase'>
               {i.title}

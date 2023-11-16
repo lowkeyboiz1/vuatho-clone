@@ -1,7 +1,10 @@
+'use client'
+
 import Image from 'next/image'
 import Link from 'next/link'
 import { useTranslations } from 'next-intl'
 import { useLocale } from 'next-intl'
+import { useEffect, useState } from 'react'
 
 import {
   FacebookIcon,
@@ -22,7 +25,12 @@ function Footer() {
   const t = useTranslations('Footer')
   const td = useTranslations('Download')
   const locale = useLocale()
+  const [isWebview, sIsWebview] = useState(false)
 
+  useEffect(() => {
+    var is_uiwebview = navigator.userAgent.includes('WebView')
+    sIsWebview(is_uiwebview)
+  }, [])
   const listSubFooter = {
     info: [
       { title: t('about_us'), url: `/${locale}/about-us` },
@@ -49,11 +57,11 @@ function Footer() {
       icon: <FacebookIcon size={20} />,
       link: 'https://www.facebook.com/vuathovietnam',
     },
-    {
-      id: 'Tiktok',
-      icon: <TiktokIcon size={20} />,
-      link: '	https://www.tiktok.com/@vuatho.com',
-    },
+    // {
+    //   id: 'Tiktok',
+    //   icon: <TiktokIcon size={20} />,
+    //   link: '	https://www.tiktok.com/@vuatho.com',
+    // },
     {
       id: 'Youtube',
       icon: <YoutubeIcon size={24} />,
@@ -71,9 +79,13 @@ function Footer() {
     },
   ]
 
+  if (isWebview) {
+    return null
+  }
+
   return (
     <footer className='bg-[#fff]/20 divide-y-2 divide-base-gray'>
-      <div className='ct-container-70 space-y-10 backdrop-blur-lg pt-10 pb-20'>
+      <div className='ct-container-70 space-y-10 pt-10 pb-20'>
         <div className='flex justify-between items-center'>
           <Image
             src='/logo/textLogo.webp'
@@ -81,7 +93,7 @@ function Footer() {
             width={256}
             height={176}
             quality={100}
-            className='h-[60px] 3xl:h-[80px] w-auto object-contain'
+            className='h-[60px] 3xl:h-[80px] w-auto object-contain pointer-events-none'
           />
           <div className='flex gap-4 items-center'>
             {socialNetworkList.map((e) => (
@@ -99,23 +111,29 @@ function Footer() {
         </div>
         <div className='grid grid-cols-8 md:gap-6 gap-10 '>
           <div className='xl:col-span-3 md:col-span-4 col-span-8 space-y-4'>
-            <h5 className='text-[2rem] font-semibold'>Liên hệ</h5>
+            <h5 className='text-[2.2rem] font-semibold'>Liên hệ</h5>
             <div className='space-y-1.5'>
-              <p className='flex gap-4'>
-                <PhoneIcon className='text-primary-blue' variant='Bold' />{' '}
-                <span className='text-[1.7rem] font-light'>3878 6688</span>
+              <p className='flex gap-4 items-center'>
+                <PhoneIcon className='text-primary-blue' variant='Bold' />
+                <span className='text-[2rem] font-light'>
+                  <span className='text-gray-500'>(+84)</span> 3878 6688
+                </span>
               </p>
-              <p className='flex gap-4'>
-                <MailIcon className='text-primary-blue' variant='Bold' />{' '}
-                <span className='text-[1.7rem] font-light'>info@vuatho.com</span>
+              <p className='flex gap-4 items-center'>
+                <MailIcon className='text-primary-blue' variant='Bold' />
+                <span className='text-[2rem] font-light'>info@vuatho.com</span>
               </p>
-              <p className='flex gap-4'>
-                <LocationIcon className='text-primary-blue' variant='Bold' />{' '}
-                <span className='text-[1.7rem] font-light'>
+              <p className='flex gap-4 items-center'>
+                <LocationIcon className='text-primary-blue' variant='Bold' />
+                <span className='text-[2rem] font-light'>
                   {t('address')}
                   <br />
                   {t('location')}
                 </span>
+              </p>
+              <p className='text-[2rem] font-light'>
+                <span className='font-semibold'>MST: </span>
+                <span className=''>0318063280</span>
               </p>
             </div>
           </div>
@@ -124,7 +142,7 @@ function Footer() {
             <div className='flex flex-col gap-2'>
               {listSubFooter.info.map((i) => (
                 <Link href={i.url} key={i.title} title={i.title}>
-                  <p className='text-[1.8rem] font-light hover:text-primary-blue'>
+                  <p className='text-[2rem] font-light hover:text-primary-blue'>
                     {i.title}
                   </p>
                 </Link>
@@ -136,7 +154,7 @@ function Footer() {
             <div className='flex flex-col gap-2'>
               {listSubFooter.policy.map((i) => (
                 <Link href={i.url} key={i.title} title={i.title}>
-                  <p className='text-[1.8rem] font-light hover:text-primary-blue'>
+                  <p className='text-[2rem] font-light hover:text-primary-blue'>
                     {i.title}
                   </p>
                 </Link>
@@ -144,7 +162,9 @@ function Footer() {
             </div>
           </div>
           <div className='xl:col-span-1 md:col-span-3 col-span-8 space-y-4 w-full md:w-auto mt-10 md:mt-0'>
-            <h5 className='text-[2rem] font-semibold'>{td('download')}</h5>
+            <h5 className='text-[2rem] font-semibold whitespace-nowrap'>
+              {td('download')}
+            </h5>
             <div className='gap-2 flex md:flex-col flex-row'>
               <AndroidBtn />
               <IosBtn />
@@ -162,7 +182,7 @@ function Footer() {
                   width={194}
                   height={64}
                   src={item.url}
-                  className='xl:h-16 h-20 w-auto object-contain'
+                  className='xl:h-16 h-20 w-auto object-contain pointer-events-none'
                 />
               ))}
             </div>
@@ -177,14 +197,19 @@ function Footer() {
 const SubFooter = () => {
   return (
     <div className='ct-container-70 md:flex grid grid-cols-2 justify-between items-center text-[1.4rem] flex-col md:flex-row gap-[10px] md:gap-2 py-10'>
-      <Image
+      <div>
+        <h1 className='text-slate-500'>
+          Đang gửi thông báo đến <br /> <span className='uppercase'>bộ công thương</span>
+        </h1>
+      </div>
+      {/* <Image
         alt='bo cong thuong'
         src='/daThongBao1.png'
         width={188}
         height={71}
         className='md:h-auto h-32 w-auto object-contain'
-      />
-      <p className='text-[1.6rem] md:text-[1.8rem] text-baseBlack'>
+      /> */}
+      <p className='text-[1.8rem] text-baseBlack whitespace-nowrap'>
         Công ty TNHH CN Vua Thợ
       </p>
       <p className='text-[1.8rem] text-baseBlack col-span-2 md:text-left text-center'>

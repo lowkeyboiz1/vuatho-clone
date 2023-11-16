@@ -21,8 +21,10 @@ import { useState } from 'react'
 
 const scrollToElement = (id: string) => {
   const homeElement: any = document.getElementById(`${id}`)
-  homeElement.scrollIntoView({ behavior: 'smooth' })
-}
+  if (homeElement) {
+    homeElement.scrollIntoView({ behavior: 'smooth' })
+  }
+} 
 const HeroSection = () => {
   return (
     <>

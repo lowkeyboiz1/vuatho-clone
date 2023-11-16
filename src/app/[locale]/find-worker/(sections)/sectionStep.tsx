@@ -1,26 +1,28 @@
 'use client'
 
 import React from 'react'
+import { useTranslations } from 'next-intl'
 
 import { AndroidBtn, IosBtn, QrCode } from '@/components/DownloadApps'
 
 import { Tabs, Tab, Image, Accordion, AccordionItem } from '@nextui-org/react'
 
 const SectionTest = () => {
+  const t = useTranslations('FindWorker')
   const tabs = [
     {
       id: '1',
-      label: 'Bước 1: Tải ứng dụng',
+      label: t('text1'),
       content: <Step1 />,
     },
     {
       id: '2',
-      label: 'Bước 2: Đăng ký/Đăng nhập',
+      label: t('text2'),
       content: <Step2 />,
     },
     {
       id: '3',
-      label: 'Bước 3: Tìm thợ',
+      label: t('text3'),
       content: <Step3 />,
     },
   ]
@@ -88,21 +90,25 @@ const SectionTest = () => {
 }
 
 const Step1 = () => {
+  const t = useTranslations('FindWorker')
+
   return (
     <div className='md:flex flex-col gap-[20px] border-2 md:border-none border-base-gray rounded-lg md:p-0 p-6'>
-      <h3 className='text-[#405AB7] font-semibold text-[2.4rem]'>Tải ứng dụng Vua Thợ</h3>
+      <h3 className='text-[#405AB7] font-semibold text-[2.4rem]'>{t('text4')}</h3>
       <div className='flex items-center gap-10 mt-8'>
         <div className='space-y-10'>
           <div>
-            <h4 className='3xl:text-[1.9rem] text-[1.7rem] mb-2'>Hệ điều hành Android</h4>
+            <h4 className='3xl:text-[1.9rem] text-[1.7rem] mb-2'>{t('text5')}</h4>
             <AndroidBtn />
           </div>
           <div>
-            <h4 className='3xl:text-[1.9rem] text-[1.7rem] mb-2'>Hệ điều hành IOS</h4>
+            <h4 className='3xl:text-[1.9rem] text-[1.7rem] mb-2'>{t('text6')}</h4>
             <IosBtn />
           </div>
         </div>
-        <span className='3xl:text-[1.8rem] text-[1.6rem] text-black/50'>hoặc</span>
+        <span className='3xl:text-[1.8rem] text-[1.6rem] text-black/50'>
+          {t('text7')}
+        </span>
         <QrCode />
       </div>
     </div>
@@ -110,23 +116,23 @@ const Step1 = () => {
 }
 
 const Step2 = () => {
+  const t = useTranslations('FindWorker')
+
   const tabs = [
     {
       id: '4',
-      label: 'Đăng ký',
+      label: t('text8'),
       content: <Register />,
     },
     {
       id: '5',
-      label: 'Đăng nhập',
+      label: t('text9'),
       content: <Login />,
     },
   ]
   return (
     <div className='flex flex-col gap-[20px] border-2 md:border-none border-base-gray rounded-lg md:p-0 p-6'>
-      <h3 className='text-[#405AB7] font-semibold text-[2.4rem]'>
-        Đăng ký/Đăng nhập tài khoản
-      </h3>
+      <h3 className='text-[#405AB7] font-semibold text-[2.4rem]'>{t('text10')}</h3>
       <div className='lg:flex hidden w-full gap-[20px]'>
         <Tabs
           aria-label='Dynamic tabs'
@@ -147,13 +153,6 @@ const Step2 = () => {
           )}
         </Tabs>
       </div>
-      {/* <div className='w-full gap-[20px] flex flex-col'>
-        {tabs.map((item) => (
-          <div key={item.id} title={item.label}>
-            <div className='w-full'>{item.content}</div>
-          </div>
-        ))}
-      </div> */}
       <div className='lg:hidden block'>
         <Register />
         <Login />
@@ -163,15 +162,15 @@ const Step2 = () => {
 }
 
 const Step3 = () => {
+  const t = useTranslations('FindWorker')
+
   const listRegisterItem = [
     {
       url: 'findWorker1.png',
       content: (
         <>
-          <p className='text-[2.4rem] font-semibold'>Bước 1</p>
-          <p className='text-[1.8rem]'>
-            Nhấn vào biểu tượng “tìm thợ” ở bên dưới thanh điều hướng để mở trang tìm thợ
-          </p>
+          <p className='text-[2.4rem] font-semibold'>{t('text11')}</p>
+          <p className='text-[1.8rem]'>{t('text30')}</p>
         </>
       ),
     },
@@ -179,15 +178,13 @@ const Step3 = () => {
       url: 'findWorker2.png',
       content: (
         <>
-          <p className='text-[2.4rem] font-semibold'>Bước 2</p>
-          <p className='text-[1.8rem]'>
-            Người dùng khách thêm các chi tiết cho đơn tìm thợ
-          </p>
+          <p className='text-[2.4rem] font-semibold'>{t('text14')}</p>
+          <p className='text-[1.8rem]'>{t('text31')}</p>
           <ul className='list-inside list-disc text-[1.6rem]'>
-            <li>Dịch vụ</li>
-            <li>Mô tả chi tiết đơn</li>
-            <li>Thời gian</li>
-            <li>Hình ảnh - video - mô tả (nếu có)</li>
+            <li>{t('text32')}</li>
+            <li>{t('text33')}</li>
+            <li>{t('text34')}</li>
+            <li>{t('text35')}</li>
           </ul>
         </>
       ),
@@ -196,14 +193,9 @@ const Step3 = () => {
       url: 'findWorker3.png',
       content: (
         <>
-          <p className='text-[2.4rem] font-semibold'>Bước 3</p>
-          <p className='text-[1.8rem]'>
-            Bấm &quot;Tìm thợ&quot; và xác nhận lại thông tin
-          </p>
-          <p className='text-[1.8rem]'>
-            Sau khi đã kiểm tra kĩ lại thông tin một lần nữa thì bạn hãy nhấn nút
-            &quot;Xác nhận&quot; để bắt đầu tìm thợ
-          </p>
+          <p className='text-[2.4rem] font-semibold'>{t('text17')}</p>
+          <p className='text-[1.8rem]'>{t('text36')}</p>
+          <p className='text-[1.8rem]'>{t('text37')}</p>
         </>
       ),
     },
@@ -211,16 +203,9 @@ const Step3 = () => {
       url: 'findWorker4.png',
       content: (
         <>
-          <p className='text-[2.4rem] font-semibold'>Bước 4</p>
-          <p className='text-[1.8rem]'>
-            Sau khi đã xác nhận ở bước 3, màn hình sẽ chuyển sang bản đồ để bắt đầu quét
-            tìm thợ
-          </p>
-          <p className='text-[1.8rem]'>
-            Khi có thợ báo giá hệ thống sẽ thông báo cho khách hàng Khách hàng sẽ chọn thợ
-            phù hợp bằng cách bấm nút &quot;Xem ngay&quot; để xem chi tiết thông tin thợ
-            và báo giá
-          </p>
+          <p className='text-[2.4rem] font-semibold'>{t('text20')}</p>
+          <p className='text-[1.8rem]'>{t('text38')}</p>
+          <p className='text-[1.8rem]'>{t('text39')}</p>
         </>
       ),
     },
@@ -229,14 +214,9 @@ const Step3 = () => {
       url2: 'findWorker5-2.png',
       content: (
         <>
-          <p className='text-[2.4rem] font-semibold'>Bước 5</p>
-          <p className='text-[1.8rem]'>
-            Sau khi vào trang Chi tiết báo giá, nếu khách đồng ý đặt thợ hãy bấm nút
-            &quot;Đặt thợ&quot;
-          </p>
-          <p className='text-[1.8rem]'>
-            Hệ thống sẽ đợi thợ xác nhận và đến nhà khách thực hiện kiểm tra chốt giá
-          </p>
+          <p className='text-[2.4rem] font-semibold'>{t('text28')}</p>
+          <p className='text-[1.8rem]'>{t('text40')}</p>
+          <p className='text-[1.8rem]'>{t('text41')}</p>
         </>
       ),
     },
@@ -245,15 +225,9 @@ const Step3 = () => {
       url2: 'findWorker6-2.png',
       content: (
         <>
-          <p className='text-[2.4rem] font-semibold'>Bước 6</p>
-          <p className='text-[1.8rem]'>
-            Người dùng thực hiện thanh toán sau khi thợ hoàn tất công việc bằng cách bấm
-            vào &quot;Thanh toán&quot; tại trang chi tiết đơn hàng
-          </p>
-          <p className='text-[1.8rem]'>
-            Người dùng có thể thêm mã ưu đãi (nếu có), tip cho thợ (nếu có), chọn phương
-            thức và bấm &quot;Xác nhận&quot;
-          </p>
+          <p className='text-[2.4rem] font-semibold'>{t('text29')}</p>
+          <p className='text-[1.8rem]'>{t('text42')}</p>
+          <p className='text-[1.8rem]'>{t('text43')}</p>
         </>
       ),
     },
@@ -261,11 +235,8 @@ const Step3 = () => {
 
   return (
     <div className='border-2 md:border-none border-base-gray rounded-lg md:p-0 p-6'>
-      <h3 className='text-[#405AB7] font-semibold text-[2.4rem]'>Tìm thợ</h3>
-      <p className='text-[1.8rem] my-[20px]'>
-        Để đăng nhập lại vào ứng dụng, người dùng chỉ cần nhập số điện thoại sau đó nhập
-        mã OTP được hệ thống gửi dưới dạng SMS
-      </p>
+      <h3 className='text-[#405AB7] font-semibold text-[2.4rem]'>{t('text44')}</h3>
+      <p className='text-[1.8rem] my-[20px]'>{t('text45')}</p>
       <div className='grid md:grid-cols-2 gap-10 2xl:gap-y-20'>
         {listRegisterItem.map((i, index) => (
           <RegisterItem url={i.url} key={i.url} url2={i.url2} index={index}>
@@ -278,17 +249,16 @@ const Step3 = () => {
 }
 
 const Register: any = () => {
+  const t = useTranslations('FindWorker')
+
   const listRegisterItem = [
     {
       url: 'screen1.png',
       content: (
         <>
-          <p className='text-[2.4rem] font-semibold'>Bước 1</p>
-          <p className='text-[1.8rem]'>Sau khi tải thành công app Vua Thợ</p>
-          <p className='text-[1.8rem]'>
-            Nếu bạn là người dùng mới, người dùng chọn tùy chọn &quot;Đăng ký&quot; trên
-            ứng dụng
-          </p>
+          <p className='text-[2.4rem] font-semibold'>{t('text11')}</p>
+          <p className='text-[1.8rem]'>{t('text12')}</p>
+          <p className='text-[1.8rem]'>{t('text13')}</p>
         </>
       ),
     },
@@ -296,11 +266,9 @@ const Register: any = () => {
       url: 'screen2.png',
       content: (
         <>
-          <p className='text-[2.4rem] font-semibold'>Bước 2</p>
-          <p className='text-[1.8rem]'>
-            Chọn mã quốc gia và nhập số điện thoại của người dùng
-          </p>
-          <p className='text-[1.8rem]'>Nhập mã giới thiệu (nếu có)</p>
+          <p className='text-[2.4rem] font-semibold'>{t('text14')}</p>
+          <p className='text-[1.8rem]'>{t('text15')}</p>
+          <p className='text-[1.8rem]'>{t('text16')}</p>
         </>
       ),
     },
@@ -308,12 +276,10 @@ const Register: any = () => {
       url: 'screen3.png',
       content: (
         <>
-          <p className='text-[2.4rem] font-semibold'>Bước 3</p>
+          <p className='text-[2.4rem] font-semibold'>{t('text17')}</p>
           <p className='text-[1.8rem]'>
-            Bấm tiếp theo để nhập mã OTP
-            <span className='text-[#FF4343]'>
-              (OTP sẽ được hệ thống gửi dưới dạng SMS)
-            </span>
+            {t('text18')}
+            <span className='text-[#FF4343]'>{t('text19')}</span>
           </p>
         </>
       ),
@@ -322,11 +288,8 @@ const Register: any = () => {
       url: 'screen4.png',
       content: (
         <>
-          <p className='text-[2.4rem] font-semibold'>Bước 4</p>
-          <p className='text-[1.8rem]'>
-            Khi đăng ký thành công, hệ thống sẽ hỏi tên người dùng, người dùng nhập tên và
-            bấm &quot;Hoàn thành&quot;
-          </p>
+          <p className='text-[2.4rem] font-semibold'>{t('text20')}</p>
+          <p className='text-[1.8rem]'>{t('text21')}</p>
         </>
       ),
     },
@@ -335,7 +298,7 @@ const Register: any = () => {
   return (
     <div className=''>
       <h5 className='text-[2.5rem] lg:hidden block bg-primary-blue w-full py-6 pl-6 rounded-lg text-white mb-10'>
-        Đăng ký
+        {t('text8')}
       </h5>
       <div className='grid md:grid-cols-2 gap-10'>
         {listRegisterItem.map((i) => (
@@ -349,28 +312,45 @@ const Register: any = () => {
 }
 
 const Login = () => {
+  const t = useTranslations('FindWorker')
+
   return (
     <>
       <h5 className='text-[2.5rem] lg:hidden bg-primary-blue w-full py-6 pl-6 rounded-lg text-white mb-10'>
-        Đăng nhập
+        {t('text9')}
       </h5>
-      <p className='text-[1.8rem]'>
-        Để đăng nhập lại vào ứng dụng, người dùng chỉ cần nhập số điện thoại sau đó nhập
-        mã OTP được hệ thống gửi dưới dạng SMS
-      </p>
+      <p className='text-[1.8rem]'>{t('text22')}</p>
       <p className='my-4'>
-        <strong className='text-[2rem]'>Lưu ý:</strong>
+        <strong className='text-[2rem]'> {t('text23')}</strong>
       </p>
-      <p className='text-[1.8rem]'>Để đăng nhập/đăng ký thành công, ngưởi dùng cần:</p>
+      <p className='text-[1.8rem]'> {t('text24')}</p>
       <ul className='list-inside list-disc pl-3 text-[1.8rem]'>
-        <li>Chọn mã quốc gia phù hợp</li>
-        <li>Nhập số điện thoại của khách hàng</li>
-        <li>Nhập mã OTP được hệ thống gửi dưới dạng SMS</li>
+        <li> {t('text25')}</li>
+        <li> {t('text26')}</li>
+        <li> {t('text27')}</li>
       </ul>
       <div className='flex mt-[20px]'>
-        <Image src='/find-worker/loginScreen1.png' alt='' width={220} height={420} />
-        <Image src='/find-worker/loginScreen2.png' alt='' width={220} height={420} />
-        <Image src='/find-worker/loginScreen3.png' alt='' width={220} height={420} />
+        <Image
+          src='/find-worker/loginScreen1.png'
+          alt=''
+          width={220}
+          height={420}
+          className='pointer-events-none'
+        />
+        <Image
+          src='/find-worker/loginScreen2.png'
+          alt=''
+          width={220}
+          height={420}
+          className='pointer-events-none'
+        />
+        <Image
+          src='/find-worker/loginScreen3.png'
+          alt=''
+          width={220}
+          height={420}
+          className='pointer-events-none'
+        />
       </div>
     </>
   )
@@ -406,7 +386,7 @@ const RegisterItem = ({
               alt=''
               width={220}
               height={300}
-              className='h-full w-full'
+              className='h-full w-full pointer-events-none'
             />
           </div>
           <div className='w-[180px]'>
@@ -415,14 +395,20 @@ const RegisterItem = ({
               alt=''
               width={220}
               height={300}
-              className='h-full w-full'
+              className='h-full w-full pointer-events-none'
             />
           </div>
         </div>
       ) : (
         <div className='flex md:justify-end justify-start w-fit'>
           <div className='w-[180px]'>
-            <Image src={`/find-worker/${url}`} alt='' width={220} height={300} />
+            <Image
+              src={`/find-worker/${url}`}
+              alt=''
+              width={220}
+              height={300}
+              className='pointer-events-none'
+            />
           </div>
         </div>
       )}

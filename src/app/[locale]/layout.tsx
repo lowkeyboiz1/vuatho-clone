@@ -21,12 +21,12 @@ const lexend = Lexend({
   subsets: ['latin'],
   display: 'swap',
 })
+const timeZone = 'Asia/Ho_Chi_Minh'
 
 export default async function RootLayout({ children, params }: any) {
   const { locale } = params
 
   const locales = ['en', 'vi']
-
   const isValidLocale = locales.some((cur) => cur === locale)
 
   if (!isValidLocale) {
@@ -45,7 +45,7 @@ export default async function RootLayout({ children, params }: any) {
     <html lang={locale} className={lexend.className + ' overflow-x-hidden'}>
       <body className='!overflow-x-hidden'>
         <NextTopLoader height={3} zIndex={9999999} />
-        <NextIntlClientProvider locale={locale} messages={messages}>
+        <NextIntlClientProvider locale={locale} messages={messages} timeZone={timeZone}>
           <Providers>
             <Header />
             {children}

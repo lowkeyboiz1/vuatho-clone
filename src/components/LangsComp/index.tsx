@@ -4,10 +4,9 @@ import { useEffect, useState } from 'react'
 import { useLocale, useTranslations } from 'next-intl'
 import { useRouter, usePathname } from 'next/navigation'
 
-import { EngIcon, VietnamIcon } from '../Icons'
 import { langs } from '@/constants'
 
-import { Button, Select, SelectItem } from '@nextui-org/react'
+import { Button } from '@nextui-org/react'
 import {
   Popover,
   PopoverTrigger,
@@ -27,7 +26,6 @@ function LangsComp() {
   const locale = useLocale()
 
   const [lang, setLang] = useState<any>(langs.find((e) => e.code == locale))
-  const [langData, setLangData] = useState<any>(langs)
 
   const handleScroll = () => {
     setIsOpen(false)
@@ -50,67 +48,13 @@ function LangsComp() {
   }
 
   return (
-    // <Select
-    //   size='sm'
-    //   items={langs}
-    //   className='w-[120px]'
-    //   selectionMode='single'
-    //   variant='bordered'
-    //   disallowEmptySelection
-    //   isOpen={isOpen}
-    //   onClick={() => setIsOpen(!isOpen)}
-    //   defaultSelectedKeys={[locale]}
-    //   renderValue={(items) => {
-    //     return items.map((item) => (
-    //       <div key={item.key} className='flex items-center gap-2'>
-    //         <div className='flex-center'>
-    //           <span className=''>{langs.find((e) => e.id === item.data?.id)?.icon}</span>
-    //           <span className='text-text text-[2.2rem] md:text-[1.6rem] ml-2 md:ml-4'>
-    //             {item.data?.title}
-    //           </span>
-    //         </div>
-    //       </div>
-    //     ))
-    //   }}
-    //   classNames={{
-    //     innerWrapper: 'pt-0',
-    //     mainWrapper: 'h-full items-center',
-    //     trigger:
-    //       'data-[hover=true]:border-[#e4e4e7] data-[open=true]:border-[#e4e4e7] data-[focus=true]:border-[#e4e4e7] border-[#e4e4e7] border-[1px] h-[40px] px-6',
-    //   }}
-    // >
-    //   {(lang) => (
-    //     <SelectItem
-    //       classNames={{
-    //         wrapper: 'rounded-none',
-    //         base: 'px-4',
-    //         description: 'px-2',
-    //         selectedIcon: 'w-[12px] h-[12px]',
-    //         shortcut: 'px-4',
-    //         title: 'ml-2 text-[2.2rem] md:text-[1.6rem] h-[20px] flex items-center',
-    //       }}
-    //       key={lang.locale}
-    //       startContent={lang.icon}
-    //       onClick={() => {
-    //         console.log(pathName?.split('/'))
-    //         setIsOpen(!isOpen)
-    //         router.replace(`/${lang.locale}/${pathName?.split('/')?.[2] || ''}`, {
-    //           scroll: false,
-    //         })
-    //       }}
-    //       className='text-[2.2rem] md:text-[1.6rem]'
-    //     >
-    //       {lang.title}
-    //     </SelectItem>
-    //   )}
-    // </Select>
     <>
       <div className='md:block hidden'>
         <Popover
           placement='bottom-end'
           isOpen={isOpen}
           onOpenChange={(open) => setIsOpen(open)}
-          className='shadow-[0_0_10px_-6px_black]'
+          className='shadow-[0_0_10px_-6px_black] px-8'
         >
           <PopoverTrigger>
             <Button className='text-[1.5rem] bg-base-gray h-20 flex justify-between gap-3'>
@@ -127,7 +71,7 @@ function LangsComp() {
           <PopoverContent>
             <div className='divide-y divide-base-gray min-w-[50vw]'>
               <div className='flex justify-between items-center py-2'>
-                <h5 className='text-[2rem] text-primary-blue font-bold'>
+                <h5 className='text-[2.2rem] text-primary-blue font-bold'>
                   {t('language')}
                 </h5>
                 <Button

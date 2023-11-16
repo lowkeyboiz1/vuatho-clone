@@ -1,6 +1,6 @@
 'use client'
 
-import { useEffect, useRef, useState } from 'react'
+import { useEffect, useState } from 'react'
 import Image from 'next/image'
 import Link from 'next/link'
 import { usePathname, useRouter } from 'next/navigation'
@@ -10,22 +10,25 @@ import LangsComp from '@/components/LangsComp'
 
 import { AnimatePresence, motion } from 'framer-motion'
 import { Add as AddIcon, HambergerMenu as MenuIcon } from 'iconsax-react'
+import { Button } from '@nextui-org/react'
 const Header = () => {
+  const [isWebview, sIsWebview] = useState(false)
+  const pathName = usePathname()
+
   const [isHeaderVisible, setHeaderVisible] = useState(true)
-  const [transparent, setTransparent] = useState(true)
+  const [transparent, setTransparent] = useState(false)
+
+  const t = useTranslations('Navbar')
+
+  useEffect(() => {
+    var is_uiwebview = navigator.userAgent.includes('WebView')
+    sIsWebview(is_uiwebview)
+  }, [])
 
   useEffect(() => {
     let prevScrollPos = window.scrollY
-
     const handleScroll = () => {
       const currentScrollPos = window.scrollY
-      const check = 2
-
-      if (currentScrollPos < check) {
-        setTransparent(true)
-      } else {
-        setTransparent(false)
-      }
 
       if (currentScrollPos > prevScrollPos && currentScrollPos > 60) {
         setHeaderVisible(false)
@@ -42,21 +45,56 @@ const Header = () => {
     }
   }, [])
 
+  useEffect(() => {
+    let prevScrollPos = window.scrollY
+
+    setTransparent(!pathName?.split('/')?.[2]?.length && window.scrollY === 0)
+
+    const handleScroll = () => {
+      const currentScrollPos = window.scrollY
+      const check = 2
+      if (!pathName?.split('/')?.[2]?.length && currentScrollPos < check) {
+        setTransparent(true)
+      } else {
+        setTransparent(false)
+      }
+
+      prevScrollPos = currentScrollPos
+    }
+
+    window.addEventListener('scroll', handleScroll)
+
+    return () => {
+      window.removeEventListener('scroll', handleScroll)
+    }
+  }, [pathName])
+
+  if (isWebview) {
+    return null
+  }
+
   return (
-    <>
-      <motion.header
-        className={`${
-          transparent ? 'bg-transparent' : 'bg-white'
-        } header transition fixed left-0 right-0 w-full z-[99999] ${
-          isHeaderVisible ? 'translate-y-0' : '-translate-y-[100%]'
-        }`}
-      >
-        <div className='flex ct-container-70 justify-between h-[64px] 3xl:h-[80px] items-center relative'>
-          <Logo />
-          <RightNav />
-        </div>
-      </motion.header>
-    </>
+    <header
+      id='header'
+      className={`${
+        transparent ? 'bg-transparent' : 'bg-white'
+      } header transition fixed left-0 right-0 w-full z-[99999] ${
+        isHeaderVisible ? 'translate-y-0' : '-translate-y-[100%]'
+      }`}
+    >
+      <div className='flex ct-container-70 px-6 justify-between h-[64px] 3xl:h-[80px] items-center'>
+        <Logo />
+        <RightNav />
+        <Button
+          onClick={() =>
+            window.open('https://vuatho.com/vi/qrcode-download-app', '_blank')
+          }
+          className='bg-primaryYellow text-baseBlack h-[40px] xl:h-[44px] 13inch:h-[50px] w-auto text-[2rem] px-[30px] xl:px-[40px] 13inch:px-[50px] font-semibold hidden md:block'
+        >
+          {t('download')}
+        </Button>
+      </div>
+    </header>
   )
 }
 
@@ -79,13 +117,15 @@ const Logo = () => {
         width={256}
         height={176}
         quality={100}
-        className='h-[50px] 3xl:h-[80px] w-auto object-contain'
+        className='h-[50px] 3xl:h-[80px] w-auto object-contain pointer-events-none'
       />
     </button>
   )
 }
 
 const RightNav = () => {
+  const t = useTranslations('Navbar')
+
   const [toggleMenu, setToggleMenu] = useState(false)
   const handleToggleMenu = () => setToggleMenu(!toggleMenu)
 
@@ -117,7 +157,7 @@ const RightNav = () => {
 
   return (
     <>
-      <div className='hidden md:flex gap-[20px] 3xl:gap-[30px]] items-center'>
+      <div className='hidden md:flex gap-[20px] 3xl:gap-8 items-center'>
         <div className='flex gap-[20px] 3xl:gap-8 items-center'>
           <LinkList />
         </div>
@@ -129,7 +169,17 @@ const RightNav = () => {
         {toggleMenu ? (
           <AddIcon size={32} className='text-text cursor-pointer rotate-45 transition' />
         ) : (
-          <MenuIcon size={32} className='text-text cursor-pointer transition' />
+          <div className='flex items-center gap-[20px]'>
+            <Button
+              onClick={() =>
+                window.open('https://vuatho.com/vi/qrcode-download-app', '_blank')
+              }
+              className='bg-primaryYellow text-baseBlack h-[40px] xl:h-[50px] w-auto text-[2rem] px-[30px] md:px-[50px] font-semibold md:hidden'
+            >
+              {t('download')}
+            </Button>
+            <MenuIcon size={32} className='text-text cursor-pointer transition' />
+          </div>
         )}
       </div>
       <AnimatePresence>
@@ -195,7 +245,7 @@ const LinkList = ({ handleToggleMenu }: { handleToggleMenu?: any }) => {
       {navLink.map((link) => {
         const isActive = pathname.includes(link.url)
         return (
-          <div key={link.id} className='max-w-max'>
+          <div key={link.id} className='w-full whitespace-nowrap'>
             <motion.div
               variants={menuVariantsLinks}
               initial='initial'
@@ -208,7 +258,7 @@ const LinkList = ({ handleToggleMenu }: { handleToggleMenu?: any }) => {
               <button
                 onClick={() => handleClick(link.url)}
                 className={`${
-                  isActive ? 'text-[#405AB7] ' : 'hover:text-[#405AB7]/60'
+                  isActive ? 'text-[#0B27B6] ' : 'hover:text-[#0B27B6]/60'
                 } duration-300 block md:hidden`}
               >
                 {link.title}
@@ -216,7 +266,7 @@ const LinkList = ({ handleToggleMenu }: { handleToggleMenu?: any }) => {
               <Link
                 href={link.url}
                 className={`md:block hidden ${
-                  isActive ? 'text-[#405AB7]' : 'hover:text-[#405AB7]/60'
+                  isActive ? 'text-[#0B27B6]' : 'hover:text-[#0B27B6]/60'
                 }`}
               >
                 {link.title}

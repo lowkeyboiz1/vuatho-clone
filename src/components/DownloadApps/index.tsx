@@ -20,7 +20,12 @@ function DownloadApps({
     <div className='flex justify-center md:justify-start w-full items-center gap-2 13inch:gap-8 mt-2 md:mt-0'>
       {!hidden && (
         <div className='relative w-[120px] h-[120px] 13inch:w-[150px] 13inch:h-[150px] hidden md:block'>
-          <Image alt='QRCode' src={'/QRCODE.png'} fill className='hover:cursor-pointer' />
+          <Image
+            alt='QRCode'
+            src={'/QRCODE.png'}
+            fill
+            className='hover:cursor-pointer pointer-events-none'
+          />
         </div>
       )}
       <div
@@ -35,7 +40,7 @@ function DownloadApps({
               src={'/DownloadGooglePlay1.svg'}
               height={height || 80}
               width={width || 260}
-              className='hover:cursor-pointer'
+              className='hover:cursor-pointer pointer-events-none'
             />
           </div>
         </Link>
@@ -46,7 +51,7 @@ function DownloadApps({
               src={'/DownloadAppStore.svg'}
               height={height || 80}
               width={width || 260}
-              className='hover:cursor-pointer'
+              className='hover:cursor-pointer pointer-events-none'
             />
           </div>
         </Link>
@@ -114,10 +119,10 @@ export const QrCode: React.FC<{ height?: string }> = ({ height }) => {
           height ? height : 'h-[140px]'
         } relative z-[1] object-contain w-auto`}
       />
-      <div className='h-1/2 aspect-square w-fit rounded-full bg-primary-blue blur-xl absolute top-0 left-0 animate-pulse' />
-      <div className='h-1/2 aspect-square w-fit rounded-full bg-primary-yellow blur-xl absolute top-0 right-0 animate-pulse' />
-      <div className='h-1/2 aspect-square w-fit rounded-full bg-primary-yellow blur-xl absolute bottom-0 left-0 animate-pulse' />
-      <div className='h-1/2 aspect-square w-fit rounded-full bg-primary-blue blur-xl absolute bottom-0 right-0 animate-pulse' />
+      <div className='h-1/2 aspect-square w-fit rounded-full bg-primary-blue blur-xl absolute top-0 left-0 animate-pulse hidden lg:block' />
+      <div className='h-1/2 aspect-square w-fit rounded-full bg-primary-yellow blur-xl absolute top-0 right-0 animate-pulse hidden lg:block' />
+      <div className='h-1/2 aspect-square w-fit rounded-full bg-primary-yellow blur-xl absolute bottom-0 left-0 animate-pulse hidden lg:block' />
+      <div className='h-1/2 aspect-square w-fit rounded-full bg-primary-blue blur-xl absolute bottom-0 right-0 animate-pulse hidden lg:block' />
     </div>
   )
 }
