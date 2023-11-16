@@ -3,7 +3,7 @@
 import { useEffect, useState } from 'react'
 import Image from 'next/image'
 import Link from 'next/link'
-import { usePathname, useRouter } from 'next/navigation'
+import { usePathname, useRouter, useSearchParams } from 'next/navigation'
 import { useLocale, useTranslations } from 'next-intl'
 
 import LangsComp from '@/components/LangsComp'
@@ -14,6 +14,8 @@ import { Button } from '@nextui-org/react'
 const Header = () => {
   const [isWebview, sIsWebview] = useState(false)
   const pathName = usePathname()
+  const searchParams = useSearchParams()
+  const hiddenHeaderAndFooter = searchParams.get('hideHeaderAndFooter')
 
   const [isHeaderVisible, setHeaderVisible] = useState(true)
   const [transparent, setTransparent] = useState(false)
@@ -72,6 +74,8 @@ const Header = () => {
   if (isWebview) {
     return null
   }
+
+  if (hiddenHeaderAndFooter) return null
 
   return (
     <header

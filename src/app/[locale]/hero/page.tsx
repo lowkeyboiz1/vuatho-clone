@@ -24,7 +24,7 @@ const scrollToElement = (id: string) => {
   if (homeElement) {
     homeElement.scrollIntoView({ behavior: 'smooth' })
   }
-} 
+}
 const HeroSection = () => {
   return (
     <>

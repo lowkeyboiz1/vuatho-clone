@@ -20,13 +20,15 @@ import {
   Location as LocationIcon,
 } from 'iconsax-react'
 import { AndroidBtn, IosBtn } from '@/components/DownloadApps'
+import { useSearchParams } from 'next/navigation'
 
 function Footer() {
   const t = useTranslations('Footer')
   const td = useTranslations('Download')
   const locale = useLocale()
   const [isWebview, sIsWebview] = useState(false)
-
+  const searchParams = useSearchParams()
+  const hiddenHeaderAndFooter = searchParams.get('hideHeaderAndFooter')
   useEffect(() => {
     var is_uiwebview = navigator.userAgent.includes('WebView')
     sIsWebview(is_uiwebview)
@@ -82,6 +84,8 @@ function Footer() {
   if (isWebview) {
     return null
   }
+
+  if (hiddenHeaderAndFooter) return null
 
   return (
     <footer className='bg-[#fff]/20 divide-y-2 divide-base-gray'>
