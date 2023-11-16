@@ -1,8 +1,18 @@
+'use client'
+
 import Image from 'next/image'
+import { useSearchParams } from 'next/navigation'
 
 function BackgroundRelative({ text }: { text: string }) {
+  const searchParams = useSearchParams()
+  const hiddenHeaderAndFooter = searchParams.get('hideHeaderAndFooter')
+
   return (
-    <div className='w-full relative min-h-[200px] h-[200px] md:h-[300px] flex-center'>
+    <div
+      className={`w-full relative min-h-[200px] h-[200px] md:h-[300px] flex-center ${
+        hiddenHeaderAndFooter ? '' : 'pt-[64px] 3xl:pt-[80px]'
+      }`}
+    >
       <div className='absolute inset-0 w-full h-full'>
         <Image
           src='/images/bg-relative.webp'
