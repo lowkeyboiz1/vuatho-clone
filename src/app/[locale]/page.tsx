@@ -481,7 +481,9 @@ const RuleSection = () => {
             <div className='space-y-6'>
               <div className='text-baseBlack bg-white p-8 md:p-5 rounded-[12px] md:rounded-[24px] shadow-sm hover:bg-white/80 duration-300 select-none'>
                 <div className='flex items-start space-x-5'>
-                  <Binoculars className={'w-[48px]'} />
+                  <div className='w-[48px]'>
+                    <Binoculars />
+                  </div>
                   <div className='space-y-3 md:space-y-[10px]'>
                     <h3 className='text-[2.8rem] md:text-[2.4rem] text-baseBlack'>
                       {t('text3')}
@@ -492,7 +494,9 @@ const RuleSection = () => {
               </div>
               <div className='text-baseBlack bg-white p-5 rounded-[12px] md:rounded-[24px] shadow-sm hover:bg-white/80 duration-300 select-none'>
                 <div className='flex items-start space-x-5'>
-                  <Mission className={'w-[48px]'} />
+                  <div className='w-[48px]'>
+                    <Mission />
+                  </div>
                   <div className='space-y-3 md:space-y-[10px]'>
                     <h1 className='text-[2.8rem] text-baseBlack'>{t('text5')}</h1>
                     <p className='text-[2.2rem]'>{t('text6')}</p>
