@@ -57,7 +57,12 @@ const AISection = () => {
         <div className='flex flex-col'>
           <div className='flex items-center justify-center md:justify-end 13inch:justify-center h-full w-full md:absolute'>
             <div className='flex items-center justify-center w-full md:w-1/2 13inch:w-auto'>
-              <Image src={'/mascot/AIRobot.png'} alt='AIRobot' width={338} height={400} />
+              {/* <Image
+                src={'/robot_animation_test.gif'}
+                alt='AIRobot'
+                width={338}
+                height={400}
+              /> */}
             </div>
           </div>
           <div className='grid grid-cols-1 13inch:grid-cols-2 gap-6 13inch:gap-32 py-12 items-center'>

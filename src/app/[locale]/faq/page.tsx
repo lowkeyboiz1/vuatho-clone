@@ -2,15 +2,18 @@ import { Metadata } from 'next'
 
 import BackgroundRelative from '@/components/BackgroundRelative'
 import FaqSection from './(sections)/faqSection'
+import { useTranslations } from 'next-intl'
 
 export const metadata: Metadata = {
   title: 'Câu hỏi thường gặp',
 }
 
 function Faq() {
+  const t = useTranslations('Footer')
+
   return (
-    <div className='pt-[64px] 3xl:pt-[80px]'>
-      <BackgroundRelative text='Câu hỏi thường gặp' />
+    <div className=''>
+      <BackgroundRelative text={t('faq')} />
       <FaqSection />
     </div>
   )

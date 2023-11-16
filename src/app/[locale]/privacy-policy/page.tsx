@@ -10,8 +10,8 @@ function PrivateInformation() {
   const t = useTranslations('PrivacyPolicy')
 
   return (
-    <div className='pt-[64px] 3xl:pt-[80px]'>
-      <BackgroundRelative text='Chính sách bảo mật' />
+    <div className=''>
+      <BackgroundRelative text={t('heading')} />
       <div className='bg-white py-[20px] 13inch:py-[40px] 3xl:py-[80px]'>
         <div className='ct-container-70 md:gap-20 gap-10'>
           <div className='flex flex-col gap-6'>
@@ -51,10 +51,7 @@ function PrivateInformation() {
                 <strong className='text-[2rem]'>{t('phapluathienhanh')}</strong>{' '}
                 {t('text11')}
               </p>
-              <p className='text-[2rem]'>
-                <strong className='text-[2rem]'>{t('phapluathienhanh')}</strong>
-                {t('text12')}
-              </p>
+              <p className='text-[2rem]'>{t('text12')}</p>
               <h5 className='text-[#0B27B6]/90 text-[2.4rem]'>{t('phanA')}</h5>
               <p className='text-[2rem]'>{t('text13')}</p>
               <ul className='list-disc list-inside text-[2rem]'>

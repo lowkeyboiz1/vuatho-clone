@@ -14,12 +14,11 @@ import { Button } from '@nextui-org/react'
 const Header = () => {
   const [isWebview, sIsWebview] = useState(false)
   const pathName = usePathname()
-  const searchParams = useSearchParams()
-  const hiddenHeaderAndFooter = searchParams.get('hideHeaderAndFooter')
 
   const [isHeaderVisible, setHeaderVisible] = useState(true)
   const [transparent, setTransparent] = useState(false)
-
+  const searchParams = useSearchParams()
+  const hiddenHeaderAndFooter = searchParams.get('hideHeaderAndFooter')
   const t = useTranslations('Navbar')
 
   useEffect(() => {
@@ -74,9 +73,8 @@ const Header = () => {
   if (isWebview) {
     return null
   }
-
   if (hiddenHeaderAndFooter) return null
-
+  
   return (
     <header
       id='header'

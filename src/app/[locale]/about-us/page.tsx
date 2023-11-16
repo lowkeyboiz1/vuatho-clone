@@ -14,7 +14,7 @@ function AboutUs() {
   const t = useTranslations('AboutUs')
 
   return (
-    <div className='pt-[64px] 3xl:pt-[80px] w-full'>
+    <div className=' w-full'>
       <HeroSection />
       <div className='w-full relative h-[400px] xl:h-[600px] bg-[#f6f8fa] xl:bg-transparent'>
         <div className='w-full'>

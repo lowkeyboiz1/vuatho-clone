@@ -7,7 +7,7 @@ import Link from 'next/link'
 export default function NotFound() {
   const t = useTranslations('NotFound')
   return (
-    <div className='pt-[64px] 3xl:pt-[80px] w-full'>
+    <div className='w-full'>
       <div className='h-[80vh] w-full flex flex-col justify-center items-center'>
         <div className='h-full w-full bg-[#4F62DD] flex-center'>
           <div className='flex-center flex-col gap-10'>

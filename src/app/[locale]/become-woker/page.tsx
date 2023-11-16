@@ -12,7 +12,7 @@ const BeComeEmployee = () => {
   const t = useTranslations('Footer')
 
   return (
-    <div className='pt-[64px] 3xl:pt-[80px]'>
+    <div className=''>
       <BackgroundRelative text={t('become_worker')} />
       <SectionStep />
     </div>
