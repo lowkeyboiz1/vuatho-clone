@@ -19,10 +19,13 @@ import { ArrowRight } from 'iconsax-react'
 import SectionToTheMoon from './(sections)/toTheMoon'
 import SectionDownload from './(sections)/downloadApp'
 import SectionWithVuaTho from './(sections)/withVuaTho'
+import { useSearchParams } from 'next/navigation'
 
 const HeroSection = () => {
+  const searchParams = useSearchParams()
+  const hiddenHeaderAndFooter = searchParams.get('hideHeaderAndFooter')
   return (
-    <div>
+    <div className={`${hiddenHeaderAndFooter ? '' : 'pt-[64px] 3xl:pt-[80px]'}`}>
       <MainSection />
       <RuleSection />
       <AISection />
@@ -131,7 +134,7 @@ const MinhBach = () => {
 
   return (
     <div className='' id='trade'>
-      <section className='pt-[64px] 3xl:pt-[80px] ct-container-70 w-full space-y-12 md:!px-[100px] h-[600px]'>
+      <section className=' ct-container-70 w-full space-y-12 md:!px-[100px] h-[600px]'>
         <div>
           <h3 className='text-center text-[3.5rem] font-semibold'>
             <span className='text-primaryBlue'>{t('heading1')}</span>
@@ -356,7 +359,7 @@ const MainSection = () => {
       <div className='blur-3xl rounded-[50%] bg-yellow-400/20 absolute right-0 bottom-[20%] h-1/2 aspect-square w-fit z-[-2] hidden lg:block' />
       <div className='blur-3xl rounded-[50%] bg-orange-300/20 absolute right-[12%] -bottom-[15%] h-1/2 aspect-square w-fit z-[-2] hidden lg:block' />
 
-      <div className='pt-[64px] 3xl:pt-[80px] ct-container-70'>
+      <div className=' ct-container-70'>
         <div className='py-20 flex items-center justify-between flex-col lg:flex-row'>
           <div className='flex flex-col gap-4 w-full'>
             <h3 className='text-[2.8rem] md:text-[2.8rem] 13inch:text-[3rem] 2xl:text-[3.6rem] font-bold text-primaryText text-left'>
