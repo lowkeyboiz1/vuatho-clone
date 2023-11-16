@@ -44,23 +44,6 @@ function FaqSection() {
             },
           ],
         },
-        {
-          title: t('listAccordion.children1.title3'),
-          children: [
-            {
-              title: t('listAccordion.children1.children3.title1'),
-            },
-            {
-              title: t('listAccordion.children1.children3.title2'),
-            },
-            {
-              title: t('listAccordion.children1.children3.title3'),
-            },
-            {
-              title: t('listAccordion.children1.children3.title4'),
-            },
-          ],
-        },
       ],
     },
     {
