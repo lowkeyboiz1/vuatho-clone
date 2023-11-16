@@ -330,7 +330,7 @@
         },
         "title10": "Theo dõi tình trạng đơn hàng ở đâu?",
         "children10": {
-          "title1": "Bạn có thể theo dõi tình trạng đơn hàng của mình trực tiếp trong ứng dụng Vua Thợ. Tại mục Đơn hàng của tôi, bạn sẽ thấy thông tin về đơn hàng hiện tại, bao gồm trạng thái và chi tiết liên quan."
+          "title1": "Bạn có thể theo dõi tình trạng đơn hàng của mình trực tiếp trong ứng dụng Vua Thợ. Tại mục Hoạt động của tôi, bạn sẽ thấy thông tin về đơn hàng hiện tại, bao gồm trạng thái và chi tiết liên quan."
         },
         "title11": "Nhân viên có mang công cụ dụng cụ gì?",
         "children11": {
@@ -382,7 +382,7 @@
           "title7": "Tôi có thể huỷ dọn dẹp nhà theo gói không?",
           "title8": "- Có, bạn có thể huỷ dịch vụ dọn dẹp nhà theo gói, tuy nhiên, hãy xem xét chính sách và điều khoản huỷ bỏ của ứng dụng để biết thông tin chi tiết về quyền lợi và điều kiện của bạn."
         },
-        "title2": "Với vai trò khách",
+        "title2": "Với vai trò thợ",
         "children2": {
           "title1": "Thợ muốn ứng trước tiền",
           "title2": "- Trong ứng dụng Vua Thợ, hình thức thanh toán thường là sau khi công việc hoàn thành. Tuy nhiên, bạn có thể thảo luận với khách hàng của mình về việc thanh toán trước tiền và đưa ra thoả thuận cụ thể về hình thức thanh toán.",
@@ -823,6 +823,7 @@
     "text48": "Sau khi chọn quốc gia và loại giấy tờ cá nhân liên quan, hệ thống yêu cầu người dùng thực hiện chụp hình 2 mặt loại giấy tờ đã chọn và chụp hình selfie theo hướng dẫn của bên thứ 3 SumSub.",
     "text49": "Xác minh danh tính",
     "text50": "Xét duyệt hồ sơ và kích hoạt tài khoản",
+    "or": "hoặc",
     "text51": "Sau khi hoàn tất các bước trên thì đợi hệ thống xét duyệt tài khoản và thông báo trong thời gian sớm nhất.",
     "text52": "Kết quả hệ thống sẽ bao gồm:",
     "text53": "Người dùng có thể sử dụng tất cả dịch vụ và các tính năng của ứng dụng",

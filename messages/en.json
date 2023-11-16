@@ -382,7 +382,7 @@
           "title7": "Can I cancel a house cleaning package?",
           "title8": "- Yes, you can cancel a house cleaning service package, however, please consider the application's cancellation policy and terms for detailed information about your rights and conditions."
         },
-        "title2": "As a customer",
+        "title2": "As a worker",
         "children2": {
           "title1": "The craftsman wants an advance payment",
           "title2": "- In the Vua Thợ app, the usual payment method is after the job is completed. However, you can discuss with your customer about advance payment and make a specific agreement on the payment method.",
@@ -450,7 +450,7 @@
   "PrivacyPolicy": {
     "heading": "Privacy Policy",
     "title1": "Personal Data",
-    "text1": "We,CÔNG TY TNHH CÔNG NGHỆ VUA THỢ (here in after referred to as “Vua Thợ” or “we, us”), place great importance on the privacy and protection of users' personal data.",
+    "text1": "We, CÔNG TY TNHH CÔNG NGHỆ VUA THỢ (here in after referred to as “Vua Thợ” or “we, us”), place great importance on the privacy and protection of users' personal data.",
     "text2": "The personal data protection policy of CÔNG TY TNHH CÔNG NGHỆ VUA THỢ “Vua Thợ” (here in after referred to as “Policy”) will provide information on how Vua Thợ collects, processes, stores personal data of Users in order to provide products and/or services of Vua Thợor conduct business transactions with Users and when Users use Vua Thợ's online services. This Policy specifies the reasons why we must collect personal information of Users, how it is used, who it may be transferred to, how to access, view and modify personal information of oneself. In addition, this Policy also sets out the standards and control procedures expected to protect Personal Data in line with the objectives of the Policy. We will also let Users know what rights they have, and how they can contact us.",
     "text3": "To avoid confusion, this Data Privacy Policy only applies to individual users. Vua Thợ encourages users to read this Policy carefully and regularly check the website for any changes that Vua Thợ may make according to the terms of this Policy.",
     "title2": "Terminology Explanation",
@@ -655,7 +655,7 @@
     "text8": "\"VUA THỢ\"",
     "text9": " refers to CÔNG TY TNHH CÔNG NGHỆ VUA THỢ operating under the Business Registration Certificate number 0318063280 issued by the Department of Planning & Investment of Ho Chi Minh City on September 25, 2023.",
     "text10": "\"Service\"",
-    "text11": " refers to the services provided by VUA THỢ or its partners through the Application.",
+    "text11": " refers to the services provided by VUA THỢ or it partners through the Application.",
     "text12": "\"You\"",
     "text13": " means any customer, an individual accessing or using the applications, websites, content, products, and services requested through the User Account.",
     "text14": "\"Partner\"",
@@ -737,7 +737,7 @@
     "text90": "- Regularly exchange and immediately receive feedback from you on the quality of service.",
     "text91": "- Except for the disclosure of Personal Data for the purposes of the services specified in these service terms of use and VUA THỢ's Privacy Policy, VUA THỢ will keep confidential information about you including Personal Data provided to VUA THỢ and adhere to VUA THỢ's Privacy Policy issued at each point in time.",
     "text92": "8. SECURITY",
-    "text93": "As an App user, you must maintain the confidentiality of all information and data related to VUA THỢ, its services, products, business operations, marketing plans and promotions, or other activities of VUA THỢ and its affiliated companies, as well as information/personal data related to the partner or partner's services (if any), information/personal data related to Users that have been disclosed to you by VUA THỢ or its representatives (whether orally or in writing, before, at, or after the date of these Terms of Use) or that you indirectly or directly collected from VUA THỢ or any other affiliated companies, or that were created in the process of contracting these Terms of Use.",
+    "text93": "As an App user, you must maintain the confidentiality of all information and data related to VUA THỢ, its services, products, business operations, marketing plans and promotions, or other activities of VUA THỢ and its affiliated companies, as well as information/personal data related to the partner or partner's services (if any), information/personal data related to Users that have been disclosed to you by VUA THỢ or it representatives (whether orally or in writing, before, at, or after the date of these Terms of Use) or that you indirectly or directly collected from VUA THỢ or any other affiliated companies, or that were created in the process of contracting these Terms of Use.",
     "text94": "9. PERSONAL DATA PRIVACY POLICY",
     "text95": "Data security is a matter of trust. VUA THỢ is aware that the security of your information & identity is especially important. Therefore, we commit to using the information you provide in the way set out in VUA THỢ's Privacy Policy issued at each point in time. The collection and use of personal information related to our Services are regulated in VUA THỢ's personal data privacy policy at",
     "text96": "10. DISCLAIMER",
@@ -822,6 +822,7 @@
     "text47": "(Recommended to use the Citizen Identity Card - CCCD)",
     "text48": "After selecting the country and type of personal document, the system requires the user to take pictures of both sides of the chosen document and a selfie following the guidance of the third party SumSub.",
     "text49": "Verify identity",
+    "or": "or",
     "text50": "Profile review and account activation",
     "text51": "After completing the above steps, wait for the system to review the account and notify as soon as possible.",
     "text52": "The system results will include:",

@@ -20,6 +20,7 @@ import SectionToTheMoon from './(sections)/toTheMoon'
 import SectionDownload from './(sections)/downloadApp'
 import SectionWithVuaTho from './(sections)/withVuaTho'
 import { useSearchParams } from 'next/navigation'
+import AIAnimation from './AIAnimation'
 
 const HeroSection = () => {
   const searchParams = useSearchParams()
@@ -40,6 +41,7 @@ const HeroSection = () => {
     </div>
   )
 }
+
 const AISection = () => {
   const t = useTranslations('AISection')
 
@@ -57,6 +59,9 @@ const AISection = () => {
         <div className='flex flex-col'>
           <div className='flex items-center justify-center md:justify-end 13inch:justify-center h-full w-full md:absolute'>
             <div className='flex items-center justify-center w-full md:w-1/2 13inch:w-auto'>
+              {/* <div className='w-[700px]'>
+                <AIAnimation />
+              </div> */}
               <Image
                 src={'/mascot/AIRobot.png'}
                 alt='AIRobot'

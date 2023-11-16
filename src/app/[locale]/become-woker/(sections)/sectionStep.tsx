@@ -419,7 +419,9 @@ const Step4: React.FC = () => {
 
 const Step5: React.FC = () => {
   const t = useTranslations('BecomeWorker')
-
+  const x = useTranslations('or')
+  console.log(x)
+  console.log('hehe')
   return (
     <>
       <h3 className='text-[#0B27B6] font-bold 3xl:text-[2.6rem] 2xl:text-[2.4rem] text-[2rem]'>
@@ -436,10 +438,10 @@ const Step5: React.FC = () => {
           className='lg:h-[250px] h-[200px] w-auto object-contain pointer-events-none'
         />
         <p className='text-[1.7rem] md:w-[400px] md:text-left text-center'>
-          {t('text52')}
+          {t('text50')}
         </p>
       </div>
-      <p className='text-[1.7rem] mt-8'>{t('text50')}</p>
+      <p className='text-[1.7rem] mt-8'>{t('text52')}</p>
       <div className='flex xl:flex-row flex-col gap-10 mt-8 items-center'>
         <div className='2xl:w-[400px] xl:w-[300px] lg:w-[350px] w-[300px] space-y-6 flex flex-col items-center'>
           <Image
@@ -452,7 +454,7 @@ const Step5: React.FC = () => {
           />
           <p className='text-[2rem] text-black/30 text-center'>{t('text53')}</p>
         </div>
-        <span className='text-[1.7rem] text-black/50'>{t('text50')}</span>
+        <span className='text-[1.7rem] text-black/50'>{t('or')}</span>
         <div className='2xl:w-[400px] xl:w-[300px] lg:w-[350px] w-[300px] space-y-6 flex flex-col items-center'>
           <Image
             alt='noti-kyc'

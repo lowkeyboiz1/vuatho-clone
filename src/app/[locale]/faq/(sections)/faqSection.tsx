@@ -124,13 +124,13 @@ function FaqSection() {
               title: t('listAccordion.children2.children9.title2'),
             },
             {
-              title: t('listAccordion.children2.children9.title2'),
-            },
-            {
               title: t('listAccordion.children2.children9.title3'),
             },
             {
               title: t('listAccordion.children2.children9.title4'),
+            },
+            {
+              title: t('listAccordion.children2.children9.title5'),
             },
           ],
         },
@@ -144,132 +144,7 @@ function FaqSection() {
         },
       ],
     },
-    {
-      title: t('listAccordion.title3'),
-      children: [
-        {
-          title: t('listAccordion.children3.title1'),
-          children: [
-            {
-              title: t('listAccordion.children3.children1.title1'),
-            },
-          ],
-        },
-        {
-          title: t('listAccordion.children3.title2'),
-          children: [
-            {
-              title: t('listAccordion.children3.children2.title1'),
-            },
-          ],
-        },
-        {
-          title: t('listAccordion.children3.title3'),
-          children: [
-            {
-              title: t('listAccordion.children3.children3.title1'),
-            },
-          ],
-        },
-        {
-          title: t('listAccordion.children3.title4'),
-          children: [
-            {
-              title: t('listAccordion.children3.children4.title1'),
-            },
-          ],
-        },
-        {
-          title: t('listAccordion.children3.title5'),
-          children: [
-            {
-              title: t('listAccordion.children3.children5.title1'),
-            },
-          ],
-        },
-        {
-          title: t('listAccordion.children3.title6'),
-          children: [
-            {
-              title: t('listAccordion.children3.children6.title1'),
-            },
-          ],
-        },
-        {
-          title: t('listAccordion.children3.title7'),
-          children: [
-            {
-              title: t('listAccordion.children3.children7.title1'),
-            },
-          ],
-        },
-        {
-          title: t('listAccordion.children3.title8'),
-          children: [
-            {
-              title: t('listAccordion.children3.children8.title1'),
-            },
-          ],
-        },
-        {
-          title: t('listAccordion.children3.title9'),
-          children: [
-            {
-              title: t('listAccordion.children3.children9.title1'),
-            },
-          ],
-        },
-        {
-          title: t('listAccordion.children3.title10'),
-          children: [
-            {
-              title: t('listAccordion.children3.children10.title1'),
-            },
-          ],
-        },
-        {
-          title: t('listAccordion.children3.title11'),
-          children: [
-            {
-              title: t('listAccordion.children3.children11.title1'),
-            },
-          ],
-        },
-        {
-          title: t('listAccordion.children3.title12'),
-          children: [
-            {
-              title: t('listAccordion.children3.children12.title1'),
-            },
-          ],
-        },
-        {
-          title: t('listAccordion.children3.title13'),
-          children: [
-            {
-              title: t('listAccordion.children3.children13.title1'),
-            },
-            {
-              title: t('listAccordion.children3.children13.title2'),
-            },
-            {
-              title: t('listAccordion.children3.children13.title3'),
-            },
-            {
-              title: t('listAccordion.children3.children13.title4'),
-            },
-            {
-              title: t('listAccordion.children3.children13.title5'),
-            },
-            { title: t('listAccordion.children3.children13.title6') },
-            { title: t('listAccordion.children3.children13.title7') },
-            {
-              title: t('listAccordion.children3.children13.title8'),
-            },
-          ],
-        },
-      ],
-    },
+
     {
       title: t('listAccordion.title4'),
       children: [
@@ -356,7 +231,7 @@ function FaqSection() {
             },
 
             {
-              title: t('listAccordion.children5.children2.title4'),
+              title: t('listAccordion.children5.children2.title5'),
             },
           ],
         },
@@ -445,8 +320,9 @@ function FaqSection() {
     },
   ]
 
-  const [activeSelect, setActiveSelect] = useState<string>('Tài khoản')
+  const [activeSelect, setActiveSelect] = useState<string>(t('listAccordion.title1'))
   const [childActive, setChildActive] = useState(['0'])
+
   const [contentActive, setContentActive] = useState(
     listAccordion.find((i: any) => i.title === activeSelect)?.children,
   )
