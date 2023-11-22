@@ -8,13 +8,115 @@ export const MoonIcon = ({ className }: { className?: any }) => (
     width='1em'
     className={className}
   >
+
     <path
       d='M21.53 15.93c-.16-.27-.61-.69-1.73-.49a8.46 8.46 0 01-1.88.13 8.409 8.409 0 01-5.91-2.82 8.068 8.068 0 01-1.44-8.66c.44-1.01.13-1.54-.09-1.76s-.77-.55-1.83-.11a10.318 10.318 0 00-6.32 10.21 10.475 10.475 0 007.04 8.99 10 10 0 002.89.55c.16.01.32.02.48.02a10.5 10.5 0 008.47-4.27c.67-.93.49-1.519.32-1.79z'
       fill='currentColor'
     />
   </svg>
 )
+export const CheckIcon1 = ({
+  height,
+  width,
+  className,
+}: {
+  height?: number
+  width?: number
+  className?: any
+}) => {
+  return (
+    <svg
+      width={width || 20}
+      height={height || 20}
+      viewBox='0 0 24 24'
+      fill='none'
+      xmlns='http://www.w3.org/2000/svg'
+      className={className}
+    >
+      <path
+        d='M8.63023 15.2131L8.28584 14.8836L7.94029 15.2119L6.46426 16.6138L6.0839 16.975L6.46298 17.3376L12.2735 22.8955L12.6191 23.2261L12.9648 22.8955L25.4382 10.9644L25.816 10.6031L25.4382 10.2418L23.9726 8.83985L23.6271 8.50942L23.2815 8.83969L12.6193 19.0287L8.63023 15.2131Z'
+        fill='url(#paint0_linear_1026_50988)'
+        stroke='url(#paint1_linear_1026_50988)'
+      />
+      <defs>
+        <linearGradient
+          id='paint0_linear_1026_50988'
+          x1='9.9461'
+          y1='19.1766'
+          x2='23.8173'
+          y2='12.0929'
+          gradientUnits='userSpaceOnUse'
+        >
+          <stop stopColor='#fff' />
+          <stop offset='1' stopColor='#fff' />
+        </linearGradient>
+        <linearGradient
+          id='paint1_linear_1026_50988'
+          x1='6.67121'
+          y1='16.1'
+          x2='24.8163'
+          y2='9.37625'
+          gradientUnits='userSpaceOnUse'
+        >
+          <stop stopColor='#fff' />
+          <stop offset='1' stopColor='#fff' />
+        </linearGradient>
+      </defs>
+    </svg>
+  )
+}
 
+
+export const CheckIcon2 = ({
+  height,
+  width,
+  className,
+}: {
+  height?: number
+  width?: number
+  className?: any
+}) => {
+  return (
+    <svg
+      width={width || 20}
+      height={height || 20}
+      viewBox='0 0 24 24'
+      fill='none'
+      xmlns='http://www.w3.org/2000/svg'
+      className={className}
+    >
+      <path
+        d='M8.62828 15.2131L8.28389 14.8836L7.93833 15.2119L6.46231 16.6138L6.08195 16.975L6.46103 17.3376L12.2716 22.8955L12.6172 23.2261L12.9628 22.8955L25.4363 10.9644L25.814 10.6031L25.4363 10.2418L23.9706 8.83985L23.6252 8.50942L23.2796 8.83969L12.6174 19.0287L8.62828 15.2131Z'
+        fill='url(#paint0_linear_1026_50893)'
+        stroke='url(#paint1_linear_1026_50893)'
+      />
+      <defs>
+        <linearGradient
+          id='paint0_linear_1026_50893'
+          x1='9.94415'
+          y1='19.1766'
+          x2='23.8153'
+          y2='12.0929'
+          gradientUnits='userSpaceOnUse'
+        >
+          <stop stopColor='#FDA00B' />
+          <stop offset='1' stopColor='#FEBD23' />
+        </linearGradient>
+        <linearGradient
+          id='paint1_linear_1026_50893'
+          x1='6.66926'
+          y1='16.1'
+          x2='24.8143'
+          y2='9.37625'
+          gradientUnits='userSpaceOnUse'
+        >
+          <stop stopColor='#FDA00B' />
+          <stop offset='1' stopColor='#FEBD23' />
+        </linearGradient>
+      </defs>
+    </svg>
+  )
+}
 export const SunIcon = ({ className }: { className?: any }) => (
   <svg
     aria-hidden='true'
