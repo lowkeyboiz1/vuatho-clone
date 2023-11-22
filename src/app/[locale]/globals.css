@@ -12,17 +12,17 @@
 }
 
 .ct-container {
-  @apply w-full 3xl:max-w-[1920px] mx-auto px-8;
+  @apply mx-auto w-full px-8 3xl:max-w-[1920px];
 }
 
 .ct-container-70 {
-  @apply w-full 13inch:w-[80%] max-w-[1600px] px-8 mx-auto;
+  @apply mx-auto w-full max-w-[1600px] px-8 13inch:w-[1240px] 13inch:px-0;
 }
 
 .ct-container-3xl {
-  @apply max-w-[90%] mx-auto md:px-16;
+  @apply mx-auto max-w-[90%] md:px-16;
 }
 
 html {
-  @apply text-[44%] lg:text-[50%] xl:text-[56%] 13inch:text-[50%] 3xl:text-[62.5%] scroll-smooth;
+  @apply scroll-smooth text-[44%] lg:text-[50%] xl:text-[56%] 13inch:text-[62.5%] 3xl:text-[62.5%];
 }

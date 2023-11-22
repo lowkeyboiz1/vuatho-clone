@@ -8,6 +8,7 @@ import Header from './(layout)/header'
 import Footer from './(layout)/footer'
 import './globals.css'
 import { redirect } from 'next/navigation'
+import Script from 'next/script'
 
 export const metadata: Metadata = {
   title: {
@@ -44,6 +45,16 @@ export default async function RootLayout({ children, params }: any) {
   return (
     <html lang={locale} className={lexend.className + ' overflow-x-hidden'}>
       <body className='!overflow-x-hidden'>
+        <Script src='https://www.googletagmanager.com/gtag/js?id=G-Z8JD7Z5934' />
+        <Script id='google-analytics'>
+          {`
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+ 
+          gtag('config', 'G-Z8JD7Z5934');
+        `}
+        </Script>
         <NextTopLoader height={3} zIndex={9999999} />
         <NextIntlClientProvider locale={locale} messages={messages} timeZone={timeZone}>
           <Providers>

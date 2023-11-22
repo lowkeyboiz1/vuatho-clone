@@ -15,7 +15,7 @@ import {
   AccordionItem,
 } from '@nextui-org/react'
 
-import { Add as AddIcon, ArrowDown2 as DownIcon } from 'iconsax-react'
+import { Add as AddIcon, Global } from 'iconsax-react'
 
 function LangsComp() {
   const t = useTranslations('Navbar')
@@ -49,29 +49,25 @@ function LangsComp() {
 
   return (
     <>
-      <div className='md:block hidden'>
+      <div className='hidden md:block'>
         <Popover
           placement='bottom-end'
           isOpen={isOpen}
           onOpenChange={(open) => setIsOpen(open)}
-          className='shadow-[0_0_10px_-6px_black] px-8'
+          className='px-8 shadow-[0_0_10px_-6px_black]'
         >
           <PopoverTrigger>
-            <Button className='text-[1.5rem] bg-base-gray h-20 flex justify-between gap-3'>
-              <div className='flex items-center gap-2 w-48 truncate'>
-                <span className='min-w-fit'>{lang.symbol}</span>
-                {lang.label}
+            <Button className='h-[44px] cursor-pointer rounded-[44px] bg-[#F8F8F8] p-[10px]'>
+              <div className='flex items-center gap-2 text-[#646464]'>
+                <Global size={24} className='' />
+                <span className='text-[1.6rem] uppercase'>{lang.code}</span>
               </div>
-              <DownIcon
-                size={15}
-                className={`${isOpen ? 'rotate-180' : ''} transition`}
-              />
             </Button>
           </PopoverTrigger>
           <PopoverContent>
-            <div className='divide-y divide-base-gray min-w-[50vw]'>
-              <div className='flex justify-between items-center py-2'>
-                <h5 className='text-[2.2rem] text-primary-blue font-bold'>
+            <div className='min-w-[50vw] divide-y divide-base-gray'>
+              <div className='flex items-center justify-between py-2'>
+                <h5 className='text-[2.2rem] font-bold text-primary-blue'>
                   {t('language')}
                 </h5>
                 <Button
@@ -93,7 +89,7 @@ function LangsComp() {
                       lang === e
                         ? 'bg-primary-blue-2 text-primary-blue'
                         : 'hover:bg-base-gray disabled:hover:bg-transparent'
-                    } flex items-center gap-2 text-[1.6rem] px-4 py-6 rounded-lg`}
+                    } flex items-center gap-2 rounded-lg px-4 py-6 text-[1.6rem]`}
                   >
                     <span>{e.symbol}</span>
                     <span className={`${e.active ? '' : 'text-black/30'}`}>
@@ -106,7 +102,7 @@ function LangsComp() {
           </PopoverContent>
         </Popover>
       </div>
-      <div className='md:hidden block w-full mb:pb-0 pb-80'>
+      <div className='mb:pb-0 block w-full pb-80 md:hidden'>
         <Accordion
           className='w-full'
           itemClasses={{
@@ -118,9 +114,9 @@ function LangsComp() {
             key='lang'
             aria-label='lang'
             title={
-              <div className='flex justify-between items-center -ml-2 '>
-                <p className='text-[2.3rem] w-full'>{t('language')}</p>
-                <div className='flex items-center gap-2 text-[2rem] pb-2 min-w-fit self-center'>
+              <div className='-ml-2 flex items-center justify-between '>
+                <p className='w-full text-[2.3rem]'>{t('language')}</p>
+                <div className='flex min-w-fit items-center gap-2 self-center pb-2 text-[2rem]'>
                   <span className='min-w-fit'>{lang.symbol}</span>
                   {lang.label}
                 </div>
@@ -137,7 +133,7 @@ function LangsComp() {
                     lang === e
                       ? 'bg-primary-blue-2 text-primary-blue'
                       : 'hover:bg-base-gray disabled:hover:bg-transparent'
-                  } flex items-center gap-2 text-[1.6rem] px-4 py-6 rounded-lg`}
+                  } flex items-center gap-2 rounded-lg px-4 py-6 text-[1.6rem]`}
                 >
                   <span>{e.symbol}</span>
                   <span className={`${e.active ? '' : 'text-black/30'}`}>{e.label}</span>

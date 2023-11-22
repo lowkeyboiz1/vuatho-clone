@@ -36,8 +36,7 @@
     "heading1": "Phát Triển ",
     "heading2": "Không Ngừng",
     "title": "Phát triển không ngừng",
-    "text1": "Chúng tôi không ngừng thử nghiệm và phát triển để mang đến nhiều dịch vụ đa dạng hơn nữa cho thị trường Việt Nam trong thời gian tới.",
-    "text2": "Chúng tôi luôn luôn lắng nghe ý kiến của người dùng và chắc chắn không ngừng hoàn thiện để mang lại trải nghiệm trên ứng dụng Vua Thợ tốt nhất."
+    "desc": "Chúng tôi cam kết luôn lắng nghe ý kiến của cộng đồng, không ngừng hoàn thiện, thử nghiệm và phát triển để mang đến nhiều dịch vụ đa dạng hơn nữa cho thị trường Việt Nam trong thời gian tới."
   },
   "WithVuaTho": {
     "title": "Đồng hành",
@@ -116,7 +115,7 @@
   "MainSection": {
     "heading1": "Ứng dụng ",
     "heading1-1": "tìm thợ, tìm việc",
-    "heading2": "Sử dụng công nghệ ",
+    "heading2": "Áp dụng công nghệ AI",
     "heading2-1": "trí tuệ nhân tạo AI",
     "subHeading": "Vua thợ hỗ trợ đa ngôn ngữ, đa ngành nghề, cần là có",
     "listCard": {
@@ -137,7 +136,7 @@
     "text6": "Tạo không gian làm việc tự do và tiện lợi, sử dụng công nghệ tiên tiến."
   },
   "AISection": {
-    "heading1": "Công Nghệ AI Đột Phá ",
+    "heading1": "Áp dụng công nghệ AI đột phá ",
     "heading2": "Trong Hệ Thống Của Chúng Tôi",
     "title1": "Trợ lý AI thông minh",
     "desc1": " Giúp xác định rõ vấn đề của khách hàng, từ đó tìm đúng thợ phù hợp cho khách hàng",
@@ -190,33 +189,52 @@
     "text1": "Đối với",
     "text2": "KHÁCH HÀNG",
     "listBenefit": {
-      "title1": "Tìm được thợ gần nhất để xử lí sự cố nhanh nhất",
-      "title2": "Chọn được người thợ giỏi nhất, ưng ý nhất",
-      "title3": "Giá thành hợp lí nhất (Không bị lừa)",
-      "title4": "Được bảo hành chất lượng , xử lí sự cố nhanh nhất",
-      "title5": "Qui trình và giá thành hợp nhất"
+      "title1": "Tìm được Thợ gần nhất để xử lý sự cố nhanh",
+      "title2": "Chọn được người thợ giỏi",
+      "title3": "Quy trình và giá thành hợp lí",
+      "title4": "Được bảo hành lâu nhất"
     }
   },
   "WorkerBenefitSection": {
-    "benefit": "Lợi Ích",
+    "benefit": "Lợi ích",
     "fromVuaTho": "Từ Vua Thợ",
-    "text1": "Đối với",
-    "text2": "THỢ",
-    "listBenefit": {
-      "title1": "Việc làm gần nhà nhất",
-      "title2": "Thu nhập cao luôn ổn định",
-      "title3": "Thời gian làm việc tự do",
-      "title4": "Cùng Vua Thợ xây dựng Cộng đồng nhân ái hỗ trợ các hoàn cảnh khó khăn",
-      "title5": "Cùng Vua Thợ chia sẻ lợi nhuận (50-50% Vật tư , nguyên liệu)",
-      "title6": "Cùng Vua Thợ xây dựng Cộng đồng thợ chia sẻ giúp đỡ nâng cao tay nghề",
-      "title7": "Công nhận tài năng và cấp bằng từ Vua Thợ thông qua trung tâm nghề",
-      "title8": "Phúc lợi hỗ trợ khi gặp tai nạn lao động",
-      "title9": "Khi về hưu lớn tuổi sẽ được bảo hiểm",
-      "title10": "Tham gia các khóa đào tạo chuyên nghiệp từ Vua Thợ",
-      "title11": "Được tham gia thi thợ giỏi hàng quí - hàng năm từ Vua Thợ",
-      "title12": "Được tham gia vĩnh viễn chương trình mỗi 1000 thợ nhận 1 xe WaveRSX",
-      "title13": "Được nhận vé may mắn vĩnh viễn tham gia chương trình trúng thưởng hàng tháng từ Vua Thợ"
-    }
+    "text": "Đối với Thợ",
+    "benefit1": "Việc làm gần nhà nhất",
+    "benefit2": "Thu nhập cao luôn ổn định ",
+    "benefit3": "Thời gian làm việc tự do ",
+    "benefit4": "Cùng Vua Thợ chia sẻ lợi nhuận (50-50% Vật tư , nguyên liệu)",
+    "benefit5": "Phúc lợi hỗ trợ khi gặp tai nạn lao động ",
+    "benefit6": "Khi về hưu lớn tuổi sẽ được bảo hiểm ",
+    "benefit7": "Được nhận vé may mắn vĩnh viễn tham gia chương trình trúng thưởng hàng tháng từ Vua Thợ",
+    "benefit8": "Được tham gia chương trình mỗi 1000 Thợ nhận 1 xe Wave RSX",
+    "benefit9": "Được tham gia các cuộc thi Thợ giỏi hàng quí - hàng năm",
+    "benefit10": "Được công nhận tay nghề - tài năng và cấp bằng từ các trung tâm đào tạo nghề của Vua Thợ (từ sơ cấp đến cao cấp)",
+    "benefit11": "Cùng - Vua Thợ xây dựng Cộng đồng nhân ái hỗ trợ các hoàn cảnh khó khăn",
+    "benefit12": "Nâng tầm vị thế của người Thợ hợp tác cùng Vua Thợ gia tăng thu nhập, Thợ tự chủ công việc của bản thân, Khách hàng sẽ tìm đến Thợ.",
+    "text1": "Ứng dụng giúp Thợ tìm nguồn Khách ổn định và gợi ý Khách gần khu vực Thợ nhất.",
+    "text2": "Tiết kiệm được chi phí đi lại và các khoản khác, Thợ có việc làm gần nhà thuận lợi và dễ dàng. Ngay khi ở về quê cũng sẽ nhanh chóng tìm được công việc gần nhà.",
+    "text3": "Chủ động kiếm thêm thu nhập và làm chủ tài chính bản thân. Thợ dễ dàng và nhanh chóng tăng thêm giao dịch uy tín với nguồn khách hàng tối ưu từ Vua Thợ.",
+    "text4": "Thời gian linh động, Thợ hoàn toàn có thể chủ động quyết định thời gian làm việc của mình.",
+    "text5": "Khi có thời gian thì mở ứng dụng hoạt động, nếu bận có thể tạm thời tắt ứng dụng, với Vua Thợ sẽ không có bất kì sự ràng buộc nào.",
+    "text6": "Về phí dịch vụ, Vua Thợ sẽ thu 15%.",
+    "text7": "Về Vật Tư - Nguyên Liệu - Sản Phẩm, Vua Thợ cùng Thợ chia sẻ 50 - 50 lợi nhuận.",
+    "text8": "Quỹ tấm lòng vàng của Cộng đồng Thợ sẽ giúp cho những trường hợp bị tai nạn lao động hoặc các sự cố không mong muốn khi hành nghề. Thợ sẽ cảm thấy được bảo vệ và an tâm khi tham gia vào Cộng đồng Vua Thợ.",
+    "text9": "Vua Thợ sẽ liên kết với các Công ty bảo hiểm để tạo ra bảo hiểm riêng cho Thợ , đảm bảo cho tương lai cho Thợ kể cả khi lớn tuổi vẫn có sự an tâm.",
+    "text10": "Ngoài ra Thợ có thể đổi sang nghề khác để tối ưu tất cả các nguồn thu nhập khi về già.",
+    "text11": "Vua thợ xây dựng tương lai chắc chắn cho nghề Thợ lâu dài và ổn định.",
+    "text12": "Kể cả khi giới thiệu thêm các anh em cùng hành nghề, với mỗi 12 Thợ mới được giới thiệu, Thợ có cơ hội nhận được vé số may mắn với tỷ lệ trúng cao và không giới hạn số vé sở hữu. Với cơ cấu giải thưởng:",
+    "text14": "1 giải đặc biệt trị giá 25 triệu đồng.",
+    "text15": "1 giải nhì 6 thùng bia",
+    "text16": "1 giải ba 3 thùng bia",
+    "text17": "Khi đăng ký Thợ thành công trên ứng dụng Vua Thợ, mỗi anh thợ sẽ nhận được 01 mã dự thưởng (cũng là mã giới thiệu) để có cơ hội nhận 01 chiếc xe Wave RSX trong mỗi 1000 thợ đăng ký. Giá trị xe lên đến 25 triệu, phục vụ làm nghề. Hiện tại đã có sẵn sàng 5 chiếc xe cho anh em thợ. Với cơ cấu giải thưởng:",
+    "text18": "1 giải đặc biệt trị giá 25 triệu đồng.",
+    "text19": "1 giải nhì 6 thùng bia",
+    "text20": "1 giải ba 3 thùng bia",
+    "text21": "Vua Thợ thường xuyên tổ chức các cuộc thi nhằm tìm kiếm những Thợ giỏi về kỹ năng chuyên môn và nghiệp vụ nhằm tuyên dương cho sự tận lực với nghề. Qua đó tạo động lực cho tất cả các anh thợ cùng nhau phấn đấu học hỏi, không ngừng phát triển.",
+    "text22": "Xây dựng đội ngũ đào tạo nghề nghiệp và dịch vụ, trong tương lai có thể tạo ra những chứng nhận để công nhận tài năng và chứng minh Thợ giỏi theo tiêu chuẩn cao. Giá trị của người Thợ tài năng luôn được công nhận bởi các chứng chỉ - bằng cấp từ các Trung tâm đào tạo nghề của Vua Thợ. Anh em Thợ cùng nhau trao đổi kinh nghiệm và nâng cấp nghề nghiệp.",
+    "text23": "Ngoài những lợi ích về chuyên môn, Vua Thợ đã và đang có những chương trình xây dựng một quỹ cộng đồng nhằm giúp đỡ, sẻ chia với những thợ có hoàn cảnh đặc biệt, đi đến những nơi còn thiếu điều kiện để lan tỏa sự yêu thương, gắn kết từ các anh thợ trên khắp mỗi miền đất nước.",
+    "text24": "Ví dụ: cùng thợ môi trường xây dựng những cây cầu, thợ hồ xây dựng nhà tình thương/ trường học...",
+    "text25": "Đến với Vua Thợ, người Thợ sẽ tự làm chủ công việc của bản thân không còn khái niệm về làm công, bên cạnh đó Thợ sẽ không cần phải lo lắng việc tìm kiếm Khách hàng mà Khách hàng sẽ tìm đến Thợ."
   },
   "FaqSection": {
     "listAccordion": {

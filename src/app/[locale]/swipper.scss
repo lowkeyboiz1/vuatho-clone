@@ -1,0 +1,35 @@
+.swiper.benefitSwipper {
+  overflow: unset !important;
+
+  .swiper-button-prev,
+  .swiper-button-next {
+    background-color: #f8f8f8;
+    height: 44px;
+    width: 44px;
+    border-radius: 10px;
+    top: unset;
+
+    &::after {
+      font-size: 1.6rem;
+      font-weight: 600;
+      color: #282828;
+    }
+  }
+  .swiper-button-next {
+    @apply right-[-4%] top-[64%] md:bottom-0 md:left-[64px] md:top-auto;
+  }
+  .swiper-button-prev {
+    @apply left-[-4%] top-[64%] md:bottom-0 md:left-0 md:top-auto;
+  }
+  .swiper-pagination-bullets {
+    @apply bottom-[-220px] grid grid-cols-6 gap-[10px] md:bottom-[-64px] md:flex md:gap-[20px];
+
+    .paginationBenefit {
+      @apply flex h-[44px] w-[44px] items-center justify-center rounded-full bg-white text-[1.6rem] text-[#282828];
+    }
+
+    .paginationBenefit.swiper-pagination-bullet-active {
+      @apply bg-[#FCB713];
+    }
+  }
+}

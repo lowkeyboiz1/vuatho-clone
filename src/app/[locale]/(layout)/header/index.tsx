@@ -74,27 +74,19 @@ const Header = () => {
     return null
   }
   if (hiddenHeaderAndFooter) return null
-  
+
   return (
     <header
       id='header'
       className={`${
         transparent ? 'bg-transparent' : 'bg-white'
-      } header transition fixed left-0 right-0 w-full z-[99999] ${
+      } header fixed left-0 right-0 z-[99999] w-full transition ${
         isHeaderVisible ? 'translate-y-0' : '-translate-y-[100%]'
       }`}
     >
-      <div className='flex ct-container-70 px-6 justify-between h-[64px] 3xl:h-[80px] items-center'>
+      <div className='ct-container-70 flex h-[64px] items-center justify-between 3xl:h-[80px]'>
         <Logo />
         <RightNav />
-        <Button
-          onClick={() =>
-            window.open('https://vuatho.com/vi/qrcode-download-app', '_blank')
-          }
-          className='bg-primaryYellow text-baseBlack h-[40px] xl:h-[44px] 13inch:h-[50px] w-auto text-[2rem] px-[30px] xl:px-[40px] 13inch:px-[50px] font-semibold hidden md:block'
-        >
-          {t('download')}
-        </Button>
       </div>
     </header>
   )
@@ -119,7 +111,7 @@ const Logo = () => {
         width={256}
         height={176}
         quality={100}
-        className='h-[50px] 3xl:h-[80px] w-auto object-contain pointer-events-none'
+        className='pointer-events-none h-[50px] w-auto object-contain 3xl:h-[80px]'
       />
     </button>
   )
@@ -159,28 +151,36 @@ const RightNav = () => {
 
   return (
     <>
-      <div className='hidden md:flex gap-[20px] 3xl:gap-8 items-center'>
-        <div className='flex gap-[20px] 3xl:gap-8 items-center'>
+      <div className='hidden items-center gap-[20px] md:flex 3xl:gap-8'>
+        <div className='flex items-center gap-[20px] 3xl:gap-8'>
           <LinkList />
         </div>
-        <div className='flex gap-2 items-center'>
+        <div className='flex items-center gap-[16px]'>
+          <Button
+            onClick={() =>
+              window.open('https://vuatho.com/vi/qrcode-download-app', '_blank')
+            }
+            className='hidden h-[44px] w-auto rounded-[44px] bg-primaryYellow px-[24px] text-[1.6rem] font-semibold text-baseBlack md:block'
+          >
+            {t('download')}
+          </Button>
           <LangsComp />
         </div>
       </div>
-      <div className='menu-mobile block md:hidden transition' onClick={handleToggleMenu}>
+      <div className='menu-mobile block transition md:hidden' onClick={handleToggleMenu}>
         {toggleMenu ? (
-          <AddIcon size={32} className='text-text cursor-pointer rotate-45 transition' />
+          <AddIcon size={32} className='rotate-45 cursor-pointer text-text transition' />
         ) : (
           <div className='flex items-center gap-[20px]'>
             <Button
               onClick={() =>
                 window.open('https://vuatho.com/vi/qrcode-download-app', '_blank')
               }
-              className='bg-primaryYellow text-baseBlack h-[40px] xl:h-[50px] w-auto text-[2rem] px-[30px] md:px-[50px] font-semibold md:hidden'
+              className='h-[40px] w-auto bg-primaryYellow px-[30px] text-[1.6rem] font-semibold text-baseBlack md:hidden md:px-[50px] xl:h-[50px]'
             >
               {t('download')}
             </Button>
-            <MenuIcon size={32} className='text-text cursor-pointer transition' />
+            <MenuIcon size={32} className='cursor-pointer text-text transition' />
           </div>
         )}
       </div>
@@ -191,7 +191,7 @@ const RightNav = () => {
             animate='animate'
             exit='exit'
             variants={menuVariants}
-            className='fixed z-10 top-[60px] left-0 right-0 bottom-0 bg-bg h-[calc(100vh-60px)] overflow-auto flex flex-col items-start gap-6 origin-top p-6'
+            className='fixed bottom-0 left-0 right-0 top-[60px] z-10 flex h-[calc(100vh-60px)] origin-top flex-col items-start gap-6 overflow-auto bg-bg p-6'
           >
             <LinkList handleToggleMenu={handleToggleMenu} />
             {/* <ThemeSwitcher /> */}
@@ -255,19 +255,19 @@ const LinkList = ({ handleToggleMenu }: { handleToggleMenu?: any }) => {
               viewport={{
                 once: true,
               }}
-              className='text-[2.3rem] xl:text-[2rem]'
+              className='text-[1.6rem]'
             >
               <button
                 onClick={() => handleClick(link.url)}
                 className={`${
                   isActive ? 'text-[#0B27B6] ' : 'hover:text-[#0B27B6]/60'
-                } duration-300 block md:hidden`}
+                } block duration-300 md:hidden`}
               >
                 {link.title}
               </button>
               <Link
                 href={link.url}
-                className={`md:block hidden ${
+                className={`hidden md:block ${
                   isActive ? 'text-[#0B27B6]' : 'hover:text-[#0B27B6]/60'
                 }`}
               >

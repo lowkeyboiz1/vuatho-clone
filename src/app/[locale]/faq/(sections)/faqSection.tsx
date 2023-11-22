@@ -363,24 +363,24 @@ function FaqSection() {
   return (
     <>
       <div className='py-[20px] 13inch:py-[40px] 3xl:py-[80px]'>
-        <div className='ct-container-70 gap-10 hidden md:flex'>
-          <div className='w-full relative max-w-[320px] 3xl:max-w-[400px]'>
+        <div className='ct-container-70 hidden gap-10 md:flex'>
+          <div className='relative w-full max-w-[320px] 3xl:max-w-[400px]'>
             <div
-              className='absolute w-full rounded-[60px] min-h-[40px] h-[40px] 13inch:h-[50px] 3xl:h-[60px] px-10 bg-gradient-to-r from-[#FFB500] to-[#FED32C] transition'
+              className='absolute h-[40px] min-h-[40px] w-full rounded-[60px] bg-gradient-to-r from-[#FFB500] to-[#FED32C] px-10 transition 13inch:h-[50px] 3xl:h-[60px]'
               ref={highlightRef}
             />
             <div className='flex flex-col gap-2'>
               {listAccordion.map((i: any) => (
                 <button
                   onClick={() => handleActiveSelect(i.title)}
-                  className={`w-full rounded-[60px] min-h-[40px] h-[40px] 13inch:h-[50px] 3xl:h-[60px] px-10 text-[1.6rem] 13inch:text-[1.8rem] 3xl:text-[2rem] flex items-center justify-start ${
+                  className={`flex h-[40px] min-h-[40px] w-full items-center justify-start rounded-[60px] px-10 text-[1.6rem] 13inch:h-[50px] 13inch:text-[1.8rem] 3xl:h-[60px] 3xl:text-[2rem] ${
                     activeSelect === i.title
                       ? 'menuActive text-black'
                       : 'bg-transparent hover:bg-gradient-to-r hover:from-[#FFB500]/5 hover:to-[#FED32C]/5'
                   }`}
                   key={i.title}
                 >
-                  <span className='z-[1] relative'>{i.title}</span>
+                  <span className='relative z-[1]'>{i.title}</span>
                 </button>
               ))}
             </div>
@@ -414,7 +414,7 @@ function FaqSection() {
                   {i.children.map((ic: any) => (
                     <p
                       key={ic.title}
-                      className={`text-[1.8rem] md:text-[1.6rem] text-[#555] ${
+                      className={`text-[1.8rem] text-[#555] md:text-[1.6rem] ${
                         ic?.bold ? 'font-bold' : ''
                       }`}
                     >
@@ -440,6 +440,10 @@ function FaqSection() {
                   key={item.title}
                   aria-label={item.title}
                   title={item.title}
+                  onPress={() => {
+                    window.scrollTo({ top: 0, behavior: 'smooth' })
+                    // window.scrollTo({ top: (index + 1) * 50, behavior: 'smooth' })
+                  }}
                   classNames={{
                     content: 'flex flex-col gap-2',
                     title:
@@ -471,7 +475,7 @@ function FaqSection() {
                       >
                         {ic?.children.map((icc: any) => (
                           <p
-                            className='text-[1.8rem] md:text-[1.6rem] text-[#555]'
+                            className='text-[1.8rem] text-[#555] md:text-[1.6rem]'
                             key={icc.title}
                           >
                             {icc.title}

@@ -32,54 +32,6 @@ export const SunIcon = ({ className }: { className?: any }) => (
   </svg>
 )
 
-export const VietnamIcon = () => (
-  <svg
-    width='24'
-    height='24'
-    viewBox='0 0 24 24'
-    fill='none'
-    xmlns='http://www.w3.org/2000/svg'
-    className='w-[32px] h-[32px]'
-  >
-    <path
-      d='M23.5861 19.8621H0.413812C0.185297 19.8621 0 19.6768 0 19.4483V4.55174C0 4.32322 0.185297 4.13792 0.413812 4.13792H23.5862C23.8147 4.13792 24 4.32322 24 4.55174V19.4483C24 19.6768 23.8147 19.8621 23.5861 19.8621Z'
-      fill='#FF4B55'
-    />
-    <path
-      d='M12.1931 7.31111L13.2998 10.6294L16.7976 10.6565C16.9932 10.658 17.0743 10.9076 16.917 11.0238L14.1031 13.1017L15.1582 16.4367C15.2172 16.6232 15.0049 16.7775 14.8457 16.6638L12 14.6297L9.15423 16.6638C8.99514 16.7775 8.7828 16.6232 8.84177 16.4367L9.89687 13.1017L7.08302 11.0238C6.92566 10.9076 7.0068 10.658 7.20236 10.6565L10.7002 10.6294L11.8069 7.31111C11.8688 7.12558 12.1312 7.12558 12.1931 7.31111Z'
-      fill='#FFE15A'
-    />
-  </svg>
-)
-
-export const EngIcon = () => (
-  <svg
-    xmlns='http://www.w3.org/2000/svg'
-    viewBox='0 0 60 30'
-    className='w-[32px] h-[32px]'
-  >
-    <clipPath id='s'>
-      <path d='M0,0 v30 h60 v-30 z' />
-    </clipPath>
-    <clipPath id='t'>
-      <path d='M30,15 h30 v15 z v15 h-30 z h-30 v-15 z v-15 h30 z' />
-    </clipPath>
-    <g clipPath='url(#s)'>
-      <path d='M0,0 v30 h60 v-30 z' fill='#012169' />
-      <path d='M0,0 L60,30 M60,0 L0,30' stroke='#fff' strokeWidth='6' />
-      <path
-        d='M0,0 L60,30 M60,0 L0,30'
-        clipPath='url(#t)'
-        stroke='#C8102E'
-        strokeWidth='4'
-      />
-      <path d='M30,0 v30 M0,15 h60' stroke='#fff' strokeWidth='10' />
-      <path d='M30,0 v30 M0,15 h60' stroke='#C8102E' strokeWidth='6' />
-    </g>
-  </svg>
-)
-
-//social network icon
 export const FacebookIcon = ({ size }: { size?: number }) => (
   <svg
     height={size || '24'}
@@ -265,109 +217,6 @@ export const InstaIcon = ({ size }: { size?: number }) => {
         fill='#fff'
         d='M30,37H18c-3.859,0-7-3.14-7-7V18c0-3.86,3.141-7,7-7h12c3.859,0,7,3.14,7,7v12	C37,33.86,33.859,37,30,37z M18,13c-2.757,0-5,2.243-5,5v12c0,2.757,2.243,5,5,5h12c2.757,0,5-2.243,5-5V18c0-2.757-2.243-5-5-5H18z'
       />
-    </svg>
-  )
-}
-/////
-
-export const CheckIcon1 = ({
-  height,
-  width,
-  className,
-}: {
-  height?: number
-  width?: number
-  className?: any
-}) => {
-  return (
-    <svg
-      width={width || 20}
-      height={height || 20}
-      viewBox='0 0 24 24'
-      fill='none'
-      xmlns='http://www.w3.org/2000/svg'
-      className={className}
-    >
-      <path
-        d='M8.63023 15.2131L8.28584 14.8836L7.94029 15.2119L6.46426 16.6138L6.0839 16.975L6.46298 17.3376L12.2735 22.8955L12.6191 23.2261L12.9648 22.8955L25.4382 10.9644L25.816 10.6031L25.4382 10.2418L23.9726 8.83985L23.6271 8.50942L23.2815 8.83969L12.6193 19.0287L8.63023 15.2131Z'
-        fill='url(#paint0_linear_1026_50988)'
-        stroke='url(#paint1_linear_1026_50988)'
-      />
-      <defs>
-        <linearGradient
-          id='paint0_linear_1026_50988'
-          x1='9.9461'
-          y1='19.1766'
-          x2='23.8173'
-          y2='12.0929'
-          gradientUnits='userSpaceOnUse'
-        >
-          <stop stopColor='#fff' />
-          <stop offset='1' stopColor='#fff' />
-        </linearGradient>
-        <linearGradient
-          id='paint1_linear_1026_50988'
-          x1='6.67121'
-          y1='16.1'
-          x2='24.8163'
-          y2='9.37625'
-          gradientUnits='userSpaceOnUse'
-        >
-          <stop stopColor='#fff' />
-          <stop offset='1' stopColor='#fff' />
-        </linearGradient>
-      </defs>
-    </svg>
-  )
-}
-
-export const CheckIcon2 = ({
-  height,
-  width,
-  className,
-}: {
-  height?: number
-  width?: number
-  className?: any
-}) => {
-  return (
-    <svg
-      width={width || 20}
-      height={height || 20}
-      viewBox='0 0 24 24'
-      fill='none'
-      xmlns='http://www.w3.org/2000/svg'
-      className={className}
-    >
-      <path
-        d='M8.62828 15.2131L8.28389 14.8836L7.93833 15.2119L6.46231 16.6138L6.08195 16.975L6.46103 17.3376L12.2716 22.8955L12.6172 23.2261L12.9628 22.8955L25.4363 10.9644L25.814 10.6031L25.4363 10.2418L23.9706 8.83985L23.6252 8.50942L23.2796 8.83969L12.6174 19.0287L8.62828 15.2131Z'
-        fill='url(#paint0_linear_1026_50893)'
-        stroke='url(#paint1_linear_1026_50893)'
-      />
-      <defs>
-        <linearGradient
-          id='paint0_linear_1026_50893'
-          x1='9.94415'
-          y1='19.1766'
-          x2='23.8153'
-          y2='12.0929'
-          gradientUnits='userSpaceOnUse'
-        >
-          <stop stopColor='#FDA00B' />
-          <stop offset='1' stopColor='#FEBD23' />
-        </linearGradient>
-        <linearGradient
-          id='paint1_linear_1026_50893'
-          x1='6.66926'
-          y1='16.1'
-          x2='24.8143'
-          y2='9.37625'
-          gradientUnits='userSpaceOnUse'
-        >
-          <stop stopColor='#FDA00B' />
-          <stop offset='1' stopColor='#FEBD23' />
-        </linearGradient>
-      </defs>
     </svg>
   )
 }
@@ -731,6 +580,24 @@ export const Pylogon = ({ className }: { className?: any }) => {
       <path
         d='M18 7.5359C20.6667 9.0755 20.6667 12.9245 18 14.4641L6 21.3923C3.33333 22.9319 -1.13682e-06 21.0074 -1.00222e-06 17.9282L-3.96541e-07 4.07179C-2.61945e-07 0.992591 3.33333 -0.931906 6 0.607695L18 7.5359Z'
         fill='currentColor'
+      />
+    </svg>
+  )
+}
+
+export const CheckIcon = ({ className }: { className?: any }) => {
+  return (
+    <svg
+      width='14'
+      height='12'
+      viewBox='0 0 14 12'
+      fill='none'
+      xmlns='http://www.w3.org/2000/svg'
+      className={className}
+    >
+      <path
+        d='M13.7 1.1999C13.3 0.799902 12.7 0.799902 12.3 1.1999L4.8 8.6999L1.7 5.5999C1.3 5.1999 0.7 5.1999 0.3 5.5999C-0.1 5.9999 -0.1 6.5999 0.3 6.9999L4.1 10.7999C4.3 10.9999 4.5 11.0999 4.8 11.0999C5.1 11.0999 5.3 10.9999 5.5 10.7999L13.7 2.5999C14.1 2.1999 14.1 1.5999 13.7 1.1999Z'
+        fill='#FCB713'
       />
     </svg>
   )
