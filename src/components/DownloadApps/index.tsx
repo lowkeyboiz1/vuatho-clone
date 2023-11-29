@@ -17,20 +17,20 @@ function DownloadApps({
   gap?: boolean
 }) {
   return (
-    <div className='flex justify-center md:justify-start w-full items-center gap-2 13inch:gap-8 mt-2 md:mt-0'>
+    <div className='mt-2 flex w-full items-center justify-center gap-2 md:mt-0 md:justify-start 13inch:gap-8'>
       {!hidden && (
-        <div className='relative w-[120px] h-[120px] 13inch:w-[150px] 13inch:h-[150px] hidden md:block'>
+        <div className='relative hidden h-[120px] w-[120px] md:block 13inch:h-[150px] 13inch:w-[150px]'>
           <Image
             alt='QRCode'
             src={'/QRCODE.png'}
             fill
-            className='hover:cursor-pointer pointer-events-none'
+            className='pointer-events-none hover:cursor-pointer'
           />
         </div>
       )}
       <div
         className={`flex items-center md:flex-col ${
-          gap ? 'gap-2 md:flex-col justify-between w-full' : 'gap-2 13inch:gap-[20px]'
+          gap ? 'w-full justify-between gap-2 md:flex-col' : 'gap-2 13inch:gap-[20px]'
         }`}
       >
         <Link href={'/'}>
@@ -40,7 +40,7 @@ function DownloadApps({
               src={'/DownloadGooglePlay1.svg'}
               height={height || 80}
               width={width || 260}
-              className='hover:cursor-pointer pointer-events-none'
+              className='pointer-events-none hover:cursor-pointer'
             />
           </div>
         </Link>
@@ -51,7 +51,7 @@ function DownloadApps({
               src={'/DownloadAppStore.svg'}
               height={height || 80}
               width={width || 260}
-              className='hover:cursor-pointer pointer-events-none'
+              className='pointer-events-none hover:cursor-pointer'
             />
           </div>
         </Link>
@@ -68,17 +68,17 @@ export const AndroidBtn: React.FC<{ style?: any }> = ({ style }) => {
       href='https://play.google.com/store/apps/details?id=com.vuatho.mobile&pli=1'
       target='_blank'
       className={twMerge(
-        'flex items-center gap-4 3xl:p-6 p-4 rounded-xl bg-black w-fit text-white 3xl:min-w-[220px] 2xl:min-w-[180px] min-w-[150px] overflow-hidden relative group select-none',
+        'group relative flex w-full max-w-[180px] select-none items-center gap-4 overflow-hidden rounded-xl bg-black p-4 text-white 2xl:min-w-[180px] 3xl:min-w-[220px] 3xl:p-6',
         style,
       )}
     >
       <GooglePlayIcon variant='Bold' size={36} />
       <div>
-        <span className='text-white/70 text-[1.2rem]'>{t('download_chplay')}</span>
-        <h6 className='3xl:text-[1.7rem] text-[1.5rem]'>Google Play</h6>
+        <span className='text-[1.2rem] text-white/70'>{t('download_chplay')}</span>
+        <h6 className='text-[1.2rem] md:text-[1.5rem] 3xl:text-[1.7rem]'>Google Play</h6>
       </div>
-      <div className='bg-white/[0.15] h-full w-1/2 absolute -right-1/3 top-0 -skew-x-[30deg] group-hover:-translate-x-1/2 transition' />
-      <div className='bg-white/10 h-full w-1/2 absolute -right-1/2 top-0 -skew-x-[30deg] group-hover:-translate-x-1/2 transition' />
+      <div className='absolute -right-1/3 top-0 h-full w-1/2 -skew-x-[30deg] bg-white/[0.15] transition group-hover:-translate-x-1/2' />
+      <div className='absolute -right-1/2 top-0 h-full w-1/2 -skew-x-[30deg] bg-white/10 transition group-hover:-translate-x-1/2' />
     </a>
   )
 }
@@ -91,24 +91,24 @@ export const IosBtn: React.FC<{ style?: any }> = ({ style }) => {
       href='https://apps.apple.com/vn/app/vua-th%E1%BB%A3-si%C3%AAu-k%E1%BA%BFt-n%E1%BB%91i/id6467541777?l=vi'
       target='_blank'
       className={twMerge(
-        'flex items-center gap-4 3xl:p-6 p-4 rounded-xl bg-black w-fit text-white 3xl:min-w-[220px] 2xl:min-w-[180px] min-w-[150px] overflow-hidden relative group select-none',
+        'group relative flex w-full max-w-[180px] select-none items-center gap-4 overflow-hidden rounded-xl bg-black p-4 text-white 2xl:min-w-[180px] 3xl:min-w-[220px] 3xl:p-6',
         style,
       )}
     >
       <AppleIcon variant='Bold' size={36} />
       <div>
-        <span className='text-white/70 text-[1.2rem]'>{t('download_appstore')}</span>
-        <h6 className='3xl:text-[1.7rem] text-[1.5rem]'>App Store</h6>
+        <span className='text-[1.2rem] text-white/70'>{t('download_appstore')}</span>
+        <h6 className='text-[1.2rem] md:text-[1.5rem] 3xl:text-[1.7rem]'>App Store</h6>
       </div>
-      <div className='bg-white/[0.15] h-full w-1/2 absolute -right-1/3 top-0 -skew-x-[30deg] group-hover:-translate-x-1/2 transition' />
-      <div className='bg-white/10 h-full w-1/2 absolute -right-1/2 top-0 -skew-x-[30deg] group-hover:-translate-x-1/2 transition' />
+      <div className='absolute -right-1/3 top-0 h-full w-1/2 -skew-x-[30deg] bg-white/[0.15] transition group-hover:-translate-x-1/2' />
+      <div className='absolute -right-1/2 top-0 h-full w-1/2 -skew-x-[30deg] bg-white/10 transition group-hover:-translate-x-1/2' />
     </a>
   )
 }
 
 export const QrCode: React.FC<{ height?: string }> = ({ height }) => {
   return (
-    <div className='bg-black/5 p-3 rounded-lg relative overflow-hidden backdrop-blur-md'>
+    <div className='relative overflow-hidden rounded-lg bg-black/5 p-3 backdrop-blur-md'>
       <Image
         alt='QRCode'
         src={'/downloadApp/qrcode.webp'}
@@ -117,12 +117,12 @@ export const QrCode: React.FC<{ height?: string }> = ({ height }) => {
         quality={100}
         className={`${
           height ? height : 'h-[140px]'
-        } relative z-[1] object-contain w-auto`}
+        } relative z-[1] w-auto object-contain`}
       />
-      <div className='h-1/2 aspect-square w-fit rounded-full bg-primary-blue blur-xl absolute top-0 left-0 animate-pulse hidden lg:block' />
-      <div className='h-1/2 aspect-square w-fit rounded-full bg-primary-yellow blur-xl absolute top-0 right-0 animate-pulse hidden lg:block' />
-      <div className='h-1/2 aspect-square w-fit rounded-full bg-primary-yellow blur-xl absolute bottom-0 left-0 animate-pulse hidden lg:block' />
-      <div className='h-1/2 aspect-square w-fit rounded-full bg-primary-blue blur-xl absolute bottom-0 right-0 animate-pulse hidden lg:block' />
+      <div className='absolute left-0 top-0 hidden aspect-square h-1/2 w-fit animate-pulse rounded-full bg-primary-blue blur-xl lg:block' />
+      <div className='absolute right-0 top-0 hidden aspect-square h-1/2 w-fit animate-pulse rounded-full bg-primary-yellow blur-xl lg:block' />
+      <div className='absolute bottom-0 left-0 hidden aspect-square h-1/2 w-fit animate-pulse rounded-full bg-primary-yellow blur-xl lg:block' />
+      <div className='absolute bottom-0 right-0 hidden aspect-square h-1/2 w-fit animate-pulse rounded-full bg-primary-blue blur-xl lg:block' />
     </div>
   )
 }

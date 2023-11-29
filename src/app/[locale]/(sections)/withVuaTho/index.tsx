@@ -9,7 +9,7 @@ function SectionWithVuaTho() {
     <div className='my-[100px]'>
       <div className='ct-container-70 relative mb-[40px]'>
         <div className='relative z-[2] w-full rounded-[60px] rounded-tl-none bg-[#B5E0FF1A]/10 px-[10px] py-[20px] md:px-[40px] md:py-[20px] lg:backdrop-blur-lg xl:px-[100px] xl:py-[60px]'>
-          <div className='absolute bottom-[80%] h-[92px] w-[120px] md:bottom-0 md:left-[-4%] md:h-[220px] md:w-[320px] lg:left-[-2%] xl:h-[330px] xl:w-[400px] 2xl:left-[4%]'>
+          <div className='absolute bottom-[80%] h-[92px] w-[120px] md:bottom-0 md:left-[-10%] md:h-[220px] md:w-[320px] lg:left-[-2%] xl:h-[330px] xl:w-[400px]'>
             <Image
               src={'/images/about-us/loaloaloa.png'}
               alt='mascot'
@@ -21,12 +21,14 @@ function SectionWithVuaTho() {
           <div className='absolute right-[7%] top-0 scale-x-[-1] text-[16rem] text-[#DAF0FF]'>
             “
           </div>
-          <div className='w-full pt-20 md:ml-[34%] md:pt-0'>
-            <div className='flex w-[85%] flex-col justify-end gap-[8px] text-primaryBlue1 md:w-[56%] md:gap-[20px]'>
-              <h5 className='text-[2.6rem] font-bold md:text-[3.6rem]'>
+          <div className='w-full pt-20 md:ml-[26%] md:pt-0'>
+            <div className='flex w-[85%] flex-col justify-end gap-[8px] text-primaryBlue1 md:w-[62%] md:gap-[20px]'>
+              <h5 className='text-[3.2rem] font-bold'>
                 {t('title')} {t('title1')}
               </h5>
-              <p className='flex justify-start text-[2.2rem]'>{t('text')}</p>
+              <p className='flex justify-start text-[1.4rem] text-base-black-1 md:text-[1.6rem]'>
+                {t('text')}
+              </p>
             </div>
           </div>
         </div>

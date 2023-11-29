@@ -12,49 +12,49 @@ export const metadata: Metadata = {
 const ContactUs = () => {
   const t = useTranslations('ContactUs')
   return (
-    <div className='2xl:pt-32 xl:pt-20 pt-10 overflow-hidden'>
-      <div className='w-screen 2xl:h-[90vh] xl:h-[80vh] lg:h-[60vh] h-[50vh] flex flex-col justify-center relative'>
-        <div className='ct-container-70 xl:pt-[80px] relative z-[1]'>
+    <div className='overflow-hidden pt-10 xl:pt-20 2xl:pt-32'>
+      <div className='relative flex h-[50vh] w-screen flex-col justify-center lg:h-[60vh] xl:h-[80vh] 2xl:h-[90vh]'>
+        <div className='ct-container-70 relative z-[1] xl:pt-[80px]'>
           <h3 className='text-[3.5rem] font-semibold'>{t('heading')}</h3>
-          <div className='lg:mt-20 mt-10 xl:space-y-20 space-y-10'>
-            <div className='flex xl:gap-10 gap-6'>
-              <div className='bg-primary-blue-2 text-primary-blue h-20 aspect-square w-fit rounded-full flex flex-col justify-center items-center'>
+          <div className='mt-10 space-y-10 lg:mt-20 xl:space-y-20'>
+            <div className='flex gap-6 xl:gap-10'>
+              <div className='flex aspect-square h-12 w-fit flex-col items-center justify-center rounded-full bg-primary-blue-2 text-primary-blue md:h-20'>
                 <LocationIcon variant='Bold' />
               </div>
               <div>
-                <h5 className='text-primary-blue lg:text-[2.5rem] text-[2rem] font-semibold'>
+                <h5 className='text-[1.6rem] font-semibold text-primary-blue'>
                   {t('address1')}
                   <br /> {t('address2')}
                 </h5>
                 <div className='mt-8 flex gap-3'>
-                  <h6 className='bg-base-gray p-3 rounded-xl text-[1.7rem] font-semibold'>
+                  <h6 className='rounded-xl bg-base-gray p-3 text-[1.6rem] font-semibold'>
                     {t('timeNumber')}
                   </h6>
-                  <h6 className='bg-base-gray p-3 rounded-xl text-[1.7rem] font-semibold'>
+                  <h6 className='rounded-xl bg-base-gray p-3 text-[1.6rem] font-semibold'>
                     {t('timeDay')}
                   </h6>
                 </div>
-                <p className='xl:text-[1.7rem] text-[1.5rem] mt-5 text-black/50'>
+                <p className='mt-5 text-[1.5rem] text-black/50 xl:text-[1.7rem]'>
                   {t('text')}
                 </p>
               </div>
             </div>
-            <div className='flex xl:gap-10 gap-6 items-center'>
-              <div className='bg-primary-blue-2 text-primary-blue h-20 aspect-square w-fit rounded-full flex flex-col justify-center items-center'>
+            <div className='flex items-center gap-6 xl:gap-10'>
+              <div className='flex aspect-square h-12 w-fit flex-col items-center justify-center rounded-full bg-primary-blue-2 text-primary-blue md:h-20'>
                 <CallIcon variant='Bold' />
               </div>
-              <h5 className='text-primary-blue lg:text-[2.5rem] text-[2rem] font-semibold'>
+              <h5 className='text-[1.6rem] font-semibold text-primary-blue'>
                 {t('numberPhone')}
               </h5>
-              <h6 className='bg-base-gray p-3 rounded-xl text-[1.7rem] font-semibold'>
+              <h6 className='rounded-xl bg-base-gray p-3 text-[1.6rem] font-semibold'>
                 24/7
               </h6>
             </div>
-            <div className='flex xl:gap-10 gap-6 items-center'>
-              <div className='bg-primary-blue-2 text-primary-blue h-20 aspect-square w-fit rounded-full flex flex-col justify-center items-center'>
+            <div className='flex items-center gap-6 xl:gap-10'>
+              <div className='h120 flex aspect-square w-fit flex-col items-center justify-center rounded-full bg-primary-blue-2 text-primary-blue md:h-20'>
                 <SmsIcon variant='Bold' />
               </div>
-              <h5 className='text-primary-blue lg:text-[2.5rem] text-[2rem] font-semibold'>
+              <h5 className='text-[1.6rem] font-semibold text-primary-blue'>
                 {t('gmail')}
               </h5>
             </div>
@@ -66,7 +66,7 @@ const ContactUs = () => {
           quality={100}
           width={1920}
           height={848}
-          className='absolute bottom-0 right-0 md:opacity-100 opacity-40 pointer-events-none'
+          className='pointer-events-none absolute bottom-0 right-0 opacity-40 md:opacity-100'
         />
       </div>
     </div>

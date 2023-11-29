@@ -151,7 +151,7 @@ const RightNav = () => {
 
   return (
     <>
-      <div className='hidden items-center gap-[20px] md:flex 3xl:gap-8'>
+      <div className='hidden w-full items-center justify-end gap-[20px] md:flex 3xl:gap-8'>
         <div className='flex items-center gap-[20px] 3xl:gap-8'>
           <LinkList />
         </div>
@@ -219,6 +219,11 @@ const LinkList = ({ handleToggleMenu }: { handleToggleMenu?: any }) => {
       title: t('find_employee'),
       url: `/${locale}/find-worker`,
     },
+    {
+      id: 2,
+      title: t('store'),
+      url: `/${locale}/store`,
+    },
   ]
 
   const menuVariantsLinks = {
@@ -260,7 +265,9 @@ const LinkList = ({ handleToggleMenu }: { handleToggleMenu?: any }) => {
               <button
                 onClick={() => handleClick(link.url)}
                 className={`${
-                  isActive ? 'text-[#0B27B6] ' : 'hover:text-[#0B27B6]/60'
+                  isActive
+                    ? 'text-[#0B27B6] '
+                    : 'text-base-black-1 hover:text-[#0B27B6]/60'
                 } block duration-300 md:hidden`}
               >
                 {link.title}
@@ -268,7 +275,9 @@ const LinkList = ({ handleToggleMenu }: { handleToggleMenu?: any }) => {
               <Link
                 href={link.url}
                 className={`hidden md:block ${
-                  isActive ? 'text-[#0B27B6]' : 'hover:text-[#0B27B6]/60'
+                  isActive
+                    ? 'text-[#0B27B6]'
+                    : 'text-base-black-1 hover:text-[#0B27B6]/60'
                 }`}
               >
                 {link.title}

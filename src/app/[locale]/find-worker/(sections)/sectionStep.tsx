@@ -28,7 +28,7 @@ const SectionTest = () => {
   ]
   return (
     <div className='flex w-full flex-col'>
-      <div className='md:block hidden'>
+      <div className='hidden md:block'>
         <Tabs
           aria-label='Dynamic tabs'
           items={tabs}
@@ -38,19 +38,19 @@ const SectionTest = () => {
             cursor: 'w-full bg-[#405AB7]',
             tab: 'max-w-fit px-[20px] py-[30px] flex items-center justify-center bg-[#F8F8F8]',
             tabContent:
-              'text-black group-data-[selected=true]:text-[#fff] text-[1.8rem] font-semibold',
+              'text-black group-data-[selected=true]:text-[#fff] text-[1.6rem] font-semibold',
           }}
         >
           {(item) => (
             <Tab key={item.id} title={item.label}>
-              <div className='border-[1px] border-[#E1E1E1] p-[20px] rounded-2xl'>
+              <div className='rounded-2xl border-[1px] border-[#E1E1E1] p-[20px]'>
                 {item.content}
               </div>
             </Tab>
           )}
         </Tabs>
       </div>
-      <div className='md:hidden block'>
+      <div className='block md:hidden'>
         <Accordion
           className='gap-5'
           itemClasses={{
@@ -74,10 +74,9 @@ const SectionTest = () => {
               }
               classNames={{
                 content: 'flex flex-col gap-2',
-                title:
-                  'text-[1.8rem] 13inch:text-[2rem] 3xl:text-[2.2rem] font-bold data-[open=true]:text-[#0B27B6]',
-                indicator: 'text-[2rem]',
-                base: 'group-[.is-splitted]:pl-12 pb-5',
+                title: 'text-[1.6rem] font-bold data-[open=true]:text-[#0B27B6]',
+                indicator: 'text-[1.6rem]',
+                base: 'group-[.is-splitted]:pl-12',
               }}
             >
               {i.content}
@@ -93,20 +92,20 @@ const Step1 = () => {
   const t = useTranslations('FindWorker')
 
   return (
-    <div className='md:flex flex-col gap-[20px] border-2 md:border-none border-base-gray rounded-lg md:p-0 p-6'>
-      <h3 className='text-[#405AB7] font-semibold text-[2.4rem]'>{t('text4')}</h3>
-      <div className='flex items-center gap-10 mt-8'>
+    <div className='flex-col gap-[20px] rounded-lg border-2 border-base-gray p-6 md:flex md:border-none md:p-0'>
+      <h3 className='text-[1.6rem] font-semibold text-[#405AB7]'>{t('text4')}</h3>
+      <div className='mt-8 flex items-center gap-10'>
         <div className='space-y-10'>
           <div>
-            <h4 className='3xl:text-[1.9rem] text-[1.7rem] mb-2'>{t('text5')}</h4>
+            <h4 className='mb-2 whitespace-nowrap text-[1.6rem]'>{t('text5')}</h4>
             <AndroidBtn />
           </div>
           <div>
-            <h4 className='3xl:text-[1.9rem] text-[1.7rem] mb-2'>{t('text6')}</h4>
+            <h4 className='mb-2 whitespace-nowrap text-[1.6rem]'>{t('text6')}</h4>
             <IosBtn />
           </div>
         </div>
-        <span className='3xl:text-[1.8rem] text-[1.6rem] text-black/50'>
+        <span className='text-[1.6rem] text-black/50 3xl:text-[1.6rem]'>
           {t('text7')}
         </span>
         <QrCode />
@@ -131,9 +130,9 @@ const Step2 = () => {
     },
   ]
   return (
-    <div className='flex flex-col gap-[20px] border-2 md:border-none border-base-gray rounded-lg md:p-0 p-6'>
-      <h3 className='text-[#405AB7] font-semibold text-[2.4rem]'>{t('text10')}</h3>
-      <div className='lg:flex hidden w-full gap-[20px]'>
+    <div className='flex flex-col gap-[20px] rounded-lg border-2 border-base-gray p-6 md:border-none md:p-0'>
+      <h3 className='text-[1.6rem] font-semibold text-[#405AB7]'>{t('text10')}</h3>
+      <div className='hidden w-full gap-[20px] lg:flex'>
         <Tabs
           aria-label='Dynamic tabs'
           items={tabs}
@@ -143,7 +142,7 @@ const Step2 = () => {
             cursor: 'w-full bg-[#405AB7]',
             tab: 'xl:min-w-[300px] min-w-[100px] p-[24px] flex items-center justify-start border-[1px] border-[#E1E1E1]',
             tabContent:
-              'text-black group-data-[selected=true]:text-[#fff] text-[1.8rem] font-semibold',
+              'text-black group-data-[selected=true]:text-[#fff] text-[1.6rem] font-semibold',
           }}
         >
           {(item) => (
@@ -153,7 +152,7 @@ const Step2 = () => {
           )}
         </Tabs>
       </div>
-      <div className='lg:hidden block'>
+      <div className='block lg:hidden'>
         <Register />
         <Login />
       </div>
@@ -169,8 +168,8 @@ const Step3 = () => {
       url: 'findWorker1.png',
       content: (
         <>
-          <p className='text-[2.4rem] font-semibold'>{t('text11')}</p>
-          <p className='text-[1.8rem]'>{t('text30')}</p>
+          <p className='text-[1.6rem] font-semibold'>{t('text11')}</p>
+          <p className='text-[1.6rem]'>{t('text30')}</p>
         </>
       ),
     },
@@ -178,8 +177,8 @@ const Step3 = () => {
       url: 'findWorker2.png',
       content: (
         <>
-          <p className='text-[2.4rem] font-semibold'>{t('text14')}</p>
-          <p className='text-[1.8rem]'>{t('text31')}</p>
+          <p className='text-[1.6rem] font-semibold'>{t('text14')}</p>
+          <p className='text-[1.6rem]'>{t('text31')}</p>
           <ul className='list-inside list-disc text-[1.6rem]'>
             <li>{t('text32')}</li>
             <li>{t('text33')}</li>
@@ -193,9 +192,9 @@ const Step3 = () => {
       url: 'findWorker3.png',
       content: (
         <>
-          <p className='text-[2.4rem] font-semibold'>{t('text17')}</p>
-          <p className='text-[1.8rem]'>{t('text36')}</p>
-          <p className='text-[1.8rem]'>{t('text37')}</p>
+          <p className='text-[1.6rem] font-semibold'>{t('text17')}</p>
+          <p className='text-[1.6rem]'>{t('text36')}</p>
+          <p className='text-[1.6rem]'>{t('text37')}</p>
         </>
       ),
     },
@@ -203,9 +202,9 @@ const Step3 = () => {
       url: 'findWorker4.png',
       content: (
         <>
-          <p className='text-[2.4rem] font-semibold'>{t('text20')}</p>
-          <p className='text-[1.8rem]'>{t('text38')}</p>
-          <p className='text-[1.8rem]'>{t('text39')}</p>
+          <p className='text-[1.6rem] font-semibold'>{t('text20')}</p>
+          <p className='text-[1.6rem]'>{t('text38')}</p>
+          <p className='text-[1.6rem]'>{t('text39')}</p>
         </>
       ),
     },
@@ -214,9 +213,9 @@ const Step3 = () => {
       url2: 'findWorker5-2.png',
       content: (
         <>
-          <p className='text-[2.4rem] font-semibold'>{t('text28')}</p>
-          <p className='text-[1.8rem]'>{t('text40')}</p>
-          <p className='text-[1.8rem]'>{t('text41')}</p>
+          <p className='text-[1.6rem] font-semibold'>{t('text28')}</p>
+          <p className='text-[1.6rem]'>{t('text40')}</p>
+          <p className='text-[1.6rem]'>{t('text41')}</p>
         </>
       ),
     },
@@ -225,19 +224,19 @@ const Step3 = () => {
       url2: 'findWorker6-2.png',
       content: (
         <>
-          <p className='text-[2.4rem] font-semibold'>{t('text29')}</p>
-          <p className='text-[1.8rem]'>{t('text42')}</p>
-          <p className='text-[1.8rem]'>{t('text43')}</p>
+          <p className='text-[1.6rem] font-semibold'>{t('text29')}</p>
+          <p className='text-[1.6rem]'>{t('text42')}</p>
+          <p className='text-[1.6rem]'>{t('text43')}</p>
         </>
       ),
     },
   ]
 
   return (
-    <div className='border-2 md:border-none border-base-gray rounded-lg md:p-0 p-6'>
-      <h3 className='text-[#405AB7] font-semibold text-[2.4rem]'>{t('text44')}</h3>
-      <p className='text-[1.8rem] my-[20px]'>{t('text45')}</p>
-      <div className='grid md:grid-cols-2 gap-10 2xl:gap-y-20'>
+    <div className='rounded-lg border-2 border-base-gray p-6 md:border-none md:p-0'>
+      <h3 className='text-[1.6rem] font-semibold text-[#405AB7]'>{t('text44')}</h3>
+      <p className='my-[20px] text-[1.6rem]'>{t('text45')}</p>
+      <div className='grid gap-10 md:grid-cols-2 2xl:gap-y-20'>
         {listRegisterItem.map((i, index) => (
           <RegisterItem url={i.url} key={i.url} url2={i.url2} index={index}>
             {i.content}
@@ -256,9 +255,9 @@ const Register: any = () => {
       url: 'screen1.png',
       content: (
         <>
-          <p className='text-[2.4rem] font-semibold'>{t('text11')}</p>
-          <p className='text-[1.8rem]'>{t('text12')}</p>
-          <p className='text-[1.8rem]'>{t('text13')}</p>
+          <p className='text-[1.6rem] font-semibold'>{t('text11')}</p>
+          <p className='text-[1.6rem]'>{t('text12')}</p>
+          <p className='text-[1.6rem]'>{t('text13')}</p>
         </>
       ),
     },
@@ -266,9 +265,9 @@ const Register: any = () => {
       url: 'screen2.png',
       content: (
         <>
-          <p className='text-[2.4rem] font-semibold'>{t('text14')}</p>
-          <p className='text-[1.8rem]'>{t('text15')}</p>
-          <p className='text-[1.8rem]'>{t('text16')}</p>
+          <p className='text-[1.6rem] font-semibold'>{t('text14')}</p>
+          <p className='text-[1.6rem]'>{t('text15')}</p>
+          <p className='text-[1.6rem]'>{t('text16')}</p>
         </>
       ),
     },
@@ -276,8 +275,8 @@ const Register: any = () => {
       url: 'screen3.png',
       content: (
         <>
-          <p className='text-[2.4rem] font-semibold'>{t('text17')}</p>
-          <p className='text-[1.8rem]'>
+          <p className='text-[1.6rem] font-semibold'>{t('text17')}</p>
+          <p className='text-[1.6rem]'>
             {t('text18')}
             <span className='text-[#FF4343]'>{t('text19')}</span>
           </p>
@@ -288,8 +287,8 @@ const Register: any = () => {
       url: 'screen4.png',
       content: (
         <>
-          <p className='text-[2.4rem] font-semibold'>{t('text20')}</p>
-          <p className='text-[1.8rem]'>{t('text21')}</p>
+          <p className='text-[1.6rem] font-semibold'>{t('text20')}</p>
+          <p className='text-[1.6rem]'>{t('text21')}</p>
         </>
       ),
     },
@@ -297,10 +296,10 @@ const Register: any = () => {
 
   return (
     <div className=''>
-      <h5 className='text-[2.5rem] lg:hidden block bg-primary-blue w-full py-6 pl-6 rounded-lg text-white mb-10'>
+      <h5 className='mb-10 block w-full rounded-lg bg-primary-blue py-6 pl-6 text-[2.5rem] text-white lg:hidden'>
         {t('text8')}
       </h5>
-      <div className='grid md:grid-cols-2 gap-10'>
+      <div className='grid gap-10 md:grid-cols-2'>
         {listRegisterItem.map((i) => (
           <RegisterItem url={i.url} key={i.url}>
             {i.content}
@@ -316,20 +315,20 @@ const Login = () => {
 
   return (
     <>
-      <h5 className='text-[2.5rem] lg:hidden bg-primary-blue w-full py-6 pl-6 rounded-lg text-white mb-10'>
+      <h5 className='mb-10 w-full rounded-lg bg-primary-blue py-6 pl-6 text-[2.5rem] text-white lg:hidden'>
         {t('text9')}
       </h5>
-      <p className='text-[1.8rem]'>{t('text22')}</p>
+      <p className='text-[1.6rem]'>{t('text22')}</p>
       <p className='my-4'>
-        <strong className='text-[2rem]'> {t('text23')}</strong>
+        <strong className='text-[1.6rem]'> {t('text23')}</strong>
       </p>
-      <p className='text-[1.8rem]'> {t('text24')}</p>
-      <ul className='list-inside list-disc pl-3 text-[1.8rem]'>
+      <p className='text-[1.6rem]'> {t('text24')}</p>
+      <ul className='list-inside list-disc pl-3 text-[1.6rem]'>
         <li> {t('text25')}</li>
         <li> {t('text26')}</li>
         <li> {t('text27')}</li>
       </ul>
-      <div className='flex mt-[20px]'>
+      <div className='mt-[20px] flex'>
         <Image
           src='/find-worker/loginScreen1.png'
           alt=''
@@ -370,23 +369,23 @@ const RegisterItem = ({
   return (
     <div
       className={`${
-        index == 4 || index == 5 ? 'xl:col-span-1 md:col-span-2' : 'col-span-1'
-      } flex justify-between gap-[20px] flex-col md:flex-row`}
+        index == 4 || index == 5 ? 'md:col-span-2 xl:col-span-1' : 'col-span-1'
+      } flex flex-col justify-between gap-[20px] md:flex-row`}
     >
       <div
-        className={`text-[#282828] flex flex-col gap-4 ${url2 ? 'md:max-w-[55%]' : ''}`}
+        className={`flex flex-col gap-4 text-[#282828] ${url2 ? 'md:max-w-[55%]' : ''}`}
       >
         {children}
       </div>
       {url2 ? (
-        <div className='flex gap-2 w-fit'>
+        <div className='flex w-fit gap-2'>
           <div className='w-[180px]'>
             <Image
               src={`/find-worker/${url}`}
               alt=''
               width={220}
               height={300}
-              className='h-full w-full pointer-events-none'
+              className='pointer-events-none h-full w-full'
             />
           </div>
           <div className='w-[180px]'>
@@ -395,12 +394,12 @@ const RegisterItem = ({
               alt=''
               width={220}
               height={300}
-              className='h-full w-full pointer-events-none'
+              className='pointer-events-none h-full w-full'
             />
           </div>
         </div>
       ) : (
-        <div className='flex md:justify-end justify-start w-fit'>
+        <div className='flex w-fit justify-start md:justify-end'>
           <div className='w-[180px]'>
             <Image
               src={`/find-worker/${url}`}

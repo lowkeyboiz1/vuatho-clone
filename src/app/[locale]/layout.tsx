@@ -43,8 +43,10 @@ export default async function RootLayout({ children, params }: any) {
   }
 
   return (
-    <html lang={locale} className={lexend.className + ' overflow-x-hidden'}>
-      <body className='!overflow-x-hidden'>
+    // <html lang={locale} className={lexend.className + ' overflow-x-hidden'}>
+    <html lang={locale} className={lexend.className + ' '}>
+      <body className=''>
+        {/* <body className='!overflow-x-hidden'> */}
         <Script src='https://www.googletagmanager.com/gtag/js?id=G-Z8JD7Z5934' />
         <Script id='google-analytics'>
           {`

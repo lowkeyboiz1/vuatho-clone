@@ -11,31 +11,31 @@ const SectionDownload = ({ sizeS }: { sizeS?: boolean }) => {
     <div className='bg-[#f4f4f4]'>
       <p
         className={`${
-          sizeS
-            ? 'text-[6rem] xl:text-[7rem]'
-            : 'text-[4rem] py-10 xl:text-[8rem] xl:py-4 md:py-20'
-        } font-medium text-center md:text-left w-full block md:hidden`}
+          sizeS ? 'text-[6rem] xl:text-[7rem]' : 'py-10 text-[3.2rem] md:py-20 xl:py-4'
+        } block w-full text-center font-medium md:hidden md:text-left`}
       >
         {t('download')}
       </p>
-      <section className='w-full mx-auto flex justify-center items-center gap-4 overflow-hidden pb-12 md:py-[100px]'>
-        <div className='flex items-center h-full gap-8 3xl:gap-[100px] flex-col md:flex-row'>
-          <div className='w-full flex items-center order-2 md:order-1 justify-center md:justify-start'>
-            <div className='flex flex-col items-start md:items-center justify-start md:justify-center'>
+      <section className='mx-auto flex w-full items-center justify-center gap-4 overflow-hidden pb-12 md:py-[100px]'>
+        <div className='flex flex-col items-center gap-8 md:flex-row 3xl:gap-[100px]'>
+          <div className='order-2 flex w-full items-center justify-center md:order-1 md:justify-start'>
+            <div className='flex flex-col items-start justify-start md:items-center md:justify-center'>
               <h2
-                className={`hidden md:block font-medium text-center md:text-left w-full text-[3.6rem]`}
+                className={`hidden w-full text-center text-[3.6rem] font-medium md:block md:text-left`}
               >
                 {t('download')}
               </h2>
               <p
-                className={`text-[2rem] my-2 font-normal w-full text-center md:text-start`}
+                className={`my-2 w-full text-center text-[2rem] font-normal md:text-start`}
               >
                 {t('download_now')}
               </p>
               <Download />
             </div>
           </div>
-          <Screen />
+          <div>
+            <Screen />
+          </div>
         </div>
       </section>
     </div>

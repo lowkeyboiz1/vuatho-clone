@@ -16,27 +16,27 @@ function AboutUs() {
   return (
     <div className=' w-full'>
       <HeroSection />
-      <div className='w-full relative h-[400px] xl:h-[600px] bg-[#f6f8fa] xl:bg-transparent'>
+      <div className='relative h-[400px] w-full bg-[#f6f8fa] xl:h-[600px] xl:bg-transparent'>
         <div className='w-full'>
           <Image
             src={'/images/about-us/people.png'}
             alt='people'
             width={2700}
             height={584}
-            className='absolute top-0 right-0 left-0 bottom-0 hidden xl:block pointer-events-none'
+            className='pointer-events-none absolute bottom-0 left-0 right-0 top-0 hidden xl:block'
           />
         </div>
-        <div className='absolute text-center left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 w-full px-8 xl:px-0'>
-          <p className='font-bold bg-clip-text text-transparent bg-gradient-to-r from-[#1C55D8] to-[#0D2D8F] text-[4rem] w-full'>
+        <div className='absolute left-1/2 top-1/2 w-full -translate-x-1/2 -translate-y-1/2 px-8 text-center xl:px-0'>
+          <p className='w-full bg-gradient-to-r from-[#1C55D8] to-[#0D2D8F] bg-clip-text text-[2.4rem] font-bold text-transparent md:text-[3.2rem]'>
             {t('goal')}
           </p>
-          <p className='font-bold bg-clip-text text-transparent bg-gradient-to-r from-[#2769FF] to-[#0032CB] text-[7rem] xl:text-[6rem]'>
+          <p className='bg-gradient-to-r from-[#2769FF] to-[#0032CB] bg-clip-text text-[3.2rem] font-bold text-transparent md:text-[4rem]'>
             {t('numberGoal')}
           </p>
-          <p className='text-[2rem] font-semibold'>{t('textGold')}</p>
+          <p className='text-[1.6rem] font-semibold'>{t('textGold')}</p>
         </div>
       </div>
-      <div className='bg-[#F6F8FA] w-full'>
+      <div className='w-full bg-[#F6F8FA]'>
         <SectionServices />
       </div>
       <SectionDownload />

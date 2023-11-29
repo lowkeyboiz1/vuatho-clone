@@ -113,83 +113,92 @@ function Footer() {
             ))}
           </div>
         </div>
-        <div className='grid grid-cols-8 gap-10 md:gap-6 '>
-          <div className='col-span-8 space-y-4 md:col-span-4 xl:col-span-3'>
-            <h5 className='text-[2.2rem] font-semibold'>Liên hệ</h5>
-            <div className='space-y-1.5'>
+        <div className='grid grid-cols-9 3xl:gap-[40px]'>
+          <div className='col-span-9 flex flex-col gap-[20px] lg:col-span-3'>
+            <h5 className='text-[1.6rem] font-semibold md:text-[2rem]'>Liên hệ</h5>
+            <div className='flex flex-col gap-[20px]'>
               <p className='flex items-center gap-4'>
                 <PhoneIcon className='text-primary-blue' variant='Bold' />
-                <span className='text-[2rem] font-light'>
+                <span className='text-[1.6rem] font-light md:text-[2rem]'>
                   <span className='text-gray-500'>(+84)</span> 3878 6688
                 </span>
               </p>
               <p className='flex items-center gap-4'>
                 <MailIcon className='text-primary-blue' variant='Bold' />
-                <span className='text-[2rem] font-light'>info@vuatho.com</span>
+                <span className='text-[1.6rem] font-light md:text-[2rem]'>
+                  info@vuatho.com
+                </span>
               </p>
               <p className='flex items-center gap-4'>
                 <LocationIcon className='text-primary-blue' variant='Bold' />
-                <span className='text-[2rem] font-light'>
+                <span className='text-[1.6rem] font-light md:text-[2rem]'>
                   {t('address')}
-                  <br />
+                  <br className='hidden lg:block' />
                   {t('location')}
                 </span>
               </p>
-              <p className='text-[2rem] font-light'>
+              <p className='text-[1.6rem] font-light md:text-[2rem]'>
                 <span className='font-semibold'>MST: </span>
                 <span className=''>0318063280</span>
               </p>
             </div>
           </div>
-          <div className='col-span-4 space-y-4 md:col-span-2'>
-            <h5 className='text-[2rem] font-semibold'>{t('about_vuatho')}</h5>
-            <div className='flex flex-col gap-2'>
-              {listSubFooter.info.map((i) => (
-                <Link href={i.url} key={i.title} title={i.title}>
-                  <p className='text-[2rem] font-light hover:text-primary-blue'>
-                    {i.title}
-                  </p>
-                </Link>
-              ))}
+          <div className='col-span-9 grid grid-cols-8 gap-[20px] md:gap-0 lg:col-span-6'>
+            <div className='col-span-8 flex flex-col gap-[20px] md:col-span-3'>
+              <h5 className='text-[1.6rem] font-semibold md:text-[2rem]'>
+                {t('about_vuatho')}
+              </h5>
+              <div className='flex flex-col gap-[20px]'>
+                {listSubFooter.info.map((i) => (
+                  <Link href={i.url} key={i.title} title={i.title}>
+                    <p className='text-[1.6rem] font-light hover:text-primary-blue md:text-[2rem]'>
+                      {i.title}
+                    </p>
+                  </Link>
+                ))}
+              </div>
+            </div>
+            <div className='col-span-8 flex flex-col gap-[20px] md:col-span-3 '>
+              <h5 className='text-[1.6rem] font-semibold md:text-[2rem]'>
+                {t('contact_with_vuatho')}
+              </h5>
+              <div className='flex flex-col gap-[20px]'>
+                {listSubFooter.policy.map((i) => (
+                  <Link href={i.url} key={i.title} title={i.title}>
+                    <p className='text-[1.6rem] font-light hover:text-primary-blue md:text-[2rem]'>
+                      {i.title}
+                    </p>
+                  </Link>
+                ))}
+              </div>
+            </div>
+            <div className='col-span-8 flex flex-col gap-[20px] md:col-span-2'>
+              <h5 className='whitespace-nowrap text-[1.6rem] font-semibold md:text-[2rem]'>
+                {td('download')}
+              </h5>
+              <div className='flex flex-row gap-[10px] md:flex-col'>
+                <AndroidBtn />
+                <IosBtn />
+              </div>
             </div>
           </div>
-          <div className='col-span-4 space-y-4 md:col-span-2'>
-            <h5 className='text-[2rem] font-semibold'>{t('contact_with_vuatho')}</h5>
-            <div className='flex flex-col gap-2'>
-              {listSubFooter.policy.map((i) => (
-                <Link href={i.url} key={i.title} title={i.title}>
-                  <p className='text-[2rem] font-light hover:text-primary-blue'>
-                    {i.title}
-                  </p>
-                </Link>
-              ))}
-            </div>
-          </div>
-          <div className='col-span-8 mt-10 w-full space-y-4 md:col-span-3 md:mt-0 md:w-auto xl:col-span-1'>
-            <h5 className='whitespace-nowrap text-[2rem] font-semibold'>
-              {td('download')}
-            </h5>
-            <div className='flex flex-row gap-2 md:flex-col'>
-              <AndroidBtn />
-              <IosBtn />
-            </div>
-          </div>
-          <div className='col-span-8 flex flex-col gap-4 md:col-span-5 xl:col-span-8 xl:mt-20 xl:flex-row xl:items-center xl:justify-between xl:gap-0'>
-            <h5 className='min-w-fit text-left text-[2rem] font-semibold'>
-              {t('our_partner')}
-            </h5>
-            <div className='grid w-full grid-cols-2 items-center gap-10 xl:flex xl:justify-end xl:gap-20'>
-              {partnerList.map((item) => (
-                <Image
-                  key={`partner-${item.id}`}
-                  alt={`partner-${item.id}`}
-                  width={194}
-                  height={64}
-                  src={item.url}
-                  className='pointer-events-none h-20 w-auto object-contain xl:h-16'
-                />
-              ))}
-            </div>
+        </div>
+        {/* doi tac */}
+        <div className='col-span-8 flex flex-col gap-4 md:col-span-5 xl:col-span-8 xl:mt-20 xl:flex-row xl:items-center xl:justify-between xl:gap-0'>
+          <h5 className='min-w-fit text-left text-[1.6rem] font-semibold md:text-[2rem]'>
+            {t('our_partner')}
+          </h5>
+          <div className='grid w-full grid-cols-2 items-center gap-10 xl:flex xl:justify-end xl:gap-20'>
+            {partnerList.map((item) => (
+              <Image
+                key={`partner-${item.id}`}
+                alt={`partner-${item.id}`}
+                width={194}
+                height={64}
+                src={item.url}
+                className='pointer-events-none h-20 w-auto object-contain xl:h-16'
+              />
+            ))}
           </div>
         </div>
       </div>
@@ -213,10 +222,8 @@ const SubFooter = () => {
         height={71}
         className='md:h-auto h-32 w-auto object-contain'
       /> */}
-      <p className='whitespace-nowrap text-[1.8rem] text-baseBlack'>
-        Công ty TNHH CN Vua Thợ
-      </p>
-      <p className='col-span-2 text-center text-[1.8rem] text-baseBlack md:text-left'>
+      <p className='text-[1.6rem] text-baseBlack'>Công ty TNHH CN Vua Thợ</p>
+      <p className='col-span-2 text-center text-[1.6rem] text-baseBlack md:text-left'>
         © 2023. All rights reserved.
       </p>
     </div>

@@ -53,20 +53,20 @@ function LangsComp() {
         <Popover
           placement='bottom-end'
           isOpen={isOpen}
-          onOpenChange={(open) => setIsOpen(open)}
-          className='px-8 shadow-[0_0_10px_-6px_black]'
+          onOpenChange={(open: any) => setIsOpen(open)}
+          className=''
         >
           <PopoverTrigger>
-            <Button className='h-[44px] cursor-pointer rounded-[44px] bg-[#F8F8F8] p-[10px]'>
+            <button className='h-[44px] cursor-pointer rounded-[44px] bg-[#F8F8F8] p-[10px]'>
               <div className='flex items-center gap-2 text-[#646464]'>
                 <Global size={24} className='' />
                 <span className='text-[1.6rem] uppercase'>{lang.code}</span>
               </div>
-            </Button>
+            </button>
           </PopoverTrigger>
           <PopoverContent>
             <div className='min-w-[50vw] divide-y divide-base-gray'>
-              <div className='flex items-center justify-between py-2'>
+              <div className='flex items-center justify-between px-[10px] py-4'>
                 <h5 className='text-[2.2rem] font-bold text-primary-blue'>
                   {t('language')}
                 </h5>
@@ -115,8 +115,8 @@ function LangsComp() {
             aria-label='lang'
             title={
               <div className='-ml-2 flex items-center justify-between '>
-                <p className='w-full text-[2.3rem]'>{t('language')}</p>
-                <div className='flex min-w-fit items-center gap-2 self-center pb-2 text-[2rem]'>
+                <p className='w-full text-[1.6rem] text-base-black-1'>{t('language')}</p>
+                <div className='flex min-w-fit items-center gap-2 self-center pb-2 text-[1.6rem]'>
                   <span className='min-w-fit'>{lang.symbol}</span>
                   {lang.label}
                 </div>
