@@ -111,6 +111,7 @@ export const CheckIcon2 = ({
           <stop stopColor='#FDA00B' />
           <stop offset='1' stopColor='#FEBD23' />
         </linearGradient>
+        {/*  */}
       </defs>
     </svg>
   )
