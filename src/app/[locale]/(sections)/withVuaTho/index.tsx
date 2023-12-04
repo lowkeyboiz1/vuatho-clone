@@ -26,7 +26,7 @@ function SectionWithVuaTho() {
               <h5 className='text-[3.2rem] font-bold'>
                 {t('title')} {t('title1')}
               </h5>
-              <p className='flex justify-start text-[1.4rem] text-base-black-1 md:text-[1.6rem]'>
+              <p className='flex justify-start text-[1.4rem] text-base-black-1 md:text-[1.8rem]'>
                 {t('text')}
               </p>
             </div>

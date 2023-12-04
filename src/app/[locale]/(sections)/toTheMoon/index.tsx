@@ -22,7 +22,7 @@ function SectionToTheMoon() {
               {t('title')}
             </p>
           </div>
-          <p className='text-[1.6rem] font-light text-white'>{t('desc')}</p>
+          <p className='text-[1.8rem] font-light text-white'>{t('desc')}</p>
         </div>
         <div className='absolute top-[-40%] z-[3] hidden w-[510px] translate-x-[90%] md:block '>
           <Image

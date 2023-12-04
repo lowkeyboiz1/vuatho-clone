@@ -1,3 +1,5 @@
+import { twMerge } from 'tailwind-merge'
+
 export const MoonIcon = ({ className }: { className?: any }) => (
   <svg
     aria-hidden='true'
@@ -699,6 +701,39 @@ export const CheckIcon = ({ className }: { className?: any }) => {
         d='M13.7 1.1999C13.3 0.799902 12.7 0.799902 12.3 1.1999L4.8 8.6999L1.7 5.5999C1.3 5.1999 0.7 5.1999 0.3 5.5999C-0.1 5.9999 -0.1 6.5999 0.3 6.9999L4.1 10.7999C4.3 10.9999 4.5 11.0999 4.8 11.0999C5.1 11.0999 5.3 10.9999 5.5 10.7999L13.7 2.5999C14.1 2.1999 14.1 1.5999 13.7 1.1999Z'
         fill='#FCB713'
       />
+    </svg>
+  )
+}
+
+export const SearchSpiner = ({ className }: { className?: any }) => {
+  return (
+    <svg
+      width='16'
+      height='16'
+      viewBox='0 0 48 48'
+      fill='rgba(22, 24, 35, .34)'
+      xmlns='http://www.w3.org/2000/svg'
+      className={className}
+    >
+      <path
+        fillRule='evenodd'
+        clipRule='evenodd'
+        d='M24 12.5C17.6487 12.5 12.5 17.6487 12.5 24C12.5 30.3513 17.6487 35.5 24 35.5C26.8172 35.5 29.3919 34.4902 31.3919 32.8101C32.4491 31.9219 34.026 32.059 34.9142 33.1161C35.8023 34.1733 35.6653 35.7503 34.6081 36.6384C31.741 39.0471 28.0369 40.5 24 40.5C14.8873 40.5 7.5 33.1127 7.5 24C7.5 14.8873 14.8873 7.5 24 7.5C33.1127 7.5 40.5 14.8873 40.5 24C40.5 25.3807 39.3807 26.5 38 26.5C36.6193 26.5 35.5 25.3807 35.5 24C35.5 17.6487 30.3513 12.5 24 12.5Z'
+      ></path>
+    </svg>
+  )
+}
+
+export const ImageSkeleton = ({ style }: { style?: string }) => {
+  return (
+    <svg
+      className={twMerge('h-10 w-10 animate-pulse text-gray-200', style)}
+      aria-hidden='true'
+      xmlns='http://www.w3.org/2000/svg'
+      fill='currentColor'
+      viewBox='0 0 20 18'
+    >
+      <path d='M18 0H2a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2Zm-5.5 4a1.5 1.5 0 1 1 0 3 1.5 1.5 0 0 1 0-3Zm4.376 10.481A1 1 0 0 1 16 15H4a1 1 0 0 1-.895-1.447l3.5-7A1 1 0 0 1 7.468 6a.965.965 0 0 1 .9.5l2.775 4.757 1.546-1.887a1 1 0 0 1 1.618.1l2.541 4a1 1 0 0 1 .028 1.011Z' />
     </svg>
   )
 }

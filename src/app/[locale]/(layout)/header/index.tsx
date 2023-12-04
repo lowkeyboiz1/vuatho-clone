@@ -11,6 +11,7 @@ import LangsComp from '@/components/LangsComp'
 import { AnimatePresence, motion } from 'framer-motion'
 import { Add as AddIcon, HambergerMenu as MenuIcon } from 'iconsax-react'
 import { Button } from '@nextui-org/react'
+
 const Header = () => {
   const [isWebview, sIsWebview] = useState(false)
   const pathName = usePathname()
@@ -81,10 +82,10 @@ const Header = () => {
       className={`${
         transparent ? 'bg-transparent' : 'bg-white'
       } header fixed left-0 right-0 z-[99999] w-full transition ${
-        isHeaderVisible ? 'translate-y-0' : '-translate-y-[100%]'
+        isHeaderVisible ? 'translate-y-0 shadow-sm' : '-translate-y-[100%]'
       }`}
     >
-      <div className='ct-container-70 flex h-[64px] items-center justify-between 3xl:h-[80px]'>
+      <div className='ct-container-70 flex h-[70px] items-center justify-between 3xl:h-[80px]'>
         <Logo />
         <RightNav />
       </div>
@@ -103,7 +104,7 @@ const Logo = () => {
           top: 0,
         })
       }}
-      className='block h-[64px] 3xl:h-[80px]'
+      className='block h-full'
     >
       <Image
         src='/logo/textLogo.webp'
@@ -152,7 +153,7 @@ const RightNav = () => {
   return (
     <>
       <div className='hidden w-full items-center justify-end gap-[20px] md:flex 3xl:gap-8'>
-        <div className='flex items-center gap-[20px] 3xl:gap-8'>
+        <div className='flex items-center gap-[16px] 3xl:gap-8'>
           <LinkList />
         </div>
         <div className='flex items-center gap-[16px]'>
@@ -160,7 +161,7 @@ const RightNav = () => {
             onClick={() =>
               window.open('https://vuatho.com/vi/qrcode-download-app', '_blank')
             }
-            className='hidden h-[44px] w-auto rounded-[44px] bg-primaryYellow px-[24px] text-[1.6rem] font-semibold text-baseBlack md:block'
+            className='hidden h-[44px] w-auto rounded-[44px] bg-primaryYellow px-[24px] text-[1.8rem] font-semibold text-baseBlack md:block'
           >
             {t('download')}
           </Button>
@@ -176,7 +177,7 @@ const RightNav = () => {
               onClick={() =>
                 window.open('https://vuatho.com/vi/qrcode-download-app', '_blank')
               }
-              className='h-[40px] w-auto bg-primaryYellow px-[30px] text-[1.6rem] font-semibold text-baseBlack md:hidden md:px-[50px] xl:h-[50px]'
+              className='h-[40px] w-auto bg-primaryYellow px-[30px] text-[1.8rem] font-semibold text-baseBlack md:hidden md:px-[50px] xl:h-[50px]'
             >
               {t('download')}
             </Button>
@@ -220,7 +221,7 @@ const LinkList = ({ handleToggleMenu }: { handleToggleMenu?: any }) => {
       url: `/${locale}/find-worker`,
     },
     {
-      id: 2,
+      id: 4,
       title: t('store'),
       url: `/${locale}/store`,
     },
@@ -260,7 +261,7 @@ const LinkList = ({ handleToggleMenu }: { handleToggleMenu?: any }) => {
               viewport={{
                 once: true,
               }}
-              className='text-[1.6rem]'
+              className='text-[1.8rem]'
             >
               <button
                 onClick={() => handleClick(link.url)}

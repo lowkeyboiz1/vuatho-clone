@@ -3,6 +3,7 @@
     "home": "Home",
     "become_employee": "Become a Worker",
     "find_employee": "Find a Worker",
+    "store": "Store",
     "language": "Language",
     "download": "Download Now"
   },
@@ -33,11 +34,10 @@
     "repair_home": "Home repair"
   },
   "ToTheMoon": {
-    "heading1": "Continuous",
-    "heading2": "Development",
-    "title": "Continuous development",
-    "text1": "We constantly experiment and develop to bring even more diverse services to the Vietnamese market in the coming time.",
-    "text2": "We always listen to user feedback and will continue to perfect to provide the best experience on the Vua Thợ app."
+    "heading1": "Development",
+    "heading2": "Continuous",
+    "title": "Continuous Development",
+    "desc": "We are committed to always listening to the community’s opinions, continuously improving, experimenting, and developing to bring more diverse services to the Vietnamese market in the future."
   },
   "WithVuaTho": {
     "title": "Accompanying",
@@ -70,7 +70,7 @@
     }
   },
   "Download": {
-    "download": "Download the app now",
+    "download": "Download app",
     "download_now": "To experience the most advanced AI technology",
     "slogan": "There's a worker for that",
     "book_now": "App for on-site worker booking",
@@ -114,19 +114,21 @@
     }
   },
   "MainSection": {
-    "heading1": "Application ",
-    "heading1-1": "for finding workers, finding jobs",
-    "heading2": "Using ",
-    "heading2-1": "AI technology",
-    "subHeading": "Vua Thợ supports multi-language, multi-industry, whenever you need it",
+    "heading1": "Application",
+    "heading1-1": "Find Workers, Find Jobs",
+    "heading2": "Apply AI Technology",
+    "heading2-1": "Artificial Intelligence (AI)",
+    "subHeading": "King of Workers supports multiple languages, multiple industries - just need is to have",
     "listCard": {
       "title1": "Breakthrough",
       "desc1": "How it works",
-      "title2": "Transparent",
-      "desc2": "Transactions and agreements",
-      "title3": "Diverse",
-      "desc3": "Forms of cooperation"
-    }
+      "title2": "Transparency",
+      "desc2": "Transactions & agreements",
+      "title3": "Diversity",
+      "desc3": "Forms of collaboration"
+    },
+    "text1": "Supports multiple languages - multiple industries",
+    "text2": "Workers everywhere - Every worker has it"
   },
   "RuleSection": {
     "text1": "The role ",
@@ -149,8 +151,7 @@
     "desc4": "AI helps you save time and find solutions as quickly as possible"
   },
   "MinhBach": {
-    "heading1": "Flexible ",
-    "heading2": "In Agreement And Transactions",
+    "heading": "Flexible in agreement and transaction",
     "listData": {
       "title1": "Clear details",
       "desc1": "The Worker provides detailed and comprehensive information on the scope of work, necessary materials, and pricing. This helps the Customer understand the services to be provided.",
@@ -167,8 +168,7 @@
     }
   },
   "HinhThucKetNoi": {
-    "heading1": "Diverse And Transparent ",
-    "heading2": "Forms Of Cooperation",
+    "heading": "Diverse and Transparent Collaboration Models",
     "listData": {
       "label1": "Diverse Choices",
       "description1": "Vua Thợ's app uses AI to quickly and transparently connect Customer needs with the corresponding Worker services",
@@ -185,38 +185,55 @@
     }
   },
   "CustomerBenefitSection": {
-    "benefit": "Benefit",
-    "fromVuaTho": "From Vua Thợ",
-    "text1": "For",
-    "text2": "CUSTOMERS",
+    "benefit": "Benefits",
+    "text": "For Customers",
     "listBenefit": {
-      "title1": "Find the nearest craftsman to deal with the problem the fastest",
-      "title2": "Choose the best and most satisfactory craftsman",
-      "title3": "The most reasonable price (Not being cheated)",
-      "title4": "Warranty for quality, handle problems the fastest",
-      "title5": "Most uniform process and pricing"
+      "title1": "Find the nearest Worker to handle incidents quickly",
+      "title2": "Choose a skilled worker",
+      "title3": "Reasonable process and cost",
+      "title4": "Longest warranty"
     }
   },
   "WorkerBenefitSection": {
-    "benefit": "Benefit",
+    "benefit": "Benefits",
     "fromVuaTho": "From Vua Thợ",
-    "text1": "For",
-    "text2": "CRAFTSMEN",
-    "listBenefit": {
-      "title1": "Find the closest job to home",
-      "title2": "High and stable income",
-      "title3": "Flexible working time",
-      "title4": "Together with Vua Thợ to build a charitable community supporting those in difficult circumstances",
-      "title5": "Together with Vua Thợ share profits (50-50% Materials, ingredients)",
-      "title6": "Together with Vua Thợ build a craftsmen community for skill improvement",
-      "title7": "Recognition of talent and certification from Vua Thợ through vocational centers",
-      "title8": "Welfare support in case of labor accidents",
-      "title9": "Insurance benefits when retired or elderly",
-      "title10": "Participate in professional training courses from Vua Thợ",
-      "title11": "Participate in the skilled craftsmen contests quarterly - annually from Vua Thợ",
-      "title12": "Permanent participation in the program every 1000 craftsmen receive a WaveRSX motorbike",
-      "title13": "Receive permanent lucky tickets to participate in the monthly prize draw from Vua Thợ"
-    }
+    "text": "For Workers",
+    "benefit1": "Closest job opportunities",
+    "benefit2": "High and stable income",
+    "benefit3": "Flexible working hours",
+    "benefit4": "Share profits with Vua Thợ 50% - 50%",
+    "benefit5": "Workers refer Workers (or Assistants) - Customers refer Workers",
+    "benefit6": "Participate in the program every 1000 Workers receive 1 Wave RSX motorcycle",
+    "benefit7": "Receive a permanent lucky number to participate in the monthly lottery program from Vua Thợ",
+    "benefit8": "Welfare support when encountering labor accidents",
+    "benefit9": "When retiring at old age",
+    "benefit10": "Participate in Skilled Worker contests (quarterly - annually)",
+    "benefit11": "Recognize skills - talents and grant certificates from Vua Thợ’s vocational training centers",
+    "benefit12": "Together with Vua Thợ build a charitable community to support difficult circumstances",
+    "benefit13": "Elevate the position of the Worker",
+    "text1": "Whether you are a worker of any profession, Vua Thợ will bring work closest to you.",
+    "text2": "Save travel costs and other expenses. Even when at home, you will quickly find a stable job.",
+    "text3": "Proactively earn extra income - control your own finances.",
+    "text4": "Workers can easily and quickly increase their transaction reputation with the optimal customer source from Vua Thợ.",
+    "text5": "Income from 20 to 60 million per month.",
+    "text6": "Flexible time, Workers can completely decide their own working time.",
+    "text7": "When you have time, open the application to work, if busy you can temporarily turn off the application, with Vua Thợ there will be no constraints.",
+    "text8": "For service fees (repair, installation …), Vua Thợ will charge 15%.",
+    "text9": "For Products - Supplies - Materials, share 50 - 50% profit.",
+    "text10": "When introducing a Main Worker or Assistant, you will receive 50,000 VND (the money will be transferred to your wallet, but cannot be used, Vua Thợ will pay when that worker generates work)",
+    "text11": "If it is an Assistant, Vua Thợ will accept without checking the level, just need to verify the information when participating in Vua Thợ.",
+    "text12": "When registering a successful Worker on the Vua Thợ application, each worker will receive 01 lottery code (also a referral code) to have the opportunity to receive 01 Wave RSX F1 motorcycle for every 1,000 workers registered through the lucky draw from the system - serving the profession.",
+    "text14": "When introducing a Worker (regardless of which Worker), each Worker is equivalent to a number, and with 12 Workers - you will have a lucky number sequence in 6 balls (each ball has 02 numbers). Workers will have a lucky number sequence, and there is no limit to the number of sequences owned to participate in regular draws every month.",
+    "text15": "The golden heart fund of the Worker community will help Workers who have labor accidents or unwanted incidents when practicing (the larger the Worker community, the greater the support).",
+    "text16": "Workers will feel protected and secure when participating in the Vua Thợ community.",
+    "text17": "When young people do heavy work, when they get older, Vua Thợ will help you switch to lighter work, helping you optimize all income sources when you get old.",
+    "text18": "Vua Thợ will cooperate with insurance companies to create private insurance, ensuring the future for Workers. When Workers get old, they will have an amount from 10,000,000 - 30,000,000 VND per month. In addition, Workers can participate in voluntary insurance, for example, paying 5,000 VND per day equivalent to 300,000 VND per month to accumulate for retirement in the future.",
+    "text19": "Vua Thợ regularly organizes competitions to find skilled Workers in professional skills and business to commend for their dedication to the profession (will invite the winning Workers to participate in shares in the companies established by Vua Thợ).",
+    "text20": "Thereby creating motivation for all Workers to strive together to learn, constantly develop.",
+    "text21": "In the future, Vua Thợ will build vocational training centers (from primary to advanced) to issue certificates and degrees … recognizing the talents of Workers according to standards.",
+    "text22": "Vua Thợ and Workers together build a community to help, share with society and localities with difficult circumstances: build a school, a bridge, clean a canal … bring the best things to society by the labor of the Workers.",
+    "text23": "Coming to Vua Thợ, the Worker will self-control their own work without the concept of being an employee.",
+    "text24": "In addition, Workers will not have to worry about finding Customers, but Customers will come to Workers."
   },
   "FaqSection": {
     "listAccordion": {
@@ -876,5 +893,25 @@
     "text43": "Users can add a discount code (if any), tip for the worker (if any), choose the method and press Confirm",
     "text44": "Find Workers",
     "text45": "To log back into the app, users just need to enter their phone number then enter the OTP sent by the system via SMS"
+  },
+  "Store": {
+    "text1": "Professional attire for Craftsmen",
+    "text2": "More confident at work",
+    "text3": "Contact to order now",
+    "text4": "UNIFORM OF VUA THỢ"
+  },
+
+  "PressHome": {
+    "heading": "Articles for You",
+    "seeAll": "See All"
+  },
+  "listBreadcrumbs": {
+    "home": "Home",
+    "acrticle": "Press",
+    "store": "Store"
+  },
+  "Map": {
+    "text1": "App user",
+    "user": "users "
   }
 }

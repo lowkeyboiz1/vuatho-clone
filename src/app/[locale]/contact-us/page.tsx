@@ -22,15 +22,15 @@ const ContactUs = () => {
                 <LocationIcon variant='Bold' />
               </div>
               <div>
-                <h5 className='text-[1.6rem] font-semibold text-primary-blue'>
+                <h5 className='text-[1.8rem] font-semibold text-primary-blue'>
                   {t('address1')}
                   <br /> {t('address2')}
                 </h5>
                 <div className='mt-8 flex gap-3'>
-                  <h6 className='rounded-xl bg-base-gray p-3 text-[1.6rem] font-semibold'>
+                  <h6 className='rounded-xl bg-base-gray p-3 text-[1.8rem] font-semibold'>
                     {t('timeNumber')}
                   </h6>
-                  <h6 className='rounded-xl bg-base-gray p-3 text-[1.6rem] font-semibold'>
+                  <h6 className='rounded-xl bg-base-gray p-3 text-[1.8rem] font-semibold'>
                     {t('timeDay')}
                   </h6>
                 </div>
@@ -43,10 +43,10 @@ const ContactUs = () => {
               <div className='flex aspect-square h-12 w-fit flex-col items-center justify-center rounded-full bg-primary-blue-2 text-primary-blue md:h-20'>
                 <CallIcon variant='Bold' />
               </div>
-              <h5 className='text-[1.6rem] font-semibold text-primary-blue'>
+              <h5 className='text-[1.8rem] font-semibold text-primary-blue'>
                 {t('numberPhone')}
               </h5>
-              <h6 className='rounded-xl bg-base-gray p-3 text-[1.6rem] font-semibold'>
+              <h6 className='rounded-xl bg-base-gray p-3 text-[1.8rem] font-semibold'>
                 24/7
               </h6>
             </div>
@@ -54,7 +54,7 @@ const ContactUs = () => {
               <div className='h120 flex aspect-square w-fit flex-col items-center justify-center rounded-full bg-primary-blue-2 text-primary-blue md:h-20'>
                 <SmsIcon variant='Bold' />
               </div>
-              <h5 className='text-[1.6rem] font-semibold text-primary-blue'>
+              <h5 className='text-[1.8rem] font-semibold text-primary-blue'>
                 {t('gmail')}
               </h5>
             </div>

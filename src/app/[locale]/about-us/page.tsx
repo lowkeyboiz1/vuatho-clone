@@ -33,7 +33,7 @@ function AboutUs() {
           <p className='bg-gradient-to-r from-[#2769FF] to-[#0032CB] bg-clip-text text-[3.2rem] font-bold text-transparent md:text-[4rem]'>
             {t('numberGoal')}
           </p>
-          <p className='text-[1.6rem] font-semibold'>{t('textGold')}</p>
+          <p className='text-[1.8rem] font-semibold'>{t('textGold')}</p>
         </div>
       </div>
       <div className='w-full bg-[#F6F8FA]'>

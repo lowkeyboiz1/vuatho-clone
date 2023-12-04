@@ -38,7 +38,7 @@ const SectionTest = () => {
             cursor: 'w-full bg-[#405AB7]',
             tab: 'max-w-fit px-[20px] py-[30px] flex items-center justify-center bg-[#F8F8F8]',
             tabContent:
-              'text-black group-data-[selected=true]:text-[#fff] text-[1.6rem] font-semibold',
+              'text-black group-data-[selected=true]:text-[#fff] text-[1.8rem] font-semibold',
           }}
         >
           {(item) => (
@@ -74,8 +74,8 @@ const SectionTest = () => {
               }
               classNames={{
                 content: 'flex flex-col gap-2',
-                title: 'text-[1.6rem] font-bold data-[open=true]:text-[#0B27B6]',
-                indicator: 'text-[1.6rem]',
+                title: 'text-[1.8rem] font-bold data-[open=true]:text-[#0B27B6]',
+                indicator: 'text-[1.8rem]',
                 base: 'group-[.is-splitted]:pl-12',
               }}
             >
@@ -93,19 +93,19 @@ const Step1 = () => {
 
   return (
     <div className='flex-col gap-[20px] rounded-lg border-2 border-base-gray p-6 md:flex md:border-none md:p-0'>
-      <h3 className='text-[1.6rem] font-semibold text-[#405AB7]'>{t('text4')}</h3>
+      <h3 className='text-[1.8rem] font-semibold text-[#405AB7]'>{t('text4')}</h3>
       <div className='mt-8 flex items-center gap-10'>
         <div className='space-y-10'>
           <div>
-            <h4 className='mb-2 whitespace-nowrap text-[1.6rem]'>{t('text5')}</h4>
+            <h4 className='mb-2 whitespace-nowrap text-[1.8rem]'>{t('text5')}</h4>
             <AndroidBtn />
           </div>
           <div>
-            <h4 className='mb-2 whitespace-nowrap text-[1.6rem]'>{t('text6')}</h4>
+            <h4 className='mb-2 whitespace-nowrap text-[1.8rem]'>{t('text6')}</h4>
             <IosBtn />
           </div>
         </div>
-        <span className='text-[1.6rem] text-black/50 3xl:text-[1.6rem]'>
+        <span className='text-[1.8rem] text-black/50 3xl:text-[1.8rem]'>
           {t('text7')}
         </span>
         <QrCode />
@@ -131,7 +131,7 @@ const Step2 = () => {
   ]
   return (
     <div className='flex flex-col gap-[20px] rounded-lg border-2 border-base-gray p-6 md:border-none md:p-0'>
-      <h3 className='text-[1.6rem] font-semibold text-[#405AB7]'>{t('text10')}</h3>
+      <h3 className='text-[1.8rem] font-semibold text-[#405AB7]'>{t('text10')}</h3>
       <div className='hidden w-full gap-[20px] lg:flex'>
         <Tabs
           aria-label='Dynamic tabs'
@@ -142,7 +142,7 @@ const Step2 = () => {
             cursor: 'w-full bg-[#405AB7]',
             tab: 'xl:min-w-[300px] min-w-[100px] p-[24px] flex items-center justify-start border-[1px] border-[#E1E1E1]',
             tabContent:
-              'text-black group-data-[selected=true]:text-[#fff] text-[1.6rem] font-semibold',
+              'text-black group-data-[selected=true]:text-[#fff] text-[1.8rem] font-semibold',
           }}
         >
           {(item) => (
@@ -168,8 +168,8 @@ const Step3 = () => {
       url: 'findWorker1.png',
       content: (
         <>
-          <p className='text-[1.6rem] font-semibold'>{t('text11')}</p>
-          <p className='text-[1.6rem]'>{t('text30')}</p>
+          <p className='text-[1.8rem] font-semibold'>{t('text11')}</p>
+          <p className='text-[1.8rem]'>{t('text30')}</p>
         </>
       ),
     },
@@ -177,9 +177,9 @@ const Step3 = () => {
       url: 'findWorker2.png',
       content: (
         <>
-          <p className='text-[1.6rem] font-semibold'>{t('text14')}</p>
-          <p className='text-[1.6rem]'>{t('text31')}</p>
-          <ul className='list-inside list-disc text-[1.6rem]'>
+          <p className='text-[1.8rem] font-semibold'>{t('text14')}</p>
+          <p className='text-[1.8rem]'>{t('text31')}</p>
+          <ul className='list-inside list-disc text-[1.8rem]'>
             <li>{t('text32')}</li>
             <li>{t('text33')}</li>
             <li>{t('text34')}</li>
@@ -192,9 +192,9 @@ const Step3 = () => {
       url: 'findWorker3.png',
       content: (
         <>
-          <p className='text-[1.6rem] font-semibold'>{t('text17')}</p>
-          <p className='text-[1.6rem]'>{t('text36')}</p>
-          <p className='text-[1.6rem]'>{t('text37')}</p>
+          <p className='text-[1.8rem] font-semibold'>{t('text17')}</p>
+          <p className='text-[1.8rem]'>{t('text36')}</p>
+          <p className='text-[1.8rem]'>{t('text37')}</p>
         </>
       ),
     },
@@ -202,9 +202,9 @@ const Step3 = () => {
       url: 'findWorker4.png',
       content: (
         <>
-          <p className='text-[1.6rem] font-semibold'>{t('text20')}</p>
-          <p className='text-[1.6rem]'>{t('text38')}</p>
-          <p className='text-[1.6rem]'>{t('text39')}</p>
+          <p className='text-[1.8rem] font-semibold'>{t('text20')}</p>
+          <p className='text-[1.8rem]'>{t('text38')}</p>
+          <p className='text-[1.8rem]'>{t('text39')}</p>
         </>
       ),
     },
@@ -213,9 +213,9 @@ const Step3 = () => {
       url2: 'findWorker5-2.png',
       content: (
         <>
-          <p className='text-[1.6rem] font-semibold'>{t('text28')}</p>
-          <p className='text-[1.6rem]'>{t('text40')}</p>
-          <p className='text-[1.6rem]'>{t('text41')}</p>
+          <p className='text-[1.8rem] font-semibold'>{t('text28')}</p>
+          <p className='text-[1.8rem]'>{t('text40')}</p>
+          <p className='text-[1.8rem]'>{t('text41')}</p>
         </>
       ),
     },
@@ -224,9 +224,9 @@ const Step3 = () => {
       url2: 'findWorker6-2.png',
       content: (
         <>
-          <p className='text-[1.6rem] font-semibold'>{t('text29')}</p>
-          <p className='text-[1.6rem]'>{t('text42')}</p>
-          <p className='text-[1.6rem]'>{t('text43')}</p>
+          <p className='text-[1.8rem] font-semibold'>{t('text29')}</p>
+          <p className='text-[1.8rem]'>{t('text42')}</p>
+          <p className='text-[1.8rem]'>{t('text43')}</p>
         </>
       ),
     },
@@ -234,8 +234,8 @@ const Step3 = () => {
 
   return (
     <div className='rounded-lg border-2 border-base-gray p-6 md:border-none md:p-0'>
-      <h3 className='text-[1.6rem] font-semibold text-[#405AB7]'>{t('text44')}</h3>
-      <p className='my-[20px] text-[1.6rem]'>{t('text45')}</p>
+      <h3 className='text-[1.8rem] font-semibold text-[#405AB7]'>{t('text44')}</h3>
+      <p className='my-[20px] text-[1.8rem]'>{t('text45')}</p>
       <div className='grid gap-10 md:grid-cols-2 2xl:gap-y-20'>
         {listRegisterItem.map((i, index) => (
           <RegisterItem url={i.url} key={i.url} url2={i.url2} index={index}>
@@ -255,9 +255,9 @@ const Register: any = () => {
       url: 'screen1.png',
       content: (
         <>
-          <p className='text-[1.6rem] font-semibold'>{t('text11')}</p>
-          <p className='text-[1.6rem]'>{t('text12')}</p>
-          <p className='text-[1.6rem]'>{t('text13')}</p>
+          <p className='text-[1.8rem] font-semibold'>{t('text11')}</p>
+          <p className='text-[1.8rem]'>{t('text12')}</p>
+          <p className='text-[1.8rem]'>{t('text13')}</p>
         </>
       ),
     },
@@ -265,9 +265,9 @@ const Register: any = () => {
       url: 'screen2.png',
       content: (
         <>
-          <p className='text-[1.6rem] font-semibold'>{t('text14')}</p>
-          <p className='text-[1.6rem]'>{t('text15')}</p>
-          <p className='text-[1.6rem]'>{t('text16')}</p>
+          <p className='text-[1.8rem] font-semibold'>{t('text14')}</p>
+          <p className='text-[1.8rem]'>{t('text15')}</p>
+          <p className='text-[1.8rem]'>{t('text16')}</p>
         </>
       ),
     },
@@ -275,8 +275,8 @@ const Register: any = () => {
       url: 'screen3.png',
       content: (
         <>
-          <p className='text-[1.6rem] font-semibold'>{t('text17')}</p>
-          <p className='text-[1.6rem]'>
+          <p className='text-[1.8rem] font-semibold'>{t('text17')}</p>
+          <p className='text-[1.8rem]'>
             {t('text18')}
             <span className='text-[#FF4343]'>{t('text19')}</span>
           </p>
@@ -287,8 +287,8 @@ const Register: any = () => {
       url: 'screen4.png',
       content: (
         <>
-          <p className='text-[1.6rem] font-semibold'>{t('text20')}</p>
-          <p className='text-[1.6rem]'>{t('text21')}</p>
+          <p className='text-[1.8rem] font-semibold'>{t('text20')}</p>
+          <p className='text-[1.8rem]'>{t('text21')}</p>
         </>
       ),
     },
@@ -318,12 +318,12 @@ const Login = () => {
       <h5 className='mb-10 w-full rounded-lg bg-primary-blue py-6 pl-6 text-[2.5rem] text-white lg:hidden'>
         {t('text9')}
       </h5>
-      <p className='text-[1.6rem]'>{t('text22')}</p>
+      <p className='text-[1.8rem]'>{t('text22')}</p>
       <p className='my-4'>
-        <strong className='text-[1.6rem]'> {t('text23')}</strong>
+        <strong className='text-[1.8rem]'> {t('text23')}</strong>
       </p>
-      <p className='text-[1.6rem]'> {t('text24')}</p>
-      <ul className='list-inside list-disc pl-3 text-[1.6rem]'>
+      <p className='text-[1.8rem]'> {t('text24')}</p>
+      <ul className='list-inside list-disc pl-3 text-[1.8rem]'>
         <li> {t('text25')}</li>
         <li> {t('text26')}</li>
         <li> {t('text27')}</li>

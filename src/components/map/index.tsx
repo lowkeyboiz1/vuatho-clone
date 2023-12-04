@@ -42,57 +42,57 @@ function Map() {
       <div className='absolute right-[-50%] top-[22%] flex flex-col rounded-[8px] bg-white p-[8px] md:right-[-40%] md:top-[20%] md:rounded-[12px] md:p-[12px] lg:right-[-40%]'>
         <div className='flex items-center gap-[10px]'>
           <div className='h-[10px] w-[10px] rounded-full bg-[#FCB713]' />
-          <p className=' text-[1rem] font-semibold text-primary-blue md:text-[1.6rem]'>
+          <p className=' text-[1rem] font-semibold text-primary-blue md:text-[1.8rem]'>
             Hà Nội
           </p>
         </div>
-        <p className=' text-[1rem] text-base-black-1 md:text-[1.6rem]'>
+        <p className=' text-[1rem] text-base-black-1 md:text-[1.8rem]'>
           12.000 {t('user')}
         </p>
       </div>
       <div className='absolute left-[-44%] top-[34%] flex flex-col rounded-[8px] bg-white p-[8px] md:left-[-33%] md:top-[32%] md:rounded-[12px] md:p-[12px] lg:left-[-40%]'>
         <div className='flex items-center gap-[10px]'>
           <div className='h-[10px] w-[10px] rounded-full bg-[#FCB713]' />
-          <p className=' text-[1rem] font-semibold text-primary-blue md:text-[1.6rem]'>
+          <p className=' text-[1rem] font-semibold text-primary-blue md:text-[1.8rem]'>
             Nghệ An
           </p>
         </div>
-        <p className=' text-[1rem] text-base-black-1 md:text-[1.6rem]'>
+        <p className=' text-[1rem] text-base-black-1 md:text-[1.8rem]'>
           2.000 {t('user')}
         </p>
       </div>
       <div className='absolute bottom-[26%] right-[-64%] flex flex-col rounded-[8px] bg-white p-[8px] md:-right-[58%] md:bottom-[30%] md:rounded-[12px] md:p-[12px] lg:-right-[55%]'>
         <div className='flex items-center gap-[10px]'>
           <div className='h-[10px] w-[10px] rounded-full bg-[#FCB713]' />
-          <p className='text-[1rem] font-semibold  text-primary-blue md:text-[1.6rem] '>
+          <p className='text-[1rem] font-semibold  text-primary-blue md:text-[1.8rem] '>
             Gia Lai
           </p>
         </div>
-        <p className='text-[1rem]  text-base-black-1 md:text-[1.6rem] '>
+        <p className='text-[1rem]  text-base-black-1 md:text-[1.8rem] '>
           4.000 {t('user')}
         </p>
       </div>
       <div className='absolute bottom-[14%] left-[-22%] flex flex-col rounded-[8px] bg-white p-[8px] md:bottom-[16%] md:left-[-10%] md:rounded-[12px] md:p-[12px] lg:-left-[20%]'>
         <div className='flex items-center gap-[10px]'>
           <div className='h-[10px] w-[10px] rounded-full bg-[#FCB713]' />
-          <p className=' text-[1rem] font-semibold text-primary-blue md:text-[1.6rem]'>
+          <p className=' text-[1rem] font-semibold text-primary-blue md:text-[1.8rem]'>
             TPHCM
           </p>
         </div>
-        <p className=' text-[1rem] text-base-black-1 md:text-[1.6rem]'>
+        <p className=' text-[1rem] text-base-black-1 md:text-[1.8rem]'>
           22.000 {t('user')}
         </p>
       </div>
       <div className='mb-[10px] max-w-max rounded-[8px] bg-[#FCB713] p-[8px] text-base-black-1 md:ml-[10%] md:p-[12px]'>
-        <p className=' text-[1rem] font-light md:text-[1.6rem]'>{t('text1')}</p>
+        <p className=' text-[1rem] font-light md:text-[1.8rem]'>{t('text1')}</p>
         <p className='text-center text-[1.4rem] font-bold md:text-[2rem]'>40.000</p>
       </div>
       <svg
         fill='#7c7c7c'
         stroke='#ffffff'
-        stroke-linecap='round'
-        stroke-linejoin='round'
-        stroke-width='2'
+        strokeLinecap='round'
+        strokeLinejoin='round'
+        strokeWidth='2'
         version='1.2'
         viewBox='0 0 1000 2113'
         xmlns='http://www.w3.org/2000/svg'
@@ -110,11 +110,11 @@ function Map() {
               <div className='flex flex-col gap-[12px]'>
                 <div className='flex items-center gap-[10px]'>
                   <div className='h-[10px] w-[10px] rounded-full bg-[#FCB713]' />
-                  <p className=' text-[1rem] font-semibold text-primary-blue md:text-[1.6rem]'>
+                  <p className=' text-[1rem] font-semibold text-primary-blue md:text-[1.8rem]'>
                     Quảng Ninh
                   </p>
                 </div>
-                <p className=' text-[1rem] text-base-black-1 md:text-[1.6rem]'>
+                <p className=' text-[1rem] text-base-black-1 md:text-[1.8rem]'>
                   {getRandomNumber() + ' người dùng'}
                 </p>
               </div>
@@ -135,11 +135,11 @@ function Map() {
               <div className='flex flex-col gap-[12px]'>
                 <div className='flex items-center gap-[10px]'>
                   <div className='h-[10px] w-[10px] rounded-full bg-[#FCB713]' />
-                  <p className=' text-[1rem] font-semibold text-primary-blue md:text-[1.6rem]'>
+                  <p className=' text-[1rem] font-semibold text-primary-blue md:text-[1.8rem]'>
                     Tây Ninh
                   </p>
                 </div>
-                <p className=' text-[1rem] text-base-black-1 md:text-[1.6rem]'>
+                <p className=' text-[1rem] text-base-black-1 md:text-[1.8rem]'>
                   {getRandomNumber() + ' người dùng'}
                 </p>
               </div>
@@ -160,11 +160,11 @@ function Map() {
               <div className='flex flex-col gap-[12px]'>
                 <div className='flex items-center gap-[10px]'>
                   <div className='h-[10px] w-[10px] rounded-full bg-[#FCB713]' />
-                  <p className=' text-[1rem] font-semibold text-primary-blue md:text-[1.6rem]'>
+                  <p className=' text-[1rem] font-semibold text-primary-blue md:text-[1.8rem]'>
                     Điện Biên
                   </p>
                 </div>
-                <p className=' text-[1rem] text-base-black-1 md:text-[1.6rem]'>
+                <p className=' text-[1rem] text-base-black-1 md:text-[1.8rem]'>
                   {getRandomNumber() + ' người dùng'}
                 </p>
               </div>
@@ -185,11 +185,11 @@ function Map() {
               <div className='flex flex-col gap-[12px]'>
                 <div className='flex items-center gap-[10px]'>
                   <div className='h-[10px] w-[10px] rounded-full bg-[#FCB713]' />
-                  <p className=' text-[1rem] font-semibold text-primary-blue md:text-[1.6rem]'>
+                  <p className=' text-[1rem] font-semibold text-primary-blue md:text-[1.8rem]'>
                     Đông Bắc
                   </p>
                 </div>
-                <p className=' text-[1rem] text-base-black-1 md:text-[1.6rem]'>
+                <p className=' text-[1rem] text-base-black-1 md:text-[1.8rem]'>
                   {getRandomNumber() + ' người dùng'}
                 </p>
               </div>
@@ -210,11 +210,11 @@ function Map() {
               <div className='flex flex-col gap-[12px]'>
                 <div className='flex items-center gap-[10px]'>
                   <div className='h-[10px] w-[10px] rounded-full bg-[#FCB713]' />
-                  <p className=' text-[1rem] font-semibold text-primary-blue md:text-[1.6rem]'>
+                  <p className=' text-[1rem] font-semibold text-primary-blue md:text-[1.8rem]'>
                     Thái Nguyên
                   </p>
                 </div>
-                <p className=' text-[1rem] text-base-black-1 md:text-[1.6rem]'>
+                <p className=' text-[1rem] text-base-black-1 md:text-[1.8rem]'>
                   {getRandomNumber() + ' người dùng'}
                 </p>
               </div>
@@ -235,11 +235,11 @@ function Map() {
               <div className='flex flex-col gap-[12px]'>
                 <div className='flex items-center gap-[10px]'>
                   <div className='h-[10px] w-[10px] rounded-full bg-[#FCB713]' />
-                  <p className=' text-[1rem] font-semibold text-primary-blue md:text-[1.6rem]'>
+                  <p className=' text-[1rem] font-semibold text-primary-blue md:text-[1.8rem]'>
                     Lai Chau
                   </p>
                 </div>
-                <p className=' text-[1rem] text-base-black-1 md:text-[1.6rem]'>
+                <p className=' text-[1rem] text-base-black-1 md:text-[1.8rem]'>
                   {getRandomNumber() + ' người dùng'}
                 </p>
               </div>
@@ -260,11 +260,11 @@ function Map() {
               <div className='flex flex-col gap-[12px]'>
                 <div className='flex items-center gap-[10px]'>
                   <div className='h-[10px] w-[10px] rounded-full bg-[#FCB713]' />
-                  <p className=' text-[1rem] font-semibold text-primary-blue md:text-[1.6rem]'>
+                  <p className=' text-[1rem] font-semibold text-primary-blue md:text-[1.8rem]'>
                     Lạng Sơn
                   </p>
                 </div>
-                <p className=' text-[1rem] text-base-black-1 md:text-[1.6rem]'>
+                <p className=' text-[1rem] text-base-black-1 md:text-[1.8rem]'>
                   {getRandomNumber() + ' người dùng'}
                 </p>
               </div>
@@ -285,11 +285,11 @@ function Map() {
               <div className='flex flex-col gap-[12px]'>
                 <div className='flex items-center gap-[10px]'>
                   <div className='h-[10px] w-[10px] rounded-full bg-[#FCB713]' />
-                  <p className=' text-[1rem] font-semibold text-primary-blue md:text-[1.6rem]'>
+                  <p className=' text-[1rem] font-semibold text-primary-blue md:text-[1.8rem]'>
                     Son La
                   </p>
                 </div>
-                <p className=' text-[1rem] text-base-black-1 md:text-[1.6rem]'>
+                <p className=' text-[1rem] text-base-black-1 md:text-[1.8rem]'>
                   {getRandomNumber() + ' người dùng'}
                 </p>
               </div>
@@ -310,11 +310,11 @@ function Map() {
               <div className='flex flex-col gap-[12px]'>
                 <div className='flex items-center gap-[10px]'>
                   <div className='h-[10px] w-[10px] rounded-full bg-[#FCB713]' />
-                  <p className=' text-[1rem] font-semibold text-primary-blue md:text-[1.6rem]'>
+                  <p className=' text-[1rem] font-semibold text-primary-blue md:text-[1.8rem]'>
                     Thanh Hóa
                   </p>
                 </div>
-                <p className=' text-[1rem] text-base-black-1 md:text-[1.6rem]'>
+                <p className=' text-[1rem] text-base-black-1 md:text-[1.8rem]'>
                   {getRandomNumber() + ' người dùng'}
                 </p>
               </div>
@@ -335,11 +335,11 @@ function Map() {
               <div className='flex flex-col gap-[12px]'>
                 <div className='flex items-center gap-[10px]'>
                   <div className='h-[10px] w-[10px] rounded-full bg-[#FCB713]' />
-                  <p className=' text-[1rem] font-semibold text-primary-blue md:text-[1.6rem]'>
+                  <p className=' text-[1rem] font-semibold text-primary-blue md:text-[1.8rem]'>
                     Tuyên Quang
                   </p>
                 </div>
-                <p className=' text-[1rem] text-base-black-1 md:text-[1.6rem]'>
+                <p className=' text-[1rem] text-base-black-1 md:text-[1.8rem]'>
                   {getRandomNumber() + ' người dùng'}
                 </p>
               </div>
@@ -360,11 +360,11 @@ function Map() {
               <div className='flex flex-col gap-[12px]'>
                 <div className='flex items-center gap-[10px]'>
                   <div className='h-[10px] w-[10px] rounded-full bg-[#FCB713]' />
-                  <p className=' text-[1rem] font-semibold text-primary-blue md:text-[1.6rem]'>
+                  <p className=' text-[1rem] font-semibold text-primary-blue md:text-[1.8rem]'>
                     Yên Bái
                   </p>
                 </div>
-                <p className=' text-[1rem] text-base-black-1 md:text-[1.6rem]'>
+                <p className=' text-[1rem] text-base-black-1 md:text-[1.8rem]'>
                   {getRandomNumber() + ' người dùng'}
                 </p>
               </div>
@@ -385,11 +385,11 @@ function Map() {
               <div className='flex flex-col gap-[12px]'>
                 <div className='flex items-center gap-[10px]'>
                   <div className='h-[10px] w-[10px] rounded-full bg-[#FCB713]' />
-                  <p className=' text-[1rem] font-semibold text-primary-blue md:text-[1.6rem]'>
+                  <p className=' text-[1rem] font-semibold text-primary-blue md:text-[1.8rem]'>
                     Hòa Bình
                   </p>
                 </div>
-                <p className=' text-[1rem] text-base-black-1 md:text-[1.6rem]'>
+                <p className=' text-[1rem] text-base-black-1 md:text-[1.8rem]'>
                   {getRandomNumber() + ' người dùng'}
                 </p>
               </div>
@@ -410,11 +410,11 @@ function Map() {
               <div className='flex flex-col gap-[12px]'>
                 <div className='flex items-center gap-[10px]'>
                   <div className='h-[10px] w-[10px] rounded-full bg-[#FCB713]' />
-                  <p className=' text-[1rem] font-semibold text-primary-blue md:text-[1.6rem]'>
+                  <p className=' text-[1rem] font-semibold text-primary-blue md:text-[1.8rem]'>
                     Hải Dương
                   </p>
                 </div>
-                <p className=' text-[1rem] text-base-black-1 md:text-[1.6rem]'>
+                <p className=' text-[1rem] text-base-black-1 md:text-[1.8rem]'>
                   {getRandomNumber() + ' người dùng'}
                 </p>
               </div>
@@ -435,11 +435,11 @@ function Map() {
               <div className='flex flex-col gap-[12px]'>
                 <div className='flex items-center gap-[10px]'>
                   <div className='h-[10px] w-[10px] rounded-full bg-[#FCB713]' />
-                  <p className=' text-[1rem] font-semibold text-primary-blue md:text-[1.6rem]'>
+                  <p className=' text-[1rem] font-semibold text-primary-blue md:text-[1.8rem]'>
                     Hải Phòng
                   </p>
                 </div>
-                <p className=' text-[1rem] text-base-black-1 md:text-[1.6rem]'>
+                <p className=' text-[1rem] text-base-black-1 md:text-[1.8rem]'>
                   {getRandomNumber() + ' người dùng'}
                 </p>
               </div>
@@ -460,11 +460,11 @@ function Map() {
               <div className='flex flex-col gap-[12px]'>
                 <div className='flex items-center gap-[10px]'>
                   <div className='h-[10px] w-[10px] rounded-full bg-[#FCB713]' />
-                  <p className=' text-[1rem] font-semibold text-primary-blue md:text-[1.6rem]'>
+                  <p className=' text-[1rem] font-semibold text-primary-blue md:text-[1.8rem]'>
                     Đồng Bằng Sông Hồng
                   </p>
                 </div>
-                <p className=' text-[1rem] text-base-black-1 md:text-[1.6rem]'>
+                <p className=' text-[1rem] text-base-black-1 md:text-[1.8rem]'>
                   {getRandomNumber() + ' người dùng'}
                 </p>
               </div>
@@ -491,11 +491,11 @@ function Map() {
               <div className='flex flex-col gap-[12px]'>
                 <div className='flex items-center gap-[10px]'>
                   <div className='h-[10px] w-[10px] rounded-full bg-[#FCB713]' />
-                  <p className=' text-[1rem] font-semibold text-primary-blue md:text-[1.6rem]'>
+                  <p className=' text-[1rem] font-semibold text-primary-blue md:text-[1.8rem]'>
                     Bắc Ninh
                   </p>
                 </div>
-                <p className=' text-[1rem] text-base-black-1 md:text-[1.6rem]'>
+                <p className=' text-[1rem] text-base-black-1 md:text-[1.8rem]'>
                   {getRandomNumber() + ' người dùng'}
                 </p>
               </div>
@@ -516,11 +516,11 @@ function Map() {
               <div className='flex flex-col gap-[12px]'>
                 <div className='flex items-center gap-[10px]'>
                   <div className='h-[10px] w-[10px] rounded-full bg-[#FCB713]' />
-                  <p className=' text-[1rem] font-semibold text-primary-blue md:text-[1.6rem]'>
+                  <p className=' text-[1rem] font-semibold text-primary-blue md:text-[1.8rem]'>
                     Vĩnh Phúc
                   </p>
                 </div>
-                <p className=' text-[1rem] text-base-black-1 md:text-[1.6rem]'>
+                <p className=' text-[1rem] text-base-black-1 md:text-[1.8rem]'>
                   {getRandomNumber() + ' người dùng'}
                 </p>
               </div>
@@ -541,11 +541,11 @@ function Map() {
               <div className='flex flex-col gap-[12px]'>
                 <div className='flex items-center gap-[10px]'>
                   <div className='h-[10px] w-[10px] rounded-full bg-[#FCB713]' />
-                  <p className=' text-[1rem] font-semibold text-primary-blue md:text-[1.6rem]'>
+                  <p className=' text-[1rem] font-semibold text-primary-blue md:text-[1.8rem]'>
                     Ninh Bình
                   </p>
                 </div>
-                <p className=' text-[1rem] text-base-black-1 md:text-[1.6rem]'>
+                <p className=' text-[1rem] text-base-black-1 md:text-[1.8rem]'>
                   {getRandomNumber() + ' người dùng'}
                 </p>
               </div>
@@ -566,11 +566,11 @@ function Map() {
               <div className='flex flex-col gap-[12px]'>
                 <div className='flex items-center gap-[10px]'>
                   <div className='h-[10px] w-[10px] rounded-full bg-[#FCB713]' />
-                  <p className=' text-[1rem] font-semibold text-primary-blue md:text-[1.6rem]'>
+                  <p className=' text-[1rem] font-semibold text-primary-blue md:text-[1.8rem]'>
                     Hà Nam
                   </p>
                 </div>
-                <p className=' text-[1rem] text-base-black-1 md:text-[1.6rem]'>
+                <p className=' text-[1rem] text-base-black-1 md:text-[1.8rem]'>
                   {getRandomNumber() + ' người dùng'}
                 </p>
               </div>
@@ -591,11 +591,11 @@ function Map() {
               <div className='flex flex-col gap-[12px]'>
                 <div className='flex items-center gap-[10px]'>
                   <div className='h-[10px] w-[10px] rounded-full bg-[#FCB713]' />
-                  <p className=' text-[1rem] font-semibold text-primary-blue md:text-[1.6rem]'>
+                  <p className=' text-[1rem] font-semibold text-primary-blue md:text-[1.8rem]'>
                     Nam Định
                   </p>
                 </div>
-                <p className=' text-[1rem] text-base-black-1 md:text-[1.6rem]'>
+                <p className=' text-[1rem] text-base-black-1 md:text-[1.8rem]'>
                   {getRandomNumber() + ' người dùng'}
                 </p>
               </div>
@@ -616,11 +616,11 @@ function Map() {
               <div className='flex flex-col gap-[12px]'>
                 <div className='flex items-center gap-[10px]'>
                   <div className='h-[10px] w-[10px] rounded-full bg-[#FCB713]' />
-                  <p className=' text-[1rem] font-semibold text-primary-blue md:text-[1.6rem]'>
+                  <p className=' text-[1rem] font-semibold text-primary-blue md:text-[1.8rem]'>
                     Phú Thọ
                   </p>
                 </div>
-                <p className=' text-[1rem] text-base-black-1 md:text-[1.6rem]'>
+                <p className=' text-[1rem] text-base-black-1 md:text-[1.8rem]'>
                   {getRandomNumber() + ' người dùng'}
                 </p>
               </div>
@@ -641,11 +641,11 @@ function Map() {
               <div className='flex flex-col gap-[12px]'>
                 <div className='flex items-center gap-[10px]'>
                   <div className='h-[10px] w-[10px] rounded-full bg-[#FCB713]' />
-                  <p className=' text-[1rem] font-semibold text-primary-blue md:text-[1.6rem]'>
+                  <p className=' text-[1rem] font-semibold text-primary-blue md:text-[1.8rem]'>
                     Bắc Giang
                   </p>
                 </div>
-                <p className=' text-[1rem] text-base-black-1 md:text-[1.6rem]'>
+                <p className=' text-[1rem] text-base-black-1 md:text-[1.8rem]'>
                   {getRandomNumber() + ' người dùng'}
                 </p>
               </div>
@@ -666,11 +666,11 @@ function Map() {
               <div className='flex flex-col gap-[12px]'>
                 <div className='flex items-center gap-[10px]'>
                   <div className='h-[10px] w-[10px] rounded-full bg-[#FCB713]' />
-                  <p className=' text-[1rem] font-semibold text-primary-blue md:text-[1.6rem]'>
+                  <p className=' text-[1rem] font-semibold text-primary-blue md:text-[1.8rem]'>
                     Thái Bình
                   </p>
                 </div>
-                <p className=' text-[1rem] text-base-black-1 md:text-[1.6rem]'>
+                <p className=' text-[1rem] text-base-black-1 md:text-[1.8rem]'>
                   {getRandomNumber() + ' người dùng'}
                 </p>
               </div>
@@ -691,11 +691,11 @@ function Map() {
               <div className='flex flex-col gap-[12px]'>
                 <div className='flex items-center gap-[10px]'>
                   <div className='h-[10px] w-[10px] rounded-full bg-[#FCB713]' />
-                  <p className=' text-[1rem] font-semibold text-primary-blue md:text-[1.6rem]'>
+                  <p className=' text-[1rem] font-semibold text-primary-blue md:text-[1.8rem]'>
                     Ha Tinh
                   </p>
                 </div>
-                <p className=' text-[1rem] text-base-black-1 md:text-[1.6rem]'>
+                <p className=' text-[1rem] text-base-black-1 md:text-[1.8rem]'>
                   {getRandomNumber() + ' người dùng'}
                 </p>
               </div>
@@ -723,11 +723,11 @@ function Map() {
               <div className='flex flex-col gap-[12px]'>
                 <div className='flex items-center gap-[10px]'>
                   <div className='h-[10px] w-[10px] rounded-full bg-[#FCB713]' />
-                  <p className=' text-[1rem] font-semibold text-primary-blue md:text-[1.6rem]'>
+                  <p className=' text-[1rem] font-semibold text-primary-blue md:text-[1.8rem]'>
                     Quảng Bình
                   </p>
                 </div>
-                <p className=' text-[1rem] text-base-black-1 md:text-[1.6rem]'>
+                <p className=' text-[1rem] text-base-black-1 md:text-[1.8rem]'>
                   {getRandomNumber() + ' người dùng'}
                 </p>
               </div>
@@ -748,11 +748,11 @@ function Map() {
               <div className='flex flex-col gap-[12px]'>
                 <div className='flex items-center gap-[10px]'>
                   <div className='h-[10px] w-[10px] rounded-full bg-[#FCB713]' />
-                  <p className=' text-[1rem] font-semibold text-primary-blue md:text-[1.6rem]'>
+                  <p className=' text-[1rem] font-semibold text-primary-blue md:text-[1.8rem]'>
                     Dak Lak
                   </p>
                 </div>
-                <p className=' text-[1rem] text-base-black-1 md:text-[1.6rem]'>
+                <p className=' text-[1rem] text-base-black-1 md:text-[1.8rem]'>
                   {getRandomNumber() + ' người dùng'}
                 </p>
               </div>
@@ -779,11 +779,11 @@ function Map() {
               <div className='flex flex-col gap-[12px]'>
                 <div className='flex items-center gap-[10px]'>
                   <div className='h-[10px] w-[10px] rounded-full bg-[#FCB713]' />
-                  <p className=' text-[1rem] font-semibold text-primary-blue md:text-[1.6rem]'>
+                  <p className=' text-[1rem] font-semibold text-primary-blue md:text-[1.8rem]'>
                     Khánh Hòa
                   </p>
                 </div>
-                <p className=' text-[1rem] text-base-black-1 md:text-[1.6rem]'>
+                <p className=' text-[1rem] text-base-black-1 md:text-[1.8rem]'>
                   {getRandomNumber() + ' người dùng'}
                 </p>
               </div>
@@ -804,11 +804,11 @@ function Map() {
               <div className='flex flex-col gap-[12px]'>
                 <div className='flex items-center gap-[10px]'>
                   <div className='h-[10px] w-[10px] rounded-full bg-[#FCB713]' />
-                  <p className=' text-[1rem] font-semibold text-primary-blue md:text-[1.6rem]'>
+                  <p className=' text-[1rem] font-semibold text-primary-blue md:text-[1.8rem]'>
                     Lâm Đồng
                   </p>
                 </div>
-                <p className=' text-[1rem] text-base-black-1 md:text-[1.6rem]'>
+                <p className=' text-[1rem] text-base-black-1 md:text-[1.8rem]'>
                   {getRandomNumber() + ' người dùng'}
                 </p>
               </div>
@@ -829,11 +829,11 @@ function Map() {
               <div className='flex flex-col gap-[12px]'>
                 <div className='flex items-center gap-[10px]'>
                   <div className='h-[10px] w-[10px] rounded-full bg-[#FCB713]' />
-                  <p className=' text-[1rem] font-semibold text-primary-blue md:text-[1.6rem]'>
+                  <p className=' text-[1rem] font-semibold text-primary-blue md:text-[1.8rem]'>
                     Ninh Thuận
                   </p>
                 </div>
-                <p className=' text-[1rem] text-base-black-1 md:text-[1.6rem]'>
+                <p className=' text-[1rem] text-base-black-1 md:text-[1.8rem]'>
                   {getRandomNumber() + ' người dùng'}
                 </p>
               </div>
@@ -854,11 +854,11 @@ function Map() {
               <div className='flex flex-col gap-[12px]'>
                 <div className='flex items-center gap-[10px]'>
                   <div className='h-[10px] w-[10px] rounded-full bg-[#FCB713]' />
-                  <p className=' text-[1rem] font-semibold text-primary-blue md:text-[1.6rem]'>
+                  <p className=' text-[1rem] font-semibold text-primary-blue md:text-[1.8rem]'>
                     Phú Yên
                   </p>
                 </div>
-                <p className=' text-[1rem] text-base-black-1 md:text-[1.6rem]'>
+                <p className=' text-[1rem] text-base-black-1 md:text-[1.8rem]'>
                   {getRandomNumber() + ' người dùng'}
                 </p>
               </div>
@@ -879,11 +879,11 @@ function Map() {
               <div className='flex flex-col gap-[12px]'>
                 <div className='flex items-center gap-[10px]'>
                   <div className='h-[10px] w-[10px] rounded-full bg-[#FCB713]' />
-                  <p className=' text-[1rem] font-semibold text-primary-blue md:text-[1.6rem]'>
+                  <p className=' text-[1rem] font-semibold text-primary-blue md:text-[1.8rem]'>
                     Bình Dương
                   </p>
                 </div>
-                <p className=' text-[1rem] text-base-black-1 md:text-[1.6rem]'>
+                <p className=' text-[1rem] text-base-black-1 md:text-[1.8rem]'>
                   {getRandomNumber() + ' người dùng'}
                 </p>
               </div>
@@ -904,11 +904,11 @@ function Map() {
               <div className='flex flex-col gap-[12px]'>
                 <div className='flex items-center gap-[10px]'>
                   <div className='h-[10px] w-[10px] rounded-full bg-[#FCB713]' />
-                  <p className=' text-[1rem] font-semibold text-primary-blue md:text-[1.6rem]'>
+                  <p className=' text-[1rem] font-semibold text-primary-blue md:text-[1.8rem]'>
                     Tiền Giang
                   </p>
                 </div>
-                <p className=' text-[1rem] text-base-black-1 md:text-[1.6rem]'>
+                <p className=' text-[1rem] text-base-black-1 md:text-[1.8rem]'>
                   {getRandomNumber() + ' người dùng'}
                 </p>
               </div>
@@ -929,11 +929,11 @@ function Map() {
               <div className='flex flex-col gap-[12px]'>
                 <div className='flex items-center gap-[10px]'>
                   <div className='h-[10px] w-[10px] rounded-full bg-[#FCB713]' />
-                  <p className=' text-[1rem] font-semibold text-primary-blue md:text-[1.6rem]'>
+                  <p className=' text-[1rem] font-semibold text-primary-blue md:text-[1.8rem]'>
                     Đắk Nông
                   </p>
                 </div>
-                <p className=' text-[1rem] text-base-black-1 md:text-[1.6rem]'>
+                <p className=' text-[1rem] text-base-black-1 md:text-[1.8rem]'>
                   {getRandomNumber() + ' người dùng'}
                 </p>
               </div>
@@ -954,11 +954,11 @@ function Map() {
               <div className='flex flex-col gap-[12px]'>
                 <div className='flex items-center gap-[10px]'>
                   <div className='h-[10px] w-[10px] rounded-full bg-[#FCB713]' />
-                  <p className=' text-[1rem] font-semibold text-primary-blue md:text-[1.6rem]'>
+                  <p className=' text-[1rem] font-semibold text-primary-blue md:text-[1.8rem]'>
                     Bình Phước
                   </p>
                 </div>
-                <p className=' text-[1rem] text-base-black-1 md:text-[1.6rem]'>
+                <p className=' text-[1rem] text-base-black-1 md:text-[1.8rem]'>
                   {getRandomNumber() + ' người dùng'}
                 </p>
               </div>
@@ -979,11 +979,11 @@ function Map() {
               <div className='flex flex-col gap-[12px]'>
                 <div className='flex items-center gap-[10px]'>
                   <div className='h-[10px] w-[10px] rounded-full bg-[#FCB713]' />
-                  <p className=' text-[1rem] font-semibold text-primary-blue md:text-[1.6rem]'>
+                  <p className=' text-[1rem] font-semibold text-primary-blue md:text-[1.8rem]'>
                     Bình Định
                   </p>
                 </div>
-                <p className=' text-[1rem] text-base-black-1 md:text-[1.6rem]'>
+                <p className=' text-[1rem] text-base-black-1 md:text-[1.8rem]'>
                   {getRandomNumber() + ' người dùng'}
                 </p>
               </div>
@@ -1004,11 +1004,11 @@ function Map() {
               <div className='flex flex-col gap-[12px]'>
                 <div className='flex items-center gap-[10px]'>
                   <div className='h-[10px] w-[10px] rounded-full bg-[#FCB713]' />
-                  <p className=' text-[1rem] font-semibold text-primary-blue md:text-[1.6rem]'>
+                  <p className=' text-[1rem] font-semibold text-primary-blue md:text-[1.8rem]'>
                     Kon Tum
                   </p>
                 </div>
-                <p className=' text-[1rem] text-base-black-1 md:text-[1.6rem]'>
+                <p className=' text-[1rem] text-base-black-1 md:text-[1.8rem]'>
                   {getRandomNumber() + ' người dùng'}
                 </p>
               </div>
@@ -1029,11 +1029,11 @@ function Map() {
               <div className='flex flex-col gap-[12px]'>
                 <div className='flex items-center gap-[10px]'>
                   <div className='h-[10px] w-[10px] rounded-full bg-[#FCB713]' />
-                  <p className=' text-[1rem] font-semibold text-primary-blue md:text-[1.6rem]'>
+                  <p className=' text-[1rem] font-semibold text-primary-blue md:text-[1.8rem]'>
                     Quảng Nam
                   </p>
                 </div>
-                <p className=' text-[1rem] text-base-black-1 md:text-[1.6rem]'>
+                <p className=' text-[1rem] text-base-black-1 md:text-[1.8rem]'>
                   {getRandomNumber() + ' người dùng'}
                 </p>
               </div>
@@ -1054,11 +1054,11 @@ function Map() {
               <div className='flex flex-col gap-[12px]'>
                 <div className='flex items-center gap-[10px]'>
                   <div className='h-[10px] w-[10px] rounded-full bg-[#FCB713]' />
-                  <p className=' text-[1rem] font-semibold text-primary-blue md:text-[1.6rem]'>
+                  <p className=' text-[1rem] font-semibold text-primary-blue md:text-[1.8rem]'>
                     Quảng Ngãi
                   </p>
                 </div>
-                <p className=' text-[1rem] text-base-black-1 md:text-[1.6rem]'>
+                <p className=' text-[1rem] text-base-black-1 md:text-[1.8rem]'>
                   {getRandomNumber() + ' người dùng'}
                 </p>
               </div>
@@ -1079,11 +1079,11 @@ function Map() {
               <div className='flex flex-col gap-[12px]'>
                 <div className='flex items-center gap-[10px]'>
                   <div className='h-[10px] w-[10px] rounded-full bg-[#FCB713]' />
-                  <p className=' text-[1rem] font-semibold text-primary-blue md:text-[1.6rem]'>
+                  <p className=' text-[1rem] font-semibold text-primary-blue md:text-[1.8rem]'>
                     Quảng Trị
                   </p>
                 </div>
-                <p className=' text-[1rem] text-base-black-1 md:text-[1.6rem]'>
+                <p className=' text-[1rem] text-base-black-1 md:text-[1.8rem]'>
                   {getRandomNumber() + ' người dùng'}
                 </p>
               </div>
@@ -1104,11 +1104,11 @@ function Map() {
               <div className='flex flex-col gap-[12px]'>
                 <div className='flex items-center gap-[10px]'>
                   <div className='h-[10px] w-[10px] rounded-full bg-[#FCB713]' />
-                  <p className=' text-[1rem] font-semibold text-primary-blue md:text-[1.6rem]'>
+                  <p className=' text-[1rem] font-semibold text-primary-blue md:text-[1.8rem]'>
                     Thừa Thiên - Huế
                   </p>
                 </div>
-                <p className=' text-[1rem] text-base-black-1 md:text-[1.6rem]'>
+                <p className=' text-[1rem] text-base-black-1 md:text-[1.8rem]'>
                   {getRandomNumber() + ' người dùng'}
                 </p>
               </div>
@@ -1129,11 +1129,11 @@ function Map() {
               <div className='flex flex-col gap-[12px]'>
                 <div className='flex items-center gap-[10px]'>
                   <div className='h-[10px] w-[10px] rounded-full bg-[#FCB713]' />
-                  <p className=' text-[1rem] font-semibold text-primary-blue md:text-[1.6rem]'>
+                  <p className=' text-[1rem] font-semibold text-primary-blue md:text-[1.8rem]'>
                     Đà Nẵng
                   </p>
                 </div>
-                <p className=' text-[1rem] text-base-black-1 md:text-[1.6rem]'>
+                <p className=' text-[1rem] text-base-black-1 md:text-[1.8rem]'>
                   {getRandomNumber() + ' người dùng'}
                 </p>
               </div>
@@ -1154,11 +1154,11 @@ function Map() {
               <div className='flex flex-col gap-[12px]'>
                 <div className='flex items-center gap-[10px]'>
                   <div className='h-[10px] w-[10px] rounded-full bg-[#FCB713]' />
-                  <p className=' text-[1rem] font-semibold text-primary-blue md:text-[1.6rem]'>
+                  <p className=' text-[1rem] font-semibold text-primary-blue md:text-[1.8rem]'>
                     Bà Rịa - Vũng Tàu
                   </p>
                 </div>
-                <p className=' text-[1rem] text-base-black-1 md:text-[1.6rem]'>
+                <p className=' text-[1rem] text-base-black-1 md:text-[1.8rem]'>
                   {getRandomNumber() + ' người dùng'}
                 </p>
               </div>
@@ -1179,11 +1179,11 @@ function Map() {
               <div className='flex flex-col gap-[12px]'>
                 <div className='flex items-center gap-[10px]'>
                   <div className='h-[10px] w-[10px] rounded-full bg-[#FCB713]' />
-                  <p className=' text-[1rem] font-semibold text-primary-blue md:text-[1.6rem]'>
+                  <p className=' text-[1rem] font-semibold text-primary-blue md:text-[1.8rem]'>
                     Bình Thuận
                   </p>
                 </div>
-                <p className=' text-[1rem] text-base-black-1 md:text-[1.6rem]'>
+                <p className=' text-[1rem] text-base-black-1 md:text-[1.8rem]'>
                   {getRandomNumber() + ' người dùng'}
                 </p>
               </div>
@@ -1204,11 +1204,11 @@ function Map() {
               <div className='flex flex-col gap-[12px]'>
                 <div className='flex items-center gap-[10px]'>
                   <div className='h-[10px] w-[10px] rounded-full bg-[#FCB713]' />
-                  <p className=' text-[1rem] font-semibold text-primary-blue md:text-[1.6rem]'>
+                  <p className=' text-[1rem] font-semibold text-primary-blue md:text-[1.8rem]'>
                     Đông Nam Bộ
                   </p>
                 </div>
-                <p className=' text-[1rem] text-base-black-1 md:text-[1.6rem]'>
+                <p className=' text-[1rem] text-base-black-1 md:text-[1.8rem]'>
                   {getRandomNumber() + ' người dùng'}
                 </p>
               </div>
@@ -1229,11 +1229,11 @@ function Map() {
               <div className='flex flex-col gap-[12px]'>
                 <div className='flex items-center gap-[10px]'>
                   <div className='h-[10px] w-[10px] rounded-full bg-[#FCB713]' />
-                  <p className=' text-[1rem] font-semibold text-primary-blue md:text-[1.6rem]'>
+                  <p className=' text-[1rem] font-semibold text-primary-blue md:text-[1.8rem]'>
                     An Giang
                   </p>
                 </div>
-                <p className=' text-[1rem] text-base-black-1 md:text-[1.6rem]'>
+                <p className=' text-[1rem] text-base-black-1 md:text-[1.8rem]'>
                   {getRandomNumber() + ' người dùng'}
                 </p>
               </div>
@@ -1254,11 +1254,11 @@ function Map() {
               <div className='flex flex-col gap-[12px]'>
                 <div className='flex items-center gap-[10px]'>
                   <div className='h-[10px] w-[10px] rounded-full bg-[#FCB713]' />
-                  <p className=' text-[1rem] font-semibold text-primary-blue md:text-[1.6rem]'>
+                  <p className=' text-[1rem] font-semibold text-primary-blue md:text-[1.8rem]'>
                     Cần Thơ
                   </p>
                 </div>
-                <p className=' text-[1rem] text-base-black-1 md:text-[1.6rem]'>
+                <p className=' text-[1rem] text-base-black-1 md:text-[1.8rem]'>
                   {getRandomNumber() + ' người dùng'}
                 </p>
               </div>
@@ -1279,11 +1279,11 @@ function Map() {
               <div className='flex flex-col gap-[12px]'>
                 <div className='flex items-center gap-[10px]'>
                   <div className='h-[10px] w-[10px] rounded-full bg-[#FCB713]' />
-                  <p className=' text-[1rem] font-semibold text-primary-blue md:text-[1.6rem]'>
+                  <p className=' text-[1rem] font-semibold text-primary-blue md:text-[1.8rem]'>
                     Ðồng Tháp
                   </p>
                 </div>
-                <p className=' text-[1rem] text-base-black-1 md:text-[1.6rem]'>
+                <p className=' text-[1rem] text-base-black-1 md:text-[1.8rem]'>
                   {getRandomNumber() + ' người dùng'}
                 </p>
               </div>
@@ -1310,11 +1310,11 @@ function Map() {
               <div className='flex flex-col gap-[12px]'>
                 <div className='flex items-center gap-[10px]'>
                   <div className='h-[10px] w-[10px] rounded-full bg-[#FCB713]' />
-                  <p className=' text-[1rem] font-semibold text-primary-blue md:text-[1.6rem]'>
+                  <p className=' text-[1rem] font-semibold text-primary-blue md:text-[1.8rem]'>
                     Kiên Giang
                   </p>
                 </div>
-                <p className=' text-[1rem] text-base-black-1 md:text-[1.6rem]'>
+                <p className=' text-[1rem] text-base-black-1 md:text-[1.8rem]'>
                   {getRandomNumber() + ' người dùng'}
                 </p>
               </div>
@@ -1335,11 +1335,11 @@ function Map() {
               <div className='flex flex-col gap-[12px]'>
                 <div className='flex items-center gap-[10px]'>
                   <div className='h-[10px] w-[10px] rounded-full bg-[#FCB713]' />
-                  <p className=' text-[1rem] font-semibold text-primary-blue md:text-[1.6rem]'>
+                  <p className=' text-[1rem] font-semibold text-primary-blue md:text-[1.8rem]'>
                     Long An
                   </p>
                 </div>
-                <p className=' text-[1rem] text-base-black-1 md:text-[1.6rem]'>
+                <p className=' text-[1rem] text-base-black-1 md:text-[1.8rem]'>
                   {getRandomNumber() + ' người dùng'}
                 </p>
               </div>
@@ -1360,11 +1360,11 @@ function Map() {
               <div className='flex flex-col gap-[12px]'>
                 <div className='flex items-center gap-[10px]'>
                   <div className='h-[10px] w-[10px] rounded-full bg-[#FCB713]' />
-                  <p className=' text-[1rem] font-semibold text-primary-blue md:text-[1.6rem]'>
+                  <p className=' text-[1rem] font-semibold text-primary-blue md:text-[1.8rem]'>
                     Bến Tre
                   </p>
                 </div>
-                <p className=' text-[1rem] text-base-black-1 md:text-[1.6rem]'>
+                <p className=' text-[1rem] text-base-black-1 md:text-[1.8rem]'>
                   {getRandomNumber() + ' người dùng'}
                 </p>
               </div>
@@ -1385,11 +1385,11 @@ function Map() {
               <div className='flex flex-col gap-[12px]'>
                 <div className='flex items-center gap-[10px]'>
                   <div className='h-[10px] w-[10px] rounded-full bg-[#FCB713]' />
-                  <p className=' text-[1rem] font-semibold text-primary-blue md:text-[1.6rem]'>
+                  <p className=' text-[1rem] font-semibold text-primary-blue md:text-[1.8rem]'>
                     Hau Giang
                   </p>
                 </div>
-                <p className=' text-[1rem] text-base-black-1 md:text-[1.6rem]'>
+                <p className=' text-[1rem] text-base-black-1 md:text-[1.8rem]'>
                   {getRandomNumber() + ' người dùng'}
                 </p>
               </div>
@@ -1410,11 +1410,11 @@ function Map() {
               <div className='flex flex-col gap-[12px]'>
                 <div className='flex items-center gap-[10px]'>
                   <div className='h-[10px] w-[10px] rounded-full bg-[#FCB713]' />
-                  <p className=' text-[1rem] font-semibold text-primary-blue md:text-[1.6rem]'>
+                  <p className=' text-[1rem] font-semibold text-primary-blue md:text-[1.8rem]'>
                     Bạc Liêu
                   </p>
                 </div>
-                <p className=' text-[1rem] text-base-black-1 md:text-[1.6rem]'>
+                <p className=' text-[1rem] text-base-black-1 md:text-[1.8rem]'>
                   {getRandomNumber() + ' người dùng'}
                 </p>
               </div>
@@ -1435,11 +1435,11 @@ function Map() {
               <div className='flex flex-col gap-[12px]'>
                 <div className='flex items-center gap-[10px]'>
                   <div className='h-[10px] w-[10px] rounded-full bg-[#FCB713]' />
-                  <p className=' text-[1rem] font-semibold text-primary-blue md:text-[1.6rem]'>
+                  <p className=' text-[1rem] font-semibold text-primary-blue md:text-[1.8rem]'>
                     Cà Mau
                   </p>
                 </div>
-                <p className=' text-[1rem] text-base-black-1 md:text-[1.6rem]'>
+                <p className=' text-[1rem] text-base-black-1 md:text-[1.8rem]'>
                   {getRandomNumber() + ' người dùng'}
                 </p>
               </div>
@@ -1460,11 +1460,11 @@ function Map() {
               <div className='flex flex-col gap-[12px]'>
                 <div className='flex items-center gap-[10px]'>
                   <div className='h-[10px] w-[10px] rounded-full bg-[#FCB713]' />
-                  <p className=' text-[1rem] font-semibold text-primary-blue md:text-[1.6rem]'>
+                  <p className=' text-[1rem] font-semibold text-primary-blue md:text-[1.8rem]'>
                     Sóc Trăng
                   </p>
                 </div>
-                <p className=' text-[1rem] text-base-black-1 md:text-[1.6rem]'>
+                <p className=' text-[1rem] text-base-black-1 md:text-[1.8rem]'>
                   {getRandomNumber() + ' người dùng'}
                 </p>
               </div>
@@ -1485,11 +1485,11 @@ function Map() {
               <div className='flex flex-col gap-[12px]'>
                 <div className='flex items-center gap-[10px]'>
                   <div className='h-[10px] w-[10px] rounded-full bg-[#FCB713]' />
-                  <p className=' text-[1rem] font-semibold text-primary-blue md:text-[1.6rem]'>
+                  <p className=' text-[1rem] font-semibold text-primary-blue md:text-[1.8rem]'>
                     Trà Vinh
                   </p>
                 </div>
-                <p className=' text-[1rem] text-base-black-1 md:text-[1.6rem]'>
+                <p className=' text-[1rem] text-base-black-1 md:text-[1.8rem]'>
                   {getRandomNumber() + ' người dùng'}
                 </p>
               </div>
@@ -1510,11 +1510,11 @@ function Map() {
               <div className='flex flex-col gap-[12px]'>
                 <div className='flex items-center gap-[10px]'>
                   <div className='h-[10px] w-[10px] rounded-full bg-[#FCB713]' />
-                  <p className=' text-[1rem] font-semibold text-primary-blue md:text-[1.6rem]'>
+                  <p className=' text-[1rem] font-semibold text-primary-blue md:text-[1.8rem]'>
                     Vĩnh Long
                   </p>
                 </div>
-                <p className=' text-[1rem] text-base-black-1 md:text-[1.6rem]'>
+                <p className=' text-[1rem] text-base-black-1 md:text-[1.8rem]'>
                   {getRandomNumber() + ' người dùng'}
                 </p>
               </div>
@@ -1535,11 +1535,11 @@ function Map() {
               <div className='flex flex-col gap-[12px]'>
                 <div className='flex items-center gap-[10px]'>
                   <div className='h-[10px] w-[10px] rounded-full bg-[#FCB713]' />
-                  <p className=' text-[1rem] font-semibold text-primary-blue md:text-[1.6rem]'>
+                  <p className=' text-[1rem] font-semibold text-primary-blue md:text-[1.8rem]'>
                     Cao Bằng
                   </p>
                 </div>
-                <p className=' text-[1rem] text-base-black-1 md:text-[1.6rem]'>
+                <p className=' text-[1rem] text-base-black-1 md:text-[1.8rem]'>
                   {getRandomNumber() + ' người dùng'}
                 </p>
               </div>
@@ -1560,11 +1560,11 @@ function Map() {
               <div className='flex flex-col gap-[12px]'>
                 <div className='flex items-center gap-[10px]'>
                   <div className='h-[10px] w-[10px] rounded-full bg-[#FCB713]' />
-                  <p className=' text-[1rem] font-semibold text-primary-blue md:text-[1.6rem]'>
+                  <p className=' text-[1rem] font-semibold text-primary-blue md:text-[1.8rem]'>
                     Hà Giang
                   </p>
                 </div>
-                <p className=' text-[1rem] text-base-black-1 md:text-[1.6rem]'>
+                <p className=' text-[1rem] text-base-black-1 md:text-[1.8rem]'>
                   {getRandomNumber() + ' người dùng'}
                 </p>
               </div>
@@ -1585,11 +1585,11 @@ function Map() {
               <div className='flex flex-col gap-[12px]'>
                 <div className='flex items-center gap-[10px]'>
                   <div className='h-[10px] w-[10px] rounded-full bg-[#FCB713]' />
-                  <p className=' text-[1rem] font-semibold text-primary-blue md:text-[1.6rem]'>
+                  <p className=' text-[1rem] font-semibold text-primary-blue md:text-[1.8rem]'>
                     Lào Cai
                   </p>
                 </div>
-                <p className=' text-[1rem] text-base-black-1 md:text-[1.6rem]'>
+                <p className=' text-[1rem] text-base-black-1 md:text-[1.8rem]'>
                   {getRandomNumber() + ' người dùng'}
                 </p>
               </div>
@@ -1637,9 +1637,9 @@ function Map() {
         <path
           d='M49.1846 17.5477L49.7239 18.0859M48.6453 18.0226L48.3456 18.276L48.9449 19.0992M27.282 27.6483L26.6528 27.3633M39.0573 2L39.5966 2.53826M38.5179 2.47495L38.2183 2.72827L38.8176 3.5515M61.9561 2L62.4955 2.53826M61.4168 2.47495L61.1172 2.72827L61.7164 3.55151M21.4561 46L21.9955 46.5383M20.9168 46.4749L20.6172 46.7283L21.2164 47.5515M41.0947 39.7954H40.5554L40.7651 40.0487L40.855 40.397L39.8962 40.492V40.9669L40.3157 41.6002L40.5554 42.1702L40.046 41.9485L39.6265 41.9801L38.7576 42.1702L38.3981 42.3285L38.3082 42.7717V43.6583L38.428 44.0382L38.2782 44.1966L37.6191 44.2283L37.4093 44.0382L36.7801 43.1834L36.6602 42.8984L37.1097 41.8535L38.2183 40.7136L39.5366 39.7321L40.6752 39.2255L40.9748 39.3521L41.0947 39.7954ZM40.3154 21.4761L38.2183 19.5L37.6191 17.5477L36.7801 18.0226L35 18.276V19.5L35.5 20.5H36.6602L38 21.5L40.3154 21.4761ZM57.6172 32.2954H57.0779L57.2876 32.5487L57.3775 32.897L56.4187 32.992V33.4669L56.8382 34.1002L57.0779 34.6702L56.5685 34.4485L56.149 34.4801L55.2801 34.6702L54.9206 34.8285L54.8307 35.2717V36.1583L54.9505 36.5382L54.8007 36.6966L54.1415 36.7283L53.9318 36.5382L53.3026 35.6834L53.1827 35.3984L53.6322 34.3535L54.7408 33.2136L56.0591 32.2321L57.1977 31.7255L57.4973 31.8521L57.6172 32.2954ZM6.55164 36.2808H6.01232L6.22206 36.5341L6.31194 36.8823L5.35314 36.9773V37.4523L5.77262 38.0856L6.01232 38.6555L5.50295 38.4339L5.08347 38.4655L4.21457 38.6555L3.85501 38.8138L3.76513 39.2571V40.1437L3.88497 40.5236L3.73515 40.6819L3.07599 40.7136L2.86625 40.5236L2.23703 39.6687L2.11719 39.3838L2.56663 38.3389L3.67524 37.199L4.99358 36.2175L6.13216 35.7108L6.43178 35.8374L6.55164 36.2808ZM16.5516 8.33373H16.0123L16.2221 8.58705L16.3119 8.93529L15.3531 9.0303V9.50525L15.7726 10.1385L16.0123 10.7085L15.5029 10.4868L15.0835 10.5185L14.2146 10.7085L13.855 10.8668L13.7651 11.31V12.1966L13.885 12.5766L13.7352 12.7349L13.076 12.7666L12.8663 12.5766L12.237 11.7217L12.1172 11.4367L12.5666 10.3918L13.6752 9.25193L14.9936 8.27042L16.1322 7.76377L16.4318 7.8904L16.5516 8.33373Z'
           stroke='white'
-          stroke-width='2.49688'
-          stroke-linecap='round'
-          stroke-linejoin='round'
+          strokeWidth='2.49688'
+          strokeLinecap='round'
+          strokeLinejoin='round'
         />
       </svg>
       <svg
@@ -1674,9 +1674,9 @@ function Map() {
         <path
           d='M48.1846 17.3192L48.7239 17.8574M47.6453 17.7941L47.3456 18.0474L47.9449 18.8707M38.0573 1.77148L38.5966 2.30974M37.5179 2.24643L37.2183 2.49975L37.8176 3.32299M60.9561 1.77149L61.4955 2.30975M60.4168 2.24643L60.1172 2.49976L60.7164 3.32299M20.4561 45.7715L20.9955 46.3097M19.9168 46.2464L19.6172 46.4998L20.2164 47.323M40.0947 39.5669H39.5554L39.7651 39.8202L39.855 40.1685L38.8962 40.2635V40.7384L39.3157 41.3717L39.5554 41.9416L39.046 41.72L38.6265 41.7516L37.7576 41.9416L37.3981 42.1L37.3082 42.5432V43.4298L37.428 43.8097L37.2782 43.968L36.6191 43.9997L36.4093 43.8097L35.7801 42.9548L35.6602 42.6699L36.1097 41.625L37.2183 40.4851L38.5366 39.5036L39.6752 38.9969L39.9748 39.1236L40.0947 39.5669ZM32.5 20.5L33 20L33.5 19L33 18.5H32L31 20H30.5L29.301 21.5H30L31.5 22L32.5 21V20.5ZM56.6172 32.0669H56.0779L56.2876 32.3202L56.3775 32.6685L55.4187 32.7635V33.2384L55.8382 33.8717L56.0779 34.4416L55.5685 34.22L55.149 34.2516L54.2801 34.4416L53.9206 34.6L53.8307 35.0432V35.9298L53.9505 36.3097L53.8007 36.468L53.1415 36.4997L52.9318 36.3097L52.3026 35.4548L52.1827 35.1699L52.6322 34.125L53.7408 32.9851L55.0591 32.0036L56.1977 31.4969L56.4973 31.6236L56.6172 32.0669ZM5.55164 36.0523H5.01232L5.22206 36.3056L5.31194 36.6538L4.35314 36.7488V37.2238L4.77262 37.857L5.01232 38.427L4.50295 38.2054L4.08347 38.237L3.21457 38.427L2.85501 38.5853L2.76513 39.0286V39.9151L2.88497 40.2951L2.73515 40.4534L2.07599 40.4851L1.86625 40.2951L1.23703 39.4402L1.11719 39.1553L1.56663 38.1104L2.67524 36.9705L3.99358 35.9889L5.13216 35.4823L5.43178 35.6089L5.55164 36.0523ZM15.5516 8.10521H15.0123L15.2221 8.35853L15.3119 8.70678L14.3531 8.80178V9.27673L14.7726 9.91L15.0123 10.4799L14.5029 10.2583L14.0835 10.2899L13.2146 10.4799L12.855 10.6383L12.7651 11.0815V11.9681L12.885 12.348L12.7352 12.5064L12.076 12.5381L11.8663 12.348L11.237 11.4932L11.1172 11.2082L11.5666 10.1633L12.6752 9.02341L13.9936 8.0419L15.1322 7.53526L15.4318 7.66188L15.5516 8.10521Z'
           stroke='white'
-          stroke-width='2'
-          stroke-linecap='round'
-          stroke-linejoin='round'
+          strokeWidth='2'
+          strokeLinecap='round'
+          strokeLinejoin='round'
         />
       </svg>
     </div>

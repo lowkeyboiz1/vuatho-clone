@@ -25,7 +25,6 @@ interface SwiperMain {
 }
 
 export const SwiperMain: React.FC<SwiperMain> = ({ list }) => {
-
   return (
     <Swiper
       spaceBetween={30}
@@ -76,7 +75,7 @@ export const SwiperMain: React.FC<SwiperMain> = ({ list }) => {
                 </div>
                 <Button
                   size='lg'
-                  className=' h-[46px] max-w-max rounded-full bg-[#FCB713] px-[24px] text-[1.6rem] font-semibold text-base-black-1'
+                  className=' h-[46px] max-w-max rounded-full bg-[#FCB713] px-[24px] text-[1.8rem] font-semibold text-base-black-1'
                 >
                   Xem ngay
                 </Button>

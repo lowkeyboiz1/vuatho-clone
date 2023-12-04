@@ -60,7 +60,7 @@ function LangsComp() {
             <button className='h-[44px] cursor-pointer rounded-[44px] bg-[#F8F8F8] p-[10px]'>
               <div className='flex items-center gap-2 text-[#646464]'>
                 <Global size={24} className='' />
-                <span className='text-[1.6rem] uppercase'>{lang.code}</span>
+                <span className='text-[1.8rem] uppercase'>{lang.code}</span>
               </div>
             </button>
           </PopoverTrigger>
@@ -89,7 +89,7 @@ function LangsComp() {
                       lang === e
                         ? 'bg-primary-blue-2 text-primary-blue'
                         : 'hover:bg-base-gray disabled:hover:bg-transparent'
-                    } flex items-center gap-2 rounded-lg px-4 py-6 text-[1.6rem]`}
+                    } flex items-center gap-2 rounded-lg px-4 py-6 text-[1.8rem]`}
                   >
                     <span>{e.symbol}</span>
                     <span className={`${e.active ? '' : 'text-black/30'}`}>
@@ -115,8 +115,8 @@ function LangsComp() {
             aria-label='lang'
             title={
               <div className='-ml-2 flex items-center justify-between '>
-                <p className='w-full text-[1.6rem] text-base-black-1'>{t('language')}</p>
-                <div className='flex min-w-fit items-center gap-2 self-center pb-2 text-[1.6rem]'>
+                <p className='w-full text-[1.8rem] text-base-black-1'>{t('language')}</p>
+                <div className='flex min-w-fit items-center gap-2 self-center pb-2 text-[1.8rem]'>
                   <span className='min-w-fit'>{lang.symbol}</span>
                   {lang.label}
                 </div>
@@ -133,7 +133,7 @@ function LangsComp() {
                     lang === e
                       ? 'bg-primary-blue-2 text-primary-blue'
                       : 'hover:bg-base-gray disabled:hover:bg-transparent'
-                  } flex items-center gap-2 rounded-lg px-4 py-6 text-[1.6rem]`}
+                  } flex items-center gap-2 rounded-lg px-4 py-6 text-[1.8rem]`}
                 >
                   <span>{e.symbol}</span>
                   <span className={`${e.active ? '' : 'text-black/30'}`}>{e.label}</span>

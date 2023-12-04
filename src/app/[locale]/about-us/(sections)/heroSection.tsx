@@ -21,7 +21,7 @@ const HeroSection = () => {
           </h3>
           <p className='hidden text-[3.2rem] font-bold md:block'> {t('heading')}</p>
           <div className='w-full'>
-            <p className='w-full py-4 text-[1.6rem]'>{t('text')}</p>
+            <p className='w-full py-4 text-[1.8rem]'>{t('text')}</p>
           </div>
         </div>
         <div className='order-1 mb-[35px] w-full md:order-3'>

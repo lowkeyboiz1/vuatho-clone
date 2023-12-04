@@ -185,10 +185,7 @@
     }
   },
   "CustomerBenefitSection": {
-    "benefit": "Lợi Ích",
-    "fromVuaTho": "Từ Vua Thợ",
-    "text1": "Đối với",
-    "text2": "KHÁCH HÀNG",
+    "benefit": "quyền lợi",
     "text": "Đối với Khách Hàng",
     "listBenefit": {
       "title1": "Tìm được Thợ gần nhất để xử lý sự cố nhanh",
@@ -198,7 +195,7 @@
     }
   },
   "WorkerBenefitSection": {
-    "benefit": "Lợi ích",
+    "benefit": "quyền lợi",
     "fromVuaTho": "Từ Vua Thợ",
     "text": "Đối với Thợ",
     "benefit1": "Việc làm gần nhà nhất",
@@ -214,6 +211,7 @@
     "benefit11": "Được công nhận tay nghề - tài năng và cấp bằng từ các trung tâm đào tạo nghề của Vua Thợ",
     "benefit12": "Cùng Vua Thợ xây dựng Cộng đồng nhân ái hỗ trợ các hoàn cảnh khó khăn",
     "benefit13": "Nâng tầm vị thế của người Thợ",
+    "benefit14": "Nâng tầm vị thế của người Thợ",
     "text1": "Dù bạn là thợ của bất kì ngành nghề nào, Vua Thợ sẽ đem công việc đến gần bạn nhất.",
     "text2": "Tiết kiệm được chi phí đi lại và các khoản khác. Ngay khi ở quê nhà cũng sẽ nhanh chóng tìm được việc làm ổn định.",
     "text3": "Chủ động kiếm thêm thu nhập - làm chủ tài chính bản thân.",
@@ -901,8 +899,19 @@
     "heading": "Bài viết dành cho bạn",
     "seeAll": "Xem tất cả"
   },
+  "Store": {
+    "text1": "Trang phục chuyên nghiệp cho Thợ",
+    "text2": "Tự tin hơn khi làm việc",
+    "text3": "Liên hệ đặt mua ngay",
+    "text4": "ĐỒNG PHỤC CỦA VUA THỢ"
+  },
   "Map": {
     "text1": "Người dùng ứng dụng",
     "user": "người dùng"
+  },
+  "listBreadcrumbs": {
+    "home": "Trang chủ",
+    "acrticle": "Bài viết",
+    "store": "Mua đồng phục"
   }
 }
