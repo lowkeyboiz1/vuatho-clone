@@ -236,7 +236,7 @@ function Map() {
                 <div className='flex items-center gap-[10px]'>
                   <div className='h-[10px] w-[10px] rounded-full bg-[#FCB713]' />
                   <p className=' text-[1rem] font-semibold text-primary-blue md:text-[1.8rem]'>
-                    Lai Chau
+                    Lai Châu
                   </p>
                 </div>
                 <p className=' text-[1rem] text-base-black-1 md:text-[1.8rem]'>
@@ -286,7 +286,7 @@ function Map() {
                 <div className='flex items-center gap-[10px]'>
                   <div className='h-[10px] w-[10px] rounded-full bg-[#FCB713]' />
                   <p className=' text-[1rem] font-semibold text-primary-blue md:text-[1.8rem]'>
-                    Son La
+                    Sơn La
                   </p>
                 </div>
                 <p className=' text-[1rem] text-base-black-1 md:text-[1.8rem]'>
@@ -692,7 +692,7 @@ function Map() {
                 <div className='flex items-center gap-[10px]'>
                   <div className='h-[10px] w-[10px] rounded-full bg-[#FCB713]' />
                   <p className=' text-[1rem] font-semibold text-primary-blue md:text-[1.8rem]'>
-                    Ha Tinh
+                    Hà Tĩnh
                   </p>
                 </div>
                 <p className=' text-[1rem] text-base-black-1 md:text-[1.8rem]'>
@@ -1385,8 +1385,8 @@ function Map() {
               <div className='flex flex-col gap-[12px]'>
                 <div className='flex items-center gap-[10px]'>
                   <div className='h-[10px] w-[10px] rounded-full bg-[#FCB713]' />
-                  <p className=' text-[1rem] font-semibold text-primary-blue md:text-[1.8rem]'>
-                    Hau Giang
+                  <p className='text-[1rem] font-semibold text-primary-blue md:text-[1.8rem]'>
+                    Hậu Giang
                   </p>
                 </div>
                 <p className=' text-[1rem] text-base-black-1 md:text-[1.8rem]'>

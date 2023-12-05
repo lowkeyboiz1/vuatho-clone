@@ -2,7 +2,7 @@
 
 import { useEffect, useState } from 'react'
 import { useLocale, useTranslations } from 'next-intl'
-import { useRouter, usePathname } from 'next/navigation'
+import { usePathname, useRouter } from 'next/navigation'
 
 import { langs } from '@/constants'
 
@@ -16,15 +16,17 @@ import {
 } from '@nextui-org/react'
 
 import { Add as AddIcon, Global } from 'iconsax-react'
+import { useGetAllQueryParams } from '@/hook/useGetAllQueryParams'
 
 function LangsComp() {
   const t = useTranslations('Navbar')
-
-  const [isOpen, setIsOpen] = useState(false)
-  const router = useRouter()
-  const pathName = usePathname()
   const locale = useLocale()
 
+  const router = useRouter()
+  const pathName = usePathname()
+  const allQueryParams: any = useGetAllQueryParams()
+
+  const [isOpen, setIsOpen] = useState(false)
   const [lang, setLang] = useState<any>(langs.find((e) => e.code == locale))
 
   const handleScroll = () => {
@@ -42,7 +44,19 @@ function LangsComp() {
   const _HandleChangeLang = (value?: any) => {
     setLang(value)
     setIsOpen(false)
-    router.replace(`/${value.code}/${pathName?.split('/')?.[2] || ''}`, {
+
+    const arrayUrl = pathName?.split('/')
+    const urlReplace = arrayUrl
+      .map((item) => (item === arrayUrl[1] ? value.code : item))
+      .join('/')
+
+    const queryString = Object.keys(allQueryParams)
+      .map(
+        (key) => `${encodeURIComponent(key)}=${encodeURIComponent(allQueryParams[key])}`,
+      )
+      .join('&')
+
+    router.replace(urlReplace + (queryString !== null ? `?${queryString}` : ''), {
       scroll: false,
     })
   }

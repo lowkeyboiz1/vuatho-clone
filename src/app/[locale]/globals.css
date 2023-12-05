@@ -26,3 +26,7 @@
 html {
   @apply scroll-smooth text-[62.5%];
 }
+
+body {
+  @apply text-[1.6rem];
+}

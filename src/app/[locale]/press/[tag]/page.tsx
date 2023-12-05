@@ -1,13 +1,15 @@
 import type { Metadata, ResolvingMetadata } from 'next'
 
 import axios from 'axios'
-import { PressContent } from '.'
+import { PressContent } from '..'
 
-export async function generateMetadata({ params, searchParams }: any): Promise<Metadata> {
-  console.log(searchParams.search)
+export async function generateMetadata({ params }: { params?: any }) {
+  const { data } = await axios.get(
+    'https://sandbox-api-website.vuatho.com/blog/byCategory?slug=tin-tuc',
+  )
 
   return {
-    title: searchParams.search ? searchParams.search : 'Press',
+    title: data?.data?.[0].category?.title,
   }
 }
 

@@ -4,6 +4,7 @@ import Link from 'next/link'
 import { useRouter } from 'next/navigation'
 import React, { useEffect } from 'react'
 import { twMerge } from 'tailwind-merge'
+import ImageFallback from '../ImageFallback'
 
 function Article({
   tag,
@@ -26,7 +27,6 @@ function Article({
   slug: string
   ref?: any
 }) {
-  // const router = useRouter()
   const locale = useLocale()
 
   return (
@@ -38,19 +38,19 @@ function Article({
         style,
       )}
     >
-      <div className='w-full overflow-hidden'>
-        <Image
-          src={thumbnail || '/default-blog.png'}
-          alt=''
+      <div className='h-[206px] w-full overflow-hidden'>
+        <ImageFallback
+          src={thumbnail}
+          alt='Article image'
           height={406}
           width={800}
-          className='object-cover transition group-hover:scale-[1.1]'
+          className='h-full w-full object-cover transition group-hover:scale-[1.1]'
         />
       </div>
       <div className='flex flex-col gap-[8px] p-[16px]'>
         <div className='flex items-center justify-between text-[1.4rem]'>
           <Link
-            href={`/${locale}/${tagSlug ? `?tag=${tagSlug}` : ''}`}
+            href={`/${locale}/press/${tagSlug}`}
             className='text-[1.5rem] font-light text-primary-blue hover:cursor-pointer hover:text-primary-blue/80'
           >
             {tag || 'Sự kiện'}

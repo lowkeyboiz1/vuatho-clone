@@ -1,8 +1,7 @@
 import type { Metadata } from 'next'
 import { Lexend } from 'next/font/google'
 import { NextIntlClientProvider } from 'next-intl'
-import NextTopLoader from 'nextjs-toploader'
-
+import NextNProgress from 'nextjs-progressbar'
 import { Providers } from './providers'
 import Header from './(layout)/header'
 import Footer from './(layout)/footer'
@@ -43,10 +42,8 @@ export default async function RootLayout({ children, params }: any) {
   }
 
   return (
-    // <html lang={locale} className={lexend.className + ' overflow-x-hidden'}>
     <html lang={locale} className={lexend.className + ' '}>
       <body className=''>
-        {/* <body className='!overflow-x-hidden'> */}
         <Script src='https://www.googletagmanager.com/gtag/js?id=G-Z8JD7Z5934' />
         <Script id='google-analytics'>
           {`
@@ -57,7 +54,7 @@ export default async function RootLayout({ children, params }: any) {
           gtag('config', 'G-Z8JD7Z5934');
         `}
         </Script>
-        <NextTopLoader height={3} zIndex={9999999} />
+
         <NextIntlClientProvider locale={locale} messages={messages} timeZone={timeZone}>
           <Providers>
             <Header />

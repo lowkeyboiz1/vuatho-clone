@@ -3,7 +3,7 @@ import { ImageSkeleton } from '../Icons'
 export const SkeletonBlog = () => {
   return (
     <div role='status' className='flex w-full animate-pulse flex-col'>
-      <div className='flex h-[150px] w-full items-center justify-center rounded bg-gray-300'>
+      <div className='flex h-[206px] w-full items-center justify-center rounded bg-gray-300'>
         <ImageSkeleton />
       </div>
       <div className='flex w-full flex-col gap-[8px] p-[16px]'>

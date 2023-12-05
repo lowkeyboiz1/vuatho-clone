@@ -157,16 +157,16 @@ const MinhBach = () => {
           {t('heading')}
         </h2>
         <div className='grid grid-cols-1 gap-[20px] lg:grid-cols-2 lg:gap-[40px]'>
-          {listData.map((i) => (
+          {listData.map((item, index) => (
             <div
-              key={i.title}
+              key={index}
               className='flex flex-col gap-[8px] text-[1.8rem] text-baseBlack'
             >
               <div className='flex gap-[10px]'>
                 <div className='h-full w-[4px] rounded-lg bg-[#FCB713]' />
-                <h3 className=' text-[1.8rem] font-bold'>{i.title}</h3>
+                <h3 className=' text-[1.8rem] font-bold'>{item.title}</h3>
               </div>
-              <p className='text-[1.8rem] font-light'>{i.desc}</p>
+              <p className='text-[1.8rem] font-light'>{item.desc}</p>
             </div>
           ))}
         </div>
@@ -327,7 +327,7 @@ const CustomerBenefitSection = () => {
     id: number
     img: string
   }
-  const listBenefit: TlistBenefit[] = [
+  const listBenefit = [
     { title: t('listBenefit.title1'), id: 1, img: 'location.png' },
     { title: t('listBenefit.title2'), id: 2, img: 'rating.png' },
     { title: t('listBenefit.title3'), id: 3, img: 'onlinereviews.png' },
@@ -336,16 +336,16 @@ const CustomerBenefitSection = () => {
   ]
 
   return (
-    <div className='ct-container-70 flex flex-col gap-[20px] py-20'>
-      <div className='flex flex-col gap-[10px] xl:hidden'>
+    <div className='ct-container-70 flex flex-col gap-[20px]'>
+      <div className='flex flex-col gap-[10px] md:hidden'>
         <h3 className='text-[1.6rem] font-semibold uppercase tracking-[8px] lg:text-[2rem]'>
           {t('benefit')}
         </h3>
         <p className=' text-[2.4rem] text-[#FCB713] md:text-[3.2rem]'>{t('text')}</p>
       </div>
-      <div className='grid grid-cols-1 items-center gap-[20px] xl:grid-cols-3'>
+      <div className=' grid grid-cols-1 items-center gap-[20px] xl:grid-cols-3'>
         <div className='col-span-1'>
-          <div className='hidden flex-col gap-[10px] xl:flex'>
+          <div className='hidden flex-col gap-[10px] md:flex'>
             <h3 className='text-[1.6rem] font-semibold uppercase tracking-[8px] md:text-[2rem]'>
               {t('benefit')}
             </h3>
@@ -381,97 +381,172 @@ const CustomerBenefitSection = () => {
 }
 
 const WorkerBenefitSection = () => {
+  const [currentIndex, setCurrentIndex] = useState(0)
+
   const t = useTranslations('WorkerBenefitSection')
   interface TlistBenefit {
     title: string
-    desc: { text: string }[]
+    desc: { text: JSX.Element }[]
     img: string
   }
   const listBenefit: TlistBenefit[] = [
     {
       title: t('benefit1'),
-      desc: [{ text: t('text1') }, { text: t('text2') }],
+      desc: [{ text: <p>{t('text1')}</p> }, { text: <p>{t('text2')}</p> }],
       img: 'benefit1.png',
     },
     {
       title: t('benefit2'),
-      desc: [{ text: t('text3') }, { text: t('text4') }, { text: t('text5') }],
+      desc: [
+        { text: <p>{t('text3')}</p> },
+        {
+          text: (
+            <p>
+              <strong>{t('text4')}</strong>
+            </p>
+          ),
+        },
+      ],
       img: 'benefit2.png',
     },
     {
       title: t('benefit3'),
-      desc: [{ text: t('text6') }, { text: t('text7') }],
+      desc: [{ text: <p>{t('text5')}</p> }, { text: <p>{t('text6')}</p> }],
       img: 'benefit3.png',
     },
     {
       title: t('benefit4'),
-      desc: [{ text: t('text8') }, { text: t('text9') }],
+      desc: [{ text: <p>{t('text7')}</p> }, { text: <p>{t('text8')}</p> }],
       img: 'benefit4.png',
     },
 
     {
       title: t('benefit5'),
-      desc: [{ text: t('text10') }, { text: t('text11') }],
+      desc: [
+        {
+          text: (
+            <p>
+              {t('text9')} <strong>{t('text10')}</strong>
+              <span className='text-[#969696]'>{t('text11')}</span>
+            </p>
+          ),
+        },
+        { text: <p>{t('text12')}</p> },
+      ],
       img: 'benefit5.png',
     },
     {
       title: t('benefit6'),
-      desc: [{ text: t('text12') }],
+      desc: [
+        { text: <p>{t('text13')}</p> },
+        {
+          text: (
+            <p>
+              <strong>{t('text14')}</strong>
+            </p>
+          ),
+        },
+        {
+          text: (
+            <p>
+              <strong>{t('text15')}</strong>
+            </p>
+          ),
+        },
+        {
+          text: (
+            <p>
+              <strong>{t('text16')}</strong>
+            </p>
+          ),
+        },
+      ],
       img: 'benefit6.png',
     },
     {
       title: t('benefit7'),
-      desc: [{ text: t('text14') }],
+      desc: [
+        { text: <p>{t('text17')}</p> },
+        {
+          text: (
+            <p>
+              <strong>{t('text18')}</strong>
+            </p>
+          ),
+        },
+        {
+          text: (
+            <p>
+              <strong>{t('text19')}</strong>
+            </p>
+          ),
+        },
+        {
+          text: (
+            <p>
+              <strong>{t('text20')}</strong>
+            </p>
+          ),
+        },
+      ],
       img: 'benefit7.png',
     },
     {
       title: t('benefit8'),
-      desc: [{ text: t('text15') }, { text: t('text16') }],
+      desc: [{ text: <p>{t('text21')}</p> }],
       img: 'benefit8.png',
     },
     {
       title: t('benefit9'),
-      desc: [{ text: t('text17') }, { text: t('text18') }],
+      desc: [
+        { text: <p>{t('text22')}</p> },
+        {
+          text: (
+            <p>
+              {t('text23')} <strong>{t('text24')}</strong>
+              {t('text25')}
+            </p>
+          ),
+        },
+      ],
       img: 'benefit9.png',
     },
     {
       title: t('benefit10'),
-      desc: [{ text: t('text19') }, { text: t('text20') }],
+      desc: [{ text: <p>{t('text26')}</p> }],
       img: 'benefit10.png',
     },
     {
       title: t('benefit11'),
-      desc: [{ text: t('text21') }],
+      desc: [{ text: <p>{t('text27')}</p> }],
       img: 'benefit11.png',
     },
     {
       title: t('benefit12'),
-      desc: [{ text: t('text22') }],
+      desc: [{ text: <p>{t('text28')}</p> }],
       img: 'benefit12.png',
     },
     {
       title: t('benefit13'),
-      desc: [{ text: t('text23') }, { text: t('text24') }],
+      desc: [{ text: <p>{t('text29')}</p> }],
       img: 'benefit13.png',
     },
     {
       title: t('benefit14'),
-      desc: [{ text: t('text23') }, { text: t('text24') }],
+      desc: [{ text: <p>{t('text30')}</p> }],
       img: 'benefit13.png',
     },
   ]
+
   const pagination = {
     clickable: true,
     renderBullet: function (index: any, className: any) {
-      return (
-        '<span class="paginationBenefit ' + className + '">' + (index + 1) + '</span>'
-      )
+      return `<span class="paginationBenefit ${className} ">${index + 1}</span>`
     },
   }
-  const [currentIndex, setCurrentIndex] = useState(0)
 
   return (
-    <div className='mb-[140px] mt-[60px] flex flex-col gap-[20px] lg:mb-[100px]'>
+    <div className=' my-[60px] flex flex-col gap-[20px]'>
       <div className='ct-container-70 flex flex-col gap-[20px] xl:gap-[40px]'>
         <div className='flex flex-col gap-[10px]'>
           <h3 className='text-[1.6rem] font-semibold uppercase tracking-[8px] md:text-[2rem]'>
@@ -502,41 +577,36 @@ const WorkerBenefitSection = () => {
         >
           {listBenefit.map((item, index) => {
             return (
-              <SwiperSlide
-                key={index}
-                className={currentIndex === index ? 'visible' : 'invisible'}
-              >
-                <div className='grid grid-cols-5 gap-[20px]'>
-                  <div className='text order-1 col-span-5 bg-white lg:order-none  lg:col-span-2 lg:min-h-[400px]'>
-                    <div className='mb-[16px] flex items-center gap-[12px]'>
-                      <p className='text-[6.4rem] font-semibold leading-none text-primary-blue/20'>
-                        {index + 1 >= 10 ? index + 1 : `0${index + 1}`}
-                      </p>
-                      <p className='text-[2.4rem] font-bold text-primary-blue'>
-                        {item.title}
-                      </p>
-                    </div>
-                    <ul className='list-inside list-disc'>
-                      {item.desc.map((ii: any) => (
-                        <li className='text-[1.8rem] font-light ' key={ii.text}>
-                          {ii.text}
-                        </li>
-                      ))}
-                    </ul>
+              <div className='h-full w-full' key={index}>
+                <SwiperSlide className={currentIndex === index ? 'visible' : 'invisible'}>
+                  <div className='mb-[16px] flex h-[76px] items-center gap-[12px]'>
+                    <p className='text-[4rem] font-semibold leading-none text-primary-blue/20 xl:text-[6.4rem]'>
+                      {index + 1 >= 10 ? index + 1 : `0${index + 1}`}
+                    </p>
+                    <h4 className='text-[1.6rem] font-bold text-primary-blue xl:text-[2.4rem]'>
+                      {item.title}
+                    </h4>
                   </div>
-                  <div className='order-none col-span-5 bg-white lg:order-1  lg:col-span-3'>
-                    <div className='h-full w-full'>
+                  <div className='grid w-full grid-cols-5 overflow-hidden rounded-xl bg-[#f8f8f8]'>
+                    <div className='text order-1 col-span-5 h-full w-full p-[20px] xl:order-none xl:col-span-2'>
+                      <ul className='flex flex-col gap-[10px]'>
+                        {item.desc.map((ii: any, index: number) => (
+                          <span key={index}>{ii.text}</span>
+                        ))}
+                      </ul>
+                    </div>
+                    <div className='order-none col-span-5 h-full w-full xl:order-1 xl:col-span-3'>
                       <Image
                         src={`/benefitCustomer/${item.img}`}
                         alt=''
-                        height={600}
-                        width={3200}
-                        className='h-full w-full object-contain'
+                        height={800}
+                        width={1280}
+                        className='h-full w-auto object-contain'
                       />
                     </div>
                   </div>
-                </div>
-              </SwiperSlide>
+                </SwiperSlide>
+              </div>
             )
           })}
         </Swiper>
@@ -558,12 +628,11 @@ const PressHome = () => {
           lang: locale,
         },
       })
-      console.log(data)
       setListBlog(data)
-      setOnFetching(false)
     } catch (error) {
-      setOnFetching(false)
       console.log(error)
+    } finally {
+      setOnFetching(false)
     }
   }
   useEffect(() => {
@@ -587,7 +656,7 @@ const PressHome = () => {
           {t('seeAll')}
         </Link>
       </div>
-      <div className='flex flex-nowrap gap-[20px] overflow-x-scroll xl:grid xl:grid-cols-4 xl:overflow-x-auto'>
+      <div className='flex flex-nowrap gap-[20px] overflow-x-auto xl:grid xl:grid-cols-4 xl:overflow-x-auto'>
         {onFetching
           ? Array(4)
               .fill(1)
@@ -600,11 +669,11 @@ const PressHome = () => {
             ? listBlog.map((item: any, index: number) => {
                 return (
                   <Article
-                    key={item.id}
+                    key={item.uuid || index}
                     slug={item.slug}
                     thumbnail={item.thumb}
                     desc={item.short_description}
-                    time={item.time || '30/11/2023'}
+                    time={item.created_at || '30/11/2023'}
                     title={item.title}
                     tagSlug={item.category.slug}
                     tag={item.category.title}

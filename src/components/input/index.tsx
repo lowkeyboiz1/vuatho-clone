@@ -1,75 +1,64 @@
 'use client'
 
-import { Input, Skeleton } from '@nextui-org/react'
-import { useState, useRef, useEffect } from 'react'
+import { useState, useRef, useEffect, useCallback } from 'react'
+import { useRouter, useSearchParams } from 'next/navigation'
+import { useLocale, useTranslations } from 'next-intl'
+
+import { Input } from '@nextui-org/react'
 import { Add, SearchNormal1 } from 'iconsax-react'
+
 import { useUnfocusItem } from '@/hook'
-import { useRouter } from 'next/navigation'
-import { useLocale } from 'next-intl'
 import { SearchSpiner } from '../Icons'
-import instance from '@/services/axiosConfig'
-import Link from 'next/link'
 
 export const InputSearch = ({ onRefresh }: { onRefresh: any }) => {
+  const [searchValue, setSearchValue] = useState<string>(
+    useSearchParams().get('search') || '',
+  )
+  const [showSearchItem, setShowSearchItem] = useState<boolean>(false)
+  const [onSearching, setOnSearching] = useState<boolean>(false)
+  const [listTagSearch, setListTagSearch] = useState<any>([])
+
   const router = useRouter()
   const locale = useLocale()
 
-  const [searchValue, setSearchValue] = useState('')
-  const [showSearchItem, setShowSearchItem] = useState<boolean>(false)
-  const [onSearching, setOnSearching] = useState<boolean>(false)
-  const [onFetchingTag, setOnFetchingTag] = useState<boolean>(false)
-  const [listTagSearch, setListTagSearch] = useState([{}])
-  const [listTag, setListTag] = useState([{}])
+  const t = useTranslations('inputSearch')
 
   const exclusionRef = useRef(null)
   const itemRef = useUnfocusItem(() => {
     setShowSearchItem(false)
   }, exclusionRef)
 
-  const handleNavigate = (value?: string) => {
-    if (value) {
-      router.push(`/${locale}/press?keyword=${value}`)
-    }
-
-    if (searchValue.length > 0) {
-      router.push(`/${locale}/press?keyword=${searchValue}`)
-      setShowSearchItem(false)
-      if (itemRef.current) {
-        itemRef.current.blur()
+  const handleNavigate = useCallback(
+    (item?: any) => {
+      if (item?.slug?.length) {
+        router.push(`/${locale}/press?search=${item.slug}`)
+        setShowSearchItem(false)
+        if (itemRef.current) {
+          itemRef.current.blur()
+        }
+        return
       }
-    }
-  }
+      if (searchValue?.length) {
+        router.push(`/${locale}/press?search=${searchValue?.trim()}`)
+        setShowSearchItem(false)
+        if (itemRef.current) {
+          itemRef.current.blur()
+        }
+      }
+    },
+    [searchValue],
+  )
 
   const handleChangeValueSearch = (e: any) => {
     const value = e.target.value
     if (value.length < 70) setSearchValue(value)
   }
 
-  const handleFetchingListTag = async () => {
-    // const {data} = instance.get('/asdasdas')
-    try {
-      setListTag([
-        { name: 'Sửa chữa xe máy', slug: 'sua-chua-xe-may' },
-        { name: 'Điện lạnh', slug: 'dien-lanh' },
-        { name: 'Xây dựng công trình', slug: 'xay-dung-cong-trinh' },
-        { name: 'Mẹo vặt', slug: 'meo-vat' },
-        { name: 'Hướng dẫn người mới', slug: 'huong-dan-nguoi-moi' },
-        { name: 'Nghề nghiệp', slug: 'nghe-nghiep' },
-      ])
-      setOnFetchingTag(false)
-    } catch (error) {
-      console.log(error)
-      setOnFetchingTag(false)
-    }
+  const _handleClickSearchItem = (e: any, item: any) => {
+    setSearchValue(item.name)
+    setShowSearchItem(false)
+    handleNavigate(item)
   }
-
-  useEffect(() => {
-    onFetchingTag && handleFetchingListTag()
-  }, [onFetchingTag])
-
-  useEffect(() => {
-    setOnFetchingTag(true)
-  }, [])
 
   const handleSearch = async () => {
     try {
@@ -91,7 +80,6 @@ export const InputSearch = ({ onRefresh }: { onRefresh: any }) => {
 
   useEffect(() => {
     setOnSearching(true)
-
     const debounceTimer = setTimeout(() => {
       //goi api o day
       handleSearch()
@@ -115,14 +103,14 @@ export const InputSearch = ({ onRefresh }: { onRefresh: any }) => {
           handleChangeValueSearch(e)
         }}
         startContent={<SearchNormal1 size={24} className=' text-[#292D32]' />}
-        placeholder='Tìm kiếm'
+        placeholder={t('search')}
         onKeyDown={(e: any) => {
           if (e.key === 'Enter') {
             handleNavigate()
           }
         }}
         endContent={
-          searchValue.length > 0 && (
+          !!searchValue?.length && (
             <div
               className={`cursor-pointer rounded-full ${
                 !onSearching && 'bg-[#292D32] hover:bg-[#292D32]/40'
@@ -153,64 +141,26 @@ export const InputSearch = ({ onRefresh }: { onRefresh: any }) => {
             'bg-white rounded rounded-full overflow-hidden data-[hover=true]:bg-white group-data-[focus=true]:bg-white h-[58px] shadow-[0px_4px_8px_0px_#ACACAC29] group-data-[focus=true]:border-none border-none',
         }}
       />
-      {showSearchItem && (
+      {!!searchValue?.length && showSearchItem && (
         <>
           <div
             className='absolute left-0 right-0 top-[70px] z-[2] max-h-[400px] overflow-y-auto rounded-[16px] bg-white py-[16px] shadow-[0px_4px_8px_0px_#ACACAC29]'
             ref={exclusionRef}
           >
-            {searchValue.trim().length !== 0 ? (
-              <div className=''>
-                {onSearching ? (
-                  <div className='px-[32px] py-[10px]  text-[1.8rem]'>
-                    Đang tìm kiếm...
-                  </div>
-                ) : (
-                  listTagSearch.map((i: any) => (
-                    <div
-                      key={i.name}
-                      onClick={() => {
-                        setSearchValue(i.name)
-                        setShowSearchItem(false)
-                        handleNavigate(i.name)
-                      }}
-                      className='cursor-pointer px-[32px] py-[10px] text-[1.8rem] font-normal text-base-black-1 duration-300 hover:bg-[#F8F8F8] '
-                    >
-                      {i.name}
-                    </div>
-                  ))
-                )}
-              </div>
+            {onSearching ? (
+              <div className='px-[32px] py-[10px]  text-[1.8rem]'>{t('lookingFor')}</div>
             ) : (
-              <div className=' flex flex-col gap-[10px] px-[16px]'>
-                <h3 className='text-[1.8rem] font-bold'>Tìm kiếm nhiều</h3>
-                <div className='list-tag flex flex-wrap items-center gap-[8px]'>
-                  {onFetchingTag ? (
-                    <div className='flex items-center gap-[20px]'>
-                      <Skeleton className='h-[40px] w-[120px] rounded-full' />
-                      <Skeleton className='h-[40px] w-[80px] rounded-full' />
-                      <Skeleton className='h-[40px] w-[150px] rounded-full' />
-                      <Skeleton className='h-[40px] w-[200px] rounded-full' />
-                      <Skeleton className='h-[40px] w-[50px] rounded-full' />
-                    </div>
-                  ) : (
-                    listTag.map((i: any) => (
-                      <div
-                        key={i.name}
-                        onClick={() => {
-                          setSearchValue(i.name)
-                          handleNavigate(i.name)
-                          setShowSearchItem(false)
-                          console.log(i.name)
-                        }}
-                        className='cursor-pointer rounded-full bg-[#F8F8F8] px-[16px] py-[10px] text-[1.8rem] font-normal text-base-black-1'
-                      >
-                        {i.name}
-                      </div>
-                    ))
-                  )}
+              listTagSearch.map((i: any) => (
+                <div
+                  key={i.name}
+                  onClick={(e) => {
+                    _handleClickSearchItem(e, i)
+                  }}
+                  className='cursor-pointer px-[32px] py-[10px] text-[1.8rem] font-normal text-base-black-1 duration-300 hover:bg-[#F8F8F8] '
+                >
+                  {i.name}
                 </div>
-              </div>
+              ))
             )}
           </div>
         </>
