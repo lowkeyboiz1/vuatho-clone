@@ -171,7 +171,13 @@ export const PressContent = ({ searchParams }: { searchParams: any }) => {
 
   const _serverFetching = async () => {
     try {
-      const { data } = await instance.get('/blog/newest')
+      const { data } = searchParams.search
+        ? await instance.get('/blog/newest', {
+            params: searchParams.search,
+          })
+        : await instance.get('/blog/newest')
+
+      console.log('goi lai api ne')
       setListBlog(data)
     } catch (error) {
       console.log(error)
@@ -253,35 +259,12 @@ export const PressContent = ({ searchParams }: { searchParams: any }) => {
                 ) : !!listMostView.length ? (
                   listMostView.map((item: any, index: number) => {
                     if (listMostView.length == index + 1) {
-                      return (
-                        <Article
-                          ref={lastElementBlog}
-                          slug={item.slug}
-                          thumbnail={item.thumb}
-                          key={item.id}
-                          desc={item.short_description}
-                          time={item.created_at}
-                          title={item.title}
-                          tagSlug={item.category.slug}
-                          tag={item.category.title}
-                        />
-                      )
+                      return <Article ref={lastElementBlog} key={item.id} item={item} />
                     }
-                    return (
-                      <Article
-                        slug={item.slug}
-                        thumbnail={item.thumb || ''}
-                        key={item.id}
-                        desc={item.short_description}
-                        time={item.created_at}
-                        title={item.title}
-                        tagSlug={item.category.slug}
-                        tag={item.category.title}
-                      />
-                    )
+                    return <Article key={item.id} item={item} />
                   })
                 ) : (
-                  <>Khang</>
+                  <p className='font-light text-[#969696]'>{td('oops')}</p>
                 )}
               </div>
             </div>
@@ -289,7 +272,9 @@ export const PressContent = ({ searchParams }: { searchParams: any }) => {
               <h4 className='h-[52px] w-full truncate whitespace-nowrap border-b-4 border-primary-blue py-[9px] text-[2rem] font-semibold'>
                 {searchParams.search
                   ? `${td('result')} "${searchParams.search}"`
-                  : td('newest')}
+                  : pathname.split('/').length === 4
+                    ? listBlog?.[0]?.category?.title
+                    : td('newest')}
               </h4>
               {onFetching || onLoading ? (
                 <div className='grid grid-cols-1 gap-[20px] md:grid-cols-2'>
@@ -302,16 +287,7 @@ export const PressContent = ({ searchParams }: { searchParams: any }) => {
               ) : !!listBlog?.length ? (
                 <div className='grid grid-cols-1 gap-[20px] md:grid-cols-2'>
                   {listBlog.map((item: any) => (
-                    <Article
-                      slug={item.slug}
-                      thumbnail={item.thumb}
-                      key={item.id}
-                      desc={item.short_description}
-                      time={item.time || '30/11/2023'}
-                      title={item.title}
-                      tagSlug={item.category.slug}
-                      tag={item.category.title}
-                    />
+                    <Article key={item.id} item={item} />
                   ))}
                 </div>
               ) : (

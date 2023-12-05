@@ -44,8 +44,8 @@ const HeroSection = () => {
       <div
         className={`${
           hiddenHeaderAndFooter
-            ? 'overflow-hidden'
-            : 'overflow-hidden pt-[70px] 3xl:pt-[80px]'
+            ? 'space-y-[40px] overflow-hidden md:space-y-[100px] xl:space-y-[100px]'
+            : 'space-y-[40px] overflow-hidden pt-[70px] md:space-y-[100px] xl:space-y-[100px] 3xl:pt-[80px]'
         }`}
       >
         <MainSection />
@@ -74,7 +74,7 @@ const AISection = () => {
   ]
 
   return (
-    <div id='AI' className='bg-white py-[40px] md:py-[68px]'>
+    <div id='AI' className='bg-base-gray py-[40px] md:py-[80px] xl:py-[100px]'>
       <div className='ct-container-70 relative'>
         <h4 className='mb-[60px] w-full text-center text-[2.4rem] font-semibold text-primaryBlue1 md:text-[3.2rem] 2xl:mb-[100px]'>
           {t('heading1')}
@@ -151,8 +151,8 @@ const MinhBach = () => {
   ]
 
   return (
-    <div className='mt-[60px] md:mt-[100px]' id='trade'>
-      <section className='ct-container-70 mt-[60px] w-full'>
+    <div className='' id='trade'>
+      <section className='ct-container-70 w-full'>
         <h2 className='mb-[40px] text-[2.4rem] font-semibold text-primary-blue md:text-[3.2rem]'>
           {t('heading')}
         </h2>
@@ -206,8 +206,8 @@ const HinhThucKetNoi = () => {
   ]
 
   return (
-    <section id='multi' className='my-[100px]'>
-      <section className='ct-container-70 mt-[60px] w-full'>
+    <section id='multi' className=''>
+      <section className='ct-container-70 w-full'>
         <h2 className='mb-[40px] text-[2.4rem] font-semibold text-primary-blue md:text-[3.2rem]'>
           {t('heading')}
         </h2>
@@ -392,7 +392,12 @@ const WorkerBenefitSection = () => {
   const listBenefit: TlistBenefit[] = [
     {
       title: t('benefit1'),
-      desc: [{ text: <p>{t('text1')}</p> }, { text: <p>{t('text2')}</p> }],
+      desc: [
+        {
+          text: <p>{t('text1')}</p>,
+        },
+        { text: <p>{t('text2')}</p> },
+      ],
       img: 'benefit1.png',
     },
     {
@@ -546,7 +551,7 @@ const WorkerBenefitSection = () => {
   }
 
   return (
-    <div className=' my-[60px] flex flex-col gap-[20px]'>
+    <div className='flex flex-col gap-[20px]'>
       <div className='ct-container-70 flex flex-col gap-[20px] xl:gap-[40px]'>
         <div className='flex flex-col gap-[10px]'>
           <h3 className='text-[1.6rem] font-semibold uppercase tracking-[8px] md:text-[2rem]'>
@@ -644,7 +649,7 @@ const PressHome = () => {
   }, [])
 
   return (
-    <div className='ct-container-70 mt-[60px] flex flex-col gap-[20px]'>
+    <div className='ct-container-70 flex flex-col gap-[20px]'>
       <div className='flex items-center justify-between'>
         <p className='text-[1.8rem] font-semibold text-primary-blue md:text-[3.2rem]'>
           {t('heading')}
@@ -670,13 +675,7 @@ const PressHome = () => {
                 return (
                   <Article
                     key={item.uuid || index}
-                    slug={item.slug}
-                    thumbnail={item.thumb}
-                    desc={item.short_description}
-                    time={item.created_at || '30/11/2023'}
-                    title={item.title}
-                    tagSlug={item.category.slug}
-                    tag={item.category.title}
+                    item={item}
                     style='w-[80%] md:w-[40%] xl:w-full cursor-pointer'
                   />
                 )

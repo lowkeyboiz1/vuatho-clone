@@ -5,7 +5,7 @@ function SectionToTheMoon() {
   const t = useTranslations('ToTheMoon')
 
   return (
-    <div className='flex-center relative py-[60px] md:min-h-[744px] 13inch:my-[100px] 13inch:py-[104px]'>
+    <div className='flex-center relative md:min-h-[744px]'>
       <div className='relative w-[96%]  md:w-[520px]'>
         <div className='relative z-[2] w-full space-y-2 rounded-[16px] bg-primary-blue p-[26px] md:p-[40px]'>
           <div className='flex items-center gap-[10px]'>

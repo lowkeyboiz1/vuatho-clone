@@ -4,12 +4,18 @@ import axios from 'axios'
 import { PressContent } from '..'
 
 export async function generateMetadata({ params }: { params?: any }) {
-  const { data } = await axios.get(
-    'https://sandbox-api-website.vuatho.com/blog/byCategory?slug=tin-tuc',
-  )
-
-  return {
-    title: data?.data?.[0].category?.title,
+  try {
+    const { data } = await axios.get(
+      'https://sandbox-api-website.vuatho.com/blog/byCategory?slug=tin-tuc',
+    )
+    return {
+      title: data?.data?.[0].category?.title,
+    }
+  } catch (error) {
+    console.log(error)
+    return {
+      title: 'Không tìm thấy thẻ tag',
+    }
   }
 }
 

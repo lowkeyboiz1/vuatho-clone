@@ -24,21 +24,19 @@ press detail api - done (10p)
 skeleton pressdetail - done (10p)
 meta title trang press/[tag]/[id] - done
 meta title trang press - done
+api các blog theo tag - done
+chỉnh lại khoảng cách trang home - done
+chỉnh lại component tải ngay (điện thoại quá bự) - done
+gọi lại api theo url trang press?search=abc - done
+tối ưu lại component article nhận props cho chuẩn chỉnh - done
 
-
-api các blog theo tag
-chỉnh lại component tải ngay (điện thoại quá bự)
-tối ưu lại component article nhận props cho chuẩn chỉnh
-
-gọi lại api theo url trang press?search=abc
+component Image lợi ích
+làm scroll infinity
 thích?
+
 search api
 store api
 bài viết nổi bật api 
-component Image lợi ích
-gọi api chuẩn chỉnh
-làm scroll infinity
-
 
 đưa các state lên đầu, import thư viện theo thứu tự nextjs/reactjs -> thư viện ngoài -> component
 

@@ -922,6 +922,9 @@
     "errorNetwork": "Vui lòng kiểm tra lại kết nối mạng.",
     "oops": "Oops, từ khóa bạn tìm hiện không có!"
   },
+  "DetailsPress": {
+    "oopsDetail": "Oops, Không tìm thấy bài viết"
+  },
   "inputSearch": {
     "searchFrequently": "Tìm kiếm nhiều",
     "search": "Tìm kiếm",

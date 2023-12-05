@@ -10,12 +10,37 @@ import { ListBreadcrumbs } from '@/components/breadcrumbs'
 import { BreadcrumbWithUrl } from '@/interface'
 import instance from '@/services/axiosConfig'
 import { useTranslations } from 'next-intl'
+import ImageFallback from '@/components/ImageFallback'
+import { ImageSkeleton } from '@/components/Icons'
 
 function Store() {
+  const td = useTranslations('listBreadcrumbs')
+
+  const listBreadcrumbs: BreadcrumbWithUrl[] = [
+    { title: td('home'), url: '/' },
+    { title: td('acrticle') },
+  ]
+
+  const [onLoading, setOnLoading] = useState<boolean>(true)
+  const [onFetching, setOnFetching] = useState<boolean>(false)
+
   const [listItem, setListItem] = useState<any>([])
-  const [onFetching, setOnFetching] = useState(false)
+  const [imageStore, setImageStore] = useState<any>([])
 
   const t = useTranslations('Store')
+
+  const _ServerFetchingImageStore = async () => {
+    try {
+      setImageStore({
+        thumbnail: '/press/pressBanner1.png',
+      })
+    } catch (error) {
+      console.log(error)
+    } finally {
+      setOnFetching(false)
+      setOnLoading(false)
+    }
+  }
 
   const serverFetching = async () => {
     try {
@@ -59,64 +84,67 @@ function Store() {
       console.log(error)
     } finally {
       setOnFetching(false)
+      setOnLoading(false)
     }
   }
   useEffect(() => {
     onFetching && serverFetching()
+    onFetching && _ServerFetchingImageStore()
   }, [onFetching])
 
   useEffect(() => {
     setOnFetching(true)
   }, [])
-  const td = useTranslations('listBreadcrumbs')
 
-  const listBreadcrumbs: BreadcrumbWithUrl[] = [
-    { title: td('home'), url: '/' },
-    { title: td('acrticle') },
-  ]
   return (
     <div className='pt-[64px] 3xl:pt-[80px]'>
-      <div className='w-full'>
-        <div className='relative inset-0 h-[420px]'>
-          <Image
-            src={'/press/pressBanner1.png'}
-            alt=''
-            height={419}
-            width={3000}
-            className='h-full object-cover'
-          />
-          <div className='absolute top-[10%] 13inch:left-1/2 13inch:-translate-x-1/2'>
-            <div className='ct-container-70 flex flex-col gap-[20px] text-white'>
-              <div className=''>
-                <ListBreadcrumbs list={listBreadcrumbs} />
+      {onFetching || onLoading ? (
+        <div className='flex h-[420px] w-full animate-pulse items-center justify-center bg-gray-300 '>
+          <ImageSkeleton style='h-[120px] w-[300px] animate-pulse' />
+        </div>
+      ) : (
+        <div className='w-full'>
+          <div className='relative inset-0 h-[420px]'>
+            <ImageFallback
+              src={imageStore.thumbnail}
+              alt=''
+              height={419}
+              width={3000}
+              className='h-full object-cover'
+            />
+            <div className='absolute top-[10%] 13inch:left-1/2 13inch:-translate-x-1/2'>
+              <div className='ct-container-70 flex flex-col gap-[20px] text-white'>
+                <div className=''>
+                  <ListBreadcrumbs list={listBreadcrumbs} />
+                </div>
               </div>
             </div>
-          </div>
-          <div className='absolute bottom-[10%] w-full text-center'>
-            <div className='mb-[16px]'>
-              <p className='text-[2.4rem] font-semibold text-white md:text-[3.2rem]'>
-                {t('text1')}
-              </p>
-              <p className='text-[2.4rem] font-semibold text-white md:text-[3.2rem]'>
-                {t('text2')}
-              </p>
+            <div className='absolute bottom-[10%] w-full text-center'>
+              <div className='mb-[16px]'>
+                <p className='text-[2.4rem] font-semibold text-white md:text-[3.2rem]'>
+                  {t('text1')}
+                </p>
+                <p className='text-[2.4rem] font-semibold text-white md:text-[3.2rem]'>
+                  {t('text2')}
+                </p>
+              </div>
+              <Button
+                size='lg'
+                className=' h-[46px] max-w-max rounded-full bg-[#FCB713] px-[24px] text-[1.8rem] font-semibold text-base-black-1'
+                endContent={<Call variant='Bold' />}
+              >
+                {t('text3')}
+              </Button>
             </div>
-            <Button
-              size='lg'
-              className=' h-[46px] max-w-max rounded-full bg-[#FCB713] px-[24px] text-[1.8rem] font-semibold text-base-black-1'
-              endContent={<Call variant='Bold' />}
-            >
-              {t('text3')}
-            </Button>
           </div>
         </div>
-      </div>
+      )}
       <div className='ct-container-70 mb-[60px]'>
         <h3 className='mb-[20px] mt-[36px] text-[2.4rem] font-semibold uppercase text-base-black-1'>
           {t('text4')}
         </h3>
         <div className='grid grid-cols-1 gap-[20px] lg:grid-cols-2 xl:grid-cols-4'>
-          {true
+          {onFetching || onLoading
             ? Array(8)
                 .fill(null)
                 .map((item, index) => (

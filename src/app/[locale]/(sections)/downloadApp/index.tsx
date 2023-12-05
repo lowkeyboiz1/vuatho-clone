@@ -16,7 +16,7 @@ const SectionDownload = ({ sizeS }: { sizeS?: boolean }) => {
       >
         {t('download')}
       </p>
-      <section className='mx-auto flex w-full items-center justify-center gap-4 overflow-hidden pb-12 md:py-[100px]'>
+      <section className='mx-auto flex w-full items-center justify-center gap-4 overflow-hidden py-[60px]'>
         <div className='flex flex-col items-center gap-8 md:flex-row 3xl:gap-[100px]'>
           <div className='order-2 flex w-full items-center justify-center md:order-1 md:justify-start'>
             <div className='flex flex-col items-start justify-start md:items-center md:justify-center'>

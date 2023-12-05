@@ -16,13 +16,15 @@ const AnimationAI = () => {
   const container = useRef(null)
 
   useEffect(() => {
-    lottie.loadAnimation({
+    const instance = lottie.loadAnimation({
       container: container.current!,
       renderer: 'svg',
       loop: true,
       autoplay: true,
       animationData: animationData1,
     })
+
+    return () => instance.destroy()
   }, [])
 
   return <div ref={container} />

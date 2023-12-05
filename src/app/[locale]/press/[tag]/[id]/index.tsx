@@ -11,9 +11,11 @@ import { useParams } from 'next/navigation'
 import Link from 'next/link'
 import { useTranslations } from 'next-intl'
 import { Skeleton } from '@nextui-org/react'
+import Image from 'next/image'
 
 function PressDetail() {
   const t = useTranslations('listBreadcrumbs')
+  const td = useTranslations('DetailsPress')
 
   const paramsData = useParams()
 
@@ -116,23 +118,40 @@ function PressDetail() {
                 </div>
               ) : (
                 <>
-                  <h1 className='text-[3.2rem] font-semibold text-base-black-1'>
-                    <Link href={`${detailPress?.slug}`}>{detailPress?.title}</Link>
-                  </h1>
-                  <div className='flex items-center gap-[16px]'>
-                    <h3 className='text-base-black-1'>
-                      <Link href={`${detailPress?.slug}`}>
-                        {detailPress?.category?.name}
-                      </Link>
-                    </h3>
-                    <time className='font-light text-base-drak-gray'>
-                      {detailPress?.created_at}
-                    </time>
-                  </div>
-                  <div
-                    className='content-blog'
-                    dangerouslySetInnerHTML={{ __html: detailPress?.content }}
-                  />
+                  {!detailPress?.name?.length ? (
+                    <div className='flex h-full w-full flex-col items-center justify-center'>
+                      <div className='h-[126px] w-[158px]'>
+                        <Image
+                          src={'/empty.png'}
+                          alt='empty'
+                          height={126}
+                          width={158}
+                          className='h-full w-full object-contain'
+                        />
+                      </div>
+                      <p className='font-light text-[#969696]'>{td('oopsDetail')}</p>
+                    </div>
+                  ) : (
+                    <>
+                      <h1 className='text-[3.2rem] font-semibold text-base-black-1'>
+                        <Link href={`${detailPress?.slug}`}>{detailPress?.title}</Link>
+                      </h1>
+                      <div className='flex items-center gap-[16px]'>
+                        <h3 className='text-base-black-1'>
+                          <Link href={`${detailPress?.slug}`}>
+                            {detailPress?.category?.name}
+                          </Link>
+                        </h3>
+                        <time className='font-light text-base-drak-gray'>
+                          {detailPress?.created_at}
+                        </time>
+                      </div>
+                      <div
+                        className='content-blog'
+                        dangerouslySetInnerHTML={{ __html: detailPress?.content }}
+                      />
+                    </>
+                  )}
                 </>
               )}
             </div>

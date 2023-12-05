@@ -59,7 +59,6 @@ const AnimatePhone = () => {
       animationData: animationData,
     })
 
-    // Return clean up function here
     return () => instance.destroy()
   }, [])
 

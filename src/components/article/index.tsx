@@ -6,32 +6,12 @@ import React, { useEffect } from 'react'
 import { twMerge } from 'tailwind-merge'
 import ImageFallback from '../ImageFallback'
 
-function Article({
-  tag,
-  time,
-  title,
-  desc,
-  style,
-  thumbnail,
-  tagSlug,
-  slug,
-  ref,
-}: {
-  tag: string
-  time: string
-  title: string
-  desc: string
-  style?: string
-  thumbnail: string
-  tagSlug: string
-  slug: string
-  ref?: any
-}) {
+function Article({ item, ref, style }: { item: any; ref?: any; style?: string }) {
   const locale = useLocale()
 
   return (
     <Link
-      href={`/${locale}/${slug}`}
+      href={`/${locale}/${item.slug}`}
       ref={ref}
       className={twMerge(
         'group flex w-full flex-shrink-0 cursor-pointer flex-col bg-white',
@@ -40,7 +20,7 @@ function Article({
     >
       <div className='h-[206px] w-full overflow-hidden'>
         <ImageFallback
-          src={thumbnail}
+          src={item.thumb}
           alt='Article image'
           height={406}
           width={800}
@@ -50,23 +30,23 @@ function Article({
       <div className='flex flex-col gap-[8px] p-[16px]'>
         <div className='flex items-center justify-between text-[1.4rem]'>
           <Link
-            href={`/${locale}/press/${tagSlug}`}
+            href={`/${locale}/press/${item.category.slug}`}
             className='text-[1.5rem] font-light text-primary-blue hover:cursor-pointer hover:text-primary-blue/80'
           >
-            {tag || 'Sự kiện'}
+            {item.category.title}
           </Link>
           <time className='text-[1.5rem] font-light text-base-drak-gray'>
-            {time || '30/11/2023'}
+            {item.created_at}
           </time>
         </div>
-        <h3 className='text-[1.8rem] font-semibold'>{title || 'Tải ngay ứng dụng'}</h3>
+        <h3 className='text-[1.8rem] font-semibold'>{item.title}</h3>
         <p
           className='line-clamp-3 text-[1.8rem] font-light text-base-drak-gray'
           onClick={(e) => {
             e.stopPropagation()
           }}
         >
-          {desc}
+          {item.short_description}
         </p>
       </div>
     </Link>

@@ -924,6 +924,9 @@
     "errorNetwork": "Please check your network connection again.",
     "oops": "Oops, the keyword you are searching for is currently not available!"
   },
+  "DetailsPress": {
+    "oopsDetail": "Oops, article not found"
+  },
   "inputSearch": {
     "searchFrequently": "Search frequently",
     "search": "Search",
