@@ -1,6 +1,6 @@
 import type { Metadata } from 'next'
 import { Lexend } from 'next/font/google'
-import { NextIntlClientProvider } from 'next-intl'
+import { NextIntlClientProvider, useLocale } from 'next-intl'
 import NextNProgress from 'nextjs-progressbar'
 import { Providers } from './providers'
 import Header from './(layout)/header'

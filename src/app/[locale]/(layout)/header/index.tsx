@@ -81,7 +81,7 @@ const Header = () => {
       id='header'
       className={`${
         transparent ? 'bg-transparent' : 'bg-white'
-      } header fixed left-0 right-0 z-[99999] w-full transition ${
+      } header fixed left-0 right-0 z-[11] w-full transition ${
         isHeaderVisible ? 'translate-y-0 shadow-sm' : '-translate-y-[100%]'
       }`}
     >

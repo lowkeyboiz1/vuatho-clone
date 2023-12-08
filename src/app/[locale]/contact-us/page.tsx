@@ -5,16 +5,31 @@ import { useTranslations } from 'next-intl'
 
 import { Location as LocationIcon, Call as CallIcon, Sms as SmsIcon } from 'iconsax-react'
 
-export const metadata: Metadata = {
-  title: 'Liên hệ',
+export async function generateMetadata({ params }: { params?: any }) {
+  try {
+    const metadata: any = {
+      vi: 'Liên hệ',
+      en: 'Contact us',
+    }
+    const description: any = {
+      vi: 'Ứng dụng số 1 Việt Nam',
+      en: 'Leading App in Vietnam',
+    }
+    return {
+      title: metadata[params.locale || 'vi'],
+      description: description[params.locale || 'vi'],
+    }
+  } catch (error) {
+    console.log(error)
+  }
 }
 
 const ContactUs = () => {
   const t = useTranslations('ContactUs')
   return (
     <div className='overflow-hidden pt-10 xl:pt-20 2xl:pt-32'>
-      <div className='relative flex h-[50vh] w-screen flex-col justify-center lg:h-[60vh] xl:h-[80vh] 2xl:h-[90vh]'>
-        <div className='ct-container-70 relative z-[1] xl:pt-[80px]'>
+      <div className='relative flex h-[60vh] w-screen flex-col justify-center xl:h-[80vh] 2xl:h-[90vh]'>
+        <div className='ct-container-70 relative z-[1] pt-[40px] xl:pt-[80px]'>
           <h3 className='text-[3.5rem] font-semibold'>{t('heading')}</h3>
           <div className='mt-10 space-y-10 lg:mt-20 xl:space-y-20'>
             <div className='flex gap-6 xl:gap-10'>
@@ -34,7 +49,7 @@ const ContactUs = () => {
                     {t('timeDay')}
                   </h6>
                 </div>
-                <p className='mt-5 text-[1.5rem] text-black/50 xl:text-[1.7rem]'>
+                <p className='mt-5 text-[1.5rem] text-black/50 xs:w-1/2 xl:text-[1.7rem]'>
                   {t('text')}
                 </p>
               </div>

@@ -2,10 +2,19 @@ import { Metadata } from 'next'
 import BackgroundRelative from '@/components/BackgroundRelative'
 import { useTranslations } from 'next-intl'
 
-export const metadata: Metadata = {
-  title: 'Điều khoản và điều kiện',
+export async function generateMetadata({ params }: { params?: any }) {
+  try {
+    const metadata: any = {
+      vi: 'Điều khoản và điều kiện',
+      en: 'Terms and condition',
+    }
+    return {
+      title: metadata[params.locale || 'vi'],
+    }
+  } catch (error) {
+    console.log(error)
+  }
 }
-
 function Guides() {
   const t = useTranslations('TermsAndCondition')
 

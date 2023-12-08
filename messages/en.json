@@ -1,15 +1,15 @@
 {
   "Navbar": {
     "home": "Home",
-    "become_employee": "Become a Worker",
-    "find_employee": "Find a Worker",
+    "become_employee": "Become Provider",
+    "find_employee": "Find Provider",
     "store": "Store",
     "language": "Language",
     "download": "Download Now"
   },
   "Banner": {
     "banner1": {
-      "text1": "Platform for booking workers",
+      "text1": "Platform for booking Service Providers",
       "text2": "Multi-industry",
       "button": "Learn more"
     },
@@ -20,12 +20,12 @@
     },
     "banner3": {
       "text1": "Fast, Easy, Professional",
-      "button": "Book a worker"
+      "button": "Book A Service Provider"
     }
   },
   "ServicesVuaTho": {
     "title": "Impressive multi-industry services",
-    "text": "Born in Vietnam with the spirit of “Elevating Craftsmanship” and “Convenience for everyone”",
+    "text": "Born in Vietnam with the spirit of “Elevating Service Provider” and “Convenience for everyone”",
     "electric": "Electric",
     "heal": "Home healthcare",
     "osin": "Housekeeping",
@@ -47,23 +47,23 @@
   "Benefit": {
     "customer": {
       "title": "Benefits for customers",
-      "button": "Find a worker",
+      "button": "Find a Service Provider",
       "list": {
-        "text1": "Book a worker anytime, anywhere.",
-        "text2": "Diverse industries, all kinds of workers available.",
-        "text3": "Transparent pricing and payment between customer and worker.",
-        "text4": "Professional repair process and easy information exchange with workers.",
-        "text5": "Public worker rating system."
+        "text1": "Book a Service Provider anytime, anywhere.",
+        "text2": "Diverse industries, all kinds of Service Providers available.",
+        "text3": "Transparent pricing and payment between customer and Service Provider.",
+        "text4": "Professional repair process and easy information exchange with Service Providers.",
+        "text5": "Public Service Provider rating system."
       }
     },
     "employee": {
-      "title": "Benefits for workers",
-      "button": "Become a worker",
+      "title": "Benefits for Service Providers",
+      "button": "Become a Service Provider",
       "list": {
         "text1": "Work anytime, anywhere, increase your income without limits!",
         "text2": "Chance to win a Wave RSX instantly!",
-        "text3": "Refer a worker now and receive a gift immediately.",
-        "text4": "Join a community of elite workers.",
+        "text3": "Refer a Service Provider now and receive a gift immediately.",
+        "text4": "Join a community of elite Service Providers.",
         "text5": "Improve your skills with leading training courses.",
         "text6": "Find jobs and connect with customers quickly."
       }
@@ -72,8 +72,8 @@
   "Download": {
     "download": "Download app",
     "download_now": "To experience the most advanced AI technology",
-    "slogan": "There's a worker for that",
-    "book_now": "App for on-site worker booking",
+    "slogan": "There's a Service Provider for that",
+    "book_now": "App for on-site Service Provider booking",
     "download_appstore": "Download from",
     "download_chplay": "Download from"
   },
@@ -88,11 +88,11 @@
     "about_vuatho": "About Vua Thợ",
     "about_us": "About us",
     "faq": "Frequently asked questions",
-    "become_worker": "Instructions for registering as a worker",
+    "become_worker": "Instructions for registering as a Service Provider",
     "contact_with_vuatho": "Cooperate with Vua Thợ",
     "guides": "Terms and Conditions",
     "private_infomation": "Privacy policy",
-    "contact_us": "Contact"
+    "contact_us": "Contact us"
   },
   "NotFound": {
     "text": "The page you are looking for cannot be found!",
@@ -115,10 +115,10 @@
   },
   "MainSection": {
     "heading1": "Application",
-    "heading1-1": "Find Workers, Find Jobs",
+    "heading1-1": "Find Service Providers, Find Jobs",
     "heading2": "Apply AI Technology",
     "heading2-1": "Artificial Intelligence (AI)",
-    "subHeading": "King of Workers supports multiple languages, multiple industries - just need is to have",
+    "subHeading": "King of Service Providers supports multiple languages, multiple industries - just need is to have",
     "listCard": {
       "title1": "Breakthrough",
       "desc1": "How it works",
@@ -128,12 +128,12 @@
       "desc3": "Forms of collaboration"
     },
     "text1": "Supports multiple languages - multiple industries",
-    "text2": "Workers everywhere - Every worker has it"
+    "text2": "Service Providers everywhere - Every Service Provider has it"
   },
   "RuleSection": {
     "text1": "The role ",
     "text2": "of Vua Thợ",
-    "text3": "For workers",
+    "text3": "For Service Providers",
     "text4": "Connecting everyone in the world and creating many opportunities.",
     "text5": "For customers",
     "text6": "Creating a free and convenient workspace using advanced technology."
@@ -142,9 +142,9 @@
     "heading1": "Breakthrough AI Technology ",
     "heading2": "In Our System",
     "title1": "Smart AI assistant",
-    "desc1": " Helps identify customer issues, thereby finding the right worker for the customer",
-    "title2": "AI supports worker skill checks",
-    "desc2": "Enhancing the quality of workers and ensuring the best perfect service for customers",
+    "desc1": " Helps identify customer issues, thereby finding the right Service Provider for the customer",
+    "title2": "AI supports Service Provider kill checks",
+    "desc2": "Enhancing the quality of Service Providers and ensuring the best perfect service for customers",
     "title3": "Language diversity with AI",
     "desc3": "Never let language barriers stop you from the solutions you need",
     "title4": "Superior speed and performance",
@@ -154,7 +154,7 @@
     "heading": "Flexible in agreement and transaction",
     "listData": {
       "title1": "Clear details",
-      "desc1": "The Worker provides detailed and comprehensive information on the scope of work, necessary materials, and pricing. This helps the Customer understand the services to be provided.",
+      "desc1": "The Service Provider provides detailed and comprehensive information on the scope of work, necessary materials, and pricing. This helps the Customer understand the services to be provided.",
       "title2": "Confirm changes",
       "desc2": "To ensure that all changes are valid, the Customer must confirm any modifications made on the Work Ticket.",
       "title3": "Consensus",
@@ -164,16 +164,16 @@
       "title5": "Honesty",
       "desc5": "Any changes on the Work Ticket must reflect the true needs and desires of both sides, not affecting the quality of service.",
       "title6": "Fair agreement",
-      "desc6": "The negotiation and amendment process is always based on cooperation and seeking common interests"
+      "desc6": "The negotiation and amendment process is always based on cooperation and seeking common interests."
     }
   },
   "HinhThucKetNoi": {
     "heading": "Diverse and Transparent Collaboration Models",
     "listData": {
       "label1": "Diverse Choices",
-      "description1": "Vua Thợ's app uses AI to quickly and transparently connect Customer needs with the corresponding Worker services",
+      "description1": "Vua Thợ's app uses AI to quickly and transparently connect Customer needs with the corresponding Service Provider ervices.",
       "label2": "Quick Response",
-      "description2": "With the support of AI technology, Vua Thợ automatically forwards requests to suitable Worker partners, optimizing the connection process.",
+      "description2": "With the support of AI technology, Vua Thợ automatically forwards requests to suitable Service Provider partners, optimizing the connection process.",
       "label3": "Transparent Solutions & Costs",
       "description3": "Booking is only confirmed after both sides agree on the solution and costs, creating clarity and avoiding misunderstandings.",
       "label4": "Freedom To Develop",
@@ -188,59 +188,60 @@
     "benefit": "Benefits",
     "text": "For Customers",
     "listBenefit": {
-      "title1": "Find the nearest Worker to handle incidents quickly",
-      "title2": "Choose a skilled worker",
+      "title1": "Find the nearest Service Provider to handle incidents quickly",
+      "title2": "Choose a skilled Service Provider",
       "title3": "Reasonable process and cost",
-      "title4": "Longest warranty"
+      "title4": "Longest warranty",
+      "title5": "Ensuring the most perfect and professional service"
     }
   },
   "WorkerBenefitSection": {
     "benefit": "benefit",
-    "text": "For the Craftsman",
+    "text": "For the Service Provider",
     "benefit1": "Closest job",
     "benefit2": "High and stable income",
     "benefit3": "Flexible working hours",
     "benefit4": "Share profits with Vua Thợ",
-    "benefit5": "Craftsman introduces Craftsman (or Assistant) - Customer introduces Craftsman",
-    "benefit6": "Participate in the program every 1000 Craftsmen receive 1 Wave RSX FI motorcycle",
+    "benefit5": "Service Provider introduces Service Provider (or Assistant) - Customer introduces Service Provider",
+    "benefit6": "Participate in the program every 1000 Service Provider receive 1 Wave RSX FI motorcycle",
     "benefit7": "Receive a permanent lucky number to participate in the monthly lottery program from Vua Thợ",
     "benefit8": "Welfare support when encountering occupational accidents",
     "benefit9": "When retiring at old age",
-    "benefit10": "Participate in good Craftsman contests (quarterly - annually)",
+    "benefit10": "Participate in good Service Provider contests (quarterly - annually)",
     "benefit11": "Recognize skills - talents and grant certificates from Vua Thợ’ vocational training centers",
     "benefit12": "Together with Vua Thợ build a charitable community to support difficult circumstances",
-    "benefit13": "Elevate the status of the Craftsman",
+    "benefit13": "Elevate the status of the Service Provider",
     "benefit14": "Ensure transparent and fair transactions",
-    "text1": "Whether you are a Craftsman of any profession, Vua Thợ will bring the job closest to you (wherever you are in Vietnam, customers can see you).",
+    "text1": "Whether you are a Service Provider of any profession, Vua Thợ will bring the job closest to you (wherever you are in Vietnam, customers can see you).",
     "text2": "Save travel costs and other expenses, even when at home you will quickly find a stable job.",
-    "text3": "Proactively earn extra income - control your own finances. Craftsmen can easily and quickly increase their reputable transactions with the optimal customer source from Vua Thợ.",
+    "text3": "Proactively earn extra income - control your own finances. Service Provider can easily and quickly increase their reputable transactions with the optimal customer source from Vua Thợ.",
     "text4": "Income from 20,000,000 to 60,000,000 VND per month.",
-    "text5": "Flexible time, Craftsmen can completely decide their own working hours.",
+    "text5": "Flexible time, Service Provider can completely decide their own working hours.",
     "text6": "When you have time, open the application to work, if busy you can temporarily turn off the application, with Vua Thợ there will be no constraints.",
     "text7": "For service fees (repair, installation …), Vua Thợ will charge 15%.",
     "text8": "For Products - Supplies - Materials …, share 50 - 50% profit.",
-    "text9": "When introducing the main Craftsman or Assistant, you will get ",
+    "text9": "When introducing the main Service Provider or Assistant, you will get ",
     "text10": "50,000 VND ",
-    "text11": "(The money will be transferred to your wallet, but cannot be used, Vua Thợ will pay when that Craftsman generates work)",
+    "text11": "(The money will be transferred to your wallet, but cannot be used, Vua Thợ will pay when that Service Provider generates work)",
     "text12": "If it is an Assistant, Vua Thợ will accept without checking the level, just need to verify the information and the job you want to do when participating in Vua Thợ.",
-    "text13": "When successfully registering Craftsman on the Vua Thợ application, each Craftsman will receive 01 lottery code (also the referral code) to have the opportunity to receive 01 Wave RSX F1 motorcycle for every 1,000 Craftsmen registered through the lottery wheel from the system - serving the profession.",
+    "text13": "When successfully registering Service Provider on the Vua Thợ application, each Service Provider will receive 01 lottery code (also the referral code) to have the opportunity to receive 01 Wave RSX F1 motorcycle for every 1,000 Service Provider registered through the lottery wheel from the system - serving the profession.",
     "text14": "1 special prize worth 25,000,000 VND",
     "text15": "1 second prize 6 beer barrels",
     "text16": "1 third prize 3 beer barrels",
-    "text17": "When introducing Craftsman (regardless of which Craftsman) each 1 Craftsman is equivalent to 1 number and with 12 Craftsmen - you will have 1 lucky number in 6 balls (each ball has 02 numbers) Craftsmen will have a lucky number and unlimited many lucky number series owned to participate in regular lottery every month.",
+    "text17": "When introducing Service Provider (regardless of which Service Provider) each 1 Service Provider is equivalent to 1 number and with 12 Service Provider - you will have 1 lucky number in 6 balls (each ball has 02 numbers) Service Provider will have a lucky number and unlimited many lucky number series owned to participate in regular lottery every month.",
     "text18": "1 special prize worth 25,000,000 VND",
     "text19": "1 second prize 6 beer barrels",
     "text20": "1 third prize 3 beer barrels",
-    "text21": "The golden heart fund of the Craftsman community will help the Craftsmen who encounter occupational accidents or unwanted incidents when practicing the profession (the larger the Craftsman community, the greater the support). Craftsmen will feel protected and secure when participating in the Vua Thợ community.",
-    "text22": "When young people do heavy work, when they get older, Vua Thợ will help you switch to lighter work, helping you optimize all income sources when you get old. - Vua Thợ will link with insurance companies to create Vua Thợ’ own insurance, ensuring the future for Craftsmen.",
-    "text23": "When old, Craftsmen will have an amount from ",
+    "text21": "The golden heart fund of the Service Provider community will help the Service Provider who encounter occupational accidents or unwanted incidents when practicing the profession (the larger the Service Provider community, the greater the support). Service Provider will feel protected and secure when participating in the Vua Thợ community.",
+    "text22": "When young people do heavy work, when they get older, Vua Thợ will help you switch to lighter work, helping you optimize all income sources when you get old. - Vua Thợ will link with insurance companies to create Vua Thợ’ own insurance, ensuring the future for Service Provider.",
+    "text23": "When old, Service Provider will have an amount from ",
     "text24": "10,000,000 - 30,000,000 VND ",
-    "text25": "per month. In addition, Craftsmen can participate in voluntary insurance, for example, paying 5,000 - 10,000 VND per day equivalent to 150,000 - 300,000 VND/ month to accumulate for retirement in the future.",
-    "text26": "Vua Thợ regularly organizes competitions to find skilled Craftsmen in professional skills and business to commend for their dedication to the profession (will invite the winning Craftsmen to participate in shares in the companies established by Vua Thợ). Thereby creating motivation for all Craftsmen to strive together to learn, constantly develop.",
-    "text27": "In the future, Vua Thợ will build vocational training centers (from primary to advanced) to issue certificates and degrees … recognizing the talents of Craftsmen according to standards.",
-    "text28": "Vua Thợ and Craftsmen together build a community to help, share with society and localities with difficult circumstances: build a school, a bridge, clean a canal … bring the best things to society by the labor of the Craftsmen.",
-    "text29": "Coming to Vua Thợ, Craftsmen will self-control their own work without the concept of labor. In addition, Craftsmen will not have to worry about finding Customers but Customers will come to Craftsmen. - Craftsmen will be the sales representative for Vua Thợ.",
-    "text30": "When completing the job well, ensure Craftsmen will receive money."
+    "text25": "per month. In addition, Service Provider can participate in voluntary insurance, for example, paying 5,000 - 10,000 VND per day equivalent to 150,000 - 300,000 VND/ month to accumulate for retirement in the future.",
+    "text26": "Vua Thợ regularly organizes competitions to find skilled Service Provider in professional skills and business to commend for their dedication to the profession (will invite the winning Service Provider to participate in shares in the companies established by Vua Thợ). Thereby creating motivation for all Service Provider to strive together to learn, constantly develop.",
+    "text27": "In the future, Vua Thợ will build vocational training centers (from primary to advanced) to issue certificates and degrees … recognizing the talents of Service Provider according to standards.",
+    "text28": "Vua Thợ and Service Provider together build a community to help, share with society and localities with difficult circumstances: build a school, a bridge, clean a canal … bring the best things to society by the labor of the Service Provider.",
+    "text29": "Coming to Vua Thợ, Service Provider will self-control their own work without the concept of labor. In addition, Service Provider will not have to worry about finding Customers but Customers will come to Service Provider. - Service Provider will be the sales representative for Vua Thợ.",
+    "text30": "When completing the job well, ensure Service Provider will receive money."
   },
   "FaqSection": {
     "listAccordion": {
@@ -271,7 +272,7 @@
       "children2": {
         "title1": "What is Vua Thợ app?",
         "children1": {
-          "title1": "Vua Thợ is an app that connects those in need of services with professional craftsmen across various fields. We make it easy for users to find and hire craftsmen, as well as allowing craftsmen to seek jobs that match their skills."
+          "title1": "Vua Thợ is an app that connects those in need of services with professional Service Provider across various fields. We make it easy for users to find and hire Service Provider, as well as allowing Service Provider to seek jobs that match their skills."
         },
         "title2": "Where is the app being deployed?",
         "children2": {
@@ -279,19 +280,19 @@
         },
         "title3": "I want to try Vua Thợ's services but am unsure about the quality?",
         "children3": {
-          "title1": "We understand your hesitation. To ensure service quality, Vua Thợ has built a rating system to evaluate each craftsman after every completed job. You can consider feedback and ratings from other users to make an informed decision when choosing a craftsman."
+          "title1": "We understand your hesitation. To ensure service quality, Vua Thợ has built a rating system to evaluate each Service Provider after every completed job. You can consider feedback and ratings from other users to make an informed decision when choosing a Service Provider "
         },
         "title4": "How long does it take to find someone to accept a job after posting it on the app?",
         "children4": {
-          "title1": "The time it takes for a craftsman to accept a job can vary depending on your location and the type of job. Typically, standard jobs can find craftsmen quickly, while special jobs or those in farther locations may take longer."
+          "title1": "The time it takes for a Service Provider to accept a job can vary depending on your location and the type of job. Typically, standard jobs can find Service Provider quickly, while special jobs or those in farther locations may take longer."
         },
         "title5": "How do I know if the helper is doing a good job?",
         "children5": {
-          "title1": "You can review and evaluate the work history of the craftsman through their profile on the app. Additionally, you can refer to reviews and comments from other users to ensure you choose a reliable and skilled craftsman."
+          "title1": "You can review and evaluate the work history of the Service Provider through their profile on the app. Additionally, you can refer to reviews and comments from other users to ensure you choose a reliable and skilled Service Provider "
         },
-        "title6": "How do I identify a craftsman?",
+        "title6": "How do I identify a Service Provider ",
         "children6": {
-          "title1": "Every craftsman on the Vua Thợ app has a personal profile with a picture, contact information, and reviews from other users. You can check the craftsman's profile before deciding to select them for the job."
+          "title1": "Every Service Provider on the Vua Thợ app has a personal profile with a picture, contact information, and reviews from other users. You can check the Service Provider's profile before deciding to select them for the job."
         },
         "title7": "Do I get any promotions if I refer friends to use the app?",
         "children7": {
@@ -304,41 +305,41 @@
         "title9": "How do I use the services on the App perfectly?",
         "children9": {
           "title1": "To use the services best, you should:",
-          "title2": "- Review ratings and choose a reputable and skilled craftsman.",
-          "title3": "- Describe your job in detail so that the craftsman understands your requirements.",
-          "title4": "- Schedule in advance to ensure you have a craftsman at the time you want.",
-          "title5": "- Once the job is completed, review and evaluate the craftsman to help improve the quality of service."
+          "title2": "- Review ratings and choose a reputable and skilled Service Provider.",
+          "title3": "- Describe your job in detail so that the Service Provider understands your requirements.",
+          "title4": "- Schedule in advance to ensure you have a Service Provider at the time you want.",
+          "title5": "- Once the job is completed, review and evaluate the Service Provider to help improve the quality of service."
         },
         "title10": "How are service prices calculated?",
         "children10": {
-          "title1": "Service prices are calculated based on the type of job, duration, and your location. Craftsmen will quote based on this information. The final price may vary depending on specific factors during the job."
+          "title1": "Service prices are calculated based on the type of job, duration, and your location. Service Provider will quote based on this information. The final price may vary depending on specific factors during the job."
         }
       },
       "title3": "Operations on Vua Thợ App",
       "children3": {
-        "title1": "Can I schedule a craftsman in the evening?",
+        "title1": "Can I schedule a Service Provider in the evening?",
         "children1": {
-          "title1": "Yes, you can schedule a craftsman in the evening. Vua Thợ provides services year-round, including evenings and weekends. However, it's best to schedule in advance to ensure availability during your desired time."
+          "title1": "Yes, you can schedule a Service Provider in the evening. Vua Thợ provides services year-round, including evenings and weekends. However, it's best to schedule in advance to ensure availability during your desired time."
         },
-        "title2": "How will the craftsman contact me?",
+        "title2": "How will the Service Provider contact me?",
         "children2": {
-          "title1": "The craftsman will contact you through the Vua Thợ app via message or phone call. You will receive a notification when a craftsman agrees to take your job, from which you can exchange detailed information."
+          "title1": "The Service Provider will contact you through the Vua Thợ app via message or phone call. You will receive a notification when a Service Provider agrees to take your job, from which you can exchange detailed information."
         },
-        "title3": "What if I want multiple craftsmen to come and help with repairs quickly?",
+        "title3": "What if I want multiple Service Provider to come and help with repairs quickly?",
         "children3": {
-          "title1": "To have multiple craftsmen come to assist with quick repairs, you can create multiple job postings for various tasks. The craftsmen will accept the jobs to complete them in a short amount of time."
+          "title1": "To have multiple Service Provider come to assist with quick repairs, you can create multiple job postings for various tasks. The Service Provider will accept the jobs to complete them in a short amount of time."
         },
         "title4": "Can I request a service for cooking for the family without cleaning?",
         "children4": {
-          "title1": "Yes, you can request a cooking service without cleaning. When posting a job, you can note that you only need cooking services and not cleaning. The craftsman will proceed according to your request."
+          "title1": "Yes, you can request a cooking service without cleaning. When posting a job, you can note that you only need cooking services and not cleaning. The Service Provider will proceed according to your request."
         },
         "title5": "Can I book multiple services at the same time?",
         "children5": {
-          "title1": "Yes, you can book different services at the same time through the Vua Thợ app. Just post a job for each service you need and select the appropriate craftsman for each task."
+          "title1": "Yes, you can book different services at the same time through the Vua Thợ app. Just post a job for each service you need and select the appropriate Service Provider for each task."
         },
         "title6": "Besides house cleaning, if I need someone to cook and iron, can Vua Thợ meet that need?",
         "children6": {
-          "title1": "Vua Thợ provides a variety of services, including house cleaning, cooking, ironing, and many others. You can select the services you need and find suitable craftsmen to perform them."
+          "title1": "Vua Thợ provides a variety of services, including house cleaning, cooking, ironing, and many others. You can select the services you need and find suitable Service Provider to perform them."
         },
         "title7": "Can I cancel a job after posting it?",
         "children7": {
@@ -350,7 +351,7 @@
         },
         "title9": "What if I want to change my schedule?",
         "children9": {
-          "title1": "To change a scheduled appointment, you can directly contact the craftsman through the app's message system to negotiate a new time. However, note that schedule changes are subject to the craftsman's availability at your desired time."
+          "title1": "To change a scheduled appointment, you can directly contact the Service Provider through the app's message system to negotiate a new time. However, note that schedule changes are subject to the Service Provider's availability at your desired time."
         },
         "title10": "Where can I track the status of my order?",
         "children10": {
@@ -358,7 +359,7 @@
         },
         "title11": "Do employees bring any tools or equipment?",
         "children11": {
-          "title1": "The tools and equipment that employees bring will depend on the type of service you request. Craftsmen will bring the necessary tools to perform the job you have ordered, such as gardening tools, repair tools, or cooking utensils, depending on your requirements."
+          "title1": "The tools and equipment that employees bring will depend on the type of service you request. Service Provider will bring the necessary tools to perform the job you have ordered, such as gardening tools, repair tools, or cooking utensils, depending on your requirements."
         },
         "title12": "Why should I rate the work shift?",
         "children12": {
@@ -381,7 +382,7 @@
         "title1": "What are the payment methods?",
         "children1": {
           "title1": "Vua Thợ supports multiple payment methods for your flexibility. Common payment methods include:",
-          "title2": "- Direct payment to the craftsman after the job is completed.",
+          "title2": "- Direct payment to the Service Provider after the job is completed.",
           "title3": "- Payment through the Vua Thợ app, using a credit card or e-wallet."
         },
         "title2": "Do I receive a receipt when I book a service?",
@@ -393,48 +394,48 @@
           "title1": "Vua Thợ can issue VAT invoices for services, depending on tax regulations and local requirements. Information about VAT will be provided on the invoice if applicable."
         }
       },
-      "title5": "Regular Craftsman Booking",
+      "title5": "Regular Service Provider Booking",
       "children5": {
         "title1": "As a customer",
         "children1": {
-          "title1": "Is there a way to book a craftsman regularly?",
-          "title2": "- Yes, you can book a craftsman regularly to perform services on a fixed schedule, such as house cleaning weekly or monthly. In the app, you can select the Regular Service Booking option and specify the schedule and type of service you want.",
-          "title3": "I am using regular craftsman booking, can I change to a different craftsman?",
-          "title4": "- Yes, you have the right to change craftsmen if you are not satisfied or for other reasons. In the app, you can search for and select a new craftsman to replace.",
-          "title5": "I am using regular craftsman booking, and I have an unexpected emergency and will be away, what should I do?",
-          "title6": "- If you have an unexpected emergency or will be away and do not need the service during that time, you should change the craftsman booking schedule to avoid inconveniencing your craftsman. In the app, you can adjust your booking schedule according to your needs.",
+          "title1": "Is there a way to book a Service Provider regularly?",
+          "title2": "- Yes, you can book a Service Provider regularly to perform services on a fixed schedule, such as house cleaning weekly or monthly. In the app, you can select the Regular Service Booking option and specify the schedule and type of service you want.",
+          "title3": "I am using regular Service Provider booking, can I change to a different Service Provider ",
+          "title4": "- Yes, you have the right to change Service Provider if you are not satisfied or for other reasons. In the app, you can search for and select a new Service Provider to replace.",
+          "title5": "I am using regular Service Provider booking, and I have an unexpected emergency and will be away, what should I do?",
+          "title6": "- If you have an unexpected emergency or will be away and do not need the service during that time, you should change the Service Provider booking schedule to avoid inconveniencing your Service Provider  In the app, you can adjust your booking schedule according to your needs.",
           "title7": "Can I cancel a house cleaning package?",
           "title8": "- Yes, you can cancel a house cleaning service package, however, please consider the application's cancellation policy and terms for detailed information about your rights and conditions."
         },
-        "title2": "As a worker",
+        "title2": "As a Service Provider",
         "children2": {
-          "title1": "The craftsman wants an advance payment",
+          "title1": "The Service Provider wants an advance payment",
           "title2": "- In the Vua Thợ app, the usual payment method is after the job is completed. However, you can discuss with your customer about advance payment and make a specific agreement on the payment method.",
-          "title3": "The craftsman wants the customer to pay in full",
-          "title4": "Is there a way to book a craftsman regularly?",
+          "title3": "The Service Provider wants the customer to pay in full",
+          "title4": "Is there a way to book a Service Provider regularly?",
           "title5": "- You can discuss with the customer about paying in advance or paying in full after the job is completed. This should be agreed upon between you and the customer before starting the job to avoid misunderstandings later."
         }
       },
       "title6": "Incident Reporting",
       "children6": {
-        "title1": "What should I do if the craftsman cancels the job?",
+        "title1": "What should I do if the Service Provider cancels the job?",
         "children1": {
-          "title1": "If the craftsman has cancelled the job, you should take the following steps:",
-          "title2": "- Contact the craftsman to understand why they cancelled and see if it’s possible to reschedule.",
-          "title3": "- If rescheduling is not possible, repost the job on the app to find another craftsman.",
+          "title1": "If the Service Provider has cancelled the job, you should take the following steps:",
+          "title2": "- Contact the Service Provider to understand why they cancelled and see if it’s possible to reschedule.",
+          "title3": "- If rescheduling is not possible, repost the job on the app to find another Service Provider ",
           "title4": "- Leave a review and record the cancellation incident on the app to provide feedback to Vua Thợ."
         },
-        "title2": "Why has no craftsman accepted the job I posted?",
+        "title2": "Why has no Service Provider accepted the job I posted?",
         "children2": {
-          "title1": "There could be several reasons why no craftsman has accepted your job, such as:",
-          "title2": "- The job requires special skills that no available craftsman possesses.",
-          "title3": "- The time you proposed does not match the craftsman’s schedule.",
-          "title4": "- Your location is too far from the craftsmen in that area. In this case, you may want to adjust the job requirements, timing, or location to increase the chances of finding a craftsman."
+          "title1": "There could be several reasons why no Service Provider has accepted your job, such as:",
+          "title2": "- The job requires special skills that no available Service Provider possesses.",
+          "title3": "- The time you proposed does not match the Service Provider's schedule.",
+          "title4": "- Your location is too far from the Service Provider in that area. In this case, you may want to adjust the job requirements, timing, or location to increase the chances of finding a Service Provider "
         },
-        "title3": "What should I do if the craftsman who arrives is different from the one on the app?",
+        "title3": "What should I do if the Service Provider who arrives is different from the one on the app?",
         "children3": {
-          "title1": "If the craftsman who arrives does not match the information on the app, you should take the following steps:",
-          "title2": "- Contact the craftsman to confirm their identity and personal information.",
+          "title1": "If the Service Provider who arrives does not match the information on the app, you should take the following steps:",
+          "title2": "- Contact the Service Provider to confirm their identity and personal information.",
           "title3": "- If you have any doubts or concerns about safety, stop the job and contact Vua Thợ to report the situation.",
           "title4": "- Note the discrepancy in the app to provide feedback to Vua Thợ."
         },
@@ -459,11 +460,11 @@
     "text": "At Vua Thợ, we pride ourselves on being a leading technology company and a pioneer in providing a super app ecosystem model in Southeast Asia. Originating from a passion and mission to improve the lives of millions of users across the development path, we offer a top-notch and convenient experience.",
     "goal": "The goal is to reach the milestone of connecting",
     "numberGoal": "100,000+",
-    "textGold": "Craftsmen and users nationwide by 2024"
+    "textGold": "Service Provider and users nationwide by 2024"
   },
   "ContactUs": {
     "heading": "Contact us",
-    "address1": "57 Song Hành, An Phú Ward, Thu Duc City,",
+    "address1": "57 Song Hành, An Phú Ward, Thủ Đức City,",
     "address2": "HCMC, Vietnam.",
     "timeNumber": "8:30 to 16:30",
     "timeDay": "Monday to Friday",
@@ -475,7 +476,7 @@
     "heading": "Privacy Policy",
     "title1": "Personal Data",
     "text1": "We, CÔNG TY TNHH CÔNG NGHỆ VUA THỢ (here in after referred to as “Vua Thợ” or “we, us”), place great importance on the privacy and protection of users' personal data.",
-    "text2": "The personal data protection policy of CÔNG TY TNHH CÔNG NGHỆ VUA THỢ “Vua Thợ” (here in after referred to as “Policy”) will provide information on how Vua Thợ collects, processes, stores personal data of Users in order to provide products and/or services of Vua Thợor conduct business transactions with Users and when Users use Vua Thợ's online services. This Policy specifies the reasons why we must collect personal information of Users, how it is used, who it may be transferred to, how to access, view and modify personal information of oneself. In addition, this Policy also sets out the standards and control procedures expected to protect Personal Data in line with the objectives of the Policy. We will also let Users know what rights they have, and how they can contact us.",
+    "text2": "The personal data protection policy of CÔNG TY TNHH CÔNG NGHỆ VUA THỢ “Vua Thợ” (here in after referred to as “Policy”) will provide information on how Vua Thợ collects, processes, stores personal data of Users in order to provide products and/or services of Vua Thợ or conduct business transactions with Users and when Users use Vua Thợ's online services. This Policy specifies the reasons why we must collect personal information of Users, how it is used, who it may be transferred to, how to access, view and modify personal information of oneself. In addition, this Policy also sets out the standards and control procedures expected to protect Personal Data in line with the objectives of the Policy. We will also let Users know what rights they have, and how they can contact us.",
     "text3": "To avoid confusion, this Data Privacy Policy only applies to individual users. Vua Thợ encourages users to read this Policy carefully and regularly check the website for any changes that Vua Thợ may make according to the terms of this Policy.",
     "title2": "Terminology Explanation",
     "text4": "For the purpose of this Policy, please note that:",
@@ -635,7 +636,7 @@
     "text143": "Part L – Unwanted consequences, damages that may occur",
     "text144": "When processing requests regarding the User's rights:",
     "text145": "As mentioned at ",
-    "text146": "Users have certain rights by law and request us to perform while processing the User's personal data. At this time, we may need a reasonable time (depending on the complexity and the impact of the User's request on the relationship between us and the User) to process the User's request and/or to inform the User of the consequences, unwanted damages that may occur if the User's request is executed.",
+    "text146": " Users have certain rights by law and request us to perform while processing the User's personal data. At this time, we may need a reasonable time (depending on the complexity and the impact of the User's request on the relationship between us and the User) to process the User's request and/or to inform the User of the consequences, unwanted damages that may occur if the User's request is executed.",
     "text147": "We hope Users note that:",
     "text148": "Based on the nature and scope of the User's request, we may not be able to continue providing services to the User, and as required by law in certain cases, we will also inform the User before completing the processing of the User's request.",
     "text149": "Or in cases where we cannot carry out the request to withdraw the User's consent while Vua Thợ is fulfilling the contract between Vua Thợ and the User; or need to process relevant personal data immediately to protect the life, health of the data subject or others as prescribed by law.",
@@ -657,8 +658,8 @@
     "text164": ", the User can contact us in various ways.",
     "text165": "Call our hotline: 38 786 688",
     "text166": "Email us at: info@vuatho.com",
-    "text167": "Or contact us directly at our office: 57 Song Hành, An Phú Ward, Thu Duc City, HCMC, Vietnam.",
-    "text168": "Headquarters: 57 Song Hành, An Phú Ward, Thu Duc City, HCMC, Vietnam.",
+    "text167": "Or contact us directly at our office: 57 Song Hanh, An Phu Ward, Thu Duc City, HCMC, Vietnam.",
+    "text168": "Headquarters: 57 Song Hanh, An Phu Ward, Thu Duc City, HCMC, Vietnam.",
     "text169": "Phone:",
     "text170": "38 786 688",
     "text171": "If the User wishes to stop receiving advertisements from Vua Thợ, please send an email to: info@vuatho.com"
@@ -693,15 +694,15 @@
     "text22": "The information provided to VUA THỢ always ensures it is updated, complete, and authentic.",
     "text23": "The use of the Application is for legitimate needs.",
     "text24": "You have full civil act capacity as prescribed by law to accept and agree to these terms of use; have the right, authority, and capacity to use the Services and to comply with these terms of use.",
-    "text25": "You do not provide access to your User Account/ Craftsman Account to any other person, including the transfer of the User Account/ Craftsman Account or information from the User Account/ Craftsman Account to anyone else.",
+    "text25": "You do not provide access to your User Account/ Service Provider Account to any other person, including the transfer of the User Account/ Service Provider Account or information from the User Account/ Service Provider Account to anyone else.",
     "text26": "You are responsible for checking and ensuring that you have downloaded the correct Application compatible with your mobile device. VUA THỢ is not responsible if you do not have a compatible device for the Application and/or have downloaded an incompatible version of the Application for your mobile device.",
     "text27": "Commitment when using the Service",
     "text28": "By using the Application, You agree that:",
     "text29": "Not to use the Application to send and store any illegal material or information or serve fraudulent purposes; to harass, disturb others, or perform fraudulent service bookings; violating the prohibitions of current Vietnamese law.",
     "text30": "Do not use the information of VUA THỢ, Partners, Users for any purpose other than using the Service.",
     "text31": "Do not perform actions (intentionally or unintentionally) that may harm the Application, the reputation, brand, property of VUA THỢ and/or Partner and/or User.",
-    "text32": "Fully responsible for preserving and securing the password of your User Account/ Craftsman Account or any identification method that VUA THỢ provides for you to use the Application.",
-    "text33": "Provide VUA THỢ with any proof of identification that VUA THỢ may require for the purpose of establishing a User Account/ Craftsman Account and providing the Service.",
+    "text32": "Fully responsible for preserving and securing the password of your User Account/ Service Provider Account or any identification method that VUA THỢ provides for you to use the Application.",
+    "text33": "Provide VUA THỢ with any proof of identification that VUA THỢ may require for the purpose of establishing a User Account/ Service Provider Account and providing the Service.",
     "text34": "Agree to provide authentic information, regularly maintain, timely update, and completely fill in the information as required by VUA THỢ to provide, use the Service to ensure that this information is always authentic, up to date, and complete at all times. You acknowledge that if the information about You is wrong, inaccurate, outdated, or incomplete in any aspect, then VUA THỢ has the right to terminate the provision, use of the Service at any time whether or not notified.",
     "text35": "Not to perform deceptive acts towards VUA THỢ and similar acts to unjustly benefit in any event, promotional activity carried out by VUA THỢ.",
     "text36": "Not to repeatedly cancel the service.",
@@ -796,7 +797,7 @@
     "text125": "Regardless of the provisions contrary to this, any complaint between the Partner and the User must be resolved directly with each other."
   },
   "BecomeWorker": {
-    "heading": "Guide to Register as a Worker",
+    "heading": "Guide to Register as a Service Provider",
     "text1": "Step 1: Prepare all necessary documents",
     "text2": "Step 2: Download the VUA THỢ app",
     "text3": "Step 3: Register an account",
@@ -820,9 +821,9 @@
     "text21": "After successful download, users open the app and choose the role:",
     "text22": "Customer",
     "text23": " If you want to search for ",
-    "text24": "services/workers.",
+    "text24": "services/Service Providers.",
     "text25": " If you want to provide services and seek employment.",
-    "text26": "Worker",
+    "text26": "Service Provider",
     "text27": "These two roles will be integrated and used within the VUA THỢ app.",
     "text28": "As a new user, select the ",
     "text29": "Register",
@@ -854,10 +855,10 @@
     "text54": " Users must verify again to be able to use all services and features of the app"
   },
   "FindWorker": {
-    "heading": "Guide on How to Find Workers on VUA THỢ",
+    "heading": "Guide on How to Find Service Providers on VUA THỢ",
     "text1": "Step 1: Download the app",
     "text2": "Step 2: Register/Login",
-    "text3": "Step 3: Find workers",
+    "text3": "Step 3: Find Service Providers",
     "text4": "Download the VUA THỢ app",
     "text5": "Android operating system",
     "text6": "iOS operating system",
@@ -884,25 +885,25 @@
     "text27": "Enter the OTP sent by the system via SMS",
     "text28": "Step 5",
     "text29": "Step 6",
-    "text30": "Press the “find workers” icon at the bottom navigation bar to open the find workers page",
-    "text31": "The guest user adds details for the worker search request",
+    "text30": "Press the “find Service Providers” icon at the bottom navigation bar to open the find Service Providers page",
+    "text31": "The guest user adds details for the Service Provider earch request",
     "text32": "Service",
     "text33": "Detailed description of the request",
     "text34": "Time",
     "text35": "Image - video - description (if any)",
-    "text36": "Press Find Workers and confirm the information",
-    "text37": "After checking the information once more, press Confirm to start searching for workers",
-    "text38": "After confirming in step 3, the screen will switch to the map to start scanning for workers",
-    "text39": "When workers send quotes, the system will notify the customer Customers will select the appropriate worker by pressing the button See now to view the worker’s details and quote",
-    "text40": "After entering the Quote Details page, if the customer agrees to book the worker, press the Book worker button",
-    "text41": "The system will wait for the worker to confirm and come to the customer's place to perform the check and finalize the price",
-    "text42": "Users perform payment after the worker has completed the work by pressing on Pay on the order details page",
-    "text43": "Users can add a discount code (if any), tip for the worker (if any), choose the method and press Confirm",
-    "text44": "Find Workers",
+    "text36": "Press Find Service Providers and confirm the information",
+    "text37": "After checking the information once more, press Confirm to start searching for Service Providers",
+    "text38": "After confirming in step 3, the screen will switch to the map to start scanning for Service Providers",
+    "text39": "When Service Providers send quotes, the system will notify the customer Customers will select the appropriate Service Provider by pressing the button See now to view the Service Provider’s details and quote",
+    "text40": "After entering the Quote Details page, if the customer agrees to book the Service Provider, press the Book Service Provider button",
+    "text41": "The system will wait for the Service Provider to confirm and come to the customer's place to perform the check and finalize the price",
+    "text42": "Users perform payment after the Service Provider has completed the work by pressing on Pay on the order details page",
+    "text43": "Users can add a discount code (if any), tip for the Service Provider (if any), choose the method and press Confirm",
+    "text44": "Find Service Providers",
     "text45": "To log back into the app, users just need to enter their phone number then enter the OTP sent by the system via SMS"
   },
   "Store": {
-    "text1": "Professional attire for Craftsmen",
+    "text1": "Professional attire for Service Provider",
     "text2": "More confident at work",
     "text3": "Contact to order now",
     "text4": "UNIFORM OF VUA THỢ"
@@ -922,7 +923,8 @@
     "newest": "Newest",
     "result": "Search results for",
     "errorNetwork": "Please check your network connection again.",
-    "oops": "Oops, the keyword you are searching for is currently not available!"
+    "oops": "Oops, the keyword you are searching for is currently not available!",
+    "notFound": "Category not found"
   },
   "DetailsPress": {
     "oopsDetail": "Oops, article not found"

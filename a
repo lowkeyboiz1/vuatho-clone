@@ -29,14 +29,36 @@ chỉnh lại khoảng cách trang home - done
 chỉnh lại component tải ngay (điện thoại quá bự) - done
 gọi lại api theo url trang press?search=abc - done
 tối ưu lại component article nhận props cho chuẩn chỉnh - done
+search api (blog/search?keyword) - done
+thích? UI - done
+meta title - store - done
+"không tìm thấy đang bị lỗi lệch hàng" - done
+làm meta title tiếng anh cho tất cả các trang - done
+Không tìm thấy trang - dịch sang tiếng anh - done
+pagination (press) - done
+pagination làm thêm theo url (press) (?page=0123) - done
+skeleton blog bi loi title - done
+coi lại search input chuỗi rỗng - done
+input search tắt cái gợi ý search - done
+thêm desc các trang - done
+skeleton BenefitImage - done
+setup api thich - done
+animation like - done
+contact-us bi bug - done
+store detail modal - done
+like overflow  - done
 
-component Image lợi ích
-làm scroll infinity
-thích?
-
-search api
+double tap to like còn api 
+touchMove set debounce 15second
+ghep api thich
 store api
-bài viết nổi bật api 
+
+bài viết nổi bật api (tạm thời ẩn)
 
 đưa các state lên đầu, import thư viện theo thứu tự nextjs/reactjs -> thư viện ngoài -> component
+
+React.memo (HOC) => higher order component: wrap component con không cần thiết bị re-render lại nếu không thay đổi bởi các state của thằng cha
+
+
+
 

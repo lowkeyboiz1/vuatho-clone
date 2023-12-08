@@ -23,6 +23,7 @@ function PressDetail() {
   const [onLoading, setOnLoading] = useState<boolean>(true)
   const [onFetchingMostView, setOnFetchingMostView] = useState<boolean>(false)
   const [onLoadingMostView, setOnLoadingMostView] = useState<boolean>(true)
+  const [isSuccess, setIsSuccess] = useState(false)
 
   const [listMostView, setListMostView] = useState<any>([])
   const [detailPress, setDetailPress] = useState<any>({})
@@ -35,14 +36,14 @@ function PressDetail() {
 
   const ServerFetching = async () => {
     try {
-      const { data } = await instance.get('/blog/detail', {
+      const data = await instance.get('/blog/detail', {
         params: {
           slug: paramsData.id,
           lang: paramsData.locale,
         },
       })
-
-      setDetailPress({ ...data })
+      setIsSuccess(data.status === 200)
+      setDetailPress(data.data)
     } catch (error) {
       setOnFetching(false)
     } finally {
@@ -50,6 +51,7 @@ function PressDetail() {
       setOnLoading(false)
     }
   }
+
   const _serverFetchingMostView = async () => {
     try {
       const data = await instance.get('/blog/mostViewByWeek')
@@ -118,8 +120,8 @@ function PressDetail() {
                 </div>
               ) : (
                 <>
-                  {!detailPress?.name?.length ? (
-                    <div className='flex h-full w-full flex-col items-center justify-center'>
+                  {!isSuccess ? (
+                    <div className='flex h-full min-h-[400px] w-full flex-col items-center justify-center'>
                       <div className='h-[126px] w-[158px]'>
                         <Image
                           src={'/empty.png'}

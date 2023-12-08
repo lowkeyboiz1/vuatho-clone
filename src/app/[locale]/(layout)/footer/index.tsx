@@ -115,7 +115,9 @@ function Footer() {
         </div>
         <div className='grid grid-cols-9 gap-[20px] 3xl:gap-[40px]'>
           <div className='col-span-9 flex flex-col gap-[20px] lg:col-span-3'>
-            <h5 className='text-[1.8rem] font-semibold md:text-[2rem]'>Liên hệ</h5>
+            <h5 className='text-[1.8rem] font-semibold md:text-[2rem]'>
+              {t('contact_us')}
+            </h5>
             <div className='flex flex-col gap-[20px]'>
               <p className='flex items-center gap-4'>
                 <PhoneIcon className='text-primary-blue' variant='Bold' />

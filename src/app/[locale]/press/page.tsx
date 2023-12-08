@@ -5,9 +5,13 @@ import { PressContent } from '.'
 
 export async function generateMetadata({ params, searchParams }: any): Promise<Metadata> {
   console.log(searchParams.search)
-
+  const description: any = {
+    vi: 'Ứng dụng số 1 Việt Nam',
+    en: 'Leading App in Vietnam',
+  }
   return {
     title: searchParams.search ? searchParams.search : 'Press',
+    description: description[params.locale || 'vi'],
   }
 }
 

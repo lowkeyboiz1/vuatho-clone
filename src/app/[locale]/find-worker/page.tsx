@@ -4,8 +4,23 @@ import { Metadata } from 'next'
 import SectionTest from './(sections)/sectionStep'
 import { useTranslations } from 'next-intl'
 
-export const metadata: Metadata = {
-  title: 'Tìm thợ',
+export async function generateMetadata({ params }: { params?: any }) {
+  try {
+    const metadata: any = {
+      vi: 'Tìm thợ',
+      en: 'Find worker',
+    }
+    const description: any = {
+      vi: 'Ứng dụng số 1 Việt Nam',
+      en: 'Leading App in Vietnam',
+    }
+    return {
+      title: metadata[params.locale || 'vi'],
+      description: description[params.locale || 'vi'],
+    }
+  } catch (error) {
+    console.log(error)
+  }
 }
 
 function FindWorker() {

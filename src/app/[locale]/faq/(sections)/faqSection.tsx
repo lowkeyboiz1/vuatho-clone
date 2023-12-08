@@ -1,12 +1,11 @@
 'use client'
 
 import { useEffect, useRef, useState } from 'react'
+
 import { Accordion, AccordionItem } from '@nextui-org/react'
 import { useTranslations } from 'next-intl'
-import { usePathname } from 'next/navigation'
 
 function FaqSection() {
-  const pathName = usePathname()
   const t = useTranslations('FaqSection')
 
   const listAccordion: any = [
@@ -144,7 +143,6 @@ function FaqSection() {
         },
       ],
     },
-
     {
       title: t('listAccordion.title4'),
       children: [
@@ -215,7 +213,7 @@ function FaqSection() {
           ],
         },
         {
-          title: t('listAccordion.children5.title1'),
+          title: t('listAccordion.children5.title2'),
           children: [
             {
               title: t('listAccordion.children5.children2.title1'),
@@ -366,23 +364,25 @@ function FaqSection() {
         <div className='ct-container-70 hidden gap-10 md:flex'>
           <div className='relative w-full max-w-[320px] 3xl:max-w-[400px]'>
             <div
-              className='absolute h-[40px] min-h-[40px] w-full rounded-[60px] bg-gradient-to-r from-[#FFB500] to-[#FED32C] px-10 transition 13inch:h-[50px] 3xl:h-[60px]'
+              className='absolute min-h-[40px] w-full rounded-[60px] bg-gradient-to-r from-[#FFB500] to-[#FED32C] px-10 py-[10px] transition 13inch:h-[50px] 3xl:h-[60px]'
               ref={highlightRef}
             />
             <div className='flex flex-col gap-2'>
-              {listAccordion.map((i: any) => (
-                <button
-                  onClick={() => handleActiveSelect(i.title)}
-                  className={`flex h-[40px] min-h-[40px] w-full items-center justify-start rounded-[60px] px-10 text-[1.8rem] 13inch:h-[50px] 3xl:h-[60px]${
-                    activeSelect === i.title
-                      ? 'menuActive text-black'
-                      : 'bg-transparent hover:bg-gradient-to-r hover:from-[#FFB500]/5 hover:to-[#FED32C]/5'
-                  }`}
-                  key={i.title}
-                >
-                  <span className='relative z-[1]'>{i.title}</span>
-                </button>
-              ))}
+              {listAccordion.map((i: any) => {
+                return (
+                  <button
+                    onClick={() => handleActiveSelect(i.title)}
+                    className={`flex min-h-[40px] w-full items-center justify-start rounded-[60px] px-10 py-[10px] text-[1.8rem] 13inch:h-[50px] 3xl:h-[60px] ${
+                      activeSelect === i.title
+                        ? ' menuActive text-black'
+                        : 'bg-transparent hover:bg-gradient-to-r hover:from-[#FFB500]/5 hover:to-[#FED32C]/5'
+                    }`}
+                    key={i.title}
+                  >
+                    <span className='relative z-[1] text-left'>{i.title}</span>
+                  </button>
+                )
+              })}
             </div>
           </div>
           <div className='w-full'>

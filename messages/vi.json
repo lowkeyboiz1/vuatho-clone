@@ -156,13 +156,13 @@
       "title1": "Rõ ràng chi tiết",
       "desc1": "Bên Thợ cung cấp một cách chi tiết và toàn diện về hạng mục công việc, nguyên vật liệu cần thiết, và bảng giá. Điều này giúp Bên Khách hiểu rõ về dịch vụ sẽ được cung cấp.",
       "title2": "Xác nhận thay đổi",
-      "desc2": "Để đảm bảo rằng mọi thay đổi đều hợp lệ, Bên Khách phải xác nhận bất kỳ sửa đổi nào được thực hiện trên Phiếu Công Tác.",
+      "desc2": "Để đảm bảo rằng mọi thay đổi đều hợp lệ, Bên Khách phải xác nhận bất kỳ sửa đổi nào được thực hiện trên Hợp Đồng Số.",
       "title3": "Đồng thuận",
       "desc3": "Thay đổi chỉ được chấp nhận khi có sự đồng thuận từ cả hai bên.",
       "title4": "Thảo luận linh hoạt",
-      "desc4": "Cả hai bên đều có khả năng tham gia vào việc điều chỉnh và thảo luận về nội dung Phiếu Công Tác, giúp tối ưu hóa các yêu cầu và mong muốn.",
+      "desc4": "Cả hai bên đều có khả năng tham gia vào việc điều chỉnh và thảo luận về nội dung Hợp Đồng Số, giúp tối ưu hóa các yêu cầu và mong muốn.",
       "title5": "Trung thực",
-      "desc5": "Mọi sự thay đổi trên Phiếu Công Tác phải phản ảnh đúng nhu cầu và mong muốn của cả hai bên, không làm ảnh hưởng đến chất lượng dịch vụ.",
+      "desc5": "Mọi sự thay đổi trên Hợp Đồng Số phải phản ảnh đúng nhu cầu và mong muốn của cả hai bên, không làm ảnh hưởng đến chất lượng dịch vụ.",
       "title6": "Thỏa thuận công bằng",
       "desc6": "Quá trình thỏa thuận và sửa đổi luôn dựa trên tinh thần hợp tác và tìm kiếm lợi ích chung"
     }
@@ -191,7 +191,8 @@
       "title1": "Tìm được Thợ gần nhất để xử lý sự cố nhanh",
       "title2": "Chọn được người thợ giỏi",
       "title3": "Quy trình và giá thành hợp lí",
-      "title4": "Được bảo hành lâu nhất"
+      "title4": "Được bảo hành lâu nhất",
+      "title5": "Đảm bảo dịch vụ hoàn hảo và chuyên nghiệp nhất"
     }
   },
   "WorkerBenefitSection": {
@@ -239,7 +240,7 @@
     "text26": "Vua Thợ thường xuyên tổ chức các cuộc thi nhằm tìm kiếm những Thợ giỏi về kỹ năng chuyên môn và nghiệp vụ nhằm tuyên dương cho sự tận lực với nghề (sẽ mời các Thợ đoạt giải tham gia cổ phần vào những Công ty do Vua Thợ thành lập). Qua đó tạo động lực cho tất cả các anh thợ cùng nhau phấn đấu học hỏi, không ngừng phát triển.",
     "text27": "Trong tương lai Vua Thợ sẽ xây dựng các Trung tâm đào tạo nghề (từ sơ cấp đến cao cấp) để cấp các chứng chỉ và bằng cấp ... công nhận tài năng của các anh em Thợ theo tiêu chuẩn.",
     "text28": "Vua Thợ và các anh em Thợ cùng xây dựng một cộng đồng nhằm giúp đỡ, sẻ chia với xã hội và địa phương có những hoàn cảnh khó khăn: xây 1 ngôi trường, 1 cái cầu, làm sạch 1 dòng kênh ... đem lại những điều tốt đẹp nhất cho xã hội bằng sức lao động của những người Thợ.",
-    "text29": "Đến với Vua Thợ, người Thợ sẽ tự làm chủ công việc của bản thân không còn khái niệm về làm công. Bên cạnh đó Thợ sẽ không cần phải lo lắng việc tìm kiếm Khách hàng mà Khách hàng sẽ tìm đến Thợ.- Thợ sẽ là người đại diện bán hàng cho Vua Thợ.",
+    "text29": "Đến với Vua Thợ, người Thợ sẽ tự làm chủ công việc của bản thân không còn khái niệm về làm công. Bên cạnh đó Thợ sẽ không cần phải lo lắng việc tìm kiếm Khách hàng mà Khách hàng sẽ tìm đến Thợ - Thợ sẽ là người đại diện bán hàng cho Vua Thợ.",
     "text30": "Khi hoàn thành tốt công việc, đảm bảo Thợ sẽ nhận được tiền."
   },
   "FaqSection": {
@@ -920,7 +921,8 @@
     "newest": "Mới nhất",
     "result": "Kết quả tìm kiếm cho",
     "errorNetwork": "Vui lòng kiểm tra lại kết nối mạng.",
-    "oops": "Oops, từ khóa bạn tìm hiện không có!"
+    "oops": "Oops, từ khóa bạn tìm hiện không có!",
+    "notFound": "Không tìm thấy danh mục"
   },
   "DetailsPress": {
     "oopsDetail": "Oops, Không tìm thấy bài viết"

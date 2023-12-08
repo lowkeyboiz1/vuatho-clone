@@ -5,8 +5,9 @@ import { useRouter } from 'next/navigation'
 import React, { useEffect } from 'react'
 import { twMerge } from 'tailwind-merge'
 import ImageFallback from '../ImageFallback'
+import { forwardRef } from '@nextui-org/react'
 
-function Article({ item, ref, style }: { item: any; ref?: any; style?: string }) {
+const Article = forwardRef(({ item, style }: { item: any; style?: string }, ref) => {
   const locale = useLocale()
 
   return (
@@ -51,6 +52,6 @@ function Article({ item, ref, style }: { item: any; ref?: any; style?: string })
       </div>
     </Link>
   )
-}
+})
 
 export default Article

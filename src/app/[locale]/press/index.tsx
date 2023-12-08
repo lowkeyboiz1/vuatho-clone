@@ -1,19 +1,19 @@
 'use client'
-import React, { useCallback, useEffect, useRef, useState } from 'react'
+import React, { useEffect, useRef, useState } from 'react'
 import Image from 'next/image'
-import { useRouter, usePathname, useSearchParams } from 'next/navigation'
+import { useParams, usePathname, useRouter } from 'next/navigation'
 import { useLocale, useTranslations } from 'next-intl'
 
 import instance from '@/services/axiosConfig'
 import { BreadcrumbWithUrl } from '@/interface'
 
 import Article from '@/components/article'
-import { ListBreadcrumbs } from '@/components/breadcrumbs'
+import { ListBreadcrumbs, ListBreadcrumbsForDetailPress } from '@/components/breadcrumbs'
 import { InputSearch } from '@/components/input'
 import { SkeletonBlog } from '@/components/skeleton'
 import { ImageSkeleton } from '@/components/Icons'
 
-import { Button, Skeleton } from '@nextui-org/react'
+import { Button, Skeleton, Pagination as PaginationNextUI } from '@nextui-org/react'
 import { Swiper, SwiperSlide } from 'swiper/react'
 import { EffectFade, Autoplay, Navigation, Pagination } from 'swiper/modules'
 
@@ -26,6 +26,7 @@ import 'swiper/css/effect-fade'
 import './pressSwiper.scss'
 import Link from 'next/link'
 import ImageFallback from '@/components/ImageFallback'
+import { useGetAllQueryParams } from '@/hook/useGetAllQueryParams'
 
 interface IMostViewed {
   isHidden?: boolean
@@ -129,10 +130,21 @@ export const PressContent = ({ searchParams }: { searchParams: any }) => {
   const [onLoadingMostView, setOnLoadingMostView] = useState<boolean>(true)
   const [listBlog, setListBlog] = useState<any>([])
   const [listMostView, setListMostView] = useState<any>([])
-  const [hasMore, setHasMore] = useState(false)
+  const [meta, setMeta] = useState<{
+    limit: number
+    page: number
+    totalPages: number
+    total: number
+  }>({
+    limit: 6,
+    page: 1,
+    totalPages: 1,
+    total: 0,
+  })
 
   const pathname = usePathname()
-  const observer = useRef<IntersectionObserver | null>(null)
+  const router = useRouter()
+  const allParam: any = useGetAllQueryParams()
 
   const listBreadcrumbs: BreadcrumbWithUrl[] = [
     { title: t('home'), url: '/' },
@@ -159,6 +171,8 @@ export const PressContent = ({ searchParams }: { searchParams: any }) => {
             slug: pathname.split('/')?.[3],
           },
         })
+        console.log('goi lai tag')
+
         setListBlog(data)
       } catch (error) {
         console.log(error)
@@ -171,21 +185,88 @@ export const PressContent = ({ searchParams }: { searchParams: any }) => {
 
   const _serverFetching = async () => {
     try {
-      const { data } = searchParams.search
-        ? await instance.get('/blog/newest', {
-            params: searchParams.search,
+      const data: any = searchParams.search
+        ? await instance.get('/blog/search', {
+            params: {
+              keyword: searchParams.search,
+              page: meta.page,
+            },
           })
-        : await instance.get('/blog/newest')
-
-      console.log('goi lai api ne')
-      setListBlog(data)
+        : await instance.get('/blog/newest', {
+            // params: {
+            //   page: meta.page,
+            // },
+          })
+      setListBlog(data.data)
+      setMeta(
+        data?.meta || {
+          limit: 6,
+          page: 1,
+          totalPages: 1,
+          total: 0,
+        },
+      )
+      console.log('chay lai api')
     } catch (error) {
       console.log(error)
+      setListBlog([
+        {
+          id: 9,
+          uuid: '3dc2baa1-8e58-4ea5-85f1-f2ef79c039a4',
+          thumb:
+            'https://sandbox-api-cms.vuatho.com/statics/blog/thumbs/9.jpg?cache=1701240176325',
+          title: 'test-3',
+          slug: 'press/tin-tuc/test-3',
+          short_description: 'asdasdas',
+          category: {
+            title: 'Tin tức',
+            slug: 'tin-tuc',
+          },
+          thumbnail: null,
+          created_at: '29-11-2023',
+        },
+        {
+          id: 8,
+          uuid: 'fde75cfd-a873-49db-9daf-7851cd889080',
+          thumb:
+            'https://sandbox-api-cms.vuatho.com/statics/blog/thumbs/8.jpg?cache=1701240175945',
+          title: 'test-2',
+          slug: 'press/tin-tuc/test-2',
+          short_description: 'asdasdas',
+          category: {
+            title: 'Tin tức',
+            slug: 'tin-tuc',
+          },
+          thumbnail: null,
+          created_at: '29-11-2023',
+        },
+        {
+          id: 7,
+          uuid: '85e8b72d-05ed-4cab-9605-262ef7ee257a',
+          thumb:
+            'https://sandbox-api-cms.vuatho.com/statics/blog/thumbs/7.jpg?cache=1701240174445',
+          title: 'test-1',
+          slug: 'press/tin-tuc/test-1',
+          short_description: 'asdasdas',
+          category: {
+            title: 'Tin tức',
+            slug: 'tin-tuc',
+          },
+          thumbnail: null,
+          created_at: '29-11-2023',
+        },
+      ])
     } finally {
       setOnFetching(false)
       setOnLoading(false)
     }
   }
+
+  useEffect(() => {
+    searchParams.page && !isNaN(Number(searchParams?.page))
+      ? setMeta((prev: any) => ({ ...prev, page: Number(searchParams.page) }))
+      : router.push(`${pathname}?page=1`)
+  }, [searchParams.page])
 
   useEffect(() => {
     onFetchingMostView && _serverFetchingMostView()
@@ -205,36 +286,22 @@ export const PressContent = ({ searchParams }: { searchParams: any }) => {
 
   useEffect(() => {
     setOnFetching(true)
-  }, [])
+  }, [searchParams.search, meta.page])
 
-  const lastElementBlog = useCallback(
-    (node: Element | null) => {
-      if (observer.current) {
-        observer.current.disconnect()
-      }
+  const handleChangePagi = (page: number) => {
+    // setMeta((prev: any) => ({ ...prev, page }))
+    router.push(`${pathname}?page=${page}`)
+  }
 
-      observer.current = new IntersectionObserver((entries) => {
-        if (entries[0].isIntersecting && hasMore) {
-          setOnFetching(true)
-          // setLimit((prevLimit) => prevLimit + ITEMS_PER_PAGE)
-          // Gọi API tại đây
-          // setOffset((prevOffset) => prevOffset + ITEMS_PER_PAGE)
-        }
-      })
-
-      if (node) {
-        observer.current.observe(node)
-      }
-    },
-    [hasMore],
-  )
   return (
     <>
-      <div className='w-full'>
+      {/* <div className='w-full'>
         <SwiperPress renderBreadcums={<ListBreadcrumbs list={listBreadcrumbs} />} />
-      </div>
+      </div> */}
+
       <div className='bg-base-gray py-[24px]'>
         <div className='ct-container-70 space-y-[16px]'>
+          <ListBreadcrumbsForDetailPress list={listBreadcrumbs} />
           <div className='grid grid-cols-6 lg:gap-[20px]'>
             <h3 className='col-span-6 flex h-[58px] items-center text-[2.4rem]  font-semibold  lg:col-span-2'>
               BLOG
@@ -257,23 +324,24 @@ export const PressContent = ({ searchParams }: { searchParams: any }) => {
                     .fill(null)
                     .map((item: any, index: number) => <SkeletonBlog key={index} />)
                 ) : !!listMostView.length ? (
-                  listMostView.map((item: any, index: number) => {
-                    if (listMostView.length == index + 1) {
-                      return <Article ref={lastElementBlog} key={item.id} item={item} />
-                    }
-                    return <Article key={item.id} item={item} />
-                  })
+                  listMostView.map((item: any, index: number) => (
+                    <div key={item.id}>
+                      <Article item={item} />
+                    </div>
+                  ))
                 ) : (
                   <p className='font-light text-[#969696]'>{td('oops')}</p>
                 )}
               </div>
             </div>
             <div className='order-none col-span-6 flex flex-col gap-[16px] lg:order-1 lg:col-span-4'>
-              <h4 className='h-[52px] w-full truncate whitespace-nowrap border-b-4 border-primary-blue py-[9px] text-[2rem] font-semibold'>
+              <h4 className=' flex h-[58px] flex-shrink-0 items-center border-b-4 border-primary-blue text-[2rem] font-semibold'>
                 {searchParams.search
                   ? `${td('result')} "${searchParams.search}"`
                   : pathname.split('/').length === 4
                     ? listBlog?.[0]?.category?.title
+                      ? listBlog?.[0]?.category?.title
+                      : td('notFound')
                     : td('newest')}
               </h4>
               {onFetching || onLoading ? (
@@ -285,13 +353,29 @@ export const PressContent = ({ searchParams }: { searchParams: any }) => {
                     ))}
                 </div>
               ) : !!listBlog?.length ? (
-                <div className='grid grid-cols-1 gap-[20px] md:grid-cols-2'>
-                  {listBlog.map((item: any) => (
-                    <Article key={item.id} item={item} />
-                  ))}
-                </div>
+                <>
+                  <div className='grid grid-cols-1 gap-[20px] md:grid-cols-2'>
+                    {listBlog.map((item: any, index: number) => (
+                      <Article key={item.id} item={item} />
+                    ))}
+                  </div>
+                  <div className='flex items-center justify-center'>
+                    <PaginationNextUI
+                      radius='full'
+                      onChange={(page) => {
+                        handleChangePagi(page)
+                      }}
+                      total={meta.totalPages || 1}
+                      page={meta.page}
+                      classNames={{
+                        cursor: 'h-[44px] w-[44px] text-[1.6rem] bg-[#282828] text-white',
+                        item: 'h-[44px] w-[44px] text-[1.6rem] text-[#282828] bg-white',
+                      }}
+                    />
+                  </div>
+                </>
               ) : (
-                <div className='flex h-full w-full flex-col items-center justify-center'>
+                <div className='flex h-full min-h-[400px] w-full flex-col items-center justify-center'>
                   <div className='h-[126px] w-[158px]'>
                     <Image
                       src={'/empty.png'}

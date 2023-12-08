@@ -2,8 +2,18 @@ import { Metadata } from 'next'
 import BackgroundRelative from '@/components/BackgroundRelative'
 import { useTranslations } from 'next-intl'
 
-export const metadata: Metadata = {
-  title: 'Chính sách bảo mật',
+export async function generateMetadata({ params }: { params?: any }) {
+  try {
+    const metadata: any = {
+      vi: 'Chính sách bảo mật',
+      en: 'Privacy policy',
+    }
+    return {
+      title: metadata[params.locale || 'vi'],
+    }
+  } catch (error) {
+    console.log(error)
+  }
 }
 
 function PrivateInformation() {

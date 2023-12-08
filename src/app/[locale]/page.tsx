@@ -1,13 +1,14 @@
 'use client'
 import React from 'react'
 import Link from 'next/link'
-import { useEffect, useState } from 'react'
+import { useEffect, useState, useRef, useImperativeHandle, forwardRef } from 'react'
 import Image from 'next/image'
 import { useSearchParams } from 'next/navigation'
 
+import { motion, useAnimate } from 'framer-motion'
+import confetti from 'canvas-confetti'
 import { useTranslations } from 'next-intl'
-import { ArrowRight } from 'iconsax-react'
-import localFont from 'next/font/local'
+import { ArrowRight, Heart } from 'iconsax-react'
 import { Autoplay, EffectFade, Pagination, Navigation } from 'swiper/modules'
 import { Swiper, SwiperSlide } from 'swiper/react'
 
@@ -18,7 +19,7 @@ import 'swiper/css/navigation'
 import './swipper.scss'
 
 import instance from '@/services/axiosConfig'
-import { Agree, CheckIcon, GigEconomy, Support } from '@/components/Icons'
+import { Agree, CheckIcon, GigEconomy, ImageSkeleton, Support } from '@/components/Icons'
 import Article from '@/components/article'
 import Map from '@/components/map'
 import SectionToTheMoon from './(sections)/toTheMoon'
@@ -26,21 +27,14 @@ import SectionDownload from './(sections)/downloadApp'
 import SectionWithVuaTho from './(sections)/withVuaTho'
 import { SkeletonBlog } from '@/components/skeleton'
 import { useLocale } from 'next-intl'
+import { TlistBenefit } from '@/interface'
+import { Skeleton } from '@nextui-org/react'
 
 const HeroSection = () => {
   const searchParams = useSearchParams()
   const hiddenHeaderAndFooter = searchParams.get('hideHeaderAndFooter')
   return (
     <>
-      {/* <Head>
-        <meta http-equiv='Content-Type' content='text/html; charset=utf-8' />
-        <link href='favicon.ico' rel='shortcut icon' type='image/x-icon' />
-        <meta http-equiv='content-language' content='vi' />
-        <title>Vua Thợ</title>
-        <meta name='description' content='mô tả' />
-        <meta name='robots' content='noodp,index,follow' />
-        <meta name='revisit-after' content='1 days' />
-      </Head> */}
       <div
         className={`${
           hiddenHeaderAndFooter
@@ -92,9 +86,9 @@ const AISection = () => {
             </div>
           </div>
           <div className='grid grid-cols-1 items-center gap-[20px] py-12 lg:ml-[10%] 13inch:ml-0 13inch:grid-cols-2 13inch:gap-[40px]'>
-            {listAI.map((i, index) => (
+            {listAI.map((item, index) => (
               <div
-                key={index}
+                key={`listAI-${index}`}
                 className={`relative z-[10] flex w-full flex-col gap-[10px] p-[20px] text-baseBlack md:max-w-[400px] ${
                   index % 2 !== 0 && '13inch:ml-[36%]'
                 }`}
@@ -108,9 +102,9 @@ const AISection = () => {
                   }`}
                 ></div>
                 <h5 className='z-[4] text-[1.8rem] font-semibold text-primary-blue'>
-                  {i.title}
+                  {item.title}
                 </h5>
-                <p className='z-[4] text-[1.8rem]'>{i.desc}</p>
+                <p className='z-[4] text-[1.8rem]'>{item.desc}</p>
               </div>
             ))}
           </div>
@@ -159,7 +153,7 @@ const MinhBach = () => {
         <div className='grid grid-cols-1 gap-[20px] lg:grid-cols-2 lg:gap-[40px]'>
           {listData.map((item, index) => (
             <div
-              key={index}
+              key={`listData-${index}`}
               className='flex flex-col gap-[8px] text-[1.8rem] text-baseBlack'
             >
               <div className='flex gap-[10px]'>
@@ -211,17 +205,17 @@ const HinhThucKetNoi = () => {
         <h2 className='mb-[40px] text-[2.4rem] font-semibold text-primary-blue md:text-[3.2rem]'>
           {t('heading')}
         </h2>
-        <div className='grid grid-cols-1 gap-[20px] lg:grid-cols-2 lg:gap-[40px]'>
-          {DataLabel.map((i: any) => (
+        <div className='grid grid-cols-1 gap-[20px] pb-[40px] lg:grid-cols-2 lg:gap-[40px]'>
+          {DataLabel.map((item: any, index: number) => (
             <div
-              key={i.label}
+              key={`datalabel-${index}`}
               className='flex flex-col gap-[8px] text-[1.8rem] text-baseBlack'
             >
               <div className='flex gap-[10px]'>
                 <div className='h-full w-[4px] rounded-lg bg-primary-blue' />
-                <h3 className='text-[1.8rem] font-bold'>{i.label}</h3>
+                <h3 className='text-[1.8rem] font-bold'>{item.label}</h3>
               </div>
-              <p className=' text-[1.8rem] font-light'>{i.description}</p>
+              <p className=' text-[1.8rem] font-light'>{item.description}</p>
             </div>
           ))}
         </div>
@@ -325,14 +319,13 @@ const CustomerBenefitSection = () => {
   interface TlistBenefit {
     title: string
     id: number
-    img: string
   }
-  const listBenefit = [
-    { title: t('listBenefit.title1'), id: 1, img: 'location.png' },
-    { title: t('listBenefit.title2'), id: 2, img: 'rating.png' },
-    { title: t('listBenefit.title3'), id: 3, img: 'onlinereviews.png' },
-    { title: t('listBenefit.title4'), id: 4, img: 'deliveryontime.png' },
-    { title: t('listBenefit.title4'), id: 5, img: 'deliveryontime.png' },
+  const listBenefit: TlistBenefit[] = [
+    { title: t('listBenefit.title1'), id: 1 },
+    { title: t('listBenefit.title2'), id: 2 },
+    { title: t('listBenefit.title3'), id: 3 },
+    { title: t('listBenefit.title4'), id: 4 },
+    { title: t('listBenefit.title5'), id: 5 },
   ]
 
   return (
@@ -364,8 +357,8 @@ const CustomerBenefitSection = () => {
           </div>
         </div>
         <div className='col-span-1 grid grid-cols-1 gap-[20px] md:col-span-2 md:mx-auto md:max-w-[820px] md:grid-cols-2 md:gap-[40px]'>
-          {listBenefit.map((item, index) => (
-            <div className='col-span-1' key={index}>
+          {listBenefit.map((item: TlistBenefit, index: number) => (
+            <div className='col-span-1' key={`listBenefit-${index}`}>
               <div className='flex flex-col gap-[20px] xl:gap-[40px]'>
                 <p className='text-[64px] font-semibold leading-none text-[#FCB713]'>
                   0{index + 1}
@@ -381,14 +374,13 @@ const CustomerBenefitSection = () => {
 }
 
 const WorkerBenefitSection = () => {
-  const [currentIndex, setCurrentIndex] = useState(0)
-
   const t = useTranslations('WorkerBenefitSection')
-  interface TlistBenefit {
-    title: string
-    desc: { text: JSX.Element }[]
-    img: string
-  }
+
+  const [currentIndex, setCurrentIndex] = useState<number>(0)
+  const [onFetching, setOnFetching] = useState<boolean>(false)
+
+  const [listDataBenefit, setListDataBenefit] = useState<any>([])
+
   const listBenefit: TlistBenefit[] = [
     {
       title: t('benefit1'),
@@ -399,6 +391,9 @@ const WorkerBenefitSection = () => {
         { text: <p>{t('text2')}</p> },
       ],
       img: 'benefit1.png',
+      like: 11,
+      isLike: false,
+      id: 1,
     },
     {
       title: t('benefit2'),
@@ -413,18 +408,26 @@ const WorkerBenefitSection = () => {
         },
       ],
       img: 'benefit2.png',
+      like: 23,
+      isLike: false,
+      id: 2,
     },
     {
       title: t('benefit3'),
       desc: [{ text: <p>{t('text5')}</p> }, { text: <p>{t('text6')}</p> }],
       img: 'benefit3.png',
+      like: 13,
+      isLike: false,
+      id: 3,
     },
     {
       title: t('benefit4'),
       desc: [{ text: <p>{t('text7')}</p> }, { text: <p>{t('text8')}</p> }],
       img: 'benefit4.png',
+      like: 153,
+      isLike: false,
+      id: 4,
     },
-
     {
       title: t('benefit5'),
       desc: [
@@ -439,6 +442,9 @@ const WorkerBenefitSection = () => {
         { text: <p>{t('text12')}</p> },
       ],
       img: 'benefit5.png',
+      like: 14,
+      isLike: false,
+      id: 5,
     },
     {
       title: t('benefit6'),
@@ -467,6 +473,9 @@ const WorkerBenefitSection = () => {
         },
       ],
       img: 'benefit6.png',
+      like: 23,
+      isLike: false,
+      id: 6,
     },
     {
       title: t('benefit7'),
@@ -495,11 +504,17 @@ const WorkerBenefitSection = () => {
         },
       ],
       img: 'benefit7.png',
+      like: 43,
+      isLike: false,
+      id: 7,
     },
     {
       title: t('benefit8'),
       desc: [{ text: <p>{t('text21')}</p> }],
       img: 'benefit8.png',
+      like: 123,
+      isLike: false,
+      id: 8,
     },
     {
       title: t('benefit9'),
@@ -515,106 +530,256 @@ const WorkerBenefitSection = () => {
         },
       ],
       img: 'benefit9.png',
+      like: 85,
+      isLike: false,
+      id: 9,
     },
     {
       title: t('benefit10'),
       desc: [{ text: <p>{t('text26')}</p> }],
       img: 'benefit10.png',
+      like: 6,
+      isLike: false,
+      id: 10,
     },
     {
       title: t('benefit11'),
       desc: [{ text: <p>{t('text27')}</p> }],
       img: 'benefit11.png',
+      like: 721,
+      isLike: false,
+      id: 11,
     },
     {
       title: t('benefit12'),
       desc: [{ text: <p>{t('text28')}</p> }],
       img: 'benefit12.png',
+      like: 85,
+      isLike: false,
+      id: 12,
     },
     {
       title: t('benefit13'),
       desc: [{ text: <p>{t('text29')}</p> }],
       img: 'benefit13.png',
+      like: 96,
+      isLike: false,
+      id: 13,
     },
     {
       title: t('benefit14'),
       desc: [{ text: <p>{t('text30')}</p> }],
-      img: 'benefit13.png',
+      img: 'benefit14.png',
+      like: 54,
+      isLike: false,
+      id: 14,
     },
   ]
 
   const pagination = {
     clickable: true,
     renderBullet: function (index: any, className: any) {
-      return `<span class="paginationBenefit ${className} ">${index + 1}</span>`
+      return `<span class="paginationBenefit ${className} " key="bullet-${index}">${
+        index + 1
+      }</span>`
     },
   }
 
+  const _handleFetching = async () => {
+    try {
+      const { data } = await instance.get('home/benefit')
+
+      setListDataBenefit(data)
+    } catch (error) {
+      console.log(error)
+      setListDataBenefit(listBenefit)
+    } finally {
+      setOnFetching(false)
+    }
+  }
+
+  useEffect(() => {
+    onFetching && _handleFetching()
+  }, [onFetching])
+
+  useEffect(() => {
+    setOnFetching(true)
+  }, [])
+
+  let clicked = false
+
+  const _HandleActiveLike = async (id: number) => {
+    try {
+      const { data } = await instance.post('/', {
+        params: {
+          id,
+        },
+      })
+      console.log(data)
+    } catch (error) {
+      console.log(error)
+    }
+  }
+
+  const handleChangeIsLike = (item: TlistBenefit) => {
+    const clone = [...listDataBenefit]
+    const indexItem = clone.findIndex((dataItem) => item.id === dataItem.id)
+    clone[indexItem].isLike = !item.isLike
+    setListDataBenefit(clone || listBenefit)
+    _HandleActiveLike(item.id)
+  }
+  const _detectDoubleTap = (e: any, item: TlistBenefit) => {
+    try {
+      if (clicked) {
+        const clone = [...listDataBenefit]
+        const indexItem = clone.findIndex((dataItem) => item.id === dataItem.id)
+        clone[indexItem].isLike = true
+        setListDataBenefit(clone || listBenefit)
+      } else {
+        clicked = true
+      }
+      setTimeout(function () {
+        clicked = false
+      }, 333) //detect fast clicks (333ms)
+    } catch (error) {}
+  }
   return (
     <div className='flex flex-col gap-[20px]'>
       <div className='ct-container-70 flex flex-col gap-[20px] xl:gap-[40px]'>
         <div className='flex flex-col gap-[10px]'>
           <h3 className='text-[1.6rem] font-semibold uppercase tracking-[8px] md:text-[2rem]'>
-            {listBenefit.length} {t('benefit')}
+            {listDataBenefit.length || 14} {t('benefit')}
           </h3>
           <p className='text-[2.4rem] font-semibold text-primary-blue md:text-[3.6rem]'>
             {t('text')}
           </p>
         </div>
-        <Swiper
-          spaceBetween={30}
-          effect={'fade'}
-          loop
-          autoHeight
-          autoplay={{
-            disableOnInteraction: false,
-            pauseOnMouseEnter: true,
-            delay: 5000,
-          }}
-          slidesPerView={1}
-          navigation
-          pagination={pagination}
-          modules={[Autoplay, EffectFade, Pagination, Navigation]}
-          className='benefitSwipper h-full w-full'
-          onActiveIndexChange={(swiper: any) => {
-            setCurrentIndex(swiper.realIndex)
-          }}
-        >
-          {listBenefit.map((item, index) => {
-            return (
-              <div className='h-full w-full' key={index}>
-                <SwiperSlide className={currentIndex === index ? 'visible' : 'invisible'}>
-                  <div className='mb-[16px] flex h-[76px] items-center gap-[12px]'>
-                    <p className='text-[4rem] font-semibold leading-none text-primary-blue/20 xl:text-[6.4rem]'>
-                      {index + 1 >= 10 ? index + 1 : `0${index + 1}`}
-                    </p>
-                    <h4 className='text-[1.6rem] font-bold text-primary-blue xl:text-[2.4rem]'>
-                      {item.title}
-                    </h4>
-                  </div>
-                  <div className='grid w-full grid-cols-5 overflow-hidden rounded-xl bg-[#f8f8f8]'>
-                    <div className='text order-1 col-span-5 h-full w-full p-[20px] xl:order-none xl:col-span-2'>
-                      <ul className='flex flex-col gap-[10px]'>
-                        {item.desc.map((ii: any, index: number) => (
-                          <span key={index}>{ii.text}</span>
-                        ))}
-                      </ul>
+        {onFetching ? (
+          <>
+            <div className='flex h-[420px] w-full animate-pulse items-center justify-center bg-gray-300 '>
+              <ImageSkeleton style='h-[120px] w-[300px] animate-pulse' />
+            </div>
+            <div className='flex w-full flex-col items-center justify-center gap-[12px] p-[20px]'>
+              {Array(4)
+                .fill(1)
+                .map((_, index) => (
+                  <Skeleton
+                    key={`skeleton-text-${index}`}
+                    className='h-[12px] w-full rounded-lg'
+                  />
+                ))}
+            </div>
+            <div className='flex w-full items-center justify-center gap-[20px]'>
+              {Array(6)
+                .fill(1)
+                .map((_: any, index: number) => (
+                  <Skeleton
+                    className='h-[68px] w-[68px] flex-shrink-0 rounded-lg'
+                    key={`skeleton-pagination-${index}`}
+                  />
+                ))}
+            </div>
+          </>
+        ) : (
+          <Swiper
+            spaceBetween={30}
+            effect={'fade'}
+            loop
+            autoHeight
+            autoplay={{
+              disableOnInteraction: false,
+              pauseOnMouseEnter: true,
+              delay: 5000,
+            }}
+            slidesPerView={1}
+            navigation
+            pagination={pagination}
+            modules={[Autoplay, EffectFade, Pagination, Navigation]}
+            className='benefitSwipper h-full w-full'
+            onActiveIndexChange={(swiper: any) => {
+              setCurrentIndex(swiper.realIndex)
+            }}
+          >
+            {listDataBenefit.map((item: TlistBenefit, index: number) => {
+              return (
+                <div className='h-full w-full' key={item.id}>
+                  <SwiperSlide
+                    className={currentIndex === index ? 'visible' : 'invisible'}
+                    onClick={(e) => {
+                      _detectDoubleTap(e, item)
+                    }}
+                  >
+                    {/* <div className='mb-[16px] flex items-center justify-between'>
+                      <div className='flex h-[76px] items-center gap-[12px]'>
+                        <p className='text-[4rem] font-semibold leading-none text-primary-blue/20 xl:text-[6.4rem]'>
+                          {index + 1 >= 10 ? index + 1 : `0${index + 1}`}
+                        </p>
+                        <h4 className='text-[1.6rem] font-bold text-primary-blue xl:text-[2.4rem]'>
+                          {item.title}
+                        </h4>
+                      </div>
+                      <div className='likeButton hidden md:block'>
+                        <Like item={item} />
+                      </div>
                     </div>
-                    <div className='order-none col-span-5 h-full w-full xl:order-1 xl:col-span-3'>
-                      <Image
-                        src={`/benefitCustomer/${item.img}`}
-                        alt=''
-                        height={800}
-                        width={1280}
-                        className='h-full w-auto object-contain'
-                      />
+                    <div className='grid w-full grid-cols-5 overflow-hidden rounded-xl bg-[#f8f8f8]'>
+                      <div className='text order-1 col-span-5 h-full w-full p-[20px] xl:order-none xl:col-span-2'>
+                        <ul className='flex flex-col gap-[10px]'>
+                          {item.desc.map((ii: any, index: number) => (
+                            <span key={`desc-text-${index}`}>{ii.text}</span>
+                          ))}
+                        </ul>
+                      </div>
+
+                      <div className='relative order-none col-span-5 h-full w-full xl:order-1 xl:col-span-3'>
+                        {item.imageContent}
+                        <div className='likeButtonMobile absolute right-[2%] top-[4%] md:hidden'>
+                          <Like item={item} />
+                        </div>
+                      </div>
+                    </div> */}
+                    <div className='mb-[16px] flex items-center justify-between'>
+                      <div className='flex h-[76px] items-center gap-[12px]'>
+                        <p className='text-[4rem] font-semibold leading-none text-primary-blue/20 xl:text-[6.4rem]'>
+                          {index + 1 >= 10 ? index + 1 : `0${index + 1}`}
+                        </p>
+                        <h4 className='text-[1.6rem] font-bold text-primary-blue xl:text-[2.4rem]'>
+                          {item.title}
+                        </h4>
+                      </div>
+                      <div className='likeButton hidden md:block'>
+                        <Like item={item} onChangeIsLike={handleChangeIsLike} />
+                      </div>
                     </div>
-                  </div>
-                </SwiperSlide>
-              </div>
-            )
-          })}
-        </Swiper>
+                    <div className='grid w-full grid-cols-5 rounded-xl bg-[#f8f8f8]'>
+                      <div className='text order-1 col-span-5 h-full w-full p-[20px] xl:order-none xl:col-span-2'>
+                        <ul className='flex flex-col gap-[10px]'>
+                          {item.desc.map((ii: any, index: number) => (
+                            <span key={`desc-text-${index}`}>{ii.text}</span>
+                          ))}
+                        </ul>
+                      </div>
+                      <div className='relative order-none col-span-5 h-full w-full xl:order-1 xl:col-span-3'>
+                        <div className='overflow-hidden rounded-t-[12px] xl:rounded-r-[12px]'>
+                          <Image
+                            src={`/benefitCustomer/${item.img}`}
+                            alt=''
+                            height={800}
+                            width={1280}
+                            className='h-full w-auto object-contain'
+                          />
+                        </div>
+                        <div className='likeButtonMobile absolute right-[2%] top-[4%] md:hidden'>
+                          <Like item={item} onChangeIsLike={handleChangeIsLike} />
+                        </div>
+                      </div>
+                    </div>
+                  </SwiperSlide>
+                </div>
+              )
+            })}
+          </Swiper>
+        )}
       </div>
     </div>
   )
@@ -649,7 +814,7 @@ const PressHome = () => {
   }, [])
 
   return (
-    <div className='ct-container-70 flex flex-col gap-[20px]'>
+    <div className='ct-container-70 flex flex-col gap-[20px] pb-[40px] md:pb-0'>
       <div className='flex items-center justify-between'>
         <p className='text-[1.8rem] font-semibold text-primary-blue md:text-[3.2rem]'>
           {t('heading')}
@@ -661,12 +826,12 @@ const PressHome = () => {
           {t('seeAll')}
         </Link>
       </div>
-      <div className='flex flex-nowrap gap-[20px] overflow-x-auto xl:grid xl:grid-cols-4 xl:overflow-x-auto'>
+      <div className='blog-home flex flex-nowrap gap-[20px] overflow-x-auto xl:grid xl:grid-cols-4 xl:overflow-x-auto'>
         {onFetching
           ? Array(4)
               .fill(1)
               .map((item: any, index: number) => (
-                <div className='w-full' key={index}>
+                <div className='w-full' key={`skeleton-blog-${index}`}>
                   <SkeletonBlog />
                 </div>
               ))
@@ -674,7 +839,7 @@ const PressHome = () => {
             ? listBlog.map((item: any, index: number) => {
                 return (
                   <Article
-                    key={item.uuid || index}
+                    key={item.uuid || `blog-${index}`}
                     item={item}
                     style='w-[80%] md:w-[40%] xl:w-full cursor-pointer'
                   />
@@ -683,7 +848,7 @@ const PressHome = () => {
             : Array(4)
                 .fill(1)
                 .map((item: any, index: number) => (
-                  <div className='w-full' key={index}>
+                  <div className='w-full' key={`skeleton-blog1-${index}`}>
                     <SkeletonBlog />
                   </div>
                 ))}
@@ -691,4 +856,80 @@ const PressHome = () => {
     </div>
   )
 }
+
+const Like = ({ item, onChangeIsLike }: { item: TlistBenefit; onChangeIsLike: any }) => {
+  const [isLike, setIsLike] = useState<boolean>(item.isLike)
+  const [likeTotal, setLikeTotal] = useState<number>(item.like)
+
+  const [scope, animate] = useAnimate()
+
+  const handeAnimation = (isLike: boolean) => {
+    const button: any = document.querySelector('.likeButton')
+    const buttonMobile: any = document.querySelector('.likeButtonMobile')
+    const rect = button.getBoundingClientRect()
+    const rect2 = buttonMobile.getBoundingClientRect()
+    const x =
+      (rect.left + rect.width / 2) / window.innerWidth !== 0
+        ? (rect.left + rect.width / 2) / window.innerWidth
+        : (rect2.left + rect2.width / 2) / window.innerWidth
+    const y =
+      (rect.top + rect.height) / window.innerHeight !== 0
+        ? (rect.top + rect.height) / window.innerHeight
+        : (rect2.top + rect2.height) / window.innerHeight
+
+    !isLike &&
+      confetti({
+        gravity: 5,
+        particleCount: 70,
+        spread: 40,
+        origin: { x, y },
+      })
+    animate(
+      isLike
+        ? []
+        : [
+            [scope.current, { y: -28 }, { duration: 0.2 }],
+            [scope.current, { scaleX: -1 }, { duration: 0.2, at: '<' }],
+            [scope.current, { scaleX: 1 }, { duration: 0.2 }],
+            [scope.current, { y: 0 }, { duration: 0.2 }],
+          ],
+    )
+  }
+
+  useEffect(() => {
+    setIsLike(item.isLike)
+    setLikeTotal(!item.isLike ? (prev: any) => prev - 1 : (prev: any) => prev + 1)
+    handeAnimation(!item.isLike)
+  }, [item.isLike])
+
+  const _handleActionLike = async () => {
+    try {
+      handeAnimation(isLike)
+      onChangeIsLike(item)
+    } catch (error) {
+      console.log(error)
+    }
+  }
+
+  return (
+    <button
+      className='like flex h-fit items-center justify-center gap-[6px] rounded-full bg-black/40 px-[8px] py-[6px] transition-all active:scale-[0.95] md:gap-[10px] md:bg-[#F8F8F8] md:px-[20px] md:py-[10px]'
+      onClick={_handleActionLike}
+    >
+      <motion.div>
+        <Heart
+          ref={scope}
+          id='heart'
+          variant='Bold'
+          size={24}
+          style={{ zIndex: 1000 }}
+          className={isLike ? 'text-[#FF4343]' : 'text-white md:text-[#969696]'}
+        />
+      </motion.div>
+      <span className='text-white md:text-base-black-1'>{likeTotal}</span>
+    </button>
+  )
+}
+
+Like.displayName = 'Like'
 export default HeroSection

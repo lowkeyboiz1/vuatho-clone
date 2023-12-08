@@ -4,12 +4,26 @@ import { Metadata } from 'next'
 import HeroSection from './(sections)/heroSection'
 import SectionServices from '../(sections)/services'
 import SectionDownload from '../(sections)/downloadApp'
-import { useTranslations } from 'next-intl'
+import { useLocale, useTranslations } from 'next-intl'
 
-export const metadata: Metadata = {
-  title: 'Về Chúng Tôi',
+export async function generateMetadata({ params }: { params?: any }) {
+  try {
+    const metadata: any = {
+      vi: 'Về chúng tôi',
+      en: 'About us',
+    }
+    const description: any = {
+      vi: 'Ứng dụng số 1 Việt Nam',
+      en: 'Leading App in Vietnam',
+    }
+    return {
+      title: metadata[params.locale || 'vi'],
+      description: description[params.locale || 'vi'],
+    }
+  } catch (error) {
+    console.log(error)
+  }
 }
-
 function AboutUs() {
   const t = useTranslations('AboutUs')
 

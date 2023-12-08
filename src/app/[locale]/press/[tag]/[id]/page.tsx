@@ -12,13 +12,23 @@ export async function generateMetadata({ params }: { params?: any }) {
         },
       },
     )
+    const description: any = {
+      vi: 'Ứng dụng số 1 Việt Nam',
+      en: 'Leading App in Vietnam',
+    }
     return {
       title: data?.data.title,
+      description: description[params.locale || 'vi'],
     }
   } catch (error) {
     console.log(error)
+
+    const metadata: any = {
+      vi: 'Không có bài viết',
+      en: 'Article not found',
+    }
     return {
-      title: 'Không có bài viết',
+      title: metadata[params.locale || 'vi'],
     }
   }
 }
