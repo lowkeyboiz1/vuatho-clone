@@ -1,13 +1,16 @@
 import type { Metadata } from 'next'
 import { Lexend } from 'next/font/google'
-import { NextIntlClientProvider, useLocale } from 'next-intl'
-import NextNProgress from 'nextjs-progressbar'
+import { NextIntlClientProvider } from 'next-intl'
+import { locales } from '@/constants'
 import { Providers } from './providers'
 import Header from './(layout)/header'
 import Footer from './(layout)/footer'
 import './globals.css'
 import { redirect } from 'next/navigation'
 import Script from 'next/script'
+// import { locales } from 'navigation'
+import { langs } from '@/constants'
+import { useMemo } from 'react'
 
 export const metadata: Metadata = {
   title: {
@@ -22,11 +25,11 @@ const lexend = Lexend({
   display: 'swap',
 })
 const timeZone = 'Asia/Ho_Chi_Minh'
+// const locales = langs.map((item) => item.code)
 
 export default async function RootLayout({ children, params }: any) {
   const { locale } = params
 
-  const locales = ['en', 'vi']
   const isValidLocale = locales.some((cur) => cur === locale)
 
   if (!isValidLocale) {

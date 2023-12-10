@@ -5,8 +5,10 @@ import { PressContent } from '..'
 
 export async function generateMetadata({ params }: { params?: any }) {
   try {
+    console.log(params)
+
     const { data } = await axios.get(
-      'https://sandbox-api-website.vuatho.com/blog/byCategory?slug=tin-tuc',
+      `https://sandbox-api-website.vuatho.com/blog/byCategory?slug=${params.tag}`,
     )
     const description: any = {
       vi: 'Ứng dụng số 1 Việt Nam',

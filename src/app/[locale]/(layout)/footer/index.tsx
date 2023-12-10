@@ -101,15 +101,16 @@ function Footer() {
           />
           <div className='flex items-center gap-4'>
             {socialNetworkList.map((e) => (
-              <Link
+              <a
+                rel='noopener'
                 key={e.id}
                 href={e.link}
-                target='blank'
+                target='_blank'
                 title={e.id}
                 className='flex-center aspect-square h-20 w-fit rounded-full bg-primary-blue-2'
               >
                 {e.icon}
-              </Link>
+              </a>
             ))}
           </div>
         </div>

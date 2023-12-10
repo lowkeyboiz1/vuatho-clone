@@ -1,5 +1,6 @@
 'use client'
-import React, { useState, useEffect } from 'react'
+
+import React, { useEffect } from 'react'
 import { useRouter } from 'next/navigation'
 
 const Default = () => {
@@ -30,7 +31,7 @@ const Default = () => {
     detectAndRedirect()
   }, [router])
 
-  return <div className='pt-[60px]'>Redirecting to Mobile Store...</div>
+  return <div className='pt-[80px]'>Redirecting to Mobile Store...</div>
 }
 
 export default Default

@@ -3,7 +3,7 @@
     "home": "Trang chủ",
     "become_employee": "Trở thành thợ",
     "find_employee": "Tìm thợ",
-    "store": "Mua đồng phục",
+    "store": "Đồng phục",
     "language": "Ngôn ngữ",
     "download": "Tải ngay"
   },
@@ -874,7 +874,7 @@
     "text16": "Nhập mã giới thiệu (nếu có)",
     "text17": "Bước 3",
     "text18": "Bấm tiếp theo để nhập mã OTP",
-    "text19": "(OTP sẽ được hệ thống gửi dưới dạng SMS)",
+    "text19": " (OTP sẽ được hệ thống gửi dưới dạng SMS)",
     "text20": "Bước 4",
     "text21": "Khi đăng ký thành công, hệ thống sẽ hỏi tên người dùng, người dùng nhập tên và bấm Hoàn thành",
     "text22": "Để đăng nhập lại vào ứng dụng, người dùng chỉ cần nhập số điện thoại sau đó nhập mã OTP được hệ thống gửi dưới dạng SMS",
@@ -894,7 +894,7 @@
     "text36": "Bấm Tìm thợ và xác nhận lại thông tin",
     "text37": "Sau khi đã kiểm tra kĩ lại thông tin một lần nữa thì bạn hãy nhấn nút Xác nhận để bắt đầu tìm thợ",
     "text38": "Sau khi đã xác nhận ở bước 3, màn hình sẽ chuyển sang bản đồ để bắt đầu quét tìm thợ",
-    "text39": "Khi có thợ báo giá hệ thống sẽ thông báo cho khách hàng Khách hàng sẽ chọn thợ phù hợp bằng cách bấm nút Xem ngay để xem chi tiết thông tin thợ và báo giá",
+    "text39": "Khi có thợ báo giá hệ thống sẽ thông báo cho khách hàng. Khách hàng sẽ chọn thợ phù hợp bằng cách bấm nút Xem ngay để xem chi tiết thông tin thợ và báo giá",
     "text40": "Sau khi vào trang Chi tiết báo giá, nếu khách đồng ý đặt thợ hãy bấm nút Đặt thợ",
     "text41": "Hệ thống sẽ đợi thợ xác nhận và đến nhà khách thực hiện kiểm tra chốt giá",
     "text42": "Người dùng thực hiện thanh toán sau khi thợ hoàn tất công việc bằng cách bấm vào Thanh toán tại trang chi tiết đơn hàng",
@@ -935,6 +935,6 @@
   "listBreadcrumbs": {
     "home": "Trang chủ",
     "acrticle": "Bài viết",
-    "store": "Mua đồng phục"
+    "store": "Đồng phục"
   }
 }

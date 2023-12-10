@@ -18,7 +18,7 @@ function SectionWithVuaTho() {
               className='pointer-events-none h-full w-full object-contain'
             />
           </div>
-          <div className='absolute right-[7%] top-0 scale-x-[-1] text-[16rem] text-[#DAF0FF]'>
+          <div className='absolute right-[7%] top-[-10%] scale-x-[-1] text-[16rem] text-[#DAF0FF] md:top-0'>
             “
           </div>
           <div className='w-full pt-20 md:ml-[26%] md:pt-0'>

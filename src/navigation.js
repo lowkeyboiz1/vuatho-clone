@@ -1,11 +1,14 @@
 import { createLocalizedPathnamesNavigation, Pathnames } from 'next-intl/navigation'
-
-export const locales = ['vi', 'en']
+import { locales } from './constants'
+// export const locales = ['vi', 'en', 'kr', 'zh']
 export const pathnames = {
   '/': '/',
   '/blog': '/blog',
   '/about-us': '/about-us',
 }
-
+console.log('123', locales)
 export const { Link, redirect, usePathname, useRouter, getPathname } =
-  createLocalizedPathnamesNavigation({ locales, pathnames })
+  createLocalizedPathnamesNavigation({
+    locales,
+    pathnames,
+  })

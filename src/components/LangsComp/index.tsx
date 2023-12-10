@@ -74,7 +74,7 @@ function LangsComp() {
             <button className='h-[44px] cursor-pointer rounded-[44px] bg-[#F8F8F8] p-[10px]'>
               <div className='flex items-center gap-2 text-[#646464]'>
                 <Global size={24} className='' />
-                <span className='text-[1.8rem] uppercase'>{lang.code}</span>
+                <span className='text-[1.8rem] uppercase'>{lang?.code}</span>
               </div>
             </button>
           </PopoverTrigger>
@@ -103,7 +103,7 @@ function LangsComp() {
                       lang === e
                         ? 'bg-primary-blue-2 text-primary-blue'
                         : 'hover:bg-base-gray disabled:hover:bg-transparent'
-                    } flex items-center gap-2 rounded-lg px-4 py-6 text-[1.8rem]`}
+                    } flex items-center gap-2 whitespace-nowrap rounded-lg px-4 py-6 text-left text-[1.8rem]`}
                   >
                     <span>{e.symbol}</span>
                     <span className={`${e.active ? '' : 'text-black/30'}`}>
@@ -147,7 +147,7 @@ function LangsComp() {
                     lang === e
                       ? 'bg-primary-blue-2 text-primary-blue'
                       : 'hover:bg-base-gray disabled:hover:bg-transparent'
-                  } flex items-center gap-2 rounded-lg px-4 py-6 text-[1.8rem]`}
+                  } flex items-center gap-2 whitespace-nowrap rounded-lg px-4 py-6 text-left text-[1.8rem]`}
                 >
                   <span>{e.symbol}</span>
                   <span className={`${e.active ? '' : 'text-black/30'}`}>{e.label}</span>

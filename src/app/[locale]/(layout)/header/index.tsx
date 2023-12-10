@@ -213,12 +213,12 @@ const LinkList = ({ handleToggleMenu }: { handleToggleMenu?: any }) => {
     {
       id: 2,
       title: t('become_employee'),
-      url: `/${locale}/become-woker`,
+      url: `/${locale}/become-services-provider`,
     },
     {
       id: 3,
       title: t('find_employee'),
-      url: `/${locale}/find-worker`,
+      url: `/${locale}/find-services-provider`,
     },
     {
       id: 4,
@@ -243,7 +243,9 @@ const LinkList = ({ handleToggleMenu }: { handleToggleMenu?: any }) => {
       },
     },
   }
+
   const router = useRouter()
+
   const handleClick = (url: any) => {
     router.replace(url)
     handleToggleMenu ? handleToggleMenu() : () => {}

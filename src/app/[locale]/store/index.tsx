@@ -31,7 +31,7 @@ export const Store = () => {
 
   const listBreadcrumbs: BreadcrumbWithUrl[] = [
     { title: td('home'), url: '/' },
-    { title: td('acrticle') },
+    { title: td('store') },
   ]
 
   const [onLoading, setOnLoading] = useState<boolean>(true)

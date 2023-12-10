@@ -40,17 +40,22 @@ pagination làm thêm theo url (press) (?page=0123) - done
 skeleton blog bi loi title - done
 coi lại search input chuỗi rỗng - done
 input search tắt cái gợi ý search - done
-thêm desc các trang - done
 skeleton BenefitImage - done
 setup api thich - done
 animation like - done
 contact-us bi bug - done
 store detail modal - done
 like overflow  - done
+double tap to like còn api - done
+click set debounce 15second - done
+thêm desc các trang - done
+api thì gửi locale - done
+ghep api thich - done
+dynamic locale - done 
 
-double tap to like còn api 
-touchMove set debounce 15second
-ghep api thich
+xóa message vn dư thừa
+lên ý tưởng cho nút dislike + modal ý kiến (hoặc hỏi ý kiến anh Bảo)
+nút dislike + modal ý kiến
 store api
 
 bài viết nổi bật api (tạm thời ẩn)

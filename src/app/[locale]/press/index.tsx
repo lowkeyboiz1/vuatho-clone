@@ -144,7 +144,7 @@ export const PressContent = ({ searchParams }: { searchParams: any }) => {
 
   const pathname = usePathname()
   const router = useRouter()
-  const allParam: any = useGetAllQueryParams()
+  const locale = useLocale()
 
   const listBreadcrumbs: BreadcrumbWithUrl[] = [
     { title: t('home'), url: '/' },
@@ -153,7 +153,7 @@ export const PressContent = ({ searchParams }: { searchParams: any }) => {
 
   const _serverFetchingMostView = async () => {
     try {
-      const data = await instance.get('/blog/mostViewByWeek')
+      const data = await instance.get(`/blog/mostViewByWeek?lang=${locale}`)
       setListMostView(data)
     } catch (error) {
       console.log(error)
@@ -169,6 +169,7 @@ export const PressContent = ({ searchParams }: { searchParams: any }) => {
         const { data } = await instance.get('blog/byCategory', {
           params: {
             slug: pathname.split('/')?.[3],
+            lang: locale,
           },
         })
         console.log('goi lai tag')
@@ -190,6 +191,7 @@ export const PressContent = ({ searchParams }: { searchParams: any }) => {
             params: {
               keyword: searchParams.search,
               page: meta.page,
+              lang: locale,
             },
           })
         : await instance.get('/blog/newest', {

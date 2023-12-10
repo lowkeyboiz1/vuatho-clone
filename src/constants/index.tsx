@@ -28,6 +28,19 @@ export const langs = [
     ),
   },
   {
+    label: 'Chinese',
+    code: 'zh',
+    active: false,
+    symbol: (
+      <Image
+        src='https://flagcdn.com/20x15/zh.png'
+        width='20'
+        height='15'
+        alt='Chinese'
+      />
+    ),
+  },
+  {
     label: 'Français',
     code: 'fr',
     active: false,
@@ -326,9 +339,13 @@ export const langs = [
   {
     label: '한국인',
     code: 'kr',
-    active: false,
+    active: true,
     symbol: (
       <Image src='https://flagcdn.com/20x15/kr.png' width='20' height='15' alt='한국인' />
     ),
   },
 ]
+
+export const locales = langs.map((item) => item.code)
+
+export const langMiddleWare = locales.join('|')

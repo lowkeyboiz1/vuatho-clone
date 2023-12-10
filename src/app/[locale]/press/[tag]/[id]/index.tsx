@@ -9,7 +9,7 @@ import instance from '@/services/axiosConfig'
 // get router pathname
 import { useParams } from 'next/navigation'
 import Link from 'next/link'
-import { useTranslations } from 'next-intl'
+import { useLocale, useTranslations } from 'next-intl'
 import { Skeleton } from '@nextui-org/react'
 import Image from 'next/image'
 
@@ -18,6 +18,7 @@ function PressDetail() {
   const td = useTranslations('DetailsPress')
 
   const paramsData = useParams()
+  const locale = useLocale()
 
   const [onFetching, setOnFetching] = useState<boolean>(false)
   const [onLoading, setOnLoading] = useState<boolean>(true)
@@ -51,10 +52,13 @@ function PressDetail() {
       setOnLoading(false)
     }
   }
-
   const _serverFetchingMostView = async () => {
     try {
-      const data = await instance.get('/blog/mostViewByWeek')
+      const data = await instance.get('/blog/mostViewByWeek', {
+        params: {
+          lang: locale,
+        },
+      })
       setListMostView(data)
     } catch (error) {
       console.log(error)

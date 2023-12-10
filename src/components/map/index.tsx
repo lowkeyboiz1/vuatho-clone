@@ -1590,7 +1590,7 @@ function Map() {
                   </p>
                 </div>
                 <p className=' text-[1rem] text-base-black-1 md:text-[1.8rem]'>
-                  {getRandomNumber() + ' người dùng'}
+                  {getRandomNumber() + t('user')}
                 </p>
               </div>
             </div>
