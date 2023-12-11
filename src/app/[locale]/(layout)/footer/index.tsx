@@ -33,7 +33,7 @@ function Footer() {
     info: [
       { title: t('about_us'), url: `/${locale}/about-us` },
       { title: t('faq'), url: `/${locale}/faq` },
-      { title: t('become_worker'), url: `/${locale}/become-woker` },
+      { title: t('become_worker'), url: `/${locale}/become-services-provider` },
     ],
     policy: [
       { title: t('guides'), url: `/${locale}/terms-and-condition` },
