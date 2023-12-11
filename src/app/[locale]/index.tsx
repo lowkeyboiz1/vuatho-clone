@@ -519,9 +519,9 @@ const WorkerBenefitSection = () => {
                       </div>
                       <div className='likeButton hidden md:flex md:items-center md:gap-[12px]'>
                         <UnLike
-                          isDisLiked={item?.isLike || false}
+                          isDisLiked={item?.dislike?.isDislike || false}
                           count={
-                            item?.dislike?.like ||
+                            item?.dislike?.dislike ||
                             Math.floor(Math.random() * (100 - 1 + 1) + 1)
                           }
                           uuid={item.uuid || Date.now()}

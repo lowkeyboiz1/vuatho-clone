@@ -70,3 +70,5 @@ bài viết nổi bật api (tạm thời ẩn)
 React.memo (HOC) => higher order component: wrap component con không cần thiết bị re-render lại nếu không thay đổi bởi các state của thằng cha
 
 
+
+

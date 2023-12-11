@@ -18,7 +18,7 @@ export async function generateMetadata({ params }: { params?: any }) {
     }
     return {
       title: data?.data.title,
-      description: description[params.locale || 'vi'],
+      description: data?.data.description || data?.data.content,
     }
   } catch (error) {
     console.log(error)

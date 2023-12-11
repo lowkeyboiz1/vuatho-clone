@@ -108,47 +108,6 @@ export const Store = () => {
   }, [])
   return (
     <div className='pt-[64px] 3xl:pt-[80px]'>
-      {/* {onFetching || onLoading ? (
-        <div className='flex h-[420px] w-full animate-pulse items-center justify-center bg-gray-300 '>
-          <ImageSkeleton style='h-[120px] w-[300px] animate-pulse' />
-        </div>
-      ) : (
-        <div className='w-full'>
-          <div className='relative inset-0 h-[420px]'>
-            <ImageFallback
-              src={imageStore.thumbnail}
-              alt=''
-              height={419}
-              width={3000}
-              className='h-full object-cover'
-            />
-            <div className='absolute top-[10%] 13inch:left-1/2 13inch:-translate-x-1/2'>
-              <div className='ct-container-70 flex flex-col gap-[20px] text-white'>
-                <div className=''>
-                  <ListBreadcrumbs list={listBreadcrumbs} />
-                </div>
-              </div>
-            </div>
-            <div className='absolute bottom-[10%] w-full text-center'>
-              <div className='mb-[16px]'>
-                <p className='text-[2.4rem] font-semibold text-white md:text-[3.2rem]'>
-                  {t('text1')}
-                </p>
-                <p className='text-[2.4rem] font-semibold text-white md:text-[3.2rem]'>
-                  {t('text2')}
-                </p>
-              </div>
-              <Button
-                size='lg'
-                className=' h-[46px] max-w-max rounded-full bg-[#FCB713] px-[24px] text-[1.8rem] font-semibold text-base-black-1'
-                endContent={<Call variant='Bold' />}
-              >
-                {t('text3')}
-              </Button>
-            </div>
-          </div>
-        </div>
-      )} */}
       <div className='ct-container-70 mb-[60px]'>
         <div className='mt-[40px]'>
           <ListBreadcrumbsForDetailPress list={listBreadcrumbs} />
