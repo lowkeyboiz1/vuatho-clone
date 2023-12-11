@@ -1,11 +1,9 @@
-import { useLocale } from 'next-intl'
-import Image from 'next/image'
-import Link from 'next/link'
-import { useRouter } from 'next/navigation'
-import React, { useEffect } from 'react'
-import { twMerge } from 'tailwind-merge'
-import ImageFallback from '../ImageFallback'
 import { forwardRef } from '@nextui-org/react'
+import { useLocale } from 'next-intl'
+import Link from 'next/link'
+import { twMerge } from 'tailwind-merge'
+
+import ImageFallback from '../ImageFallback'
 
 const Article = forwardRef(({ item, style }: { item: any; style?: string }, ref) => {
   const locale = useLocale()

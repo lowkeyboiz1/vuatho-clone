@@ -1,14 +1,18 @@
 'use client'
 
-import React, { useEffect, useRef, useState } from 'react'
 import { useTranslations } from 'next-intl'
 import Image from 'next/image'
+import React, { useEffect, useRef, useState } from 'react'
 
-import { Accordion, AccordionItem } from '@nextui-org/react'
 import { AndroidBtn, IosBtn, QrCode } from '@/components/DownloadApps'
+import { Accordion, AccordionItem } from '@nextui-org/react'
 
 const SectionStep = () => {
   const t = useTranslations('BecomeWorker')
+  const [contentNumber, setContentNumber] = useState<number>(0)
+
+  const highlightRef = useRef(null)
+
   const listAccordion: any = [
     {
       title: t('text1'),
@@ -31,17 +35,13 @@ const SectionStep = () => {
       content: <Step5 />,
     },
   ]
-
   const [activeSelect, setActiveSelect] = useState<string>(listAccordion[0].title)
-
-  const [contentNumber, setContentNumber] = useState<number>(0)
 
   const handleActiveSelect = (title: any, index: number) => {
     setActiveSelect(title)
     setContentNumber(index)
   }
 
-  const highlightRef = useRef(null)
   const handleSelect = () => {
     const activeButton = document.querySelector(`button.menuActive`) as HTMLElement
     const highlight = highlightRef.current
@@ -341,6 +341,7 @@ const Step3: React.FC = () => {
 
 const Step4: React.FC = () => {
   const t = useTranslations('BecomeWorker')
+
   return (
     <>
       <h3 className='text-[1.8rem] font-bold text-[#0B27B6]'>{t('text41')}</h3>
@@ -403,9 +404,7 @@ const Step4: React.FC = () => {
 
 const Step5: React.FC = () => {
   const t = useTranslations('BecomeWorker')
-  const x = useTranslations('or')
-  console.log(x)
-  console.log('hehe')
+
   return (
     <>
       <h3 className='text-[1.8rem] font-bold text-[#0B27B6]'>{t('text50')}</h3>

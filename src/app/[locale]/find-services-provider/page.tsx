@@ -1,8 +1,5 @@
-import React from 'react'
-import { Metadata } from 'next'
-
-import SectionTest from './(sections)/sectionStep'
 import { useTranslations } from 'next-intl'
+import SectionTest from './(sections)/sectionStep'
 
 export async function generateMetadata({ params }: { params?: any }) {
   try {

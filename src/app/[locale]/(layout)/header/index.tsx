@@ -1,16 +1,16 @@
 'use client'
 
-import { useEffect, useState } from 'react'
+import { useLocale, useTranslations } from 'next-intl'
 import Image from 'next/image'
 import Link from 'next/link'
 import { usePathname, useRouter, useSearchParams } from 'next/navigation'
-import { useLocale, useTranslations } from 'next-intl'
+import { useEffect, useState } from 'react'
 
 import LangsComp from '@/components/LangsComp'
 
+import { Button } from '@nextui-org/react'
 import { AnimatePresence, motion } from 'framer-motion'
 import { Add as AddIcon, HambergerMenu as MenuIcon } from 'iconsax-react'
-import { Button } from '@nextui-org/react'
 
 const Header = () => {
   const [isWebview, sIsWebview] = useState(false)
@@ -152,7 +152,7 @@ const RightNav = () => {
 
   return (
     <>
-      <div className='hidden w-full items-center justify-end gap-[20px] md:flex 3xl:gap-8'>
+      <div className='hidden w-full items-center justify-end gap-[20px] lg:flex 3xl:gap-8'>
         <div className='flex items-center gap-[16px] 3xl:gap-8'>
           <LinkList />
         </div>
@@ -161,14 +161,14 @@ const RightNav = () => {
             onClick={() =>
               window.open('https://vuatho.com/vi/qrcode-download-app', '_blank')
             }
-            className='hidden h-[44px] w-auto rounded-[44px] bg-primaryYellow px-[24px] text-[1.8rem] font-semibold text-baseBlack md:block'
+            className='hidden h-[44px] w-auto rounded-[44px] bg-primaryYellow px-[24px] text-[1.8rem] font-semibold text-baseBlack lg:block'
           >
             {t('download')}
           </Button>
           <LangsComp />
         </div>
       </div>
-      <div className='menu-mobile block transition md:hidden' onClick={handleToggleMenu}>
+      <div className='menu-mobile block transition lg:hidden' onClick={handleToggleMenu}>
         {toggleMenu ? (
           <AddIcon size={32} className='rotate-45 cursor-pointer text-text transition' />
         ) : (
@@ -177,7 +177,7 @@ const RightNav = () => {
               onClick={() =>
                 window.open('https://vuatho.com/vi/qrcode-download-app', '_blank')
               }
-              className='h-[40px] w-auto bg-primaryYellow px-[30px] text-[1.8rem] font-semibold text-baseBlack md:hidden md:px-[50px] xl:h-[50px]'
+              className='h-[40px] w-auto bg-primaryYellow px-[30px] text-[1.8rem] font-semibold text-baseBlack md:px-[50px] lg:hidden xl:h-[50px]'
             >
               {t('download')}
             </Button>

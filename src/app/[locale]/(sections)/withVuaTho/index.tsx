@@ -1,7 +1,5 @@
-'use client'
-
-import Image from 'next/image'
 import { useTranslations } from 'next-intl'
+import Image from 'next/image'
 
 function SectionWithVuaTho() {
   const t = useTranslations('WithVuaTho')

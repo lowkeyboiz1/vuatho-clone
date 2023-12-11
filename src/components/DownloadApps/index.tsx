@@ -1,7 +1,7 @@
+import { useTranslations } from 'next-intl'
 import Image from 'next/image'
 import Link from 'next/link'
 import { twMerge } from 'tailwind-merge'
-import { useTranslations } from 'next-intl'
 
 import { Apple as AppleIcon, GooglePlay as GooglePlayIcon } from 'iconsax-react'
 

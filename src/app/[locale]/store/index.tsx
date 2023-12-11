@@ -1,8 +1,11 @@
 'use client'
 
 import Image from 'next/image'
-import React, { useState, useEffect } from 'react'
+import { useEffect, useState } from 'react'
 
+import ImageFallback from '@/components/ImageFallback'
+import { ListBreadcrumbsForDetailPress } from '@/components/breadcrumbs'
+import { BreadcrumbWithUrl } from '@/interface'
 import {
   Button,
   Modal,
@@ -12,12 +15,8 @@ import {
   Skeleton,
   useDisclosure,
 } from '@nextui-org/react'
-import { ListBreadcrumbsForDetailPress } from '@/components/breadcrumbs'
-import { BreadcrumbWithUrl } from '@/interface'
-import instance from '@/services/axiosConfig'
-import { useTranslations } from 'next-intl'
 import { Add } from 'iconsax-react'
-import ImageFallback from '@/components/ImageFallback'
+import { useTranslations } from 'next-intl'
 
 interface IItemClothes {
   title: string

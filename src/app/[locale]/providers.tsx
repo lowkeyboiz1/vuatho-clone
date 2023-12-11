@@ -2,7 +2,6 @@
 
 import { NextUIProvider } from '@nextui-org/react'
 import { ThemeProvider as NextThemesProvider } from 'next-themes'
-import NextNProgress from 'nextjs-progressbar'
 import { AppProgressBar as ProgressBar } from 'next-nprogress-bar'
 
 export function Providers({ children }: { children: React.ReactNode }) {

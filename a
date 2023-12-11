@@ -50,20 +50,23 @@ double tap to like còn api - done
 click set debounce 15second - done
 thêm desc các trang - done
 api thì gửi locale - done
-ghep api thich - done
-dynamic locale - done 
+ghep api thich - done   
+message popup dislike - done
+popup message dislike - done
+toast component - done
+dislike có message mới cho dislike -> undislike không cần message - done
+check nút navigation benefit swiper - done
+xóa message vn dư thừa - done
+header links tablet -> mobile - done
+refactor code structure - done
 
-xóa message vn dư thừa
-lên ý tưởng cho nút dislike + modal ý kiến (hoặc hỏi ý kiến anh Bảo)
-nút dislike + modal ý kiến
 store api
+dislike api
 
 bài viết nổi bật api (tạm thời ẩn)
 
 đưa các state lên đầu, import thư viện theo thứu tự nextjs/reactjs -> thư viện ngoài -> component
 
 React.memo (HOC) => higher order component: wrap component con không cần thiết bị re-render lại nếu không thay đổi bởi các state của thằng cha
-
-
 
 

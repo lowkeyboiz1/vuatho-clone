@@ -1,8 +1,8 @@
 'use client'
 
 import { useTranslations } from 'next-intl'
-import Link from 'next/link'
 import Image from 'next/image'
+import Link from 'next/link'
 
 export default function NotFound() {
   const t = useTranslations('NotFound')

@@ -8,6 +8,11 @@ import { useTranslations } from 'next-intl'
 function FaqSection() {
   const t = useTranslations('FaqSection')
 
+  const [activeSelect, setActiveSelect] = useState<string>(t('listAccordion.title1'))
+  const [childActive, setChildActive] = useState(['0'])
+
+  const highlightRef = useRef(null)
+
   const listAccordion: any = [
     {
       title: t('listAccordion.title1'),
@@ -318,9 +323,6 @@ function FaqSection() {
     },
   ]
 
-  const [activeSelect, setActiveSelect] = useState<string>(t('listAccordion.title1'))
-  const [childActive, setChildActive] = useState(['0'])
-
   const [contentActive, setContentActive] = useState(
     listAccordion.find((i: any) => i.title === activeSelect)?.children,
   )
@@ -331,7 +333,6 @@ function FaqSection() {
     setChildActive(['0'])
   }
 
-  const highlightRef = useRef(null)
   const handleSelect = () => {
     const activeButton = document.querySelector(`button.menuActive`) as HTMLElement
     const highlight = highlightRef.current

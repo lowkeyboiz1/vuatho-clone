@@ -1,4 +1,3 @@
-import { Metadata } from 'next'
 import BackgroundRelative from '@/components/BackgroundRelative'
 import { useTranslations } from 'next-intl'
 

@@ -80,7 +80,7 @@
   "Footer": {
     "company": "CÔNG TY TNHH CÔNG NGHỆ VUA THỢ",
     "address": "57 Song Hanh, An Phu Ward, Thu Duc City,",
-    "location": "Ho Chi Minh City, Vietnam.",
+    "location": " Ho Chi Minh City, Vietnam.",
     "policies": "Policy terms",
     "privacy": "Privacy information",
     "contact": "CONTACT US",
@@ -92,7 +92,9 @@
     "contact_with_vuatho": "Cooperate with Vua Thợ",
     "guides": "Terms and Conditions",
     "private_infomation": "Privacy policy",
-    "contact_us": "Contact us"
+    "contact_us": "Contact us",
+    "sending": "Sending notification to the ",
+    "BCT": "Ministry of Industry and Trade"
   },
   "NotFound": {
     "text": "The page you are looking for cannot be found!",
@@ -937,5 +939,11 @@
   "Map": {
     "text1": "App users",
     "user": "users "
+  },
+  "Modal": {
+    "heading": "Please leave your feedback so we can improve!",
+    "type": "Enter...",
+    "send": "Send",
+    "messageToast": "Thank you for your feedback"
   }
 }

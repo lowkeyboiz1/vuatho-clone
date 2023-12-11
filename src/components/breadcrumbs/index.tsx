@@ -1,7 +1,7 @@
 'use client'
 
 import { BreadcrumbWithUrl } from '@/interface'
-import { Breadcrumbs, BreadcrumbItem } from '@nextui-org/breadcrumbs'
+import { BreadcrumbItem, Breadcrumbs } from '@nextui-org/breadcrumbs'
 
 export const ListBreadcrumbs = ({ list }: { list: BreadcrumbWithUrl[] }) => {
   return (

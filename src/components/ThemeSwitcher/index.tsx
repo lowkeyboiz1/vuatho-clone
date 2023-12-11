@@ -7,10 +7,12 @@ import { useTheme } from 'next-themes'
 import { useEffect, useState } from 'react'
 
 export function ThemeSwitcher({ props }: { props?: any }) {
+  const { theme, setTheme } = useTheme()
+
+  const [mounted, setMounted] = useState(false)
+
   const { Component, slots, isSelected, getBaseProps, getInputProps, getWrapperProps } =
     useSwitch(props)
-  const [mounted, setMounted] = useState(false)
-  const { theme, setTheme } = useTheme()
 
   useEffect(() => {
     setMounted(true)
@@ -19,7 +21,7 @@ export function ThemeSwitcher({ props }: { props?: any }) {
   if (!mounted) return null
 
   return (
-    <div className='flex flex-col gap-2 cursor-pointer'>
+    <div className='flex cursor-pointer flex-col gap-2'>
       <Component {...getBaseProps()}>
         <VisuallyHidden>
           <input
@@ -32,7 +34,7 @@ export function ThemeSwitcher({ props }: { props?: any }) {
           {...getWrapperProps()}
           className={slots.wrapper({
             class: [
-              'w-8 h-8',
+              'h-8 w-8',
               'flex items-center justify-center',
               'rounded-lg bg-transparent',
             ],

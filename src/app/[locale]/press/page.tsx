@@ -1,6 +1,5 @@
-import type { Metadata, ResolvingMetadata } from 'next'
+import type { Metadata } from 'next'
 
-import axios from 'axios'
 import { PressContent } from '.'
 
 export async function generateMetadata({ params, searchParams }: any): Promise<Metadata> {

@@ -1,21 +1,21 @@
 'use client'
 
-import { useEffect, useState } from 'react'
 import { useLocale, useTranslations } from 'next-intl'
 import { usePathname, useRouter } from 'next/navigation'
+import { useEffect, useState } from 'react'
 
 import { langs } from '@/constants'
 
-import { Button } from '@nextui-org/react'
 import {
-  Popover,
-  PopoverTrigger,
-  PopoverContent,
   Accordion,
   AccordionItem,
+  Button,
+  Popover,
+  PopoverContent,
+  PopoverTrigger,
 } from '@nextui-org/react'
-
 import { Add as AddIcon, Global } from 'iconsax-react'
+
 import { useGetAllQueryParams } from '@/hook/useGetAllQueryParams'
 
 function LangsComp() {

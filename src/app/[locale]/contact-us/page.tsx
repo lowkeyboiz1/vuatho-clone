@@ -1,9 +1,7 @@
-import React from 'react'
-import Image from 'next/image'
-import { Metadata } from 'next'
 import { useTranslations } from 'next-intl'
+import Image from 'next/image'
 
-import { Location as LocationIcon, Call as CallIcon, Sms as SmsIcon } from 'iconsax-react'
+import { Call as CallIcon, Location as LocationIcon, Sms as SmsIcon } from 'iconsax-react'
 
 export async function generateMetadata({ params }: { params?: any }) {
   try {
@@ -15,6 +13,7 @@ export async function generateMetadata({ params }: { params?: any }) {
       vi: 'Ứng dụng số 1 Việt Nam',
       en: 'Leading App in Vietnam',
     }
+
     return {
       title: metadata[params.locale || 'vi'],
       description: description[params.locale || 'vi'],

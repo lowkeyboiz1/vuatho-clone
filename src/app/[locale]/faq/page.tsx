@@ -1,9 +1,8 @@
-import { Metadata } from 'next'
-import React from 'react'
+import { memo } from 'react'
 
 import BackgroundRelative from '@/components/BackgroundRelative'
-import FaqSection from './(sections)/faqSection'
 import { useTranslations } from 'next-intl'
+import FaqSection from './(sections)/faqSection'
 
 export async function generateMetadata({ params }: { params?: any }) {
   try {
@@ -34,4 +33,4 @@ function Faq() {
   )
 }
 
-export default React.memo(Faq)
+export default memo(Faq)

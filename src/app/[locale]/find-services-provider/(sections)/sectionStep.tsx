@@ -1,11 +1,10 @@
 'use client'
 
-import React from 'react'
 import { useTranslations } from 'next-intl'
 
-import { AndroidBtn, IosBtn, QrCode } from '@/components/DownloadApps'
+import { Accordion, AccordionItem, Image, Tab, Tabs } from '@nextui-org/react'
 
-import { Tabs, Tab, Image, Accordion, AccordionItem } from '@nextui-org/react'
+import { AndroidBtn, IosBtn, QrCode } from '@/components/DownloadApps'
 
 const SectionTest = () => {
   const t = useTranslations('FindWorker')

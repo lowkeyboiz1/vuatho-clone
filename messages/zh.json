@@ -92,7 +92,9 @@
     "contact_with_vuatho": "与Vua Thợ合作",
     "guides": "条款和条件",
     "private_infomation": "隐私政策",
-    "contact_us": "联系我们"
+    "contact_us": "联系我们",
+    "sending": "发送通知 ",
+    "BCT": "商务部"
   },
   "NotFound": {
     "text": "找不到您需要的页面！",
@@ -782,5 +784,11 @@
     "home": "主页",
     "acrticle": "文章",
     "store": "工装"
+  },
+  "Modal": {
+    "heading": "请留下您的反馈，以便我们可以改进！",
+    "type": "输入...",
+    "send": "发送",
+    "messageToast": "感谢您的反馈"
   }
 }

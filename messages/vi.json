@@ -1,41 +1,17 @@
 {
   "Navbar": {
-    "home": "Trang chủ",
     "become_employee": "Trở thành thợ",
     "find_employee": "Tìm thợ",
     "store": "Đồng phục",
     "language": "Ngôn ngữ",
     "download": "Tải ngay"
   },
-  "Banner": {
-    "banner1": {
-      "text1": "Nền tảng đặt thợ",
-      "text2": "Đa ngành nghề",
-      "button": "Tìm hiểu ngay"
-    },
-    "banner2": {
-      "text1": "Làm Việc Mọi Lúc, Mọi Nơi",
-      "text2": "Tăng thu nhập không giới hạn!",
-      "button": "Đăng ký ngay"
-    },
-    "banner3": {
-      "text1": "Nhanh Chóng, Dễ dàng, Chuyên nghiệp",
-      "button": "Đặt thợ"
-    }
-  },
+
   "ServicesVuaTho": {
     "title": "Dịch vụ đa ngành nghề ấn tượng",
-    "text": "Đã ra đời tại Việt Nam với tinh thần “Nâng Tầm Thợ Nghề” và “Tiện ích cho tất cả mọi người”",
-    "electric": "Điện",
-    "heal": "Y tế tại nhà",
-    "osin": "Giúp việc nhà",
-    "electrical": "Điện lạnh",
-    "water_electric": "Điện nước",
-    "repair_home": "Sửa chữa nhà"
+    "text": "Đã ra đời tại Việt Nam với tinh thần “Nâng Tầm Thợ Nghề” và “Tiện ích cho tất cả mọi người”"
   },
   "ToTheMoon": {
-    "heading1": "Phát Triển ",
-    "heading2": "Không Ngừng",
     "title": "Phát triển không ngừng",
     "desc": "Chúng tôi cam kết luôn lắng nghe ý kiến của cộng đồng, không ngừng hoàn thiện, thử nghiệm và phát triển để mang đến nhiều dịch vụ đa dạng hơn nữa cho thị trường Việt Nam trong thời gian tới."
   },
@@ -44,46 +20,15 @@
     "title1": "cùng Vua Thợ",
     "text": "Với Vua Thợ, bạn không chỉ tìm thấy các dịch vụ tiện ích mà còn được đồng hành cùng một cộng đồng đam mê và sáng tạo. Hãy bắt đầu cuộc hành trình với Vua Thợ ngay hôm nay vì cuộc sống tốt đẹp hơn."
   },
-  "Benefit": {
-    "customer": {
-      "title": "Lợi ích của khách",
-      "button": "Tìm thợ",
-      "list": {
-        "text1": "Đặt thợ mọi lúc mọi nơi.",
-        "text2": "Đa dạng ngành nghề thợ gì cũng có.",
-        "text3": "Giá cả và thanh toán minh bạch giữa khách và thợ.",
-        "text4": "Quy trình sửa chuyên nghiệp và dễ dàng trao đổi thông tin cùng thợ.",
-        "text5": "Hệ thống đánh giá thợ công khai."
-      }
-    },
-    "employee": {
-      "title": "Lợi ích của thợ",
-      "button": "Trở thành thợ",
-      "list": {
-        "text1": "Làm việc mọi lúc, mọi nơi, tăng thu nhập không giới hạn!",
-        "text2": "Cơ hội trúng Wave RSX liền tay!",
-        "text3": "Giới thiệu thợ ngay nhận quà liền tay.",
-        "text4": "Tham gia cộng đồng thợ đẳng cấp.",
-        "text5": "Nâng cao tay nghề với các khóa đào tạo hàng đầu.",
-        "text6": "Tìm việc, kết nối với khách hàng một cách nhanh chóng."
-      }
-    }
-  },
   "Download": {
     "download": "Tải ngay",
     "download_now": "Để trải nghiệm công nghệ AI tiên tiến nhất",
-    "slogan": "Thợ nào cũng có",
-    "book_now": "Ứng dụng gọi thợ tận nơi",
     "download_appstore": "Tải từ",
     "download_chplay": "Tải từ"
   },
   "Footer": {
-    "company": "CÔNG TY TNHH Công Nghệ VUA THỢ",
     "address": "57 Song Hành, P. An Phú, TP. Thủ Đức,",
     "location": "TP. HCM, Việt Nam.",
-    "policies": "Điều khoản chính sách",
-    "privacy": "Thông tin bảo mật",
-    "contact": "LIÊN LẠC VỚI CHÚNG TÔI",
     "our_partner": "Đối tác của chúng tôi",
     "about_vuatho": "Về Vua Thợ",
     "about_us": "Về chúng tôi",
@@ -92,7 +37,9 @@
     "contact_with_vuatho": "Hợp tác cùng Vua Thợ",
     "guides": "Điều khoản và Điều kiện",
     "private_infomation": "Chính sách bảo mật",
-    "contact_us": "Liên hệ"
+    "contact_us": "Liên hệ",
+    "sending": "Đang gửi thông báo đến ",
+    "BCT": "bộ công thương"
   },
   "NotFound": {
     "text": "Không tìm thấy trang bạn cần tìm !",
@@ -117,8 +64,6 @@
     "heading1": "Ứng dụng ",
     "heading1-1": "tìm Thợ, tìm việc",
     "heading2": "Áp dụng công nghệ AI",
-    "heading2-1": "trí tuệ nhân tạo AI",
-    "subHeading": "Vua Thợ hỗ trợ đa ngôn ngữ, đa ngành nghề, cần là có",
     "listCard": {
       "title1": "Đột phá",
       "desc1": "Cách thức hoạt động",
@@ -129,14 +74,6 @@
     },
     "text1": "Hỗ trợ đa ngôn ngữ - đa ngành nghề",
     "text2": "Nơi đâu cũng có Thợ - Thợ nào cũng có"
-  },
-  "RuleSection": {
-    "text1": "Vai trò ",
-    "text2": "của Vua Thợ",
-    "text3": "Đối với thợ",
-    "text4": "Kết nối mọi người trên toàn thế giới và tạo nhiều cơ hội.",
-    "text5": "Đối với khách hàng",
-    "text6": "Tạo không gian làm việc tự do và tiện lợi, sử dụng công nghệ tiên tiến."
   },
   "AISection": {
     "heading1": "Áp dụng công nghệ AI đột phá ",
@@ -197,51 +134,7 @@
   },
   "WorkerBenefitSection": {
     "benefit": "quyền lợi",
-    "text": "Đối với Thợ",
-    "benefit1": "Việc làm gần nhà nhất",
-    "benefit2": "Thu nhập cao luôn ổn định",
-    "benefit3": "Thời gian làm việc tự do",
-    "benefit4": "Cùng Vua Thợ chia sẻ lợi nhuận",
-    "benefit5": "Thợ giới thiệu Thợ (hoặc Thợ phụ) - Khách giới thiệu Thợ",
-    "benefit6": "Được tham gia chương trình mỗi 1000 Thợ nhận 1 xe Wave RSX FI",
-    "benefit7": "Được nhận dãy số may mắn vĩnh viễn tham gia chương trình trúng thưởng hàng tháng từ Vua Thợ",
-    "benefit8": "Phúc lợi hỗ trợ khi gặp tai nạn lao động",
-    "benefit9": "Khi về hưu lớn tuổi",
-    "benefit10": "Được tham gia các cuộc thi Thợ giỏi (hàng quý - hàng năm)",
-    "benefit11": "Được công nhận tay nghề - tài năng và cấp bằng từ các trung tâm đào tạo nghề của Vua Thợ",
-    "benefit12": "Cùng Vua Thợ xây dựng Cộng đồng nhân ái hỗ trợ các hoàn cảnh khó khăn",
-    "benefit13": "Nâng tầm vị thế của người Thợ",
-    "benefit14": "Đảm bảo giao dịch minh bạch và công bằng",
-    "text1": "Dù bạn là Thợ của bất kì ngành nghề nào, Vua Thợ sẽ đem công việc đến gần bạn nhất (dù bạn ở đâu trên đất nước Việt Nam, Khách hàng đều nhìn thấy bạn).",
-    "text2": "Tiết kiệm được chi phí đi lại và các khoản khác, ngay khi ở quê nhà cũng sẽ nhanh chóng tìm được công việc ổn định.",
-    "text3": "Chủ động kiếm thêm thu nhập - làm chủ tài chính bản thân. Thợ dễ dàng nhanh chóng tăng thêm giao dịch uy tín với nguồn khách hàng tối ưu từ Vua Thợ.",
-    "text4": "Thu nhập từ 20.000.000 đến 60.000.000đ mỗi tháng.",
-    "text5": "Thời gian linh động, Thợ hoàn toàn có thể chủ động quyết định thời gian làm việc của mình.",
-    "text6": "Khi có thời gian thì mở ứng dụng hoạt động, nếu bận có thể tạm thời tắt ứng dụng, với Vua Thợ sẽ không có bất kì sự ràng buộc nào.",
-    "text7": "Về phí dịch vụ (sửa chữa, lắp đặt ...), Vua Thợ sẽ thu 15%.",
-    "text8": "Về Sản phẩm - Vật Tư - Nguyên Liệu ..., chia sẻ 50 - 50% lợi nhuận.",
-    "text9": "Khi giới thiệu Thợ chính hoặc Thợ phụ bạn sẽ được ",
-    "text10": "50.000đ ",
-    "text11": "(Tiền sẽ được chuyển vào ví của bạn, nhưng không sử dụng được, Vua Thợ sẽ thanh toán khi người Thợ đó phát sinh việc làm)",
-    "text12": "Nếu là Thợ phụ sẽ được Vua Thợ chấp nhận mà không cần kiểm tra trình độ, chỉ cần xác minh thông tin và nghề mình muốn làm khi tham gia vào Vua Thợ.",
-    "text13": "Khi đăng ký Thợ thành công trên ứng dụng Vua Thợ, mỗi anh thợ sẽ nhận được 01 mã dự thưởng (cũng là mã giới thiệu) để có cơ hội nhận 01 chiếc xe Wave RSX F1 trong mỗi 1.000 Thợ đăng ký thông qua vòng quay trúng thưởng từ hệ thống - phục vụ làm nghề.",
-    "text14": "1 giải đặc biệt trị giá 25.000.000đ",
-    "text15": "1 giải nhì 6 thùng bia",
-    "text16": "1 giải ba 3 thùng bia",
-    "text17": "Khi giới thiệu Thợ (dù là Thợ nào) mỗi 1 Thợ tương đương với 1 con số và với 12 người Thợ - bạn sẽ có 1 dãy số may mắn trong 6 trái banh (mỗi trái banh có 02 con số) Thợ sẽ có một dãy số may mắn và không giới hạn nhiều dãy số sở hữu được tham gia mở thưởng định kì vào mỗi tháng.",
-    "text18": "1 giải đặc biệt trị giá 25.000.000đ",
-    "text19": "1 giải nhì 6 thùng bia",
-    "text20": "1 giải ba 3 thùng bia",
-    "text21": "Quỹ tấm lòng vàng của Cộng đồng Thợ sẽ giúp cho các anh Thợ bị những trường hợp tai nạn lao động hoặc các sự cố không mong muốn khi hành nghề (cộng đồng Thợ càng lớn thì sự hỗ trợ sẽ càng lớn). Thợ sẽ cảm thấy được bảo vệ và an tâm khi tham gia vào Cộng đồng Vua Thợ.",
-    "text22": "Khi trẻ làm các công việc nặng nhọc, đến khi lớn tuổi Vua Thợ sẽ giúp bạn chuyển qua công việc nhẹ nhàng hơn, giúp bạn tối ưu tất cả các nguồn thu nhập khi về già.- Vua Thợ sẽ liên kết với các Công ty bảo hiểm để tạo ra bảo hiểm riêng của Vua Thợ, đảm bảo cho tương lai cho Thợ.",
-    "text23": "Khi lớn tuổi Thợ sẽ có 1 khoảng tiền từ ",
-    "text24": "10.000.000 - 30.000.000đ ",
-    "text25": "mỗi tháng. Ngoài ra Thợ sẽ có thể tham gia bảo hiểm tự nguyện, ví dụ ngày đóng 5.000 - 10.000đ tương đương 150.000 - 300.000đ/ tháng để tích luỹ khi về hưu sau này.",
-    "text26": "Vua Thợ thường xuyên tổ chức các cuộc thi nhằm tìm kiếm những Thợ giỏi về kỹ năng chuyên môn và nghiệp vụ nhằm tuyên dương cho sự tận lực với nghề (sẽ mời các Thợ đoạt giải tham gia cổ phần vào những Công ty do Vua Thợ thành lập). Qua đó tạo động lực cho tất cả các anh thợ cùng nhau phấn đấu học hỏi, không ngừng phát triển.",
-    "text27": "Trong tương lai Vua Thợ sẽ xây dựng các Trung tâm đào tạo nghề (từ sơ cấp đến cao cấp) để cấp các chứng chỉ và bằng cấp ... công nhận tài năng của các anh em Thợ theo tiêu chuẩn.",
-    "text28": "Vua Thợ và các anh em Thợ cùng xây dựng một cộng đồng nhằm giúp đỡ, sẻ chia với xã hội và địa phương có những hoàn cảnh khó khăn: xây 1 ngôi trường, 1 cái cầu, làm sạch 1 dòng kênh ... đem lại những điều tốt đẹp nhất cho xã hội bằng sức lao động của những người Thợ.",
-    "text29": "Đến với Vua Thợ, người Thợ sẽ tự làm chủ công việc của bản thân không còn khái niệm về làm công. Bên cạnh đó Thợ sẽ không cần phải lo lắng việc tìm kiếm Khách hàng mà Khách hàng sẽ tìm đến Thợ - Thợ sẽ là người đại diện bán hàng cho Vua Thợ.",
-    "text30": "Khi hoàn thành tốt công việc, đảm bảo Thợ sẽ nhận được tiền."
+    "text": "Đối với Thợ"
   },
   "FaqSection": {
     "listAccordion": {
@@ -936,5 +829,11 @@
     "home": "Trang chủ",
     "acrticle": "Bài viết",
     "store": "Đồng phục"
+  },
+  "Modal": {
+    "heading": "Hãy để lại ý kiến của bạn để chúng tôi có thể cải thiện hơn nhé!",
+    "type": "Nhập...",
+    "send": "Gửi",
+    "messageToast": "Cảm ơn bạn đã đóng góp ý kiến"
   }
 }

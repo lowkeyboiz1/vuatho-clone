@@ -1,10 +1,9 @@
 import Image from 'next/image'
-import { Metadata } from 'next'
 
-import HeroSection from './(sections)/heroSection'
-import SectionServices from '../(sections)/services'
+import { useTranslations } from 'next-intl'
 import SectionDownload from '../(sections)/downloadApp'
-import { useLocale, useTranslations } from 'next-intl'
+import SectionServices from '../(sections)/services'
+import HeroSection from './(sections)/heroSection'
 
 export async function generateMetadata({ params }: { params?: any }) {
   try {

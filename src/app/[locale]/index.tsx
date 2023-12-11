@@ -1,35 +1,43 @@
 'use client'
 
-import React from 'react'
-import Link from 'next/link'
-import { useEffect, useState, useRef, useImperativeHandle, createRef } from 'react'
 import Image from 'next/image'
-import { useSearchParams } from 'next/navigation'
+import Link from 'next/link'
+import React, { createRef, useEffect, useImperativeHandle, useRef, useState } from 'react'
 
-import { motion, useAnimate } from 'framer-motion'
 import confetti from 'canvas-confetti'
-import { useTranslations } from 'next-intl'
-import { ArrowRight, Heart } from 'iconsax-react'
-import { Autoplay, EffectFade, Pagination, Navigation } from 'swiper/modules'
+import { motion, useAnimate } from 'framer-motion'
+import { Add, ArrowRight, Heart, HeartSlash } from 'iconsax-react'
+import { useLocale, useTranslations } from 'next-intl'
+import { useSearchParams } from 'next/navigation'
+import { Autoplay, EffectFade, Navigation, Pagination } from 'swiper/modules'
 import { Swiper, SwiperSlide } from 'swiper/react'
 
-import 'swiper/css'
-import 'swiper/css/effect-fade'
-import 'swiper/css/pagination'
-import 'swiper/css/navigation'
-import './swipper.scss'
-
-import instance from '@/services/axiosConfig'
 import { Agree, CheckIcon, GigEconomy, ImageSkeleton, Support } from '@/components/Icons'
 import Article from '@/components/article'
 import Map from '@/components/map'
-import SectionToTheMoon from './(sections)/toTheMoon'
-import SectionDownload from './(sections)/downloadApp'
-import SectionWithVuaTho from './(sections)/withVuaTho'
 import { SkeletonBlog } from '@/components/skeleton'
-import { useLocale } from 'next-intl'
-import { TlistBenefit } from '@/interface'
-import { Skeleton } from '@nextui-org/react'
+import instance from '@/services/axiosConfig'
+import {
+  Button,
+  Modal,
+  ModalBody,
+  ModalContent,
+  ModalHeader,
+  Skeleton,
+  Textarea,
+  useDisclosure,
+} from '@nextui-org/react'
+import SectionDownload from './(sections)/downloadApp'
+import SectionToTheMoon from './(sections)/toTheMoon'
+import SectionWithVuaTho from './(sections)/withVuaTho'
+
+import ImageFallback from '@/components/ImageFallback'
+import { ToastComponent } from '@/components/ToastComponent'
+import 'swiper/css'
+import 'swiper/css/effect-fade'
+import 'swiper/css/navigation'
+import 'swiper/css/pagination'
+import './swipper.scss'
 
 function HomePage() {
   const searchParams = useSearchParams()
@@ -284,18 +292,18 @@ const MainSection = () => {
             </div>
           </div>
           <div className='grid w-full grid-cols-1 gap-6 md:grid-cols-3'>
-            {listCard.map((i: any, index: any) => (
+            {listCard.map((item: any, index: any) => (
               <a
-                href={`${i.id}`}
-                key={index}
+                href={item.id}
+                key={`listcard-${index}`}
                 className='group z-[2] flex cursor-pointer items-center gap-[10px] rounded-[10px] bg-white p-[12px] shadow-[0px_16px_60px_-16px_rgba(35,35,35,0.06)] duration-300 hover:border-transparent hover:bg-white md:flex-col md:items-start xl:p-[10px] xl:hover:-translate-y-[6px]'
               >
-                <i.icon size={40} className='text-primaryBlue' variant='Bold' />
+                <item.icon size={40} className='text-primaryBlue' variant='Bold' />
                 <div className='w-full pl-5 md:pl-0'>
-                  <p className='mt-2 text-[1.6rem] text-primaryText'>{i.desc}</p>
+                  <p className='mt-2 text-[1.6rem] text-primaryText'>{item.desc}</p>
                   <div className='flex items-center justify-between'>
                     <p className='mt-2 text-[1.8rem] font-semibold text-primaryText'>
-                      {i.title}
+                      {item.title}
                     </p>
                     <span className='-translate-x-[10px] opacity-0 duration-300 group-hover:translate-x-0 group-hover:opacity-100'>
                       <ArrowRight size={24} className='text-black' />
@@ -364,7 +372,9 @@ const CustomerBenefitSection = () => {
                 <p className='text-[4rem] font-semibold leading-none text-[#FCB713] md:text-[6.4rem]'>
                   0{index + 1}
                 </p>
-                <p className='text-[1.6rem] text-base-black-1'>{item.title}</p>
+                <p className='text-left text-[1.6rem] text-base-black-1 md:text-center'>
+                  {item.title}
+                </p>
               </div>
             </div>
           ))}
@@ -380,20 +390,11 @@ const WorkerBenefitSection = () => {
 
   const [currentIndex, setCurrentIndex] = useState<number>(0)
   const [onFetching, setOnFetching] = useState<boolean>(false)
+  const [onRefresh, setOnRefresh] = useState<boolean>(false)
 
   const [listDataBenefit, setListDataBenefit] = useState<any>([])
 
   const swiperRef = useRef<any>(null)
-  const itemRefs = useRef<any>([])
-
-  let clicked = false
-  let timer: any = null
-
-  useEffect(() => {
-    itemRefs.current = Array(listDataBenefit.length)
-      .fill(null)
-      .map((_, i) => itemRefs.current[i] || createRef())
-  }, [listDataBenefit.length])
 
   const _handleFetching = async () => {
     try {
@@ -403,6 +404,7 @@ const WorkerBenefitSection = () => {
       console.log(error)
     } finally {
       setOnFetching(false)
+      onRefresh && setOnRefresh(false)
     }
   }
 
@@ -414,42 +416,18 @@ const WorkerBenefitSection = () => {
     setOnFetching(true)
   }, [])
 
-  const _HandleActiveLike = async (item: TlistBenefit) => {
-    try {
-      // const { data } = await instance.post('/', {
-      //   params: {
-      //     id,
-      //     isLike
-      //   },
-      // })
-    } catch (error) {
-      console.log(error)
-    }
-  }
+  useEffect(() => {
+    onRefresh && _handleFetching()
+  }, [onRefresh])
 
-  const _detectDoubleTap = async (e: any, index: any) => {
-    try {
-      if (clicked) {
-        itemRefs.current[index].current?.like()
-      } else {
-        // _handleClickSwiper()
-        clicked = true
-      }
-      setTimeout(function () {
-        clicked = false
-      }, 333) //detect fast clicks (333ms)
-    } catch (error) {}
-  }
+  let timer: any = null
 
   const _handleClickSwiper = () => {
-    swiperRef.current.swiper.autoplay.stop()
+    swiperRef?.current?.swiper?.autoplay?.stop()
     clearTimeout(timer)
     timer = setTimeout(() => {
-      swiperRef.current.swiper.autoplay.start()
+      swiperRef?.current?.swiper?.autoplay?.start()
     }, 30000)
-  }
-  const handleLog = () => {
-    console.log('123')
   }
 
   const pagination = {
@@ -460,14 +438,6 @@ const WorkerBenefitSection = () => {
       }</span>`
     },
   }
-
-  useEffect(() => {
-    window.addEventListener('DOMContentLoaded', (event) => {
-      document.querySelectorAll('.paginationBenefit').forEach((item) => {
-        item.addEventListener('click', handleLog)
-      })
-    })
-  }, [])
 
   useEffect(() => {
     return () => clearTimeout(timer)
@@ -533,12 +503,10 @@ const WorkerBenefitSection = () => {
           >
             {listDataBenefit?.map((item: any, index: number) => {
               return (
-                <div className='h-full w-full' key={item.id}>
+                <div className='h-full w-full' key={`listDataBenefit-${index}`}>
                   <SwiperSlide
                     className={currentIndex === index ? 'visible' : 'invisible'}
-                    onClick={(e) => {
-                      _detectDoubleTap(e, index)
-                    }}
+                    onClick={_handleClickSwiper}
                   >
                     <div className='mb-[16px] flex items-center justify-between'>
                       <div className='flex h-[76px] items-center gap-[12px]'>
@@ -549,12 +517,21 @@ const WorkerBenefitSection = () => {
                           {item.title}
                         </h4>
                       </div>
-                      <div className='likeButton hidden md:block'>
+                      <div className='likeButton hidden md:flex md:items-center md:gap-[12px]'>
+                        <UnLike
+                          isDisLiked={item?.isLike || false}
+                          count={
+                            item?.dislike?.like ||
+                            Math.floor(Math.random() * (100 - 1 + 1) + 1)
+                          }
+                          uuid={item.uuid || Date.now()}
+                          onRefresh={setOnRefresh}
+                        />
                         <Like
-                          ref={itemRefs.current[index]}
-                          count={item.like}
-                          isLike={item.isLike}
                           uuid={item.uuid}
+                          count={item.like.like}
+                          isLike={item.like.isLike}
+                          onRefresh={setOnRefresh}
                         />
                       </div>
                     </div>
@@ -564,7 +541,7 @@ const WorkerBenefitSection = () => {
                       </div>
                       <div className='relative order-none col-span-5 h-full w-full xl:order-1 xl:col-span-3'>
                         <div className='overflow-hidden rounded-t-[12px] xl:rounded-r-[12px]'>
-                          <Image
+                          <ImageFallback
                             src={item.img}
                             alt=''
                             height={800}
@@ -572,12 +549,21 @@ const WorkerBenefitSection = () => {
                             className='h-full w-auto object-contain'
                           />
                         </div>
-                        <div className='likeButtonMobile absolute right-[2%] top-[4%] md:hidden'>
+                        <div className='likeButtonMobile item-center absolute right-[2%] top-[4%] flex gap-[12px] md:hidden'>
+                          <UnLike
+                            isDisLiked={item?.isLike || false}
+                            count={
+                              item?.dislike?.like ||
+                              Math.floor(Math.random() * (100 - 1 + 1) + 1)
+                            }
+                            uuid={item.uuid || Date.now()}
+                            onRefresh={setOnRefresh}
+                          />
                           <Like
-                            ref={itemRefs.current[index]}
-                            count={item.like}
-                            isLike={item.isLike}
+                            count={item.like.like}
+                            isLike={item.like.isLike}
                             uuid={item.uuid}
+                            onRefresh={setOnRefresh}
                           />
                         </div>
                       </div>
@@ -637,8 +623,8 @@ const PressHome = () => {
       <div className='blog-home flex flex-nowrap gap-[20px] overflow-x-auto xl:grid xl:grid-cols-4 xl:overflow-x-auto'>
         {onFetching
           ? Array(4)
-              .fill(1)
-              .map((item: any, index: number) => (
+              .fill(null)
+              .map((_, index: number) => (
                 <div className='w-full' key={`skeleton-blog-${index}`}>
                   <SkeletonBlog />
                 </div>
@@ -647,15 +633,15 @@ const PressHome = () => {
             ? listBlog.map((item: any, index: number) => {
                 return (
                   <Article
-                    key={item.uuid || `blog-${index}`}
+                    key={`blog-${index}`}
                     item={item}
                     style='w-[80%] md:w-[40%] xl:w-full cursor-pointer'
                   />
                 )
               })
             : Array(4)
-                .fill(1)
-                .map((item: any, index: number) => (
+                .fill(null)
+                .map((_, index) => (
                   <div className='w-full' key={`skeleton-blog1-${index}`}>
                     <SkeletonBlog />
                   </div>
@@ -665,100 +651,234 @@ const PressHome = () => {
   )
 }
 
-const Like = React.memo(
-  React.forwardRef((props: any, ref: any) => {
-    const [isLike, setIsLike] = useState<boolean>(props.isLike)
-    const [likeTotal, setLikeTotal] = useState<number>(props.count || 0)
-    const [onSending, setonSending] = useState(false)
+const Like = ({
+  isLike,
+  count,
+  uuid,
+  onRefresh,
+}: {
+  isLike: boolean
+  count: number
+  uuid: string
+  onRefresh: any
+}) => {
+  const [isLiked, setIsLiked] = useState<boolean>(isLike)
+  const [likeTotal, setLikeTotal] = useState<number>(count || 0)
+  const [onSending, setOnSending] = useState(false)
 
-    const [scope, animate] = useAnimate()
+  const [scope, animate] = useAnimate()
 
-    useImperativeHandle(
-      ref,
-      () => {
-        return {
-          like: () => _handleActionLike(),
-        }
-      },
-      [],
+  const handeAnimation = (isLike: boolean) => {
+    const button: any = document.querySelector('.likeButton')
+    const buttonMobile: any = document.querySelector('.likeButtonMobile')
+    const rect = button.getBoundingClientRect()
+    const rect2 = buttonMobile.getBoundingClientRect()
+    const x =
+      (rect.left + rect.width / 2) / window.innerWidth !== 0
+        ? (rect.left + rect.width / 2) / window.innerWidth
+        : (rect2.left + rect2.width / 2) / window.innerWidth
+    const y =
+      (rect.top + rect.height) / window.innerHeight !== 0
+        ? (rect.top + rect.height) / window.innerHeight
+        : (rect2.top + rect2.height) / window.innerHeight
+
+    !isLike &&
+      confetti({
+        gravity: 5,
+        particleCount: 70,
+        spread: 40,
+        origin: { x, y },
+      })
+    animate(
+      isLike
+        ? []
+        : [
+            [scope.current, { y: -28 }, { duration: 0.2 }],
+            [scope.current, { scaleX: -1 }, { duration: 0.2, at: '<' }],
+            [scope.current, { scaleX: 1 }, { duration: 0.2 }],
+            [scope.current, { y: 0 }, { duration: 0.2 }],
+          ],
     )
+  }
 
-    const handeAnimation = (isLike: boolean) => {
-      const button: any = document.querySelector('.likeButton')
-      const buttonMobile: any = document.querySelector('.likeButtonMobile')
-      const rect = button.getBoundingClientRect()
-      const rect2 = buttonMobile.getBoundingClientRect()
-      const x =
-        (rect.left + rect.width / 2) / window.innerWidth !== 0
-          ? (rect.left + rect.width / 2) / window.innerWidth
-          : (rect2.left + rect2.width / 2) / window.innerWidth
-      const y =
-        (rect.top + rect.height) / window.innerHeight !== 0
-          ? (rect.top + rect.height) / window.innerHeight
-          : (rect2.top + rect2.height) / window.innerHeight
-
-      !isLike &&
-        confetti({
-          gravity: 5,
-          particleCount: 70,
-          spread: 40,
-          origin: { x, y },
-        })
-      animate(
-        isLike
-          ? []
-          : [
-              [scope.current, { y: -28 }, { duration: 0.2 }],
-              [scope.current, { scaleX: -1 }, { duration: 0.2, at: '<' }],
-              [scope.current, { scaleX: 1 }, { duration: 0.2 }],
-              [scope.current, { y: 0 }, { duration: 0.2 }],
-            ],
-      )
+  const _ServerSendingLike = async () => {
+    try {
+      const data: any = await instance.post(`/home/benefit`, {
+        uuid: uuid,
+      })
+      handeAnimation(!data.isLiked)
+      setLikeTotal(data.count)
+      setIsLiked(data.isLiked)
+      onRefresh && onRefresh(true)
+    } catch (error) {
+    } finally {
+      setOnSending(false)
     }
+  }
 
-    const _ServerSendingLike = async () => {
-      try {
-        const data: any = await instance.post(`/home/benefit`, {
-          uuid: props.uuid,
-        })
-        handeAnimation(!data.isLiked)
-        setLikeTotal(data.count)
-        setIsLike(data.isLiked)
-      } catch (error) {
-      } finally {
-        setonSending(false)
-      }
-    }
+  useEffect(() => {
+    onSending && _ServerSendingLike()
+  }, [onSending])
 
-    useEffect(() => {
-      onSending && _ServerSendingLike()
-    }, [onSending])
+  const _handleActionLike = async () => {
+    setOnSending(true)
+  }
 
-    const _handleActionLike = async () => {
-      setonSending(true)
-    }
-
-    return (
-      <button
-        disabled={onSending}
-        className='like flex h-fit items-center justify-center gap-[6px] rounded-full bg-black/40 px-[8px] py-[6px] transition-all active:scale-[0.95] md:gap-[10px] md:bg-[#F8F8F8] md:px-[20px] md:py-[10px]'
-        onClick={_handleActionLike}
-      >
-        <motion.div>
-          <Heart
-            ref={scope}
-            id='heart'
-            variant='Bold'
-            size={24}
-            style={{ zIndex: 1000 }}
-            className={isLike ? 'text-[#FF4343]' : 'text-white md:text-[#969696]'}
-          />
-        </motion.div>
-        <span className='text-white md:text-base-black-1'>{likeTotal}</span>
-      </button>
-    )
-  }),
-)
+  return (
+    <button
+      disabled={onSending}
+      className='like flex h-fit items-center justify-center gap-[6px] rounded-full bg-black/40 px-[8px] py-[6px] transition-all active:scale-[0.95] md:gap-[10px] md:bg-[#F8F8F8] md:px-[20px] md:py-[10px]'
+      onClick={_handleActionLike}
+    >
+      <motion.div>
+        <Heart
+          ref={scope}
+          variant='Bold'
+          size={24}
+          style={{ zIndex: 1000 }}
+          className={isLiked ? 'text-[#FF4343]' : 'text-white md:text-[#969696]'}
+        />
+      </motion.div>
+      <span className='text-white md:text-base-black-1'>{likeTotal}</span>
+    </button>
+  )
+}
 
 Like.displayName = 'Like'
+
+const UnLike = ({
+  uuid,
+  count,
+  isDisLiked,
+  onRefresh,
+}: {
+  uuid: string
+  count: number
+  isDisLiked: boolean
+  onRefresh: any
+}) => {
+  const { isOpen, onOpen, onOpenChange, onClose } = useDisclosure()
+  const t = useTranslations('Modal')
+
+  const [isDisLike, setIsDisLike] = useState(isDisLiked)
+  const [totalUnLike, setTotalUnLike] = useState(count)
+
+  const [onSending, setOnSending] = useState(false)
+
+  const [message, setMessage] = useState('')
+
+  const _ServerSendingMessage = async () => {
+    if (!!message?.length || isDisLike) {
+      try {
+        // const { data } = await instance.post('home/benefit/dislike', {
+        //   uuid,
+        //   message,
+        // })
+        setIsDisLike((prev) => !prev)
+        setTotalUnLike((prev) => (isDisLike ? prev - 1 : prev + 1))
+        !isDisLike &&
+          ToastComponent({
+            message: t('messageToast'),
+            type: 'success',
+          })
+      } catch (error) {
+        console.log(error)
+      }
+    }
+    onClose()
+    setOnSending(false)
+    setMessage('')
+    onRefresh && onRefresh(true)
+  }
+
+  useEffect(() => {
+    onSending && _ServerSendingMessage()
+  }, [onSending])
+
+  const _HandleUnLike = () => {
+    !isDisLike ? onOpen() : setOnSending(true)
+  }
+
+  const _HandleSendMessage = () => {
+    setOnSending(true)
+  }
+
+  return (
+    <>
+      <button
+        onClick={_HandleUnLike}
+        className='unlike flex h-fit items-center justify-center gap-[6px] rounded-full bg-black/40 px-[8px] py-[6px] transition-all active:scale-[0.95] md:gap-[10px] md:bg-[#F8F8F8] md:px-[20px] md:py-[10px]'
+      >
+        <HeartSlash
+          size={24}
+          variant={isDisLike ? 'Bold' : 'Linear'}
+          className={isDisLike ? 'text-[#FF4343]' : 'text-white md:text-[#969696]'}
+        />
+        <span className='text-white md:text-base-black-1'>{totalUnLike}</span>
+      </button>
+      <Modal
+        isOpen={isOpen}
+        onOpenChange={onOpenChange}
+        hideCloseButton
+        size='5xl'
+        placement='center'
+        classNames={{
+          body: 'p-0',
+          header: 'p-0 pl-8 ',
+        }}
+      >
+        <ModalContent>
+          {(onClose) => (
+            <>
+              <ModalHeader className='flex items-center justify-end p-2'>
+                <Button
+                  isIconOnly
+                  onPress={onClose}
+                  variant='light'
+                  className='h-[48px] w-[56px]'
+                >
+                  <Add className='rotate-45' size={32} />
+                </Button>
+              </ModalHeader>
+              <ModalBody>
+                <div className='flex h-full w-full flex-col gap-[24px] p-[16px]'>
+                  <div className='flex items-center justify-center'>
+                    <Image
+                      src={'/benefitCustomer/Fixy-write1.png'}
+                      alt='write-mascot'
+                      height={174}
+                      width={217}
+                      className='object-cover'
+                    />
+                  </div>
+                  <div className='flex flex-col justify-center gap-[8px]'>
+                    <p className='font-medium text-base-black-1 '>{t('heading')}</p>
+                    <Textarea
+                      value={message}
+                      onChange={(e: any) => setMessage(e.target.value)}
+                      placeholder={t('type')}
+                      minRows={2}
+                      className='w-full'
+                      classNames={{
+                        input: 'text-[1.6rem]',
+                        inputWrapper:
+                          'px-[16px] py-[12px] text-[#969696] border-1 border-[#E1E1E1] bg-transparent',
+                      }}
+                    />
+                  </div>
+                  <Button
+                    onPress={_HandleSendMessage}
+                    className='flex h-[44px] w-full items-center justify-center rounded-full bg-[#FCB813] text-[1.6rem] font-medium text-base-black-1'
+                  >
+                    {t('send')}
+                  </Button>
+                </div>
+              </ModalBody>
+            </>
+          )}
+        </ModalContent>
+      </Modal>
+    </>
+  )
+}
 export default HomePage

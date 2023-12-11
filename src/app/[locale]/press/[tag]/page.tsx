@@ -1,5 +1,3 @@
-import type { Metadata, ResolvingMetadata } from 'next'
-
 import axios from 'axios'
 import { PressContent } from '..'
 

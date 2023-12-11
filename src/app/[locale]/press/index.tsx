@@ -1,32 +1,32 @@
 'use client'
-import React, { useEffect, useRef, useState } from 'react'
-import Image from 'next/image'
-import { useParams, usePathname, useRouter } from 'next/navigation'
+
 import { useLocale, useTranslations } from 'next-intl'
+import Image from 'next/image'
+import Link from 'next/link'
+import { usePathname, useRouter } from 'next/navigation'
+import React, { useEffect, useState } from 'react'
 
-import instance from '@/services/axiosConfig'
 import { BreadcrumbWithUrl } from '@/interface'
+import instance from '@/services/axiosConfig'
 
+import { ImageSkeleton } from '@/components/Icons'
 import Article from '@/components/article'
-import { ListBreadcrumbs, ListBreadcrumbsForDetailPress } from '@/components/breadcrumbs'
+import { ListBreadcrumbsForDetailPress } from '@/components/breadcrumbs'
 import { InputSearch } from '@/components/input'
 import { SkeletonBlog } from '@/components/skeleton'
-import { ImageSkeleton } from '@/components/Icons'
 
-import { Button, Skeleton, Pagination as PaginationNextUI } from '@nextui-org/react'
+import ImageFallback from '@/components/ImageFallback'
+import { Button, Pagination as PaginationNextUI, Skeleton } from '@nextui-org/react'
+import { Autoplay, EffectFade, Navigation, Pagination } from 'swiper/modules'
 import { Swiper, SwiperSlide } from 'swiper/react'
-import { EffectFade, Autoplay, Navigation, Pagination } from 'swiper/modules'
 
 import 'swiper/css'
-import 'swiper/css/pagination'
 import 'swiper/css/autoplay'
-import 'swiper/css/navigation'
 import 'swiper/css/effect-fade'
+import 'swiper/css/navigation'
+import 'swiper/css/pagination'
 
 import './pressSwiper.scss'
-import Link from 'next/link'
-import ImageFallback from '@/components/ImageFallback'
-import { useGetAllQueryParams } from '@/hook/useGetAllQueryParams'
 
 interface IMostViewed {
   isHidden?: boolean

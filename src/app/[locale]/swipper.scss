@@ -9,7 +9,7 @@
 
   .swiper-button-prev,
   .swiper-button-next {
-    @apply top-[170px] flex h-[40px] w-[40px] items-center justify-center rounded-full bg-black/20 text-white md:bottom-[32%] md:top-[260px] lg:top-[330px] xl:hidden;
+    @apply top-[200px] flex h-[40px] w-[40px] items-center justify-center rounded-full bg-black/20 text-white md:bottom-[32%] md:top-[260px] lg:top-[330px] xl:hidden;
 
     &::after {
       @apply text-[1.6rem];

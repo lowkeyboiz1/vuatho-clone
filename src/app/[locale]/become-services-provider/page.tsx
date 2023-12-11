@@ -14,6 +14,7 @@ export async function generateMetadata({ params }: { params?: any }) {
       vi: 'Ứng dụng số 1 Việt Nam',
       en: 'Leading App in Vietnam',
     }
+
     return {
       title: metadata[params.locale || 'vi'],
       description: description[params.locale || 'vi'],

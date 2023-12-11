@@ -1,34 +1,30 @@
 'use client'
 
+import { useLocale, useTranslations } from 'next-intl'
 import Image from 'next/image'
 import Link from 'next/link'
-import { useTranslations } from 'next-intl'
-import { useLocale } from 'next-intl'
 import { useEffect, useState } from 'react'
 
-import {
-  FacebookIcon,
-  InstaIcon,
-  LinkedinIcon,
-  TiktokIcon,
-  YoutubeIcon,
-} from '@/components/Icons'
+import { FacebookIcon, LinkedinIcon, YoutubeIcon } from '@/components/Icons'
 
-import {
-  Call as PhoneIcon,
-  Sms as MailIcon,
-  Location as LocationIcon,
-} from 'iconsax-react'
 import { AndroidBtn, IosBtn } from '@/components/DownloadApps'
+import {
+  Location as LocationIcon,
+  Sms as MailIcon,
+  Call as PhoneIcon,
+} from 'iconsax-react'
 import { useSearchParams } from 'next/navigation'
 
 function Footer() {
-  const t = useTranslations('Footer')
-  const td = useTranslations('Download')
   const locale = useLocale()
-  const [isWebview, sIsWebview] = useState(false)
   const searchParams = useSearchParams()
   const hiddenHeaderAndFooter = searchParams.get('hideHeaderAndFooter')
+
+  const t = useTranslations('Footer')
+  const td = useTranslations('Download')
+
+  const [isWebview, sIsWebview] = useState(false)
+
   useEffect(() => {
     var is_uiwebview = navigator.userAgent.includes('WebView')
     sIsWebview(is_uiwebview)
@@ -146,7 +142,7 @@ function Footer() {
               </p>
             </div>
           </div>
-          <div className='col-span-9 grid grid-cols-8 gap-[20px] md:gap-0 lg:col-span-6'>
+          <div className='col-span-9 grid grid-cols-8 gap-[20px] lg:col-span-6'>
             <div className='col-span-8 flex flex-col gap-[20px] md:col-span-3'>
               <h5 className='text-[1.8rem] font-semibold md:text-[2rem]'>
                 {t('about_vuatho')}
@@ -211,11 +207,12 @@ function Footer() {
 }
 
 const SubFooter = () => {
+  const t = useTranslations('Footer')
   return (
     <div className='ct-container-70 grid grid-cols-2 flex-col items-center justify-between gap-[10px] py-10 text-[1.4rem] md:flex md:flex-row md:gap-2'>
       <div>
         <h1 className='text-slate-500'>
-          Đang gửi thông báo đến <br /> <span className='uppercase'>bộ công thương</span>
+          {t('sending')} <br /> <span className='uppercase'>{t('BCT')}</span>
         </h1>
       </div>
       {/* <Image

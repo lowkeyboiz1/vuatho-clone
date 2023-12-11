@@ -1,17 +1,16 @@
 'use client'
 
 import { ListBreadcrumbsForDetailPress } from '@/components/breadcrumbs'
-import { MostViewed } from '../..'
-import { BreadcrumbWithUrl } from '@/interface'
 import { InputSearch } from '@/components/input'
-import { useEffect, useState } from 'react'
+import { BreadcrumbWithUrl } from '@/interface'
 import instance from '@/services/axiosConfig'
-// get router pathname
-import { useParams } from 'next/navigation'
-import Link from 'next/link'
-import { useLocale, useTranslations } from 'next-intl'
+import { useEffect, useState } from 'react'
+import { MostViewed } from '../..'
 import { Skeleton } from '@nextui-org/react'
+import { useLocale, useTranslations } from 'next-intl'
 import Image from 'next/image'
+import Link from 'next/link'
+import { useParams } from 'next/navigation'
 
 function PressDetail() {
   const t = useTranslations('listBreadcrumbs')
@@ -52,6 +51,7 @@ function PressDetail() {
       setOnLoading(false)
     }
   }
+
   const _serverFetchingMostView = async () => {
     try {
       const data = await instance.get('/blog/mostViewByWeek', {

@@ -1,12 +1,12 @@
-import Image from 'next/image'
 import { useTranslations } from 'next-intl'
+import Image from 'next/image'
 
 function SectionToTheMoon() {
   const t = useTranslations('ToTheMoon')
 
   return (
-    <div className='flex-center relative md:min-h-[744px]'>
-      <div className='relative w-[96%]  md:w-[520px]'>
+    <div className='flex-center relative md:min-h-[500px]'>
+      <div className='relative w-[96%] md:w-[520px]'>
         <div className='relative z-[2] w-full space-y-2 rounded-[16px] bg-primary-blue p-[26px] md:p-[40px]'>
           <div className='flex items-center gap-[10px]'>
             <div className='h-[40px] w-[48px]'>
@@ -33,7 +33,7 @@ function SectionToTheMoon() {
             className='h-full w-full object-contain'
           />
         </div>
-        <div className='absolute left-[-100%] top-[-100%] z-[1] hidden w-[744px] md:block 3xl:left-[-70%]'>
+        <div className='absolute left-[-100%] top-[-45%] z-[1] hidden w-[744px] md:block 3xl:left-[-70%]'>
           <Image
             src={'/home/salestarget.png'}
             alt=''

@@ -1,8 +1,11 @@
+'use client'
+
 import lottie from 'lottie-web'
 import { useEffect, useRef } from 'react'
 import { twMerge } from 'tailwind-merge'
-import animationData from '@/components/animateJson/downloadApp.json'
+
 import animationAboutUs from '@/components/animateJson/aboutUs_banner.json'
+import animationData from '@/components/animateJson/downloadApp.json'
 
 export const Screen = ({ style }: { style?: string }) => {
   const container = useRef(null)

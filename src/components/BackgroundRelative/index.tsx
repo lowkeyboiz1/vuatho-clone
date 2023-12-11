@@ -5,6 +5,7 @@ import { useSearchParams } from 'next/navigation'
 
 function BackgroundRelative({ text }: { text: string }) {
   const searchParams = useSearchParams()
+
   const hiddenHeaderAndFooter = searchParams.get('hideHeaderAndFooter')
 
   return (

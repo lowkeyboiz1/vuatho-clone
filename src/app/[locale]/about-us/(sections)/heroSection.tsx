@@ -1,7 +1,7 @@
 'use client'
 
-import React, { useEffect, useRef } from 'react'
 import Image from 'next/image'
+import { useEffect, useRef } from 'react'
 
 import animationData from '@/components/animateJson/aboutUs_banner.json'
 import { useTranslations } from 'next-intl'
@@ -62,13 +62,7 @@ const AnimatePhone = () => {
     return () => instance.destroy()
   }, [])
 
-  return (
-    <div
-      ref={container}
-      // className='mx-auto mb-0 w-[260px] md:mb-[-40px] lg:mb-[-30px] 13inch:w-[300px] 3xl:w-[382px]'
-      className=''
-    />
-  )
+  return <div ref={container} className='' />
 }
 
 export default HeroSection

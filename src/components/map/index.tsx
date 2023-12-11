@@ -1,8 +1,11 @@
 'use client'
-import { useEffect } from 'react'
-import './map.scss'
+
 import { Tooltip } from '@nextui-org/react'
 import { useTranslations } from 'next-intl'
+import { useEffect } from 'react'
+
+import './map.scss'
+
 function Map() {
   const listSpecial = [
     { name: 'Nghệ An' },
@@ -39,7 +42,7 @@ function Map() {
     <div className='relative mx-auto w-fit'>
       <div className='absolute left-[42%] top-[17%] aspect-square h-fit w-[70%] -translate-x-1/2 rounded-full bg-white/20 md:top-[15%]'></div>
       <div className='absolute bottom-[5%] left-[20%] aspect-square h-fit w-full rounded-full bg-white/20'></div>
-      <div className='absolute right-[-50%] top-[22%] flex flex-col rounded-[8px] bg-white p-[8px] md:right-[-40%] md:top-[20%] md:rounded-[12px] md:p-[12px] lg:right-[-40%]'>
+      <div className='absolute right-[-50%] top-[22%] flex flex-col rounded-[8px] bg-white p-[8px] md:right-[-40%] md:top-[27%] md:rounded-[12px] md:p-[12px] lg:right-[-44%] xl:right-[-44%] xl:mr-[12%]'>
         <div className='flex items-center gap-[10px]'>
           <div className='h-[10px] w-[10px] rounded-full bg-[#FCB713]' />
           <p className=' text-[1rem] font-semibold text-primary-blue md:text-[1.8rem]'>
@@ -61,7 +64,7 @@ function Map() {
           2.000 {t('user')}
         </p>
       </div>
-      <div className='absolute bottom-[26%] right-[-64%] flex flex-col rounded-[8px] bg-white p-[8px] md:-right-[58%] md:bottom-[30%] md:rounded-[12px] md:p-[12px] lg:-right-[55%]'>
+      <div className='absolute bottom-[26%] right-[-64%] flex flex-col rounded-[8px] bg-white p-[8px] md:-right-[58%] md:bottom-[30%] md:rounded-[12px] md:p-[12px] lg:-right-[50%] xl:hidden [@media(min-width:1440px)]:right-[-58%] [@media(min-width:1440px)]:flex'>
         <div className='flex items-center gap-[10px]'>
           <div className='h-[10px] w-[10px] rounded-full bg-[#FCB713]' />
           <p className='text-[1rem] font-semibold  text-primary-blue md:text-[1.8rem] '>

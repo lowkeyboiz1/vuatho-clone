@@ -1,8 +1,8 @@
 'use client'
 
 import animationData1 from '@/components/animateJson/websiteAbout.json'
-import { useEffect, useRef } from 'react'
 import lottie from 'lottie-web'
+import { useEffect, useRef } from 'react'
 
 function AnimationToTheMoon() {
   return (

@@ -1,8 +1,8 @@
 'use client'
 
-import { useState, useRef, useEffect, useCallback } from 'react'
-import { useParams, useRouter, useSearchParams } from 'next/navigation'
 import { useLocale, useTranslations } from 'next-intl'
+import { useRouter, useSearchParams } from 'next/navigation'
+import { useCallback, useEffect, useRef, useState } from 'react'
 
 import { Input } from '@nextui-org/react'
 import { Add, SearchNormal1 } from 'iconsax-react'
@@ -53,14 +53,6 @@ export const InputSearch = ({ onRefresh }: { onRefresh: any }) => {
   const handleSearch = async () => {
     try {
       // const {data} = instance.post('home/search')
-      setListTagSearch([
-        { name: 'Nghề nghiệp', slug: 'nghe-nghiep' },
-        { name: 'Xây dựng công trình', slug: 'xay-dung-cong-trinh' },
-        { name: 'Mẹo vặt', slug: 'meo-vat' },
-        { name: 'Sửa chữa xe máy', slug: 'sua-chua-xe-may' },
-        { name: 'Điện lạnh', slug: 'dien-lanh' },
-        { name: 'Hướng dẫn người mới', slug: 'huong-dan-nguoi-moi' },
-      ])
     } catch (error) {
       console.log(error)
     } finally {
