@@ -1,16 +1,11 @@
 import createMiddleware from 'next-intl/middleware'
-import { locales, langMiddleWare } from './constants'
+import { locales } from './constants'
 
 export default createMiddleware({
-  // A list of all locales that are supported
   locales: locales,
-  // pathnames,
-  // Used when no locale matches
-  defaultLocale: 'vi',
   localePrefix: 'always',
+  localeDetection: true,
 })
-
-// console.log(locales.splice(''))
 
 export const config = {
   // Match only internationalized pathnames

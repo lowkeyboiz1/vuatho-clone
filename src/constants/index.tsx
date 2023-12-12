@@ -2,19 +2,6 @@ import Image from 'next/image'
 
 export const langs = [
   {
-    label: 'English',
-    code: 'en',
-    active: true,
-    symbol: (
-      <Image
-        src='https://flagcdn.com/20x15/gb.png'
-        width='20'
-        height='15'
-        alt='English'
-      />
-    ),
-  },
-  {
     label: 'Tiếng Việt',
     code: 'vi',
     active: true,
@@ -28,16 +15,37 @@ export const langs = [
     ),
   },
   {
-    label: 'Chinese',
-    code: 'zh',
-    active: false,
+    label: 'English',
+    code: 'en',
+    active: true,
     symbol: (
       <Image
-        src='https://flagcdn.com/20x15/zh.png'
+        src='https://flagcdn.com/20x15/gb.png'
         width='20'
         height='15'
-        alt='Chinese'
+        alt='English'
       />
+    ),
+  },
+  {
+    label: '简体中文',
+    code: 'zh',
+    active: true,
+    symbol: (
+      <Image
+        src='https://flagcdn.com/20x15/cn.png'
+        width='20'
+        height='15'
+        alt='简体中文'
+      />
+    ),
+  },
+  {
+    label: '한국인',
+    code: 'kr',
+    active: true,
+    symbol: (
+      <Image src='https://flagcdn.com/20x15/kr.png' width='20' height='15' alt='한국인' />
     ),
   },
   {
@@ -302,19 +310,7 @@ export const langs = [
       <Image src='https://flagcdn.com/20x15/bd.png' width='20' height='15' alt='বাংলা' />
     ),
   },
-  {
-    label: '简体中文',
-    code: 'zh-CN',
-    active: false,
-    symbol: (
-      <Image
-        src='https://flagcdn.com/20x15/cn.png'
-        width='20'
-        height='15'
-        alt='简体中文'
-      />
-    ),
-  },
+
   {
     label: '繁體中文',
     code: 'zh-TW',
@@ -334,14 +330,6 @@ export const langs = [
     active: false,
     symbol: (
       <Image src='https://flagcdn.com/20x15/jp.png' width='20' height='15' alt='日本' />
-    ),
-  },
-  {
-    label: '한국인',
-    code: 'kr',
-    active: true,
-    symbol: (
-      <Image src='https://flagcdn.com/20x15/kr.png' width='20' height='15' alt='한국인' />
     ),
   },
 ]

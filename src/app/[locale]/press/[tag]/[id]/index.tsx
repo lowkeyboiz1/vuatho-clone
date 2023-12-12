@@ -1,22 +1,27 @@
 'use client'
 
+import { useEffect, useState } from 'react'
+import Link from 'next/link'
+import Image from 'next/image'
+import { useParams, usePathname } from 'next/navigation'
+
+import instance from '@/services/axiosConfig'
+import { BreadcrumbWithUrl } from '@/interface'
+import { MostViewed } from '../..'
+
 import { ListBreadcrumbsForDetailPress } from '@/components/breadcrumbs'
 import { InputSearch } from '@/components/input'
-import { BreadcrumbWithUrl } from '@/interface'
-import instance from '@/services/axiosConfig'
-import { useEffect, useState } from 'react'
-import { MostViewed } from '../..'
+
 import { Skeleton } from '@nextui-org/react'
 import { useLocale, useTranslations } from 'next-intl'
-import Image from 'next/image'
-import Link from 'next/link'
-import { useParams } from 'next/navigation'
 
 function PressDetail() {
   const t = useTranslations('listBreadcrumbs')
   const td = useTranslations('DetailsPress')
 
   const paramsData = useParams()
+  const pathname = usePathname()
+  console.log(pathname)
   const locale = useLocale()
 
   const [onFetching, setOnFetching] = useState<boolean>(false)
@@ -140,11 +145,12 @@ function PressDetail() {
                   ) : (
                     <>
                       <h1 className='text-[3.2rem] font-semibold text-base-black-1'>
-                        <Link href={`${detailPress?.slug}`}>{detailPress?.title}</Link>
+                        {/* <Link href={`${detailPress?.slug}`}>{detailPress?.title}</Link> */}
+                        {detailPress?.title}
                       </h1>
                       <div className='flex items-center gap-[16px]'>
                         <h3 className='text-base-black-1'>
-                          <Link href={`${detailPress?.slug}`}>
+                          <Link href={`/${paramsData.locale}/press/${detailPress?.category?.slug}`}>
                             {detailPress?.category?.name}
                           </Link>
                         </h3>

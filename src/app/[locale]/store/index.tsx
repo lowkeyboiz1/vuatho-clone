@@ -16,17 +16,29 @@ import {
   useDisclosure,
 } from '@nextui-org/react'
 import { Add } from 'iconsax-react'
-import { useTranslations } from 'next-intl'
+import { useLocale, useTranslations } from 'next-intl'
+import instance from '@/services/axiosConfig'
+
+interface IItemClothe {
+  title: string
+  thumb: string
+  currency: string
+}
 
 interface IItemClothes {
   title: string
   price: string
   thumb: string
+  version: number
+  currency: string
+  isInStock: boolean
+  package: IItemClothe[]
 }
 
 export const Store = () => {
   const td = useTranslations('listBreadcrumbs')
   const { isOpen, onOpen, onOpenChange } = useDisclosure()
+  const locale = useLocale()
 
   const listBreadcrumbs: BreadcrumbWithUrl[] = [
     { title: td('home'), url: '/' },
@@ -36,62 +48,27 @@ export const Store = () => {
   const [onLoading, setOnLoading] = useState<boolean>(true)
   const [onFetching, setOnFetching] = useState<boolean>(false)
 
-  const [listItem, setListItem] = useState<IItemClothes[]>([])
+  const [listItem, setListItem] = useState<any[]>([])
   const [itemActive, setItemActive] = useState<IItemClothes | null>(null)
 
   const t = useTranslations('Store')
 
   const handleClick = (item: IItemClothes) => {
+    console.log(item)
+
     setItemActive(item.thumb ? item : null)
     item.thumb && onOpen()
   }
 
   const serverFetching = async () => {
     try {
-      // const { data } = instance.get('/store')
-      // setListItem(data)
-      setListItem([
-        {
-          title: 'Áo thun vua thợ',
-          price: '80.000',
-          thumb: 'ao1.png',
+      const data: IItemClothes[] = await instance.get('/uniforms', {
+        params: {
+          lang: locale,
+          urrency: 'đ',
         },
-        {
-          title: 'Áo tay dài vua thợ',
-          price: '120.000',
-          thumb: 'ao2.png',
-        },
-        {
-          title: 'Quần thun vua thợ',
-          price: '90.000',
-          thumb: 'ao3.png',
-        },
-        {
-          title: 'Quần dài vua thợ',
-          price: '80.000',
-          thumb: 'ao4.png',
-        },
-        {
-          title: 'Mũ bảo hiểm vua thợ',
-          price: '100.000',
-          thumb: 'ao5.png',
-        },
-        {
-          title: 'Khẩu trang vua thợ',
-          price: '5.000',
-          thumb: 'ao6.png',
-        },
-        {
-          title: 'Giày vua thợ',
-          price: '200.000',
-          thumb: 'ao7.png',
-        },
-        {
-          title: 'Dép lào vua thợ',
-          price: '90.000',
-          thumb: 'ao8.png',
-        },
-      ])
+      })
+      setListItem([...data])
     } catch (error) {
       console.log(error)
     } finally {
@@ -103,9 +80,6 @@ export const Store = () => {
     onFetching && serverFetching()
   }, [onFetching])
 
-  useEffect(() => {
-    setOnFetching(true)
-  }, [])
   return (
     <div className='pt-[64px] 3xl:pt-[80px]'>
       <div className='ct-container-70 mb-[60px]'>
@@ -131,7 +105,7 @@ export const Store = () => {
                     </div>
                   </div>
                 ))
-            : listItem.map((item: IItemClothes, index: number) => {
+            : listItem?.map((item: IItemClothes, index: number) => {
                 return (
                   <div
                     className='group cursor-pointer overflow-hidden rounded-[8px] shadow-[0px_4px_8px_0px_#ACACAC29]'
@@ -140,7 +114,7 @@ export const Store = () => {
                   >
                     <div className='h-[200px] w-full overflow-hidden'>
                       <ImageFallback
-                        src={`/store/${item.thumb}`}
+                        src={item.thumb}
                         alt=''
                         height={300}
                         width={600}
@@ -152,7 +126,8 @@ export const Store = () => {
                         {item.title}
                       </p>
                       <p className='text-[1.8rem] font-semibold text-primary-blue'>
-                        {item.price}đ
+                        {item.price}
+                        {item.currency}
                       </p>
                     </div>
                   </div>
@@ -189,8 +164,8 @@ export const Store = () => {
               </ModalHeader>
               <ModalBody>
                 <div className='h-full w-full'>
-                  <Image
-                    src={`/store/${itemActive?.thumb}`}
+                  <ImageFallback
+                    src={itemActive?.thumb || ''}
                     alt=''
                     width={800}
                     height={600}

@@ -943,7 +943,7 @@
   "Modal": {
     "heading": "Please leave your feedback so we can improve!",
     "type": "Enter...",
-    "send": "Send",
-    "messageToast": "Thank you for your feedback"
+    "messageToast": "Thank you for your feedback",
+    "send": "Send"
   }
 }

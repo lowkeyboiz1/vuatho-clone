@@ -3,7 +3,7 @@ import { Store } from '.'
 export async function generateMetadata({ params }: { params?: any }) {
   try {
     const metadata: any = {
-      vi: 'Mua đồng phục',
+      vi: 'Đồng phục',
       en: 'Store',
     }
     const description: any = {

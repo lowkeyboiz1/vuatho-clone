@@ -2,11 +2,11 @@
 
 import Image from 'next/image'
 import Link from 'next/link'
-import React, { createRef, useEffect, useImperativeHandle, useRef, useState } from 'react'
+import { useEffect, useRef, useState } from 'react'
 
 import confetti from 'canvas-confetti'
 import { motion, useAnimate } from 'framer-motion'
-import { Add, ArrowRight, Heart, HeartSlash } from 'iconsax-react'
+import { Add, ArrowRight, Dislike, Like1 } from 'iconsax-react'
 import { useLocale, useTranslations } from 'next-intl'
 import { useSearchParams } from 'next/navigation'
 import { Autoplay, EffectFade, Navigation, Pagination } from 'swiper/modules'
@@ -42,6 +42,7 @@ import './swipper.scss'
 function HomePage() {
   const searchParams = useSearchParams()
   const hiddenHeaderAndFooter = searchParams.get('hideHeaderAndFooter')
+
   return (
     <>
       <div
@@ -345,7 +346,7 @@ const CustomerBenefitSection = () => {
         </h3>
         <p className=' text-[2.4rem] text-[#FCB713] md:text-[3.2rem]'>{t('text')}</p>
       </div>
-      <div className=' grid grid-cols-1 items-center gap-[20px] xl:grid-cols-3'>
+      <div className=' grid grid-cols-1 items-center gap-[20px] xl:grid-cols-2'>
         <div className='col-span-1'>
           <div className='hidden flex-col gap-[10px] md:flex'>
             <h3 className='text-[1.6rem] font-semibold uppercase tracking-[8px] md:text-[2rem]'>
@@ -355,7 +356,7 @@ const CustomerBenefitSection = () => {
               {t('text')}
             </p>
           </div>
-          <div className='mx-auto h-[200px] w-[200px] md:h-[300px] md:w-[300px] xl:h-[400px] xl:w-[400px]'>
+          <div className='mx-auto h-[200px] w-[200px] md:h-[300px] md:w-[300px] xl:mx-0 xl:h-[400px] xl:w-[400px]'>
             <Image
               src={'/benefitWorker/benefitWorker1.png'}
               alt=''
@@ -365,16 +366,14 @@ const CustomerBenefitSection = () => {
             />
           </div>
         </div>
-        <div className='col-span-1 grid grid-cols-1 gap-[20px] md:col-span-2 md:mx-auto md:max-w-[820px] md:grid-cols-2 md:gap-[40px]'>
+        <div className='col-span-1 grid grid-cols-1 gap-[20px] md:mx-auto md:max-w-[820px] md:grid-cols-2 md:gap-[40px]'>
           {listBenefit.map((item: TlistBenefit, index: number) => (
             <div className='col-span-1' key={`listBenefit-${index}`}>
-              <div className='flex items-center gap-[20px] md:flex-col xl:gap-[40px]'>
+              <div className='items-left flex gap-[20px] md:flex-col xl:gap-[40px]'>
                 <p className='text-[4rem] font-semibold leading-none text-[#FCB713] md:text-[6.4rem]'>
                   0{index + 1}
                 </p>
-                <p className='text-left text-[1.6rem] text-base-black-1 md:text-center'>
-                  {item.title}
-                </p>
+                <p className='text-[1.6rem] text-base-black-1'>{item.title}</p>
               </div>
             </div>
           ))}
@@ -443,6 +442,51 @@ const WorkerBenefitSection = () => {
     return () => clearTimeout(timer)
   }, [])
 
+  const listImg = [
+    {
+      thumb: '/benefitCustomer/benefit1.png',
+    },
+    {
+      thumb: '/benefitCustomer/benefit2.png',
+    },
+    {
+      thumb: '/benefitCustomer/benefit3.png',
+    },
+    {
+      thumb: '/benefitCustomer/benefit4.png',
+    },
+    {
+      thumb: '/benefitCustomer/benefit5.png',
+    },
+    {
+      thumb: '/benefitCustomer/benefit6.png',
+    },
+    {
+      thumb: '/benefitCustomer/benefit7.png',
+    },
+    {
+      thumb: '/benefitCustomer/benefit8.png',
+    },
+    {
+      thumb: '/benefitCustomer/benefit9.png',
+    },
+    {
+      thumb: '/benefitCustomer/benefit10.png',
+    },
+    {
+      thumb: '/benefitCustomer/benefit11.png',
+    },
+    {
+      thumb: '/benefitCustomer/benefit12.png',
+    },
+    {
+      thumb: '/benefitCustomer/benefit13.png',
+    },
+    {
+      thumb: '/benefitCustomer/benefit14.png',
+    },
+  ]
+
   return (
     <div className='flex flex-col gap-[20px]'>
       <div className='ct-container-70 flex flex-col gap-[20px] xl:gap-[40px]'>
@@ -456,8 +500,8 @@ const WorkerBenefitSection = () => {
         </div>
         {onFetching ? (
           <>
-            <div className='flex h-[420px] w-full animate-pulse items-center justify-center bg-gray-300 '>
-              <ImageSkeleton style='h-[120px] w-[300px] animate-pulse' />
+            <div className='flex h-[200px] w-full animate-pulse items-center justify-center bg-gray-300'>
+              <ImageSkeleton style='h-[60px] w-full animate-pulse' />
             </div>
             <div className='flex w-full flex-col items-center justify-center gap-[12px] p-[20px]'>
               {Array(4)
@@ -474,7 +518,7 @@ const WorkerBenefitSection = () => {
                 .fill(1)
                 .map((_: any, index: number) => (
                   <Skeleton
-                    className='h-[68px] w-[68px] flex-shrink-0 rounded-lg'
+                    className='h-[32px] w-[32px] flex-shrink-0 rounded-lg'
                     key={`skeleton-pagination-${index}`}
                   />
                 ))}
@@ -517,39 +561,15 @@ const WorkerBenefitSection = () => {
                           {item.title}
                         </h4>
                       </div>
-                      <div className='likeButton hidden md:flex md:items-center md:gap-[12px]'>
-                        <UnLike
-                          isDisLiked={item?.dislike?.isDislike || false}
-                          count={
-                            item?.dislike?.dislike ||
-                            Math.floor(Math.random() * (100 - 1 + 1) + 1)
-                          }
-                          uuid={item.uuid || Date.now()}
-                          onRefresh={setOnRefresh}
-                        />
-                        <Like
-                          uuid={item.uuid}
-                          count={item.like.like}
-                          isLike={item.like.isLike}
-                          onRefresh={setOnRefresh}
-                        />
-                      </div>
-                    </div>
-                    <div className='grid w-full grid-cols-5 rounded-xl bg-[#f8f8f8]'>
-                      <div className='text order-1 col-span-5 h-full w-full p-[20px] xl:order-none xl:col-span-2'>
-                        <div dangerouslySetInnerHTML={{ __html: item.html }} />
-                      </div>
-                      <div className='relative order-none col-span-5 h-full w-full xl:order-1 xl:col-span-3'>
-                        <div className='overflow-hidden rounded-t-[12px] xl:rounded-r-[12px]'>
-                          <ImageFallback
-                            src={item.img}
-                            alt=''
-                            height={800}
-                            width={1280}
-                            className='h-full w-auto object-contain'
+                      <div className='likeButton hidden md:block'>
+                        <div className='flex h-[40px] items-center justify-between overflow-hidden rounded-full bg-white md:h-[48px] md:bg-[#F8F8F8]'>
+                          <Like
+                            count={item.like.like}
+                            isLike={item.like.isLike}
+                            uuid={item.uuid}
+                            onRefresh={setOnRefresh}
                           />
-                        </div>
-                        <div className='likeButtonMobile item-center absolute right-[2%] top-[4%] flex gap-[12px] md:hidden'>
+                          <div className='mx-[8px] flex h-[80%] w-[1px] items-center justify-center bg-[#E1E1E1]' />
                           <UnLike
                             isDisLiked={item?.isLike || false}
                             count={
@@ -559,12 +579,43 @@ const WorkerBenefitSection = () => {
                             uuid={item.uuid || Date.now()}
                             onRefresh={setOnRefresh}
                           />
-                          <Like
-                            count={item.like.like}
-                            isLike={item.like.isLike}
-                            uuid={item.uuid}
-                            onRefresh={setOnRefresh}
+                        </div>
+                      </div>
+                    </div>
+                    <div className='grid w-full grid-cols-5 rounded-xl bg-[#f8f8f8]'>
+                      <div className='text order-1 col-span-5 h-full w-full p-[20px] xl:order-none xl:col-span-2'>
+                        <div dangerouslySetInnerHTML={{ __html: item.html }} />
+                      </div>
+                      <div className='relative order-none col-span-5 h-full w-full xl:order-1 xl:col-span-3'>
+                        <div className='overflow-hidden rounded-t-[12px] xl:rounded-r-[12px]'>
+                          <ImageFallback
+                            // src={item.img}
+                            src={listImg[index].thumb}
+                            alt=''
+                            height={800}
+                            width={1280}
+                            className='max-h-[250px] w-full object-cover md:max-h-none'
                           />
+                        </div>
+                        <div className='likeButtonMobile absolute right-[2%] top-[4%] md:hidden'>
+                          <div className='flex h-[40px] items-center justify-between overflow-hidden rounded-full bg-white md:h-[48px] md:bg-[#F8F8F8]'>
+                            <Like
+                              count={item.like.like}
+                              isLike={item.like.isLike}
+                              uuid={item.uuid}
+                              onRefresh={setOnRefresh}
+                            />
+                            <div className='mx-[8px] flex h-[80%] w-[1px] items-center justify-center bg-[#E1E1E1]' />
+                            <UnLike
+                              isDisLiked={item?.isLike || false}
+                              count={
+                                item?.dislike?.like ||
+                                Math.floor(Math.random() * (100 - 1 + 1) + 1)
+                              }
+                              uuid={item.uuid || Date.now()}
+                              onRefresh={setOnRefresh}
+                            />
+                          </div>
                         </div>
                       </div>
                     </div>
@@ -727,19 +778,19 @@ const Like = ({
   return (
     <button
       disabled={onSending}
-      className='like flex h-fit items-center justify-center gap-[6px] rounded-full bg-black/40 px-[8px] py-[6px] transition-all active:scale-[0.95] md:gap-[10px] md:bg-[#F8F8F8] md:px-[20px] md:py-[10px]'
+      className='like flex items-center gap-[8px] px-[20px] py-[10px]'
       onClick={_handleActionLike}
     >
       <motion.div>
-        <Heart
+        <Like1
           ref={scope}
-          variant='Bold'
+          variant={isLiked ? 'Bold' : 'Linear'}
           size={24}
           style={{ zIndex: 1000 }}
-          className={isLiked ? 'text-[#FF4343]' : 'text-white md:text-[#969696]'}
+          className={isLiked ? 'text-[#FCB713]' : 'text-base-black-1'}
         />
       </motion.div>
-      <span className='text-white md:text-base-black-1'>{likeTotal}</span>
+      <span className='text-base-black-1'>{likeTotal}</span>
     </button>
   )
 }
@@ -807,14 +858,13 @@ const UnLike = ({
     <>
       <button
         onClick={_HandleUnLike}
-        className='unlike flex h-fit items-center justify-center gap-[6px] rounded-full bg-black/40 px-[8px] py-[6px] transition-all active:scale-[0.95] md:gap-[10px] md:bg-[#F8F8F8] md:px-[20px] md:py-[10px]'
+        className='unlike flex items-center px-[20px] py-[10px]'
       >
-        <HeartSlash
+        <Dislike
           size={24}
           variant={isDisLike ? 'Bold' : 'Linear'}
-          className={isDisLike ? 'text-[#FF4343]' : 'text-white md:text-[#969696]'}
+          className={isDisLike ? 'text-[#FCB713]' : 'text-base-black-1'}
         />
-        <span className='text-white md:text-base-black-1'>{totalUnLike}</span>
       </button>
       <Modal
         isOpen={isOpen}

@@ -19,6 +19,8 @@ export async function generateMetadata({ params }: { params?: any }) {
     return {
       title: data?.data.title,
       description: data?.data.description || data?.data.content,
+      keywords: data?.data.keywords,
+      robots: data?.data.robots
     }
   } catch (error) {
     console.log(error)
