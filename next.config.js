@@ -9,6 +9,7 @@ module.exports = withNextIntl({
       'api.vuatho.com',
       'localhost',
       'sandbox-api-cms.vuatho.com',
+      '192.168.1.72',
     ],
   },
 })

@@ -17,7 +17,6 @@ const Header = () => {
   const pathName = usePathname()
 
   const [isHeaderVisible, setHeaderVisible] = useState(true)
-  const [transparent, setTransparent] = useState(false)
   const searchParams = useSearchParams()
   const hiddenHeaderAndFooter = searchParams.get('hideHeaderAndFooter')
   const t = useTranslations('Navbar')
@@ -47,29 +46,29 @@ const Header = () => {
     }
   }, [])
 
-  useEffect(() => {
-    let prevScrollPos = window.scrollY
+  // useEffect(() => {
+  //   let prevScrollPos = window.scrollY
 
-    setTransparent(!pathName?.split('/')?.[2]?.length && window.scrollY === 0)
+  //   setTransparent(!pathName?.split('/')?.[2]?.length && window.scrollY === 0)
 
-    const handleScroll = () => {
-      const currentScrollPos = window.scrollY
-      const check = 2
-      if (!pathName?.split('/')?.[2]?.length && currentScrollPos < check) {
-        setTransparent(true)
-      } else {
-        setTransparent(false)
-      }
+  //   const handleScroll = () => {
+  //     const currentScrollPos = window.scrollY
+  //     const check = 2
+  //     if (!pathName?.split('/')?.[2]?.length && currentScrollPos < check) {
+  //       setTransparent(true)
+  //     } else {
+  //       setTransparent(false)
+  //     }
 
-      prevScrollPos = currentScrollPos
-    }
+  //     prevScrollPos = currentScrollPos
+  //   }
 
-    window.addEventListener('scroll', handleScroll)
+  //   window.addEventListener('scroll', handleScroll)
 
-    return () => {
-      window.removeEventListener('scroll', handleScroll)
-    }
-  }, [pathName])
+  //   return () => {
+  //     window.removeEventListener('scroll', handleScroll)
+  //   }
+  // }, [pathName])
 
   if (isWebview) {
     return null
@@ -79,9 +78,7 @@ const Header = () => {
   return (
     <header
       id='header'
-      className={`${
-        transparent ? 'bg-transparent' : 'bg-white'
-      } header fixed left-0 right-0 z-[11] w-full transition ${
+      className={`header fixed left-0 right-0 z-[11] w-full bg-white transition ${
         isHeaderVisible ? 'translate-y-0 shadow-sm' : '-translate-y-[100%]'
       }`}
     >
@@ -230,7 +227,7 @@ const LinkList = ({ handleToggleMenu }: { handleToggleMenu?: any }) => {
   const menuVariantsLinks = {
     initial: {
       opacity: 0,
-      y: '30vh',
+      y: '10vh',
       transiton: {
         duration: 0.5,
       },

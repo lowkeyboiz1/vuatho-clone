@@ -68,7 +68,7 @@ export const AndroidBtn: React.FC<{ style?: any }> = ({ style }) => {
       href='https://play.google.com/store/apps/details?id=com.vuatho.mobile&pli=1'
       target='_blank'
       className={twMerge(
-        'group relative flex w-full max-w-[180px] select-none items-center gap-4 overflow-hidden rounded-xl bg-black p-4 text-white 2xl:min-w-[180px] 3xl:min-w-[220px] 3xl:p-6',
+        '2xl:min-w-[14 0px] group relative flex w-full max-w-[180px] select-none items-center gap-4 overflow-hidden rounded-xl bg-black p-4 text-white 3xl:min-w-[220px] 3xl:p-6',
         style,
       )}
     >

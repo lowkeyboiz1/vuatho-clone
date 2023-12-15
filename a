@@ -59,13 +59,20 @@ check nút navigation benefit swiper - done
 xóa message vn dư thừa - done
 header links tablet -> mobile - done
 refactor code structure - done
+Modal component - done
+khi thêm item giỏ hàng chưa + số lượng ngay - done
+currency UI - done
+store api - done
+search sort js currency and languages - done
+craftment => service provider - done
 
-currency UI 
+logic like (cực kì ưu tiên)
+Store UI - (hiện giỏ hàng khi bấm thanh toán)
+
+
+download app button bug reponsive
 currency API
-Modal component
 logic and api dislike, like 
-UI store
-store api
 dislike api
 nhắn anh Trí đổi ảnh benefit
 
@@ -75,6 +82,7 @@ bài viết nổi bật api (tạm thời ẩn)
 
 React.memo (HOC) => higher order component: wrap component con không cần thiết bị re-render lại nếu không thay đổi bởi các state của thằng cha
 
+0704633073
 
 
 

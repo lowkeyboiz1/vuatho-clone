@@ -1,0 +1,7 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.ct-container-70 {
+  @apply mx-auto w-full max-w-[1600px] px-8 13inch:w-[1240px] 13inch:px-0;
+}

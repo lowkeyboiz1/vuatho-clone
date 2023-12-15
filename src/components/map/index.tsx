@@ -7,6 +7,8 @@ import { useEffect } from 'react'
 import './map.scss'
 
 function Map() {
+  const t = useTranslations('Map')
+
   const listSpecial = [
     { name: 'Nghệ An' },
     { name: 'Ha Noi' },
@@ -36,7 +38,6 @@ function Map() {
   useEffect(() => {
     handleActive()
   }, [])
-  const t = useTranslations('Map')
 
   return (
     <div className='relative mx-auto w-fit'>
@@ -118,7 +119,7 @@ function Map() {
                   </p>
                 </div>
                 <p className=' text-[1rem] text-base-black-1 md:text-[1.8rem]'>
-                  {getRandomNumber() + ' người dùng'}
+                  {getRandomNumber() + ' ' + t('user')}
                 </p>
               </div>
             </div>
@@ -143,7 +144,7 @@ function Map() {
                   </p>
                 </div>
                 <p className=' text-[1rem] text-base-black-1 md:text-[1.8rem]'>
-                  {getRandomNumber() + ' người dùng'}
+                  {getRandomNumber() + ' ' + t('user')}
                 </p>
               </div>
             </div>
@@ -168,7 +169,7 @@ function Map() {
                   </p>
                 </div>
                 <p className=' text-[1rem] text-base-black-1 md:text-[1.8rem]'>
-                  {getRandomNumber() + ' người dùng'}
+                  {getRandomNumber() + ' ' + t('user')}
                 </p>
               </div>
             </div>
@@ -193,7 +194,7 @@ function Map() {
                   </p>
                 </div>
                 <p className=' text-[1rem] text-base-black-1 md:text-[1.8rem]'>
-                  {getRandomNumber() + ' người dùng'}
+                  {getRandomNumber() + ' ' + t('user')}
                 </p>
               </div>
             </div>
@@ -218,7 +219,7 @@ function Map() {
                   </p>
                 </div>
                 <p className=' text-[1rem] text-base-black-1 md:text-[1.8rem]'>
-                  {getRandomNumber() + ' người dùng'}
+                  {getRandomNumber() + ' ' + t('user')}
                 </p>
               </div>
             </div>
@@ -243,7 +244,7 @@ function Map() {
                   </p>
                 </div>
                 <p className=' text-[1rem] text-base-black-1 md:text-[1.8rem]'>
-                  {getRandomNumber() + ' người dùng'}
+                  {getRandomNumber() + ' ' + t('user')}
                 </p>
               </div>
             </div>
@@ -268,7 +269,7 @@ function Map() {
                   </p>
                 </div>
                 <p className=' text-[1rem] text-base-black-1 md:text-[1.8rem]'>
-                  {getRandomNumber() + ' người dùng'}
+                  {getRandomNumber() + ' ' + t('user')}
                 </p>
               </div>
             </div>
@@ -293,7 +294,7 @@ function Map() {
                   </p>
                 </div>
                 <p className=' text-[1rem] text-base-black-1 md:text-[1.8rem]'>
-                  {getRandomNumber() + ' người dùng'}
+                  {getRandomNumber() + ' ' + t('user')}
                 </p>
               </div>
             </div>
@@ -318,7 +319,7 @@ function Map() {
                   </p>
                 </div>
                 <p className=' text-[1rem] text-base-black-1 md:text-[1.8rem]'>
-                  {getRandomNumber() + ' người dùng'}
+                  {getRandomNumber() + ' ' + t('user')}
                 </p>
               </div>
             </div>
@@ -343,7 +344,7 @@ function Map() {
                   </p>
                 </div>
                 <p className=' text-[1rem] text-base-black-1 md:text-[1.8rem]'>
-                  {getRandomNumber() + ' người dùng'}
+                  {getRandomNumber() + ' ' + t('user')}
                 </p>
               </div>
             </div>
@@ -368,7 +369,7 @@ function Map() {
                   </p>
                 </div>
                 <p className=' text-[1rem] text-base-black-1 md:text-[1.8rem]'>
-                  {getRandomNumber() + ' người dùng'}
+                  {getRandomNumber() + ' ' + t('user')}
                 </p>
               </div>
             </div>
@@ -393,7 +394,7 @@ function Map() {
                   </p>
                 </div>
                 <p className=' text-[1rem] text-base-black-1 md:text-[1.8rem]'>
-                  {getRandomNumber() + ' người dùng'}
+                  {getRandomNumber() + ' ' + t('user')}
                 </p>
               </div>
             </div>
@@ -418,7 +419,7 @@ function Map() {
                   </p>
                 </div>
                 <p className=' text-[1rem] text-base-black-1 md:text-[1.8rem]'>
-                  {getRandomNumber() + ' người dùng'}
+                  {getRandomNumber() + ' ' + t('user')}
                 </p>
               </div>
             </div>
@@ -443,7 +444,7 @@ function Map() {
                   </p>
                 </div>
                 <p className=' text-[1rem] text-base-black-1 md:text-[1.8rem]'>
-                  {getRandomNumber() + ' người dùng'}
+                  {getRandomNumber() + ' ' + t('user')}
                 </p>
               </div>
             </div>
@@ -468,7 +469,7 @@ function Map() {
                   </p>
                 </div>
                 <p className=' text-[1rem] text-base-black-1 md:text-[1.8rem]'>
-                  {getRandomNumber() + ' người dùng'}
+                  {getRandomNumber() + ' ' + t('user')}
                 </p>
               </div>
             </div>
@@ -499,7 +500,7 @@ function Map() {
                   </p>
                 </div>
                 <p className=' text-[1rem] text-base-black-1 md:text-[1.8rem]'>
-                  {getRandomNumber() + ' người dùng'}
+                  {getRandomNumber() + ' ' + t('user')}
                 </p>
               </div>
             </div>
@@ -524,7 +525,7 @@ function Map() {
                   </p>
                 </div>
                 <p className=' text-[1rem] text-base-black-1 md:text-[1.8rem]'>
-                  {getRandomNumber() + ' người dùng'}
+                  {getRandomNumber() + ' ' + t('user')}
                 </p>
               </div>
             </div>
@@ -549,7 +550,7 @@ function Map() {
                   </p>
                 </div>
                 <p className=' text-[1rem] text-base-black-1 md:text-[1.8rem]'>
-                  {getRandomNumber() + ' người dùng'}
+                  {getRandomNumber() + ' ' + t('user')}
                 </p>
               </div>
             </div>
@@ -574,7 +575,7 @@ function Map() {
                   </p>
                 </div>
                 <p className=' text-[1rem] text-base-black-1 md:text-[1.8rem]'>
-                  {getRandomNumber() + ' người dùng'}
+                  {getRandomNumber() + ' ' + t('user')}
                 </p>
               </div>
             </div>
@@ -599,7 +600,7 @@ function Map() {
                   </p>
                 </div>
                 <p className=' text-[1rem] text-base-black-1 md:text-[1.8rem]'>
-                  {getRandomNumber() + ' người dùng'}
+                  {getRandomNumber() + ' ' + t('user')}
                 </p>
               </div>
             </div>
@@ -624,7 +625,7 @@ function Map() {
                   </p>
                 </div>
                 <p className=' text-[1rem] text-base-black-1 md:text-[1.8rem]'>
-                  {getRandomNumber() + ' người dùng'}
+                  {getRandomNumber() + ' ' + t('user')}
                 </p>
               </div>
             </div>
@@ -649,7 +650,7 @@ function Map() {
                   </p>
                 </div>
                 <p className=' text-[1rem] text-base-black-1 md:text-[1.8rem]'>
-                  {getRandomNumber() + ' người dùng'}
+                  {getRandomNumber() + ' ' + t('user')}
                 </p>
               </div>
             </div>
@@ -674,7 +675,7 @@ function Map() {
                   </p>
                 </div>
                 <p className=' text-[1rem] text-base-black-1 md:text-[1.8rem]'>
-                  {getRandomNumber() + ' người dùng'}
+                  {getRandomNumber() + ' ' + t('user')}
                 </p>
               </div>
             </div>
@@ -699,7 +700,7 @@ function Map() {
                   </p>
                 </div>
                 <p className=' text-[1rem] text-base-black-1 md:text-[1.8rem]'>
-                  {getRandomNumber() + ' người dùng'}
+                  {getRandomNumber() + ' ' + t('user')}
                 </p>
               </div>
             </div>
@@ -731,7 +732,7 @@ function Map() {
                   </p>
                 </div>
                 <p className=' text-[1rem] text-base-black-1 md:text-[1.8rem]'>
-                  {getRandomNumber() + ' người dùng'}
+                  {getRandomNumber() + ' ' + t('user')}
                 </p>
               </div>
             </div>
@@ -756,7 +757,7 @@ function Map() {
                   </p>
                 </div>
                 <p className=' text-[1rem] text-base-black-1 md:text-[1.8rem]'>
-                  {getRandomNumber() + ' người dùng'}
+                  {getRandomNumber() + ' ' + t('user')}
                 </p>
               </div>
             </div>
@@ -787,7 +788,7 @@ function Map() {
                   </p>
                 </div>
                 <p className=' text-[1rem] text-base-black-1 md:text-[1.8rem]'>
-                  {getRandomNumber() + ' người dùng'}
+                  {getRandomNumber() + ' ' + t('user')}
                 </p>
               </div>
             </div>
@@ -812,7 +813,7 @@ function Map() {
                   </p>
                 </div>
                 <p className=' text-[1rem] text-base-black-1 md:text-[1.8rem]'>
-                  {getRandomNumber() + ' người dùng'}
+                  {getRandomNumber() + ' ' + t('user')}
                 </p>
               </div>
             </div>
@@ -837,7 +838,7 @@ function Map() {
                   </p>
                 </div>
                 <p className=' text-[1rem] text-base-black-1 md:text-[1.8rem]'>
-                  {getRandomNumber() + ' người dùng'}
+                  {getRandomNumber() + ' ' + t('user')}
                 </p>
               </div>
             </div>
@@ -862,7 +863,7 @@ function Map() {
                   </p>
                 </div>
                 <p className=' text-[1rem] text-base-black-1 md:text-[1.8rem]'>
-                  {getRandomNumber() + ' người dùng'}
+                  {getRandomNumber() + ' ' + t('user')}
                 </p>
               </div>
             </div>
@@ -887,7 +888,7 @@ function Map() {
                   </p>
                 </div>
                 <p className=' text-[1rem] text-base-black-1 md:text-[1.8rem]'>
-                  {getRandomNumber() + ' người dùng'}
+                  {getRandomNumber() + ' ' + t('user')}
                 </p>
               </div>
             </div>
@@ -912,7 +913,7 @@ function Map() {
                   </p>
                 </div>
                 <p className=' text-[1rem] text-base-black-1 md:text-[1.8rem]'>
-                  {getRandomNumber() + ' người dùng'}
+                  {getRandomNumber() + ' ' + t('user')}
                 </p>
               </div>
             </div>
@@ -937,7 +938,7 @@ function Map() {
                   </p>
                 </div>
                 <p className=' text-[1rem] text-base-black-1 md:text-[1.8rem]'>
-                  {getRandomNumber() + ' người dùng'}
+                  {getRandomNumber() + ' ' + t('user')}
                 </p>
               </div>
             </div>
@@ -962,7 +963,7 @@ function Map() {
                   </p>
                 </div>
                 <p className=' text-[1rem] text-base-black-1 md:text-[1.8rem]'>
-                  {getRandomNumber() + ' người dùng'}
+                  {getRandomNumber() + ' ' + t('user')}
                 </p>
               </div>
             </div>
@@ -987,7 +988,7 @@ function Map() {
                   </p>
                 </div>
                 <p className=' text-[1rem] text-base-black-1 md:text-[1.8rem]'>
-                  {getRandomNumber() + ' người dùng'}
+                  {getRandomNumber() + ' ' + t('user')}
                 </p>
               </div>
             </div>
@@ -1012,7 +1013,7 @@ function Map() {
                   </p>
                 </div>
                 <p className=' text-[1rem] text-base-black-1 md:text-[1.8rem]'>
-                  {getRandomNumber() + ' người dùng'}
+                  {getRandomNumber() + ' ' + t('user')}
                 </p>
               </div>
             </div>
@@ -1037,7 +1038,7 @@ function Map() {
                   </p>
                 </div>
                 <p className=' text-[1rem] text-base-black-1 md:text-[1.8rem]'>
-                  {getRandomNumber() + ' người dùng'}
+                  {getRandomNumber() + ' ' + t('user')}
                 </p>
               </div>
             </div>
@@ -1062,7 +1063,7 @@ function Map() {
                   </p>
                 </div>
                 <p className=' text-[1rem] text-base-black-1 md:text-[1.8rem]'>
-                  {getRandomNumber() + ' người dùng'}
+                  {getRandomNumber() + ' ' + t('user')}
                 </p>
               </div>
             </div>
@@ -1087,7 +1088,7 @@ function Map() {
                   </p>
                 </div>
                 <p className=' text-[1rem] text-base-black-1 md:text-[1.8rem]'>
-                  {getRandomNumber() + ' người dùng'}
+                  {getRandomNumber() + ' ' + t('user')}
                 </p>
               </div>
             </div>
@@ -1112,7 +1113,7 @@ function Map() {
                   </p>
                 </div>
                 <p className=' text-[1rem] text-base-black-1 md:text-[1.8rem]'>
-                  {getRandomNumber() + ' người dùng'}
+                  {getRandomNumber() + ' ' + t('user')}
                 </p>
               </div>
             </div>
@@ -1137,7 +1138,7 @@ function Map() {
                   </p>
                 </div>
                 <p className=' text-[1rem] text-base-black-1 md:text-[1.8rem]'>
-                  {getRandomNumber() + ' người dùng'}
+                  {getRandomNumber() + ' ' + t('user')}
                 </p>
               </div>
             </div>
@@ -1162,7 +1163,7 @@ function Map() {
                   </p>
                 </div>
                 <p className=' text-[1rem] text-base-black-1 md:text-[1.8rem]'>
-                  {getRandomNumber() + ' người dùng'}
+                  {getRandomNumber() + ' ' + t('user')}
                 </p>
               </div>
             </div>
@@ -1187,7 +1188,7 @@ function Map() {
                   </p>
                 </div>
                 <p className=' text-[1rem] text-base-black-1 md:text-[1.8rem]'>
-                  {getRandomNumber() + ' người dùng'}
+                  {getRandomNumber() + ' ' + t('user')}
                 </p>
               </div>
             </div>
@@ -1212,7 +1213,7 @@ function Map() {
                   </p>
                 </div>
                 <p className=' text-[1rem] text-base-black-1 md:text-[1.8rem]'>
-                  {getRandomNumber() + ' người dùng'}
+                  {getRandomNumber() + ' ' + t('user')}
                 </p>
               </div>
             </div>
@@ -1237,7 +1238,7 @@ function Map() {
                   </p>
                 </div>
                 <p className=' text-[1rem] text-base-black-1 md:text-[1.8rem]'>
-                  {getRandomNumber() + ' người dùng'}
+                  {getRandomNumber() + ' ' + t('user')}
                 </p>
               </div>
             </div>
@@ -1262,7 +1263,7 @@ function Map() {
                   </p>
                 </div>
                 <p className=' text-[1rem] text-base-black-1 md:text-[1.8rem]'>
-                  {getRandomNumber() + ' người dùng'}
+                  {getRandomNumber() + ' ' + t('user')}
                 </p>
               </div>
             </div>
@@ -1287,7 +1288,7 @@ function Map() {
                   </p>
                 </div>
                 <p className=' text-[1rem] text-base-black-1 md:text-[1.8rem]'>
-                  {getRandomNumber() + ' người dùng'}
+                  {getRandomNumber() + ' ' + t('user')}
                 </p>
               </div>
             </div>
@@ -1318,7 +1319,7 @@ function Map() {
                   </p>
                 </div>
                 <p className=' text-[1rem] text-base-black-1 md:text-[1.8rem]'>
-                  {getRandomNumber() + ' người dùng'}
+                  {getRandomNumber() + ' ' + t('user')}
                 </p>
               </div>
             </div>
@@ -1343,7 +1344,7 @@ function Map() {
                   </p>
                 </div>
                 <p className=' text-[1rem] text-base-black-1 md:text-[1.8rem]'>
-                  {getRandomNumber() + ' người dùng'}
+                  {getRandomNumber() + ' ' + t('user')}
                 </p>
               </div>
             </div>
@@ -1368,7 +1369,7 @@ function Map() {
                   </p>
                 </div>
                 <p className=' text-[1rem] text-base-black-1 md:text-[1.8rem]'>
-                  {getRandomNumber() + ' người dùng'}
+                  {getRandomNumber() + ' ' + t('user')}
                 </p>
               </div>
             </div>
@@ -1393,7 +1394,7 @@ function Map() {
                   </p>
                 </div>
                 <p className=' text-[1rem] text-base-black-1 md:text-[1.8rem]'>
-                  {getRandomNumber() + ' người dùng'}
+                  {getRandomNumber() + ' ' + t('user')}
                 </p>
               </div>
             </div>
@@ -1418,7 +1419,7 @@ function Map() {
                   </p>
                 </div>
                 <p className=' text-[1rem] text-base-black-1 md:text-[1.8rem]'>
-                  {getRandomNumber() + ' người dùng'}
+                  {getRandomNumber() + ' ' + t('user')}
                 </p>
               </div>
             </div>
@@ -1443,7 +1444,7 @@ function Map() {
                   </p>
                 </div>
                 <p className=' text-[1rem] text-base-black-1 md:text-[1.8rem]'>
-                  {getRandomNumber() + ' người dùng'}
+                  {getRandomNumber() + ' ' + t('user')}
                 </p>
               </div>
             </div>
@@ -1468,7 +1469,7 @@ function Map() {
                   </p>
                 </div>
                 <p className=' text-[1rem] text-base-black-1 md:text-[1.8rem]'>
-                  {getRandomNumber() + ' người dùng'}
+                  {getRandomNumber() + ' ' + t('user')}
                 </p>
               </div>
             </div>
@@ -1493,7 +1494,7 @@ function Map() {
                   </p>
                 </div>
                 <p className=' text-[1rem] text-base-black-1 md:text-[1.8rem]'>
-                  {getRandomNumber() + ' người dùng'}
+                  {getRandomNumber() + ' ' + t('user')}
                 </p>
               </div>
             </div>
@@ -1518,7 +1519,7 @@ function Map() {
                   </p>
                 </div>
                 <p className=' text-[1rem] text-base-black-1 md:text-[1.8rem]'>
-                  {getRandomNumber() + ' người dùng'}
+                  {getRandomNumber() + ' ' + t('user')}
                 </p>
               </div>
             </div>
@@ -1543,7 +1544,7 @@ function Map() {
                   </p>
                 </div>
                 <p className=' text-[1rem] text-base-black-1 md:text-[1.8rem]'>
-                  {getRandomNumber() + ' người dùng'}
+                  {getRandomNumber() + ' ' + t('user')}
                 </p>
               </div>
             </div>
@@ -1568,7 +1569,7 @@ function Map() {
                   </p>
                 </div>
                 <p className=' text-[1rem] text-base-black-1 md:text-[1.8rem]'>
-                  {getRandomNumber() + ' người dùng'}
+                  {getRandomNumber() + ' ' + t('user')}
                 </p>
               </div>
             </div>

@@ -6,7 +6,7 @@ import { useEffect, useRef, useState } from 'react'
 
 import confetti from 'canvas-confetti'
 import { motion, useAnimate } from 'framer-motion'
-import { Add, ArrowRight, Dislike, Like1 } from 'iconsax-react'
+import { ArrowRight, Dislike, Like1 } from 'iconsax-react'
 import { useLocale, useTranslations } from 'next-intl'
 import { useSearchParams } from 'next/navigation'
 import { Autoplay, EffectFade, Navigation, Pagination } from 'swiper/modules'
@@ -17,22 +17,14 @@ import Article from '@/components/article'
 import Map from '@/components/map'
 import { SkeletonBlog } from '@/components/skeleton'
 import instance from '@/services/axiosConfig'
-import {
-  Button,
-  Modal,
-  ModalBody,
-  ModalContent,
-  ModalHeader,
-  Skeleton,
-  Textarea,
-  useDisclosure,
-} from '@nextui-org/react'
+import { Button, Skeleton, Textarea, useDisclosure } from '@nextui-org/react'
 import SectionDownload from './(sections)/downloadApp'
 import SectionToTheMoon from './(sections)/toTheMoon'
 import SectionWithVuaTho from './(sections)/withVuaTho'
 
 import ImageFallback from '@/components/ImageFallback'
 import { ToastComponent } from '@/components/ToastComponent'
+import { DefaultModal } from '@/components/modal'
 import 'swiper/css'
 import 'swiper/css/effect-fade'
 import 'swiper/css/navigation'
@@ -350,7 +342,7 @@ const CustomerBenefitSection = () => {
         <div className='col-span-1'>
           <div className='hidden flex-col gap-[10px] md:flex'>
             <h3 className='text-[1.6rem] font-semibold uppercase tracking-[8px] md:text-[2rem]'>
-              {t('benefit')}
+              5 {t('benefit')}
             </h3>
             <p className='whitespace-nowrap text-[2.4rem] font-semibold text-[#FCB713] md:text-[3.2rem]'>
               {t('text')}
@@ -492,7 +484,7 @@ const WorkerBenefitSection = () => {
       <div className='ct-container-70 flex flex-col gap-[20px] xl:gap-[40px]'>
         <div className='flex flex-col gap-[10px]'>
           <h3 className='text-[1.6rem] font-semibold uppercase tracking-[8px] md:text-[2rem]'>
-            {listDataBenefit?.length || 14} {t('benefit')}
+            {listDataBenefit?.length} {t('benefit')}
           </h3>
           <p className='text-[2.4rem] font-semibold text-primary-blue md:text-[3.6rem]'>
             {t('text')}
@@ -562,24 +554,22 @@ const WorkerBenefitSection = () => {
                         </h4>
                       </div>
                       <div className='likeButton hidden md:block'>
-                        <div className='flex h-[40px] items-center justify-between overflow-hidden rounded-full bg-white md:h-[48px] md:bg-[#F8F8F8]'>
+                        {/* <div className='flex h-[40px] items-center justify-between overflow-hidden rounded-full bg-white md:h-[48px] md:bg-[#F8F8F8]'>
                           <Like
-                            count={item.like.like}
-                            isLike={item.like.isLike}
-                            uuid={item.uuid}
-                            onRefresh={setOnRefresh}
+                            item={item}
+                            handleActionLike={(item: any, setIsLike: any) =>
+                              handleActionLike(item, setIsLike)
+                            }
                           />
                           <div className='mx-[8px] flex h-[80%] w-[1px] items-center justify-center bg-[#E1E1E1]' />
                           <UnLike
-                            isDisLiked={item?.isLike || false}
-                            count={
-                              item?.dislike?.like ||
-                              Math.floor(Math.random() * (100 - 1 + 1) + 1)
+                            item={item}
+                            handleActionLike={(item: any, setIsLike: any) =>
+                              handleActionLike(item, setIsLike)
                             }
-                            uuid={item.uuid || Date.now()}
-                            onRefresh={setOnRefresh}
                           />
-                        </div>
+                        </div> */}
+                        <LikeControl item={item} />
                       </div>
                     </div>
                     <div className='grid w-full grid-cols-5 rounded-xl bg-[#f8f8f8]'>
@@ -589,8 +579,7 @@ const WorkerBenefitSection = () => {
                       <div className='relative order-none col-span-5 h-full w-full xl:order-1 xl:col-span-3'>
                         <div className='overflow-hidden rounded-t-[12px] xl:rounded-r-[12px]'>
                           <ImageFallback
-                            // src={item.img}
-                            src={listImg[index].thumb}
+                            src={item.img}
                             alt=''
                             height={800}
                             width={1280}
@@ -598,24 +587,7 @@ const WorkerBenefitSection = () => {
                           />
                         </div>
                         <div className='likeButtonMobile absolute right-[2%] top-[4%] md:hidden'>
-                          <div className='flex h-[40px] items-center justify-between overflow-hidden rounded-full bg-white md:h-[48px] md:bg-[#F8F8F8]'>
-                            <Like
-                              count={item.like.like}
-                              isLike={item.like.isLike}
-                              uuid={item.uuid}
-                              onRefresh={setOnRefresh}
-                            />
-                            <div className='mx-[8px] flex h-[80%] w-[1px] items-center justify-center bg-[#E1E1E1]' />
-                            <UnLike
-                              isDisLiked={item?.isLike || false}
-                              count={
-                                item?.dislike?.like ||
-                                Math.floor(Math.random() * (100 - 1 + 1) + 1)
-                              }
-                              uuid={item.uuid || Date.now()}
-                              onRefresh={setOnRefresh}
-                            />
-                          </div>
+                          <LikeControl item={item} />
                         </div>
                       </div>
                     </div>
@@ -702,21 +674,91 @@ const PressHome = () => {
   )
 }
 
+const LikeControl = ({ item }: { item: any }) => {
+  const [checkLike, setCheckLike] = useState({ isLiked: item.isLike, count: item.like })
+  const [checkDislike, setCheckDislike] = useState<any>({ isDisliked: item.isDislike })
+
+  const [dislikeMessage, setDislikeMessage] = useState<string>('')
+
+  const _ServerSendingLike = async () => {
+    try {
+      const data: any = await instance.post(`/home/benefit`, {
+        uuid: item.uuid,
+      })
+      setCheckLike(data)
+    } catch (error) {
+      console.log(error)
+    }
+  }
+
+  const _ServerSendingDislike = async () => {
+    try {
+      const data = await instance.post('/home/benefit/dislike', {
+        uuid: item.uuid,
+        message: dislikeMessage,
+      })
+      setCheckDislike(data)
+      ToastComponent({ message: 'Cảm ơn bạn đã đóng góp ý kiến', type: 'success' })
+    } catch (error) {
+      console.log(error)
+    }
+  }
+
+  const _HandleAction = (type: string) => {
+    if (checkLike.isLiked === checkDislike.isDisliked) {
+      type === 'like' ? _ServerSendingLike() : _ServerSendingDislike()
+    } else {
+      if (type === 'like') {
+        if (checkDislike.isDisliked === true) {
+          return
+        } else {
+          _ServerSendingLike()
+        }
+      } else if (type === 'dislike') {
+        if (checkLike.isLiked === true) {
+          _ServerSendingLike()
+          _ServerSendingDislike()
+        } else {
+          _ServerSendingDislike()
+        }
+      }
+    }
+  }
+
+  return (
+    <div className='flex h-[40px] items-center justify-between overflow-hidden rounded-full bg-white md:h-[48px] md:bg-[#F8F8F8]'>
+      <div className=''>
+        <Like
+          isDislike={checkDislike.isDisliked}
+          isLike={checkLike.isLiked}
+          count={checkLike.count}
+          onClick={() => _HandleAction('like')}
+        />
+      </div>
+      <div className='mx-[8px] flex h-[80%] w-[1px] items-center justify-center bg-[#E1E1E1]' />
+      <div className=''>
+        <UnLike
+          isDislike={checkDislike.isDisliked}
+          setMessage={setDislikeMessage}
+          message={dislikeMessage}
+          onClick={() => _HandleAction('dislike')}
+        />
+      </div>
+    </div>
+  )
+}
+
 const Like = ({
+  onClick,
   isLike,
   count,
-  uuid,
-  onRefresh,
+  isDislike,
 }: {
-  isLike: boolean
-  count: number
-  uuid: string
-  onRefresh: any
+  onClick?: any
+  isLike?: boolean
+  count?: number
+  isDislike: boolean
 }) => {
-  const [isLiked, setIsLiked] = useState<boolean>(isLike)
-  const [likeTotal, setLikeTotal] = useState<number>(count || 0)
-  const [onSending, setOnSending] = useState(false)
-
   const [scope, animate] = useAnimate()
 
   const handeAnimation = (isLike: boolean) => {
@@ -752,45 +794,22 @@ const Like = ({
     )
   }
 
-  const _ServerSendingLike = async () => {
-    try {
-      const data: any = await instance.post(`/home/benefit`, {
-        uuid: uuid,
-      })
-      handeAnimation(!data.isLiked)
-      setLikeTotal(data.count)
-      setIsLiked(data.isLiked)
-      onRefresh && onRefresh(true)
-    } catch (error) {
-    } finally {
-      setOnSending(false)
-    }
-  }
-
-  useEffect(() => {
-    onSending && _ServerSendingLike()
-  }, [onSending])
-
-  const _handleActionLike = async () => {
-    setOnSending(true)
-  }
-
   return (
     <button
-      disabled={onSending}
+      disabled={isDislike}
       className='like flex items-center gap-[8px] px-[20px] py-[10px]'
-      onClick={_handleActionLike}
+      onClick={onClick}
     >
       <motion.div>
         <Like1
           ref={scope}
-          variant={isLiked ? 'Bold' : 'Linear'}
+          variant={isLike ? 'Bold' : 'Linear'}
           size={24}
           style={{ zIndex: 1000 }}
-          className={isLiked ? 'text-[#FCB713]' : 'text-base-black-1'}
+          className={isLike ? 'text-[#FCB713]' : 'text-base-black-1'}
         />
       </motion.div>
-      <span className='text-base-black-1'>{likeTotal}</span>
+      <span className='text-base-black-1'>{count}</span>
     </button>
   )
 }
@@ -798,137 +817,84 @@ const Like = ({
 Like.displayName = 'Like'
 
 const UnLike = ({
-  uuid,
-  count,
-  isDisLiked,
-  onRefresh,
+  onClick,
+  isDislike,
+  message,
+  setMessage,
 }: {
-  uuid: string
-  count: number
-  isDisLiked: boolean
-  onRefresh: any
+  onClick?: any
+  isDislike?: boolean
+  message: string
+  setMessage: any
 }) => {
-  const { isOpen, onOpen, onOpenChange, onClose } = useDisclosure()
   const t = useTranslations('Modal')
 
-  const [isDisLike, setIsDisLike] = useState(isDisLiked)
-  const [totalUnLike, setTotalUnLike] = useState(count)
-
-  const [onSending, setOnSending] = useState(false)
-
-  const [message, setMessage] = useState('')
-
-  const _ServerSendingMessage = async () => {
-    if (!!message?.length || isDisLike) {
-      try {
-        // const { data } = await instance.post('home/benefit/dislike', {
-        //   uuid,
-        //   message,
-        // })
-        setIsDisLike((prev) => !prev)
-        setTotalUnLike((prev) => (isDisLike ? prev - 1 : prev + 1))
-        !isDisLike &&
-          ToastComponent({
-            message: t('messageToast'),
-            type: 'success',
-          })
-      } catch (error) {
-        console.log(error)
-      }
-    }
-    onClose()
-    setOnSending(false)
-    setMessage('')
-    onRefresh && onRefresh(true)
-  }
-
-  useEffect(() => {
-    onSending && _ServerSendingMessage()
-  }, [onSending])
+  const { isOpen, onOpenChange, onOpen, onClose } = useDisclosure()
 
   const _HandleUnLike = () => {
-    !isDisLike ? onOpen() : setOnSending(true)
+    isDislike !== true && onOpen()
   }
 
   const _HandleSendMessage = () => {
-    setOnSending(true)
+    if (!!message.length) {
+      onClick()
+      onClose()
+    }
   }
 
   return (
     <>
       <button
-        onClick={_HandleUnLike}
+        onClick={() => _HandleUnLike()}
+        disabled={isDislike}
         className='unlike flex items-center px-[20px] py-[10px]'
       >
         <Dislike
           size={24}
-          variant={isDisLike ? 'Bold' : 'Linear'}
-          className={isDisLike ? 'text-[#FCB713]' : 'text-base-black-1'}
+          variant={isDislike ? 'Bold' : 'Linear'}
+          className={isDislike ? 'text-[#FCB713]' : 'text-base-black-1'}
         />
       </button>
-      <Modal
-        isOpen={isOpen}
+      <DefaultModal
         onOpenChange={onOpenChange}
-        hideCloseButton
-        size='5xl'
-        placement='center'
-        classNames={{
-          body: 'p-0',
-          header: 'p-0 pl-8 ',
-        }}
-      >
-        <ModalContent>
-          {(onClose) => (
-            <>
-              <ModalHeader className='flex items-center justify-end p-2'>
-                <Button
-                  isIconOnly
-                  onPress={onClose}
-                  variant='light'
-                  className='h-[48px] w-[56px]'
-                >
-                  <Add className='rotate-45' size={32} />
-                </Button>
-              </ModalHeader>
-              <ModalBody>
-                <div className='flex h-full w-full flex-col gap-[24px] p-[16px]'>
-                  <div className='flex items-center justify-center'>
-                    <Image
-                      src={'/benefitCustomer/Fixy-write1.png'}
-                      alt='write-mascot'
-                      height={174}
-                      width={217}
-                      className='object-cover'
-                    />
-                  </div>
-                  <div className='flex flex-col justify-center gap-[8px]'>
-                    <p className='font-medium text-base-black-1 '>{t('heading')}</p>
-                    <Textarea
-                      value={message}
-                      onChange={(e: any) => setMessage(e.target.value)}
-                      placeholder={t('type')}
-                      minRows={2}
-                      className='w-full'
-                      classNames={{
-                        input: 'text-[1.6rem]',
-                        inputWrapper:
-                          'px-[16px] py-[12px] text-[#969696] border-1 border-[#E1E1E1] bg-transparent',
-                      }}
-                    />
-                  </div>
-                  <Button
-                    onPress={_HandleSendMessage}
-                    className='flex h-[44px] w-full items-center justify-center rounded-full bg-[#FCB813] text-[1.6rem] font-medium text-base-black-1'
-                  >
-                    {t('send')}
-                  </Button>
-                </div>
-              </ModalBody>
-            </>
-          )}
-        </ModalContent>
-      </Modal>
+        isOpen={isOpen}
+        modalBody={
+          <div className='flex h-full w-full flex-col gap-[24px] p-[16px]'>
+            <div className='flex items-center justify-center'>
+              <Image
+                src={'/benefitCustomer/Fixy-write1.png'}
+                alt='write-mascot'
+                height={174}
+                width={217}
+                className='object-cover'
+              />
+            </div>
+            <div className='flex flex-col justify-center gap-[8px]'>
+              <p className='font-medium text-base-black-1 '>{t('heading')}</p>
+              <Textarea
+                value={message}
+                onChange={(e: any) => setMessage(e.target.value)}
+                placeholder={t('type')}
+                minRows={2}
+                className='w-full'
+                classNames={{
+                  input: 'text-[1.6rem]',
+                  inputWrapper:
+                    'px-[16px] py-[12px] text-[#969696] border-1 border-[#E1E1E1] bg-transparent',
+                }}
+              />
+            </div>
+            <Button
+              onPress={_HandleSendMessage}
+              className='flex h-[44px] w-full items-center justify-center rounded-full bg-[#FCB813] text-[1.6rem] font-medium text-base-black-1'
+            >
+              {t('send')}
+            </Button>
+          </div>
+        }
+      ></DefaultModal>
     </>
   )
 }
+
 export default HomePage

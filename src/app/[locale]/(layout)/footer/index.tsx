@@ -142,7 +142,7 @@ function Footer() {
               </p>
             </div>
           </div>
-          <div className='col-span-9 grid grid-cols-8 gap-[20px] lg:col-span-6'>
+          <div className='col-span-9 grid grid-cols-8 gap-[8px] lg:col-span-6'>
             <div className='col-span-8 flex flex-col gap-[20px] md:col-span-3'>
               <h5 className='text-[1.8rem] font-semibold md:text-[2rem]'>
                 {t('about_vuatho')}
