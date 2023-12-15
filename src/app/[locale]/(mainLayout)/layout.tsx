@@ -39,11 +39,11 @@ export default async function RootLayout({ children, params }: any) {
 
   let messages
 
-  try {
-    messages = (await import(`../../../messages/${locale}.json`)).default
-  } catch (error) {
-    console.log(error)
-  }
+  // try {
+  //   messages = (await import(`../../../messages/${locale}.json`)).default
+  // } catch (error) {
+  //   console.log(error)
+  // }
 
   return (
     <>

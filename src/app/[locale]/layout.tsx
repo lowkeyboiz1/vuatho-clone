@@ -48,6 +48,8 @@ export default async function RootLayout({ children, params }: any) {
 
   let messages
 
+  console.log(locale)
+
   try {
     messages = (await import(`../../../messages/${locale}.json`)).default
   } catch (error) {

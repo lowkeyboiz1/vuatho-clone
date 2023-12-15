@@ -129,7 +129,7 @@ function LangsComp() {
 
   return (
     <>
-      <div className='hidden lg:block '>
+      <div className='hidden md:block '>
         <Popover
           placement='bottom-end'
           isOpen={isOpen}
@@ -261,7 +261,7 @@ function LangsComp() {
           </PopoverContent>
         </Popover>
       </div>
-      <div className='mb:pb-0 block w-full pb-80 lg:hidden'>
+      <div className='mb:pb-0 block w-full pb-80 md:hidden'>
         <div className='grid grid-cols-2 gap-[20px] overflow-y-scroll'>
           <div className=''>
             <div className='flex flex-col justify-between gap-[16px]'>
