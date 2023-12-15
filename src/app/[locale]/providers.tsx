@@ -1,6 +1,5 @@
 'use client'
 
-import { Provider as StoreProvider } from 'react-redux'
 import { ThemeProvider as NextThemesProvider } from 'next-themes'
 
 import { AppProgressBar as ProgressBar } from 'next-nprogress-bar'
