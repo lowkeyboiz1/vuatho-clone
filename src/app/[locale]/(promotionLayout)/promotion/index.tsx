@@ -1,30 +1,22 @@
 'use client'
 
-import { useEffect, useState } from 'react'
+import { useState } from 'react'
+import { Button, Select, SelectItem } from '@nextui-org/react'
+import { Call, Apple as AppleIcon, GooglePlay as GooglePlayIcon } from 'iconsax-react'
+import { useTranslations } from 'next-intl'
+
 import { HeaderWrapper, Logo } from '../../(mainLayout)/(layout)/header'
-import { useLocale, useTranslations } from 'next-intl'
-import {
-  Button,
-  Dropdown,
-  DropdownItem,
-  DropdownMenu,
-  DropdownTrigger,
-  Select,
-  SelectItem,
-} from '@nextui-org/react'
-import LangsComp from '@/components/LangsComp'
-import { Call } from 'iconsax-react'
-import { animals } from '@/constants'
-import { usePathname, useRouter } from 'next/navigation'
 import ImageFallback from '@/components/ImageFallback'
+import { twMerge } from 'tailwind-merge'
 
 function PromotionPage() {
+  const t = useTranslations('Download')
+
   return (
     <>
-      {' '}
-      <div className='ct-container-70 pt-[70px] 3xl:pt-[80px]'>
+      <div className=' pt-[70px] 3xl:pt-[80px]'>
         {/* start section hero */}
-        <div className='grid grid-cols-5 py-[6%]'>
+        <div className='ct-container-70 grid grid-cols-5 py-[6%]'>
           <div className='col-span-2 flex flex-col gap-2'>
             <h1 className='text-4xl font-semibold text-base-black-1'>
               Dãy số may mắn <br /> Trúng xe máy điện
@@ -52,7 +44,7 @@ function PromotionPage() {
             </div>
           </div>
         </div>
-        <div className='flex flex-col gap-5'>
+        <div className='ct-container-70 flex flex-col gap-5 py-24'>
           <h2 className='text-center text-4xl font-bold text-primary-blue'>
             Thể lệ chương trình
           </h2>
@@ -83,6 +75,119 @@ function PromotionPage() {
                   </div>
                 </div>
               ))}
+          </div>
+        </div>
+        {/* cachs thuc tham gia */}
+        <div className='ct-container-70 flex flex-col gap-5'>
+          <div className='flex flex-col gap-5'>
+            <div className='flex flex-col gap-2 text-center'>
+              <h3 className='text-4xl font-bold text-primary-blue'>
+                Cách thức tham gia: 
+              </h3>
+              <p className='font-light text-base-black-1 '>
+                Người dùng tải ứng dụng Vua Thợ trên App Store hoặc Android và tiến hành
+                đăng ký tài khoản với vai trò Thợ. 
+              </p>
+            </div>
+            <div className='flex items-center justify-center gap-2'>
+              <a
+                href='https://play.google.com/store/apps/details?id=com.vuatho.mobile&pli=1'
+                target='_blank'
+                className='group relative flex w-full max-w-[180px] select-none items-center gap-4 overflow-hidden rounded-xl bg-black p-3 text-white'
+              >
+                <GooglePlayIcon variant='Bold' size={36} />
+                <div>
+                  <span className='text-xs text-white/70'>{t('download_chplay')}</span>
+                  <h6 className='text-xs md:text-base'>Google Play</h6>
+                </div>
+                <div className='absolute -right-1/3 top-0 h-full w-1/2 -skew-x-[30deg] bg-white/[0.15] transition group-hover:-translate-x-1/2' />
+                <div className='absolute -right-1/2 top-0 h-full w-1/2 -skew-x-[30deg] bg-white/10 transition group-hover:-translate-x-1/2' />
+              </a>
+              <a
+                href='https://play.google.com/store/apps/details?id=com.vuatho.mobile&pli=1'
+                target='_blank'
+                className='group relative flex w-full max-w-[180px] select-none items-center gap-4 overflow-hidden rounded-xl bg-black p-3 text-white'
+              >
+                <AppleIcon variant='Bold' size={36} />
+                <div>
+                  <span className='text-xs text-white/70'>{t('download_appstore')}</span>
+                  <h6 className='text-xs md:text-base'>App Store</h6>
+                </div>
+                <div className='absolute -right-1/3 top-0 h-full w-1/2 -skew-x-[30deg] bg-white/[0.15] transition group-hover:-translate-x-1/2' />
+                <div className='absolute -right-1/2 top-0 h-full w-1/2 -skew-x-[30deg] bg-white/10 transition group-hover:-translate-x-1/2' />
+              </a>
+            </div>
+          </div>
+          <div className='grid grid-cols-3  gap-5'>
+            {Array(5)
+              .fill(null)
+              .map((_, index) => (
+                <div
+                  className={`flex flex-col gap-2 rounded-[20px] bg-[#DEEDFF] p-5 ${
+                    index === 1 ? 'xl:col-span-2' : ''
+                  }`}
+                  key={index}
+                >
+                  <h3 className='text-4xl font-bold text-base-black-1/20'>{index + 1}</h3>
+                  <p className='font-light text-base-black-1'>
+                    Sau khi đăng ký thành công, mỗi tài khoản Thợ sẽ nhận được một mã dự
+                    thưởng (cũng là mã giới thiệu) ngẫu nhiên và được hệ thống tự động ghi
+                    nhận vào chương trình vòng quay.
+                  </p>
+                </div>
+              ))}
+          </div>
+        </div>
+        <div className='my-24 bg-[#F5FAFF]'>
+          <div className='ct-container-70 py-24'>
+            <div className='grid grid-cols-3 items-center gap-10'>
+              <div className='col-span-2 flex flex-col gap-2 text-base-black-1'>
+                <h3 className='text-4xl font-bold text-primary-blue'>
+                  Thủ tục trao thưởng:
+                </h3>
+                <p className=''>
+                  Khi nhận thưởng, Thợ trúng thưởng phải thực hiện các thủ tục sau:{' '}
+                </p>
+                <ul className='list-inside list-disc'>
+                  <li className='font-light '>
+                    Đối với Thợ trúng giải nhất cần có mặt trực tiếp tại Công ty TNHH Công
+                    nghệ Vua Thợ. 
+                  </li>
+                  <li className='font-light '>
+                    Vua Thợ không chấp nhận các trường hợp nhận giải hộ.
+                  </li>
+                </ul>
+                <p className=''>
+                  Giải thưởng sẽ được gửi tới Thợ trúng giải trong vòng 30 ngày kể từ ngày
+                  nhận kết quả quay thưởng. Trong trường hợp Vua Thợ không liên lạc được
+                  với Thợ trúng giải, hoặc Thợ trúng giải không đến nhận giải trong thời
+                  gian quy định, giải thưởng sẽ được Vua Thợ thu hồi và giá trị giải
+                  thưởng sẽ được quy đổi thành các quỹ hỗ trợ của Vua Thợ.
+                </p>
+                <p>
+                  Thợ trúng thưởng phải chịu toàn bộ chi phí đi lại, chi phí vận chuyển
+                  (nếu có) cho việc nhận thưởng của mình.
+                </p>
+              </div>
+              <div className='col-span-1'>
+                <div className=''>
+                  <ImageFallback
+                    src={'/promotion/thu-tuc-trao-thuong.png'}
+                    alt='thu-tuc-trao-thuong'
+                    width={377}
+                    height={266}
+                  />
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div className='my-24 bg-white'>
+          <div className='ct-container-70 py-24'>
+            <h3 className='text-4xl font-bold text-primary-blue'>
+              Chi tiết điều kiện áp dụng:
+            </h3>
+            <p></p>
           </div>
         </div>
       </div>

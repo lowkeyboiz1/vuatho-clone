@@ -3,8 +3,8 @@ import HomePage from '.'
 export async function generateMetadata({ params }: { params?: any }) {
   try {
     const metadata: any = {
-      vi: 'Vua Thợ | Thợ nào cũng có',
-      en: 'Vua Thợ | Home',
+      vi: 'Thợ nào cũng có',
+      en: 'Home',
     }
     return {
       title: metadata[params.locale || 'vi'],

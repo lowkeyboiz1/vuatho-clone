@@ -13,17 +13,17 @@ import './global.css'
 
 export const metadata: Metadata = {
   title: {
-    default: 'Trang chủ | Vua Thợ',
+    default: 'Trang chủ',
     template: '%s | Vua Thợ',
   },
   description: 'Ứng dụng số 1 Việt Nam',
   openGraph: {
+    type: 'website',
     url: 'https://vuatho.com',
+    title: 'Vua Thợ',
     description: 'Thợ nào cũng có',
     siteName: 'Vua Thợ',
-    images: [
-      'https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.kkday.com%2Fvi%2Fblog%2F2022%2F01%2F24%2Fchup-anh-dep-bang-dien-thoai%2F&psig=AOvVaw2HFHjW02euPygHkhM64Omq&ust=1702702827235000&source=images&cd=vfe&ved=0CBIQjRxqFwoTCMiXvbzUkIMDFQAAAAAdAAAAABAE',
-    ],
+    images: ['https://cdn.vuatho.com/7e73936c9eff8e7c54c018b225ec224b'],
   },
 }
 
