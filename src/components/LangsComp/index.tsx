@@ -129,7 +129,7 @@ function LangsComp() {
 
   return (
     <>
-      <div className='hidden md:block '>
+      <div className='hidden lg:block '>
         <Popover
           placement='bottom-end'
           isOpen={isOpen}
@@ -139,10 +139,13 @@ function LangsComp() {
           }}
         >
           <PopoverTrigger>
-            <button className='h-[44px] cursor-pointer rounded-[44px] bg-[#F8F8F8] p-[10px]'>
+            <button className='flex h-[44px] cursor-pointer items-center space-x-6 divide-x-1 rounded-[44px] bg-[#F8F8F8] p-[10px] px-5 hover:opacity-80 focus:outline-none active:opacity-100'>
               <div className='flex items-center gap-2 text-[#646464]'>
                 <Global size={24} className='' />
                 <span className='text-[1.8rem] uppercase'>{lang?.code}</span>
+              </div>
+              <div className='flex items-center pl-6 text-[#646464]'>
+                <span className='text-[1.8rem] uppercase'>{selectCurrency?.code}</span>
               </div>
             </button>
           </PopoverTrigger>
@@ -227,6 +230,11 @@ function LangsComp() {
                         .toLowerCase()
                         .includes(searchCurrency.toLowerCase().trim()),
                     )
+                    ?.map((x: any) => ({
+                      ...x,
+                      priority: x.code === selectCurrency.code ? 1 : 0,
+                    }))
+                    .sort((a: any, b: any) => b.priority - a.priority)
                     .map((item: any) => (
                       <button
                         onClick={() => _HandleChangeCurrency(item)}
@@ -253,7 +261,7 @@ function LangsComp() {
           </PopoverContent>
         </Popover>
       </div>
-      <div className='mb:pb-0 block w-full pb-80 md:hidden'>
+      <div className='mb:pb-0 block w-full pb-80 lg:hidden'>
         <div className='grid grid-cols-2 gap-[20px] overflow-y-scroll'>
           <div className=''>
             <div className='flex flex-col justify-between gap-[16px]'>

@@ -17,7 +17,7 @@ import Article from '@/components/article'
 import Map from '@/components/map'
 import { SkeletonBlog } from '@/components/skeleton'
 import instance from '@/services/axiosConfig'
-import { Button, Skeleton, Textarea, useDisclosure } from '@nextui-org/react'
+import { Button, Skeleton, Textarea, Tooltip, useDisclosure } from '@nextui-org/react'
 import SectionDownload from './(sections)/downloadApp'
 import SectionToTheMoon from './(sections)/toTheMoon'
 import SectionWithVuaTho from './(sections)/withVuaTho'
@@ -554,21 +554,6 @@ const WorkerBenefitSection = () => {
                         </h4>
                       </div>
                       <div className='likeButton hidden md:block'>
-                        {/* <div className='flex h-[40px] items-center justify-between overflow-hidden rounded-full bg-white md:h-[48px] md:bg-[#F8F8F8]'>
-                          <Like
-                            item={item}
-                            handleActionLike={(item: any, setIsLike: any) =>
-                              handleActionLike(item, setIsLike)
-                            }
-                          />
-                          <div className='mx-[8px] flex h-[80%] w-[1px] items-center justify-center bg-[#E1E1E1]' />
-                          <UnLike
-                            item={item}
-                            handleActionLike={(item: any, setIsLike: any) =>
-                              handleActionLike(item, setIsLike)
-                            }
-                          />
-                        </div> */}
                         <LikeControl item={item} />
                       </div>
                     </div>
@@ -726,25 +711,34 @@ const LikeControl = ({ item }: { item: any }) => {
   }
 
   return (
-    <div className='flex h-[40px] items-center justify-between overflow-hidden rounded-full bg-white md:h-[48px] md:bg-[#F8F8F8]'>
-      <div className=''>
-        <Like
-          isDislike={checkDislike.isDisliked}
-          isLike={checkLike.isLiked}
-          count={checkLike.count}
-          onClick={() => _HandleAction('like')}
-        />
+    <Tooltip
+      isDisabled={!checkDislike.isDisliked}
+      content={'Cảm ơn bạn đã đóng góp ý kiến'}
+      placement='top'
+      classNames={{
+        content: 'text-[1.6rem] px-[16px] py-[8px]',
+      }}
+    >
+      <div className='flex h-[40px] items-center justify-between overflow-hidden rounded-full bg-white md:h-[48px] md:bg-[#F8F8F8]'>
+        <div className=''>
+          <Like
+            isDislike={checkDislike.isDisliked}
+            isLike={checkLike.isLiked}
+            count={checkLike.count}
+            onClick={() => _HandleAction('like')}
+          />
+        </div>
+        <div className='mx-[8px] flex h-[80%] w-[1px] items-center justify-center bg-[#E1E1E1]' />
+        <div className=''>
+          <UnLike
+            isDislike={checkDislike.isDisliked}
+            setMessage={setDislikeMessage}
+            message={dislikeMessage}
+            onClick={() => _HandleAction('dislike')}
+          />
+        </div>
       </div>
-      <div className='mx-[8px] flex h-[80%] w-[1px] items-center justify-center bg-[#E1E1E1]' />
-      <div className=''>
-        <UnLike
-          isDislike={checkDislike.isDisliked}
-          setMessage={setDislikeMessage}
-          message={dislikeMessage}
-          onClick={() => _HandleAction('dislike')}
-        />
-      </div>
-    </div>
+    </Tooltip>
   )
 }
 

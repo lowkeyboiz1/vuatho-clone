@@ -7,11 +7,9 @@ import { ToastContainer } from 'react-toastify'
 
 import { locales } from '@/constants'
 
-import Footer from './(layout)/footer'
-import Header from './(layout)/header'
 import { Providers } from './providers'
 
-import './globals.css'
+import './global.css'
 
 export const metadata: Metadata = {
   title: {
@@ -19,6 +17,18 @@ export const metadata: Metadata = {
     template: '%s | Vua Thợ',
   },
   description: 'Ứng dụng số 1 Việt Nam',
+  openGraph: {
+    type: 'website',
+    url: 'https://vuatho.com',
+    title: 'Vua Thợ',
+    description: 'Thợ nào cũng có',
+    siteName: 'Vua Thợ',
+    images: [
+      {
+        url: 'https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.kkday.com%2Fvi%2Fblog%2F2022%2F01%2F24%2Fchup-anh-dep-bang-dien-thoai%2F&psig=AOvVaw2HFHjW02euPygHkhM64Omq&ust=1702702827235000&source=images&cd=vfe&ved=0CBIQjRxqFwoTCMiXvbzUkIMDFQAAAAAdAAAAABAE',
+      },
+    ],
+  },
 }
 
 const lexend = Lexend({
@@ -26,7 +36,6 @@ const lexend = Lexend({
   display: 'swap',
 })
 const timeZone = 'Asia/Ho_Chi_Minh'
-// const locales = langs.map((item) => item.code)
 
 export default async function RootLayout({ children, params }: any) {
   const { locale } = params
@@ -60,11 +69,7 @@ export default async function RootLayout({ children, params }: any) {
         </Script>
         <ToastContainer />
         <NextIntlClientProvider locale={locale} messages={messages} timeZone={timeZone}>
-          <Providers>
-            <Header />
-            {children}
-            <Footer />
-          </Providers>
+          <Providers>{children}</Providers>
         </NextIntlClientProvider>
       </body>
     </html>

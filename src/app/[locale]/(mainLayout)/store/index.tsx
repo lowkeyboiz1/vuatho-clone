@@ -241,17 +241,12 @@ const ItemClothe = ({
   }
 
   return (
-    <div className='relative overflow-hidden'>
-      {item.isInStock && (
-        <span className='flex-center absolute right-0 top-0 h-[30px] w-fit bg-red-500 px-[20px] text-[1.4rem] text-white'>
-          {t('text11')}
-        </span>
-      )}
+    <>
       <div
-        className='group cursor-pointer overflow-hidden rounded-[8px] shadow-[0px_4px_8px_0px_#ACACAC29]'
+        className='group flex h-full cursor-pointer flex-col overflow-hidden rounded-[8px] shadow-[0px_4px_8px_0px_#ACACAC29]'
         onClick={() => handleClick(item)}
       >
-        <div className='h-[200px] w-full overflow-hidden'>
+        <div className='h-[200px] min-h-[200px] w-full overflow-hidden'>
           <ImageFallback
             src={item?.thumb}
             alt=''
@@ -260,8 +255,10 @@ const ItemClothe = ({
             className='h-full w-full object-cover duration-300 group-hover:scale-[1.1]'
           />
         </div>
-        <div className='flex flex-col gap-[8px] bg-white p-[16px]'>
-          <p className='text-[1.8rem] font-semibold text-base-black-1'>{item.title}</p>
+        <div className='flex h-full flex-col justify-between gap-[8px] bg-white p-[16px]'>
+          <p className='line-clamp-2 min-h-[54px] text-[1.8rem] font-semibold text-base-black-1'>
+            {item.title}
+          </p>
           <p className='text-[1.8rem] font-semibold text-primary-blue'>
             {formatMoney(item.price)}
             {item.currency}
@@ -273,7 +270,7 @@ const ItemClothe = ({
         onOpenChange={onOpenChange}
         styleHeader='pt-[12px] pl-[24px]'
         title={
-          <h3 className='text-[1.6rem] font-semibold leading-normal text-base-black-1 md:text-[2.4rem]'>
+          <h3 className='max-w-[90%] text-[1.6rem] font-semibold leading-normal text-base-black-1 md:text-[2.4rem]'>
             {item?.title}
           </h3>
         }
@@ -288,7 +285,7 @@ const ItemClothe = ({
           />
         }
       ></DefaultModal>
-    </div>
+    </>
   )
 }
 
@@ -675,7 +672,7 @@ const PackageItem = ({
         <p className='font-light text-base-black-1'>{itemPackage.title || ''}</p>
         <p className='font-light text-base-black-1'>x {itemPackage.quantity || ''}</p>
       </div>
-      <div className='col-span-3 flex items-center gap-[8px] md:col-span-2 md:gap-[16px]'>
+      <div className='col-span-3 flex items-center gap-[8px] pr-[8px] md:col-span-2 md:justify-end md:gap-[16px]'>
         <p className='text-[#969696]'>Chọn size</p>
         {itemPackage.sizes.map((itemSize: any) => (
           <button
@@ -731,7 +728,7 @@ const CartItem = ({
   return (
     <div className='flex flex-col gap-[24px]'>
       <div className='grid grid-cols-3'>
-        <div className='col-span-2 flex space-x-3'>
+        <div className='col-span-3 flex space-x-3 md:col-span-2'>
           <div className='image w-[128px]'>
             <ImageFallback src={item.thumb} alt='12312321' width={74} height={128} />
           </div>
@@ -754,7 +751,7 @@ const CartItem = ({
             </div>
           </div>
         </div>
-        <div className='flex items-start justify-end gap-[16px]'>
+        <div className='col-span-3 mt-[10px] flex items-start justify-end gap-[16px] md:col-span-1 '>
           <QuantityControl
             quantity={quantity}
             setQuantity={_handleChangeQuantity}
@@ -882,26 +879,6 @@ const BodyCard = ({
     console.log(token)
 
     try {
-      const payloadOKOK = {
-        token,
-        deliveryInformation: {
-          ...infoCustomer,
-          phoneNumber: {
-            phone: infoCustomer.phone,
-            phone_code: infoCustomer.phoneCountry,
-          },
-        },
-        detailsOrder: {
-          packageID: cartItems?.[0]?.uuid,
-          quantity: cartItems?.[0]?.quantity,
-          items: cartItems?.[0]?.package.map((item: any) => {
-            const { uuid, sizes } = item
-            const size = sizes.find((s: any) => s.isActive)?.name || ''
-            return { uuid, size }
-          }),
-        },
-      }
-
       const payload = {
         token,
         deliveryInformation: {
@@ -914,7 +891,7 @@ const BodyCard = ({
         detailsOrder: {
           packageID: cartItems?.[0]?.uuid,
           quantity: cartItems?.[0]?.quantity,
-          size: cartItems?.[0]?.package.map((item: any) => {
+          items: cartItems?.[0]?.package.map((item: any) => {
             const { uuid, sizes } = item
             const size = sizes.find((s: any) => s.isActive)?.name || ''
             return { uuid, size }
@@ -1051,7 +1028,7 @@ const BodyCard = ({
             <div className='mt-[4px]'>
               <Input
                 variant='bordered'
-                placeholder='Địa chỉ nhận'
+                placeholder={t('text26')}
                 value={infoCustomer.address}
                 onChange={(e: any) => _HandleChangeValue('address', e)}
                 radius='full'

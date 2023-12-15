@@ -910,11 +910,11 @@
     "text3": "Contact to order now",
     "text4": "UNIFORM OF VUA THỢ",
     "text5": "We only provide uniforms for internal company employees. Thank you for your interest, and we hope you understand this inconvenience.",
-    "text6": "Phone number for artisan registration",
+    "text6": "Phone number for service providers registration",
     "text7": "Continue",
-    "text8": "We are happy if you want to register for a uniform. However, you need to become an Artisan before you can do this. Thank you for understanding and cooperating!",
+    "text8": "We are happy if you want to register for a uniform. However, you need to become a service providers before you can do this. Thank you for understanding and cooperating!",
     "text9": "Re-verify",
-    "text10": "Become an artisan",
+    "text10": "Become a service providers",
     "text11": "Out of stock",
     "text12": "Place order",
     "text13": "Successful login!",
@@ -926,10 +926,11 @@
     "text19": "Order Uniform",
     "text20": "No products yet",
     "text21": "Total",
-    "text22": "Shipping information",
+    "text22": "Delivery information",
     "text23": "Please enter name",
     "text24": "Please enter address",
-    "text25": "Confirm order information"
+    "text25": "Confirm order information",
+    "text26": "Delivery address"
   },
 
   "PressHome": {

@@ -50,7 +50,9 @@ export const DefaultModal: React.FC<DefaultModal> = ({
               {!hiddenHeader && (
                 <ModalHeader
                   className={twMerge(
-                    `flex items-center p-2 ${title ? 'justify-between' : 'justify-end'}`,
+                    `relative flex items-center p-2 ${
+                      title ? 'justify-between' : 'justify-end'
+                    }`,
                     styleHeader,
                   )}
                 >
@@ -58,9 +60,10 @@ export const DefaultModal: React.FC<DefaultModal> = ({
                   {!hiddenCloseBtn && (
                     <Button
                       isIconOnly
+                      radius='full'
                       onPress={onClose}
                       variant='light'
-                      className='h-[48px] w-[56px]'
+                      className='absolute right-[1%] top-[10%] h-[48px] w-[48px] min-w-[unset]'
                     >
                       <Add className='rotate-45 text-base-black-1' size={32} />
                     </Button>

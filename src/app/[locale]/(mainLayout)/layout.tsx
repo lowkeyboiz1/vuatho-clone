@@ -7,9 +7,11 @@ import { ToastContainer } from 'react-toastify'
 
 import { locales } from '@/constants'
 
+import Footer from './(layout)/footer'
+import Header from './(layout)/header'
 import { Providers } from '../providers'
 
-import './promotion.css'
+import './globals.css'
 
 export const metadata: Metadata = {
   title: {
@@ -24,8 +26,9 @@ const lexend = Lexend({
   display: 'swap',
 })
 const timeZone = 'Asia/Ho_Chi_Minh'
+// const locales = langs.map((item) => item.code)
 
-export default async function PromotionLayout({ children, params }: any) {
+export default async function RootLayout({ children, params }: any) {
   const { locale } = params
 
   const isValidLocale = locales.some((cur) => cur === locale)
@@ -43,23 +46,10 @@ export default async function PromotionLayout({ children, params }: any) {
   }
 
   return (
-    <html lang={locale} className={lexend.className + ' '}>
-      <body className=''>
-        <Script src='https://www.googletagmanager.com/gtag/js?id=G-Z8JD7Z5934' />
-        <Script id='google-analytics'>
-          {`
-          window.dataLayer = window.dataLayer || [];
-          function gtag(){dataLayer.push(arguments);}
-          gtag('js', new Date());
- 
-          gtag('config', 'G-Z8JD7Z5934');
-        `}
-        </Script>
-        <ToastContainer />
-        <NextIntlClientProvider locale={locale} messages={messages} timeZone={timeZone}>
-          <Providers>{children}</Providers>
-        </NextIntlClientProvider>
-      </body>
-    </html>
+    <>
+      <Header />
+      {children}
+      <Footer />
+    </>
   )
 }

@@ -4,7 +4,7 @@ import { useLocale, useTranslations } from 'next-intl'
 import Image from 'next/image'
 import Link from 'next/link'
 import { usePathname, useRouter, useSearchParams } from 'next/navigation'
-import { useEffect, useState } from 'react'
+import React, { useEffect, useState } from 'react'
 
 import LangsComp from '@/components/LangsComp'
 
@@ -13,13 +13,20 @@ import { AnimatePresence, motion } from 'framer-motion'
 import { Add as AddIcon, HambergerMenu as MenuIcon } from 'iconsax-react'
 
 const Header = () => {
+  return (
+    <HeaderWrapper>
+      <Logo />
+      <RightNav />
+    </HeaderWrapper>
+  )
+}
+
+export const HeaderWrapper = ({ children }: { children: React.ReactNode }) => {
   const [isWebview, sIsWebview] = useState(false)
-  const pathName = usePathname()
 
   const [isHeaderVisible, setHeaderVisible] = useState(true)
   const searchParams = useSearchParams()
   const hiddenHeaderAndFooter = searchParams.get('hideHeaderAndFooter')
-  const t = useTranslations('Navbar')
 
   useEffect(() => {
     var is_uiwebview = navigator.userAgent.includes('WebView')
@@ -46,35 +53,10 @@ const Header = () => {
     }
   }, [])
 
-  // useEffect(() => {
-  //   let prevScrollPos = window.scrollY
-
-  //   setTransparent(!pathName?.split('/')?.[2]?.length && window.scrollY === 0)
-
-  //   const handleScroll = () => {
-  //     const currentScrollPos = window.scrollY
-  //     const check = 2
-  //     if (!pathName?.split('/')?.[2]?.length && currentScrollPos < check) {
-  //       setTransparent(true)
-  //     } else {
-  //       setTransparent(false)
-  //     }
-
-  //     prevScrollPos = currentScrollPos
-  //   }
-
-  //   window.addEventListener('scroll', handleScroll)
-
-  //   return () => {
-  //     window.removeEventListener('scroll', handleScroll)
-  //   }
-  // }, [pathName])
-
   if (isWebview) {
     return null
   }
   if (hiddenHeaderAndFooter) return null
-
   return (
     <header
       id='header'
@@ -83,14 +65,13 @@ const Header = () => {
       }`}
     >
       <div className='ct-container-70 flex h-[70px] items-center justify-between 3xl:h-[80px]'>
-        <Logo />
-        <RightNav />
+        {children}
       </div>
     </header>
   )
 }
 
-const Logo = () => {
+export const Logo = () => {
   const router = useRouter()
   const locale = useLocale()
   return (
@@ -120,6 +101,8 @@ const RightNav = () => {
 
   const [toggleMenu, setToggleMenu] = useState(false)
   const handleToggleMenu = () => setToggleMenu(!toggleMenu)
+  const _HandleOpenWindow = () =>
+    window.open('https://vuatho.com/vi/qrcode-download-app', '_blank')
 
   const menuVariants = {
     initial: {
@@ -155,9 +138,7 @@ const RightNav = () => {
         </div>
         <div className='flex items-center gap-[16px]'>
           <Button
-            onClick={() =>
-              window.open('https://vuatho.com/vi/qrcode-download-app', '_blank')
-            }
+            onClick={_HandleOpenWindow.bind(this)}
             className='hidden h-[44px] w-auto rounded-[44px] bg-primaryYellow px-[24px] text-[1.8rem] font-semibold text-baseBlack lg:block'
           >
             {t('download')}
@@ -171,9 +152,7 @@ const RightNav = () => {
         ) : (
           <div className='flex items-center gap-[20px]'>
             <Button
-              onClick={() =>
-                window.open('https://vuatho.com/vi/qrcode-download-app', '_blank')
-              }
+              onClick={_HandleOpenWindow.bind(this)}
               className='h-[40px] w-auto bg-primaryYellow px-[30px] text-[1.8rem] font-semibold text-baseBlack md:px-[50px] lg:hidden xl:h-[50px]'
             >
               {t('download')}
@@ -192,7 +171,6 @@ const RightNav = () => {
             className='fixed bottom-0 left-0 right-0 top-[60px] z-10 flex h-[calc(100vh-60px)] origin-top flex-col items-start gap-6 overflow-auto bg-bg p-6'
           >
             <LinkList handleToggleMenu={handleToggleMenu} />
-            {/* <ThemeSwitcher /> */}
             <LangsComp />
           </motion.div>
         )}

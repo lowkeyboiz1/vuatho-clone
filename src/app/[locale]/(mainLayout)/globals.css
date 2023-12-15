@@ -15,10 +15,6 @@
   @apply mx-auto w-full px-8 3xl:max-w-[1920px];
 }
 
-.ct-container-70 {
-  @apply mx-auto w-full max-w-[1600px] px-8 13inch:w-[1240px] 13inch:px-0;
-}
-
 .ct-container-3xl {
   @apply mx-auto max-w-[90%] md:px-16;
 }
