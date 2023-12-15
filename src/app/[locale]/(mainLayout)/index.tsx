@@ -2,7 +2,7 @@
 
 import Image from 'next/image'
 import Link from 'next/link'
-import { useEffect, useRef, useState } from 'react'
+import { useEffect, useRef, useState, useCallback } from 'react'
 
 import confetti from 'canvas-confetti'
 import { motion, useAnimate } from 'framer-motion'
@@ -82,6 +82,7 @@ const AISection = () => {
                 src={'/mascot/AIRobot.png'}
                 alt='AIRobot'
                 width={338}
+                quality={100}
                 height={400}
                 className='pointer-events-none'
               />
@@ -95,13 +96,8 @@ const AISection = () => {
                   index % 2 !== 0 && '13inch:ml-[36%]'
                 }`}
               >
-                <span className='absolute left-[-12%] top-[-46%] z-[1] hidden text-[6.4rem] font-semibold text-[#FCB713]/20 lg:block'>
-                  0{index + 1}
-                </span>
                 <div
-                  className={`absolute inset-0 z-[2] rounded-[20px] bg-white shadow-[0px_8px_16px_0px_#A2BAF366] ${
-                    index === 0 && 'border-b-[2px] border-[#FCB713]'
-                  }`}
+                  className={`absolute inset-0 z-[2] rounded-[20px] border-b-[2px] border-[#FCB713] bg-white shadow-[0px_8px_16px_0px_#A2BAF366]`}
                 ></div>
                 <h5 className='z-[4] text-[1.8rem] font-semibold text-primary-blue'>
                   {item.title}
@@ -278,6 +274,7 @@ const MainSection = () => {
               <Image
                 src={'/home/dualPhone.png'}
                 alt=''
+                quality={100}
                 width={446}
                 height={400}
                 className=' object-contain'
@@ -293,7 +290,7 @@ const MainSection = () => {
               >
                 <item.icon size={40} className='text-primaryBlue' variant='Bold' />
                 <div className='w-full pl-5 md:pl-0'>
-                  <p className='mt-2 text-[1.6rem] text-primaryText'>{item.desc}</p>
+                  <p className='mt-2 text-[1.8rem] text-primaryText'>{item.desc}</p>
                   <div className='flex items-center justify-between'>
                     <p className='mt-2 text-[1.8rem] font-semibold text-primaryText'>
                       {item.title}
@@ -333,15 +330,15 @@ const CustomerBenefitSection = () => {
   return (
     <div className='ct-container-70 flex flex-col gap-[20px]'>
       <div className='flex flex-col gap-[10px] md:hidden'>
-        <h3 className='text-[1.6rem] font-semibold uppercase tracking-[8px] lg:text-[2rem]'>
+        <h3 className='text-[1.8rem] font-semibold uppercase tracking-[8px] lg:text-[2rem]'>
           {t('benefit')}
         </h3>
         <p className=' text-[2.4rem] text-[#FCB713] md:text-[3.2rem]'>{t('text')}</p>
       </div>
-      <div className=' grid grid-cols-1 items-center gap-[20px] xl:grid-cols-2'>
-        <div className='col-span-1'>
+      <div className=' grid grid-cols-1 items-center gap-[20px] xl:grid-cols-5'>
+        <div className='col-span-1 xl:col-span-2'>
           <div className='hidden flex-col gap-[10px] md:flex'>
-            <h3 className='text-[1.6rem] font-semibold uppercase tracking-[8px] md:text-[2rem]'>
+            <h3 className='text-[1.8rem] font-semibold uppercase tracking-[8px] md:text-[2rem]'>
               5 {t('benefit')}
             </h3>
             <p className='whitespace-nowrap text-[2.4rem] font-semibold text-[#FCB713] md:text-[3.2rem]'>
@@ -350,22 +347,23 @@ const CustomerBenefitSection = () => {
           </div>
           <div className='mx-auto h-[200px] w-[200px] md:h-[300px] md:w-[300px] xl:mx-0 xl:h-[400px] xl:w-[400px]'>
             <Image
-              src={'/benefitWorker/benefitWorker1.png'}
+              src={'/benefitWorker/benefitWorker3.png'}
               alt=''
+              quality={100}
               height={400}
               width={400}
               className='h-full w-full object-contain'
             />
           </div>
         </div>
-        <div className='col-span-1 grid grid-cols-1 gap-[20px] md:mx-auto md:max-w-[820px] md:grid-cols-2 md:gap-[40px]'>
+        <div className='col-span-1 grid grid-cols-1 gap-[20px] md:mx-auto md:max-w-[820px] md:grid-cols-2 md:gap-[40px] xl:col-span-3'>
           {listBenefit.map((item: TlistBenefit, index: number) => (
             <div className='col-span-1' key={`listBenefit-${index}`}>
               <div className='items-left flex gap-[20px] md:flex-col xl:gap-[40px]'>
                 <p className='text-[4rem] font-semibold leading-none text-[#FCB713] md:text-[6.4rem]'>
                   0{index + 1}
                 </p>
-                <p className='text-[1.6rem] text-base-black-1'>{item.title}</p>
+                <p className='text-[1.8rem] text-base-black-1'>{item.title}</p>
               </div>
             </div>
           ))}
@@ -382,12 +380,11 @@ const WorkerBenefitSection = () => {
   const [currentIndex, setCurrentIndex] = useState<number>(0)
   const [onFetching, setOnFetching] = useState<boolean>(false)
   const [onRefresh, setOnRefresh] = useState<boolean>(false)
-
   const [listDataBenefit, setListDataBenefit] = useState<any>([])
 
   const swiperRef = useRef<any>(null)
 
-  const _handleFetching = async () => {
+  const _handleFetching = useCallback(async () => {
     try {
       const data: any = await instance.get(`home/benefit?lang=${locale}`)
       setListDataBenefit([...data])
@@ -397,11 +394,11 @@ const WorkerBenefitSection = () => {
       setOnFetching(false)
       onRefresh && setOnRefresh(false)
     }
-  }
+  }, [locale, onRefresh])
 
   useEffect(() => {
     onFetching && _handleFetching()
-  }, [onFetching])
+  }, [onFetching, _handleFetching])
 
   useEffect(() => {
     setOnFetching(true)
@@ -409,7 +406,7 @@ const WorkerBenefitSection = () => {
 
   useEffect(() => {
     onRefresh && _handleFetching()
-  }, [onRefresh])
+  }, [onRefresh, _handleFetching])
 
   let timer: any = null
 
@@ -432,58 +429,13 @@ const WorkerBenefitSection = () => {
 
   useEffect(() => {
     return () => clearTimeout(timer)
-  }, [])
-
-  const listImg = [
-    {
-      thumb: '/benefitCustomer/benefit1.png',
-    },
-    {
-      thumb: '/benefitCustomer/benefit2.png',
-    },
-    {
-      thumb: '/benefitCustomer/benefit3.png',
-    },
-    {
-      thumb: '/benefitCustomer/benefit4.png',
-    },
-    {
-      thumb: '/benefitCustomer/benefit5.png',
-    },
-    {
-      thumb: '/benefitCustomer/benefit6.png',
-    },
-    {
-      thumb: '/benefitCustomer/benefit7.png',
-    },
-    {
-      thumb: '/benefitCustomer/benefit8.png',
-    },
-    {
-      thumb: '/benefitCustomer/benefit9.png',
-    },
-    {
-      thumb: '/benefitCustomer/benefit10.png',
-    },
-    {
-      thumb: '/benefitCustomer/benefit11.png',
-    },
-    {
-      thumb: '/benefitCustomer/benefit12.png',
-    },
-    {
-      thumb: '/benefitCustomer/benefit13.png',
-    },
-    {
-      thumb: '/benefitCustomer/benefit14.png',
-    },
-  ]
+  }, [timer])
 
   return (
     <div className='flex flex-col gap-[20px]'>
       <div className='ct-container-70 flex flex-col gap-[20px] xl:gap-[40px]'>
         <div className='flex flex-col gap-[10px]'>
-          <h3 className='text-[1.6rem] font-semibold uppercase tracking-[8px] md:text-[2rem]'>
+          <h3 className='text-[1.8rem] font-semibold uppercase tracking-[8px] md:text-[2rem]'>
             {listDataBenefit?.length} {t('benefit')}
           </h3>
           <p className='text-[2.4rem] font-semibold text-primary-blue md:text-[3.6rem]'>
@@ -549,7 +501,7 @@ const WorkerBenefitSection = () => {
                         <p className='text-[4rem] font-semibold leading-none text-primary-blue/20 xl:text-[6.4rem]'>
                           {index + 1 >= 10 ? index + 1 : `0${index + 1}`}
                         </p>
-                        <h4 className='text-[1.6rem] font-bold text-primary-blue xl:text-[2.4rem]'>
+                        <h4 className='text-[1.8rem] font-bold text-primary-blue xl:text-[2.4rem]'>
                           {item.title}
                         </h4>
                       </div>
@@ -716,7 +668,7 @@ const LikeControl = ({ item }: { item: any }) => {
       content={'Cảm ơn bạn đã đóng góp ý kiến'}
       placement='top'
       classNames={{
-        content: 'text-[1.6rem] px-[16px] py-[8px]',
+        content: 'text-[1.8rem] px-[16px] py-[8px]',
       }}
     >
       <div className='flex h-[40px] items-center justify-between overflow-hidden rounded-full bg-white md:h-[48px] md:bg-[#F8F8F8]'>
@@ -839,6 +791,8 @@ const UnLike = ({
   return (
     <>
       <button
+        type='button'
+        title='button'
         onClick={() => _HandleUnLike()}
         disabled={isDislike}
         className='unlike flex items-center px-[20px] py-[10px]'
@@ -872,7 +826,7 @@ const UnLike = ({
                 minRows={2}
                 className='w-full'
                 classNames={{
-                  input: 'text-[1.6rem]',
+                  input: 'text-[1.8rem]',
                   inputWrapper:
                     'px-[16px] py-[12px] text-[#969696] border-1 border-[#E1E1E1] bg-transparent',
                 }}
@@ -880,7 +834,7 @@ const UnLike = ({
             </div>
             <Button
               onPress={_HandleSendMessage}
-              className='flex h-[44px] w-full items-center justify-center rounded-full bg-[#FCB813] text-[1.6rem] font-medium text-base-black-1'
+              className='flex h-[44px] w-full items-center justify-center rounded-full bg-[#FCB813] text-[1.8rem] font-medium text-base-black-1'
             >
               {t('send')}
             </Button>

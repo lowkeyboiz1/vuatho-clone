@@ -1,9 +1,9 @@
-// import { PromotionsHeader } from './promotion/page'
+import { PromotionsHeader } from './promotion'
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <div>
-      {/* <PromotionsHeader /> */}
+      <PromotionsHeader />
       {children}
     </div>
   )

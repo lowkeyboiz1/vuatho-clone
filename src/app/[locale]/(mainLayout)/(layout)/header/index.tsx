@@ -76,6 +76,8 @@ export const Logo = () => {
   const locale = useLocale()
   return (
     <button
+      title='button'
+      type='button'
       onClick={() => {
         router.push(`/${locale}`)
         window.scrollTo({

@@ -13,6 +13,7 @@ function SectionWithVuaTho() {
               alt='mascot'
               height={330}
               width={423}
+              quality={100}
               className='pointer-events-none h-full w-full object-contain'
             />
           </div>

@@ -23,6 +23,7 @@ const Article = forwardRef(({ item, style }: { item: any; style?: string }, ref)
           alt='Article image'
           height={406}
           width={800}
+          quality={100}
           className='h-full w-full object-cover transition group-hover:scale-[1.1]'
         />
       </div>

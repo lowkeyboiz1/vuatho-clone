@@ -21,13 +21,6 @@ export const metadata: Metadata = {
   description: 'Ứng dụng số 1 Việt Nam',
 }
 
-const lexend = Lexend({
-  subsets: ['latin'],
-  display: 'swap',
-})
-const timeZone = 'Asia/Ho_Chi_Minh'
-// const locales = langs.map((item) => item.code)
-
 export default async function RootLayout({ children, params }: any) {
   const { locale } = params
 

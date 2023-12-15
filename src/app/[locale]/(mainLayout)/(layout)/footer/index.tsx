@@ -194,6 +194,7 @@ function Footer() {
                 alt={`partner-${item.id}`}
                 width={194}
                 height={64}
+                quality={100}
                 src={item.url}
                 className='pointer-events-none h-20 w-auto object-contain xl:h-16'
               />
