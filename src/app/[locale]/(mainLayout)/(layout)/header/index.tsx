@@ -11,6 +11,7 @@ import LangsComp from '@/components/LangsComp'
 import { Button } from '@nextui-org/react'
 import { AnimatePresence, motion } from 'framer-motion'
 import { Add as AddIcon, HambergerMenu as MenuIcon } from 'iconsax-react'
+import { twMerge } from 'tailwind-merge'
 
 const Header = () => {
   return (
@@ -21,7 +22,13 @@ const Header = () => {
   )
 }
 
-export const HeaderWrapper = ({ children }: { children: React.ReactNode }) => {
+export const HeaderWrapper = ({
+  children,
+  style,
+}: {
+  children: React.ReactNode
+  style?: string
+}) => {
   const [isWebview, sIsWebview] = useState(false)
 
   const [isHeaderVisible, setHeaderVisible] = useState(true)
@@ -64,7 +71,12 @@ export const HeaderWrapper = ({ children }: { children: React.ReactNode }) => {
         isHeaderVisible ? 'translate-y-0 shadow-sm' : '-translate-y-[100%]'
       }`}
     >
-      <div className='ct-container-70 flex h-[70px] items-center justify-between 3xl:h-[80px]'>
+      <div
+        className={twMerge(
+          `ct-container-70 flex h-[70px] items-center justify-between 3xl:h-[80px]`,
+          style,
+        )}
+      >
         {children}
       </div>
     </header>
@@ -103,8 +115,9 @@ const RightNav = () => {
 
   const [toggleMenu, setToggleMenu] = useState(false)
   const handleToggleMenu = () => setToggleMenu(!toggleMenu)
-  const _HandleOpenWindow = () =>
+  const _HandleOpenWindow = () => {
     window.open('https://vuatho.com/vi/qrcode-download-app', '_blank')
+  }
 
   const menuVariants = {
     initial: {

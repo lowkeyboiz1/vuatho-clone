@@ -31,10 +31,11 @@ const lexend = Lexend({
   subsets: ['latin'],
   display: 'swap',
 })
+
 const timeZone = 'Asia/Ho_Chi_Minh'
 
 export default async function RootLayout({ children, params }: any) {
-  const { locale } = params
+  const { locale = 'vi' } = params
 
   const isValidLocale = locales.some((cur) => cur === locale)
 
@@ -44,14 +45,11 @@ export default async function RootLayout({ children, params }: any) {
 
   let messages
 
-  console.log(locale)
-
   try {
     messages = (await import(`../../../messages/${locale || 'vi'}.json`)).default
   } catch (error) {
     console.log(error)
   }
-
   return (
     <html lang={locale} className={lexend.className + ' '}>
       <body className=''>

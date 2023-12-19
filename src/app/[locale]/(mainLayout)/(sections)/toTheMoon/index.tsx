@@ -7,27 +7,17 @@ function SectionToTheMoon() {
   return (
     <div className='flex-center relative md:min-h-[500px]'>
       <div className='relative w-[96%] md:w-[520px]'>
-        <div className='relative z-[2] w-full space-y-2 rounded-[16px] border-3 bg-primary-blue p-[26px] md:p-[40px]'>
+        <div className='relative z-[2] w-full space-y-2 rounded-[16px] border-3 border-[#ffe297] bg-gradient-to-br from-[#ffe8ad] via-[#f5b500] to-[#ffd255] p-[26px] text-black md:p-[40px]'>
           <div className='flex items-center gap-[10px]'>
-            <div className='h-[40px] w-[48px]'>
-              <Image
-                src={'/home/logohome.png'}
-                alt=''
-                width={48}
-                quality={100}
-                height={40}
-                className='h-full w-full object-contain'
-              />
-            </div>
-            <p className=' w-[55%] text-[2.4rem] font-semibold text-white xs:w-full md:text-[3.2rem]'>
+            <p className=' w-[55%] text-[2.4rem] font-semibold xs:w-full md:text-[3.2rem]'>
               {t('title')}
             </p>
           </div>
-          <p className='text-[1.8rem] font-light text-white'>{t('desc')}</p>
+          <p className='text-[1.8rem] font-light'>{t('desc')}</p>
         </div>
-        <div className='absolute top-[-40%] z-[1] hidden w-[744px] translate-x-[90%] md:block 3xl:left-[-60%] '>
+        <div className='absolute top-[-40%] z-[1] hidden w-[744px] translate-x-[90%] md:block lg:left-[-85%] xl:left-[-62%] 2xl:left-[-60%]'>
           <Image
-            src={'/home/test10.png'}
+            src={'/home/test12.png?cache=1'}
             alt=''
             height={280}
             quality={100}
@@ -35,9 +25,9 @@ function SectionToTheMoon() {
             className='h-full w-full object-contain'
           />
         </div>
-        <div className='absolute left-[-100%] top-[-45%] z-[1] hidden w-[744px] md:block 3xl:left-[-110%]'>
+        <div className='absolute left-[-100%] top-[-45%] z-[1] hidden w-[744px] md:block lg:left-[-80%] xl:left-[-90%] 2xl:left-[-110%]'>
           <Image
-            src={'/home/test5.png'}
+            src={'/home/test11.png'}
             alt=''
             height={280}
             quality={100}

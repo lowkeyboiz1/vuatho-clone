@@ -31,7 +31,7 @@ const Article = forwardRef(({ item, style }: { item: any; style?: string }, ref)
         <div className='flex items-center justify-between text-[1.4rem]'>
           <Link
             href={`/${locale}/press/${item.category.slug}`}
-            className='text-[1.5rem] font-light text-primary-blue hover:cursor-pointer hover:text-primary-blue/80'
+            className='text-[1.5rem] font-light text-[#f5b500] hover:cursor-pointer hover:text-[#f5b500]/80'
           >
             {item.category.title}
           </Link>

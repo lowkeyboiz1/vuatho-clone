@@ -116,26 +116,26 @@ function Footer() {
               {t('contact_us')}
             </h5>
             <div className='flex flex-col gap-[20px]'>
-              <p className='flex items-center gap-4'>
+              <div className='flex items-center gap-4'>
                 <PhoneIcon className='text-primary-blue' variant='Bold' />
                 <span className='text-[1.8rem] font-light md:text-[2rem]'>
                   <span className='text-gray-500'>(+84)</span> 3878 6688
                 </span>
-              </p>
-              <p className='flex items-center gap-4'>
+              </div>
+              <div className='flex items-center gap-4'>
                 <MailIcon className='text-primary-blue' variant='Bold' />
                 <span className='text-[1.8rem] font-light md:text-[2rem]'>
                   info@vuatho.com
                 </span>
-              </p>
-              <p className='flex items-center gap-4'>
+              </div>
+              <div className='flex items-center gap-4'>
                 <LocationIcon className='text-primary-blue' variant='Bold' />
                 <span className='text-[1.8rem] font-light md:text-[2rem]'>
                   {t('address')}
                   <br className='hidden lg:block' />
                   {t('location')}
                 </span>
-              </p>
+              </div>
               <p className='text-[1.8rem] font-light md:text-[2rem]'>
                 <span className='font-semibold'>MST: </span>
                 <span className=''>0318063280</span>

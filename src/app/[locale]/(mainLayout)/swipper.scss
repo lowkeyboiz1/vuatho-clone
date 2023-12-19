@@ -26,10 +26,10 @@
     @apply bottom-0 left-1/2 mx-auto hidden -translate-x-1/2 items-center justify-center gap-[10px] md:grid md:w-[80%] md:grid-cols-7  xl:flex xl:w-full xl:gap-[14px];
 
     .paginationBenefit {
-      @apply flex h-[68px] w-[68px] flex-shrink-0 items-center justify-center rounded-[4px] bg-[#f8f8f8] text-[1.6rem] text-base-black-1 opacity-100;
+      @apply flex h-[68px] w-[68px] flex-shrink-0 items-center justify-center rounded-[4px] bg-[#f5b500] text-[1.6rem] text-base-black-1 opacity-100;
     }
     .paginationBenefit.swiper-pagination-bullet-active {
-      @apply bg-base-black-1 text-white;
+      @apply bg-[#fff45ac4] text-[#2b2b2bc4];
     }
   }
 }

@@ -157,7 +157,7 @@ export const Store = () => {
           {valid && <Bagde cartItems={cartItems} setCartItems={setCartItems} />}
         </div>
 
-        {!valid && !isOpenModal && (
+        {!valid && !isOpenModal && !onLoading && !onFetching && (
           <div className='flex min-h-[400px] w-full flex-col items-center justify-center gap-[20px]'>
             <div className='max-w-[150px]'>
               <ImageFallback

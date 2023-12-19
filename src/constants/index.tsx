@@ -2,19 +2,6 @@ import Image from 'next/image'
 
 export const langs = [
   {
-    label: 'Tiếng Việt',
-    code: 'vi',
-    active: true,
-    symbol: (
-      <Image
-        src='https://flagcdn.com/20x15/vn.png'
-        width='20'
-        height='15'
-        alt='Tiếng Việt'
-      />
-    ),
-  },
-  {
     label: 'English',
     code: 'en',
     active: true,
@@ -24,6 +11,19 @@ export const langs = [
         width='20'
         height='15'
         alt='English'
+      />
+    ),
+  },
+  {
+    label: 'Tiếng Việt',
+    code: 'vi',
+    active: true,
+    symbol: (
+      <Image
+        src='https://flagcdn.com/20x15/vn.png'
+        width='20'
+        height='15'
+        alt='Tiếng Việt'
       />
     ),
   },
@@ -51,7 +51,7 @@ export const langs = [
   {
     label: 'Français',
     code: 'fr',
-    active: false,
+    active: true,
     symbol: (
       <Image
         src='https://flagcdn.com/20x15/fr.png'
@@ -61,11 +61,11 @@ export const langs = [
       />
     ),
   },
-  { label: 'Français (Afrique)', code: 'fr-AF', active: false, symbol: '🌍' },
+  { label: 'Français (Afrique)', code: 'fr-AF', active: true, symbol: '🌍' },
   {
     label: 'Filipino',
     code: 'fil',
-    active: false,
+    active: true,
     symbol: (
       <Image
         src='https://flagcdn.com/20x15/ph.png'
@@ -78,7 +78,7 @@ export const langs = [
   {
     label: 'Italiano',
     code: 'it',
-    active: false,
+    active: true,
     symbol: (
       <Image
         src='https://flagcdn.com/20x15/it.png'
@@ -91,7 +91,7 @@ export const langs = [
   {
     label: 'Polski',
     code: 'pl',
-    active: false,
+    active: true,
     symbol: (
       <Image src='https://flagcdn.com/20x15/pl.png' width='20' height='15' alt='Polski' />
     ),
@@ -99,7 +99,7 @@ export const langs = [
   {
     label: 'Português (Brasil)',
     code: 'pt-BR',
-    active: false,
+    active: true,
     symbol: (
       <Image
         src='https://flagcdn.com/20x15/br.png'
@@ -112,7 +112,7 @@ export const langs = [
   {
     label: 'Português (Portugal)',
     code: 'pt-PT',
-    active: false,
+    active: true,
     symbol: (
       <Image
         src='https://flagcdn.com/20x15/pt.png'
@@ -125,7 +125,7 @@ export const langs = [
   {
     label: 'Română',
     code: 'ro',
-    active: false,
+    active: true,
     symbol: (
       <Image src='https://flagcdn.com/20x15/ro.png' width='20' height='15' alt='Română' />
     ),
@@ -133,7 +133,7 @@ export const langs = [
   {
     label: 'Svenska',
     code: 'sv',
-    active: false,
+    active: true,
     symbol: (
       <Image
         src='https://flagcdn.com/20x15/sv.png'
@@ -146,7 +146,7 @@ export const langs = [
   {
     label: 'Slovenčina',
     code: 'sk',
-    active: false,
+    active: true,
     symbol: (
       <Image
         src='https://flagcdn.com/20x15/sk.png'
@@ -159,7 +159,7 @@ export const langs = [
   {
     label: 'Slovenščina',
     code: 'sl',
-    active: false,
+    active: true,
     symbol: (
       <Image
         src='https://flagcdn.com/20x15/sl.png'
@@ -172,7 +172,7 @@ export const langs = [
   {
     label: 'Türkçe',
     code: 'tr',
-    active: false,
+    active: true,
     symbol: (
       <Image src='https://flagcdn.com/20x15/tr.png' width='20' height='15' alt='Türkçe' />
     ),
@@ -180,7 +180,7 @@ export const langs = [
   {
     label: 'latviešu valoda',
     code: 'lv',
-    active: false,
+    active: true,
     symbol: (
       <Image
         src='https://flagcdn.com/20x15/lv.png'
@@ -193,7 +193,7 @@ export const langs = [
   {
     label: 'Čeština',
     code: 'cs',
-    active: false,
+    active: true,
     symbol: (
       <Image
         src='https://flagcdn.com/20x15/cz.png'
@@ -206,7 +206,7 @@ export const langs = [
   {
     label: 'Ελληνικά',
     code: 'el',
-    active: false,
+    active: true,
     symbol: (
       <Image
         src='https://flagcdn.com/20x15/gr.png'
@@ -219,7 +219,7 @@ export const langs = [
   {
     label: 'Русский',
     code: 'ru',
-    active: false,
+    active: true,
     symbol: (
       <Image
         src='https://flagcdn.com/20x15/ru.png'
@@ -230,22 +230,9 @@ export const langs = [
     ),
   },
   {
-    label: 'Русский (Украина)',
-    code: 'ru-UA',
-    active: false,
-    symbol: (
-      <Image
-        src='https://flagcdn.com/20x15/ua.png'
-        width='20'
-        height='15'
-        alt='Русский (Украина)'
-      />
-    ),
-  },
-  {
     label: 'Українська',
     code: 'uk',
-    active: false,
+    active: true,
     symbol: (
       <Image
         src='https://flagcdn.com/20x15/ua.png'
@@ -258,7 +245,7 @@ export const langs = [
   {
     label: 'български',
     code: 'bg',
-    active: false,
+    active: true,
     symbol: (
       <Image
         src='https://flagcdn.com/20x15/hu.png'
@@ -271,7 +258,7 @@ export const langs = [
   {
     label: 'العربية',
     code: 'ar',
-    active: false,
+    active: true,
     symbol: (
       <Image
         src='https://flagcdn.com/20x15/sa.png'
@@ -284,28 +271,15 @@ export const langs = [
   {
     label: 'اردو',
     code: 'ur',
-    active: false,
+    active: true,
     symbol: (
       <Image src='https://flagcdn.com/20x15/pk.png' width='20' height='15' alt='اردو' />
     ),
   },
   {
-    label: 'العربية (البحرين)',
-    code: 'ar-BH',
-    active: false,
-    symbol: (
-      <Image
-        src='https://flagcdn.com/20x15/qa.png'
-        width='20'
-        height='15'
-        alt='العربية (البحرين)'
-      />
-    ),
-  },
-  {
     label: 'বাংলা',
     code: 'bn',
-    active: false,
+    active: true,
     symbol: (
       <Image src='https://flagcdn.com/20x15/bd.png' width='20' height='15' alt='বাংলা' />
     ),
@@ -314,7 +288,7 @@ export const langs = [
   {
     label: '繁體中文',
     code: 'zh-TW',
-    active: false,
+    active: true,
     symbol: (
       <Image
         src='https://flagcdn.com/20x15/tw.png'
@@ -327,9 +301,134 @@ export const langs = [
   {
     label: '日本',
     code: 'ja',
-    active: false,
+    active: true,
     symbol: (
       <Image src='https://flagcdn.com/20x15/jp.png' width='20' height='15' alt='日本' />
+    ),
+  },
+  {
+    label: 'ภาษาไทย',
+    code: 'th',
+    active: true,
+    symbol: (
+      <Image
+        src='https://flagcdn.com/20x15/th.png'
+        width='20'
+        height='15'
+        alt='ภาษาไทย'
+      />
+    ),
+  },
+  {
+    label: 'Bahasa Indonesia',
+    code: 'id',
+    active: true,
+    symbol: (
+      <Image
+        src='https://flagcdn.com/20x15/id.png'
+        width='20'
+        height='15'
+        alt='Bahasa Indonesia'
+      />
+    ),
+  },
+  {
+    label: 'Wikang Tagalog',
+    code: 'tl',
+    active: false,
+    symbol: (
+      <Image
+        src='https://flagcdn.com/20x15/ph.png'
+        width='20'
+        height='15'
+        alt='Wikang Tagalog'
+      />
+    ),
+  },
+  {
+    label: 'ភាសាខ្មែរ',
+    code: 'km',
+    active: false,
+    symbol: (
+      <Image
+        src='https://flagcdn.com/20x15/kh.png'
+        width='20'
+        height='15'
+        alt='ភាសាខ្មែរ'
+      />
+    ),
+  },
+  {
+    label: 'ພາສາລາວ',
+    code: 'lo',
+    active: false,
+    symbol: (
+      <Image
+        src='https://flagcdn.com/20x15/la.png'
+        width='20'
+        height='15'
+        alt='ພາສາລາວ'
+      />
+    ),
+  },
+  {
+    label: 'မြန်မာစာ',
+    code: 'my',
+    active: false,
+    symbol: (
+      <Image
+        src='https://flagcdn.com/20x15/mm.png'
+        width='20'
+        height='15'
+        alt='မြန်မာစာ'
+      />
+    ),
+  },
+  {
+    label: 'Bahasa Melayu',
+    code: 'ms',
+    active: false,
+    symbol: (
+      <Image
+        src='https://flagcdn.com/20x15/bn.png'
+        width='20'
+        height='15'
+        alt='Bahasa Melayu'
+      />
+    ),
+  },
+  {
+    label: 'हिन्दी',
+    code: 'hi',
+    active: false,
+    symbol: (
+      <Image src='https://flagcdn.com/20x15/in.png' width='20' height='15' alt='हिन्दी' />
+    ),
+  },
+  {
+    label: 'Deutsch',
+    code: 'de',
+    active: false,
+    symbol: (
+      <Image
+        src='https://flagcdn.com/20x15/de.png'
+        width='20'
+        height='15'
+        alt='Deutsch'
+      />
+    ),
+  },
+  {
+    label: 'Español',
+    code: 'es',
+    active: false,
+    symbol: (
+      <Image
+        src='https://flagcdn.com/20x15/es.png'
+        width='20'
+        height='15'
+        alt='Español'
+      />
     ),
   },
 ]

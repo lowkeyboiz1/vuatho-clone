@@ -3,6 +3,7 @@ import Image from 'next/image'
 
 function SectionWithVuaTho() {
   const t = useTranslations('WithVuaTho')
+
   return (
     <div className='my-[100px]'>
       <div className='ct-container-70 relative mb-[40px]'>
@@ -17,11 +18,11 @@ function SectionWithVuaTho() {
               className='pointer-events-none h-full w-full object-contain'
             />
           </div>
-          <div className='absolute right-[7%] top-[-10%] scale-x-[-1] text-[16rem] text-[#DAF0FF] md:top-0'>
+          <div className='absolute right-[7%] top-[-10%] scale-x-[-1] text-[16rem] text-[#f5b500]/20 md:top-0'>
             “
           </div>
           <div className='w-full pt-20 md:ml-[26%] md:pt-0'>
-            <div className='flex w-[85%] flex-col justify-end gap-[8px] text-primaryBlue1 md:w-[62%] md:gap-[20px]'>
+            <div className='flex w-[85%] flex-col justify-end gap-[8px] text-[#f5b500] md:w-[62%] md:gap-[20px]'>
               <h5 className='text-[3.2rem] font-bold'>
                 {t('title')} {t('title1')}
               </h5>
@@ -31,7 +32,7 @@ function SectionWithVuaTho() {
             </div>
           </div>
         </div>
-        <div className='absolute bottom-0 left-[20%] top-0 hidden w-[200px] -skew-x-[30deg] bg-[#42A3CF]/10 md:block'></div>
+        <div className='absolute bottom-0 left-[20%] top-0 hidden w-[200px] -skew-x-[30deg] bg-[#f5b500]/10 md:block'></div>
         <div className='absolute bottom-0 left-[calc(20%+210px)] top-0 hidden w-[200px] -skew-x-[30deg] bg-white/20 md:block'></div>
       </div>
     </div>

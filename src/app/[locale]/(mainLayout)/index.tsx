@@ -31,6 +31,12 @@ import 'swiper/css/navigation'
 import 'swiper/css/pagination'
 import './swipper.scss'
 
+import dynamic from 'next/dynamic'
+
+const GlobeComponent = dynamic(() => import('@/components/GlobeComponent'), {
+  ssr: false,
+})
+
 function HomePage() {
   const searchParams = useSearchParams()
   const hiddenHeaderAndFooter = searchParams.get('hideHeaderAndFooter')
@@ -70,38 +76,36 @@ const AISection = () => {
   ]
 
   return (
-    <div id='AI' className='bg-base-gray py-[40px] md:py-[80px] xl:py-[100px]'>
+    <div id='AI' className='relative bg-white py-[40px] md:py-[80px] xl:py-[100px]'>
       <div className='ct-container-70 relative'>
-        <h4 className='mb-[60px] w-full text-center text-[2.4rem] font-semibold text-primaryBlue1 md:text-[3.2rem] 2xl:mb-[100px]'>
+        <h4 className='relative z-10 mb-[60px] inline-block w-full bg-gradient-to-r from-[#ff7c54] via-[#ffcc3f] to-[#ff783a] bg-clip-text text-center text-[2.4rem] font-semibold uppercase  text-transparent drop-shadow-sm md:text-[4.2rem] 2xl:mb-[100px]'>
           {t('heading1')}
         </h4>
         <div className='flex flex-col'>
-          <div className='flex h-full w-full items-center justify-center md:absolute md:justify-end 13inch:justify-center'>
+          <div className='bottom-2 flex h-full w-full items-center justify-center md:absolute md:justify-end 13inch:justify-center'>
             <div className='flex w-full items-center justify-center md:w-1/2 13inch:w-auto'>
               <Image
-                src={'/mascot/AIRobot.png'}
-                alt='AIRobot'
-                width={338}
+                src={'/ai-section-1.png'}
+                alt='AI Robot'
+                width={700}
+                height={680}
                 quality={100}
-                height={400}
-                className='pointer-events-none'
+                className='pointer-events-none select-none'
               />
             </div>
           </div>
-          <div className='grid grid-cols-1 items-center gap-[20px] py-12 lg:ml-[10%] 13inch:ml-0 13inch:grid-cols-2 13inch:gap-[40px]'>
+          <div className='grid grid-cols-1 items-center gap-[20px] py-12 lg:ml-[10%] 13inch:ml-0 13inch:grid-cols-2 13inch:gap-[56px]'>
             {listAI.map((item, index) => (
               <div
                 key={`listAI-${index}`}
-                className={`relative z-[10] flex w-full flex-col gap-[10px] p-[20px] text-baseBlack md:max-w-[400px] ${
+                className={`relative z-[10] flex w-full flex-col gap-[10px] p-[20px] text-baseBlack md:max-w-[400px]  ${
                   index % 2 !== 0 && '13inch:ml-[36%]'
                 }`}
               >
                 <div
-                  className={`absolute inset-0 z-[2] rounded-[20px] border-b-[2px] border-[#FCB713] bg-white shadow-[0px_8px_16px_0px_#A2BAF366]`}
+                  className={`absolute inset-0 z-[2] rounded-[20px] border-b-[2px] border-[#fbac47] bg-gradient-to-br from-[#ffffff] via-[#ffffff] to-[#e7e7e7] shadow-[0px_8px_16px_0px_#A2BAF366]`}
                 ></div>
-                <h5 className='z-[4] text-[1.8rem] font-semibold text-primary-blue'>
-                  {item.title}
-                </h5>
+                <h5 className=' z-[4] text-[1.8rem] font-bold'>{item.title}</h5>
                 <p className='z-[4] text-[1.8rem]'>{item.desc}</p>
               </div>
             ))}
@@ -144,8 +148,11 @@ const MinhBach = () => {
 
   return (
     <div className='' id='trade'>
-      <section className='ct-container-70 w-full'>
-        <h2 className='mb-[40px] text-[2.4rem] font-semibold text-primary-blue md:text-[3.2rem]'>
+      <section className='ct-container-70'>
+        <h2
+          className='mb-[40px] inline-block bg-gradient-to-br from-[#ff7c54] via-[#ffcc3f] to-[#ff783a] bg-clip-text text-[2.4rem] font-semibold uppercase text-[#f5b500]
+        text-transparent md:text-[4.2rem]'
+        >
           {t('heading')}
         </h2>
         <div className='grid grid-cols-1 gap-[20px] lg:grid-cols-2 lg:gap-[40px]'>
@@ -154,9 +161,12 @@ const MinhBach = () => {
               key={`listData-${index}`}
               className='flex flex-col gap-[8px] text-[1.8rem] text-baseBlack'
             >
-              <div className='flex gap-[10px]'>
-                <div className='h-full w-[4px] rounded-lg bg-[#FCB713]' />
-                <h3 className=' text-[1.8rem] font-bold'>{item.title}</h3>
+              <div className='flex items-center gap-[10px]'>
+                <span className='relative flex h-6 w-6 items-center justify-center'>
+                  <span className='absolute inline-flex h-full w-full animate-ping rounded-full bg-[#f5b500] opacity-75'></span>
+                  <span className='relative inline-flex h-4 w-4 rounded-full bg-[#f5b500]'></span>
+                </span>
+                <h3 className=' text-[2.2rem] font-bold text-black'>{item.title}</h3>
               </div>
               <p className='text-[1.8rem] font-light'>{item.desc}</p>
             </div>
@@ -199,8 +209,11 @@ const HinhThucKetNoi = () => {
 
   return (
     <section id='multi' className=''>
-      <section className='ct-container-70 w-full'>
-        <h2 className='mb-[40px] text-[2.4rem] font-semibold text-primary-blue md:text-[3.2rem]'>
+      <section className='ct-container-70'>
+        <h2
+          className='mb-[40px] inline-block bg-gradient-to-br from-[#ff7c54] via-[#ffcc3f] to-[#ff783a] bg-clip-text text-[2.4rem] font-semibold
+        uppercase  text-transparent md:text-[4.2rem]'
+        >
           {t('heading')}
         </h2>
         <div className='grid grid-cols-1 gap-[20px] pb-[40px] lg:grid-cols-2 lg:gap-[40px]'>
@@ -209,9 +222,13 @@ const HinhThucKetNoi = () => {
               key={`datalabel-${index}`}
               className='flex flex-col gap-[8px] text-[1.8rem] text-baseBlack'
             >
-              <div className='flex gap-[10px]'>
-                <div className='h-full w-[4px] rounded-lg bg-primary-blue' />
-                <h3 className='text-[1.8rem] font-bold'>{item.label}</h3>
+              <div className='flex items-center gap-[10px]'>
+                {/* <div className='h-[12px] w-[12px] animate-ping rounded-full bg-gradient-to-tr from-[#000000] to-[#181818]' /> */}
+                <span className='relative flex h-6 w-6 items-center justify-center'>
+                  <span className='absolute inline-flex h-full w-full animate-ping rounded-full bg-[#f5b500] opacity-75'></span>
+                  <span className='relative inline-flex h-4 w-4 rounded-full bg-[#f5b500]'></span>
+                </span>
+                <h3 className='text-[2.2rem] font-bold text-black'>{item.label}</h3>
               </div>
               <p className=' text-[1.8rem] font-light'>{item.description}</p>
             </div>
@@ -245,67 +262,81 @@ const MainSection = () => {
     },
   ]
   return (
-    <div className='bg-gradient-to-br from-[#2559BD] to-[#3773E6] md:pb-[60px]'>
-      <div className='ct-container-70 grid grid-cols-1 items-center xl:grid-cols-5'>
-        <div className='col-span-1 xl:col-span-3'>
-          <div className='mx-auto flex max-w-max flex-col justify-between gap-[40px] pt-10 xl:mx-0 xl:w-full xl:pt-20'>
-            <div className='mx-auto flex max-w-max flex-col gap-[20px] xl:mx-0 xl:w-full'>
-              <h3 className='text-left text-[2.4rem] font-bold text-white xl:text-[3.2rem]'>
-                {t('heading1')} <span className='text-white'>{t('heading1-1')}</span>
-                <br />
-                {t('heading2')}
-              </h3>
-              <div className='flex flex-col gap-[20px]'>
-                <div className='flex items-center gap-[8px]'>
-                  <CheckIcon className='h-[14px] w-[14px]' />
-                  <p className='text-[1.8rem] text-white xl:text-[1.8rem]'>
-                    {t('text1')}
-                  </p>
-                </div>
-                <div className='flex items-center gap-[8px]'>
-                  <CheckIcon className='h-[14px] w-[14px]' />
-                  <p className='text-[1.8rem] text-white xl:text-[1.8rem]'>
-                    {t('text2')}
-                  </p>
-                </div>
-              </div>
-            </div>
-            <div className=''>
-              <Image
-                src={'/home/dualPhone.png'}
-                alt=''
-                quality={100}
-                width={446}
-                height={400}
-                className=' object-contain'
-              />
-            </div>
-          </div>
-          <div className='grid w-full grid-cols-1 gap-6 md:grid-cols-3'>
-            {listCard.map((item: any, index: any) => (
-              <a
-                href={item.id}
-                key={`listcard-${index}`}
-                className='group z-[2] flex cursor-pointer items-center gap-[10px] rounded-[10px] bg-white p-[12px] shadow-[0px_16px_60px_-16px_rgba(35,35,35,0.06)] duration-300 hover:border-transparent hover:bg-white md:flex-col md:items-start xl:p-[10px] xl:hover:-translate-y-[6px]'
-              >
-                <item.icon size={40} className='text-primaryBlue' variant='Bold' />
-                <div className='w-full pl-5 md:pl-0'>
-                  <p className='mt-2 text-[1.8rem] text-primaryText'>{item.desc}</p>
-                  <div className='flex items-center justify-between'>
-                    <p className='mt-2 text-[1.8rem] font-semibold text-primaryText'>
-                      {item.title}
+    <div>
+      <div className='relative bg-[white]'>
+        <Image
+          alt='background download'
+          className='absolute left-0 right-0 z-0 w-full select-none opacity-20'
+          src='/main-background.png'
+          layout='fill'
+          objectFit='cover'
+          quality={100}
+        />
+        <div className='ct-container-70 z-1 relative grid grid-cols-1 items-center xl:grid-cols-5'>
+          <div className='col-span-1 xl:col-span-3'>
+            <div className='mx-auto flex max-w-max flex-col justify-between gap-[40px] pt-10 xl:mx-0 xl:w-full xl:pt-20'>
+              <div className='mx-auto flex max-w-max flex-col gap-[20px] xl:mx-0 xl:w-full'>
+                <h3
+                  id='target-1'
+                  className='bg-gradient-to-r from-[#ff7c54] via-[#ffcc3f] to-[#ff783a] bg-clip-text text-left text-[2.4rem] font-bold text-[#f5b500] text-transparent xl:text-[3.2rem]'
+                >
+                  {t('heading1')}{' '}
+                  <span className='text-[#f5b500]'>{t('heading1-1')}</span>
+                  <br />
+                  {t('heading2')}
+                </h3>
+                <div className='flex flex-col gap-[20px]'>
+                  <div className='flex items-center gap-[8px]'>
+                    <CheckIcon className='h-[14px] w-[14px]' />
+                    <p className='text-[1.8rem] text-black xl:text-[1.8rem]'>
+                      {t('text1')}
                     </p>
-                    <span className='-translate-x-[10px] opacity-0 duration-300 group-hover:translate-x-0 group-hover:opacity-100'>
-                      <ArrowRight size={24} className='text-black' />
-                    </span>
+                  </div>
+                  <div className='flex items-center gap-[8px]'>
+                    <CheckIcon className='h-[14px] w-[14px]' />
+                    <p className='text-[1.8rem] text-black xl:text-[1.8rem]'>
+                      {t('text2')}
+                    </p>
                   </div>
                 </div>
-              </a>
-            ))}
+              </div>
+              <div className=''>
+                <Image
+                  src={'/home/dualPhone.png'}
+                  alt=''
+                  quality={100}
+                  width={446}
+                  height={400}
+                  className=' object-contain'
+                />
+              </div>
+            </div>
+            {/* <div className='grid w-full grid-cols-1 gap-6 md:grid-cols-3'>
+              {listCard.map((item: any, index: any) => (
+                <a
+                  href={item.id}
+                  key={`listcard-${index}`}
+                  className='group z-[2] flex cursor-pointer items-center gap-[10px] rounded-[10px] border border-[#ffe8b2] bg-white p-[12px] shadow-[0px_16px_60px_-16px_rgba(35,35,35,0.06)] duration-300 hover:border-transparent hover:bg-white md:flex-col md:items-start xl:p-[10px] xl:hover:-translate-y-[6px]'
+                >
+                  <item.icon size={40} className='text-primaryBlue' variant='Bold' />
+                  <div className='w-full pl-5 md:pl-0'>
+                    <p className='mt-2 text-[1.8rem] text-primaryText'>{item.desc}</p>
+                    <div className='flex items-center justify-between'>
+                      <p className='mt-2 text-[1.8rem] font-semibold text-primaryText'>
+                        {item.title}
+                      </p>
+                      <span className='-translate-x-[10px] opacity-0 duration-300 group-hover:translate-x-0 group-hover:opacity-100'>
+                        <ArrowRight size={24} className='text-black' />
+                      </span>
+                    </div>
+                  </div>
+                </a>
+              ))}
+            </div> */}
           </div>
-        </div>
-        <div className='col-span-1 my-[80px] w-full xl:col-span-2 xl:my-[40px]'>
-          <Map />
+          <div className='col-span-1 ml-[-200px] mt-[-440px] hidden w-full xl:col-span-2 xl:block'>
+            {/* <GlobeComponent /> */}
+          </div>
         </div>
       </div>
     </div>
@@ -330,28 +361,28 @@ const CustomerBenefitSection = () => {
   return (
     <div className='ct-container-70 flex flex-col gap-[20px]'>
       <div className='flex flex-col gap-[10px] md:hidden'>
-        <h3 className='text-[1.8rem] font-semibold uppercase tracking-[8px] lg:text-[2rem]'>
+        <h3 className='text-[1.8rem] font-semibold uppercase tracking-[8px] text-primary-blue lg:text-[2rem]'>
           {t('benefit')}
         </h3>
-        <p className=' text-[2.4rem] text-[#FCB713] md:text-[3.2rem]'>{t('text')}</p>
+        <p className=' text-[2.4rem] md:text-[3.2rem]'>{t('text')}</p>
       </div>
       <div className=' grid grid-cols-1 items-center gap-[20px] xl:grid-cols-5'>
         <div className='col-span-1 xl:col-span-2'>
           <div className='hidden flex-col gap-[10px] md:flex'>
             <h3 className='text-[1.8rem] font-semibold uppercase tracking-[8px] md:text-[2rem]'>
-              5 {t('benefit')}
+              {t('benefit')}
             </h3>
-            <p className='whitespace-nowrap text-[2.4rem] font-semibold text-[#FCB713] md:text-[3.2rem]'>
+            <p className='whitespace-nowrap bg-gradient-to-r from-[#ff7c54] via-[#ffcc3f] to-[#ff783a] bg-clip-text text-[2.4rem] font-semibold uppercase text-transparent md:text-[3.2rem]'>
               {t('text')}
             </p>
           </div>
-          <div className='mx-auto h-[200px] w-[200px] md:h-[300px] md:w-[300px] xl:mx-0 xl:h-[400px] xl:w-[400px]'>
+          <div className='mx-auto mt-6 h-[200px] w-[200px] md:h-[300px] md:w-[300px] xl:mx-0 xl:h-[480px] xl:w-[480px]'>
             <Image
-              src={'/benefitWorker/benefitWorker3.png'}
+              src={'/khach-benefit-7.png'}
               alt=''
               quality={100}
-              height={400}
-              width={400}
+              height={600}
+              width={600}
               className='h-full w-full object-contain'
             />
           </div>
@@ -359,9 +390,9 @@ const CustomerBenefitSection = () => {
         <div className='col-span-1 grid grid-cols-1 gap-[20px] md:mx-auto md:max-w-[820px] md:grid-cols-2 md:gap-[40px] xl:col-span-3'>
           {listBenefit.map((item: TlistBenefit, index: number) => (
             <div className='col-span-1' key={`listBenefit-${index}`}>
-              <div className='items-left flex gap-[20px] md:flex-col xl:gap-[40px]'>
-                <p className='text-[4rem] font-semibold leading-none text-[#FCB713] md:text-[6.4rem]'>
-                  0{index + 1}
+              <div className='items-left flex gap-[20px] md:flex-col xl:gap-[32px]'>
+                <p className='text-[4rem] font-semibold leading-none text-[#f5b500] md:text-[6.4rem]'>
+                  {index + 1}
                 </p>
                 <p className='text-[1.8rem] text-base-black-1'>{item.title}</p>
               </div>
@@ -436,9 +467,9 @@ const WorkerBenefitSection = () => {
       <div className='ct-container-70 flex flex-col gap-[20px] xl:gap-[40px]'>
         <div className='flex flex-col gap-[10px]'>
           <h3 className='text-[1.8rem] font-semibold uppercase tracking-[8px] md:text-[2rem]'>
-            {listDataBenefit?.length} {t('benefit')}
+            {t('benefit')}
           </h3>
-          <p className='text-[2.4rem] font-semibold text-primary-blue md:text-[3.6rem]'>
+          <p className='bg-gradient-to-br from-[#ff7c54] to-[#ffdb3a] bg-clip-text text-[2.4rem] font-bold uppercase text-transparent md:text-[3.6rem]'>
             {t('text')}
           </p>
         </div>
@@ -498,10 +529,10 @@ const WorkerBenefitSection = () => {
                   >
                     <div className='mb-[16px] flex items-center justify-between'>
                       <div className='flex h-[76px] items-center gap-[12px]'>
-                        <p className='text-[4rem] font-semibold leading-none text-primary-blue/20 xl:text-[6.4rem]'>
-                          {index + 1 >= 10 ? index + 1 : `0${index + 1}`}
+                        <p className='text-[4rem] font-semibold uppercase leading-none text-[#f5b500] xl:text-[6.4rem]'>
+                          {index + 1}
                         </p>
-                        <h4 className='text-[1.8rem] font-bold text-primary-blue xl:text-[2.4rem]'>
+                        <h4 className='text-[1.8rem] font-bold uppercase text-[#f5b500] xl:text-[2.4rem]'>
                           {item.title}
                         </h4>
                       </div>
@@ -510,7 +541,7 @@ const WorkerBenefitSection = () => {
                       </div>
                     </div>
                     <div className='grid w-full grid-cols-5 rounded-xl bg-[#f8f8f8]'>
-                      <div className='text order-1 col-span-5 h-full w-full p-[20px] xl:order-none xl:col-span-2'>
+                      <div className='text order-1 col-span-5 h-full w-full p-[20px] text-[1.8rem] xl:order-none xl:col-span-2'>
                         <div dangerouslySetInnerHTML={{ __html: item.html }} />
                       </div>
                       <div className='relative order-none col-span-5 h-full w-full xl:order-1 xl:col-span-3'>
@@ -545,7 +576,7 @@ const PressHome = () => {
   const [onFetching, setOnFetching] = useState<boolean>()
   const [listBlog, setListBlog] = useState([])
 
-  const serverFetching = async () => {
+  const serverFetching = useCallback(async () => {
     try {
       const { data } = await instance.get('/home/blogs', {
         params: {
@@ -555,27 +586,29 @@ const PressHome = () => {
       setListBlog(data)
     } catch (error) {
       console.log(error)
+      setOnFetching(false)
     } finally {
       setOnFetching(false)
     }
-  }
-  useEffect(() => {
-    onFetching && serverFetching()
-  }, [onFetching])
+  }, [locale])
 
   useEffect(() => {
-    setOnFetching(true)
-  }, [])
+    onFetching && serverFetching()
+  }, [onFetching, serverFetching])
+
+  useEffect(() => {
+    locale && setOnFetching(true)
+  }, [locale])
 
   return (
     <div className='ct-container-70 flex flex-col gap-[20px] pb-[40px] md:pb-0'>
       <div className='flex items-center justify-between'>
-        <p className='text-[1.8rem] font-semibold text-primary-blue md:text-[3.2rem]'>
+        <h2 className='inline-block bg-gradient-to-br from-[#ff7c54] via-[#ffcc3f] to-[#ff783a] bg-clip-text text-[1.8rem] font-bold uppercase text-transparent md:text-[3.2rem]'>
           {t('heading')}
-        </p>
+        </h2>
         <Link
           href={`/${locale}/press`}
-          className='text-[1.8rem] font-semibold text-[#FCB713] md:text-[1.8rem]'
+          className='text-[1.8rem] font-semibold uppercase text-[#f5b500]'
         >
           {t('seeAll')}
         </Link>

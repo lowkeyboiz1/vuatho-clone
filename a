@@ -65,20 +65,25 @@ currency UI - done
 store api - done
 search sort js currency and languages - done
 craftment => service provider - done
+đưa các state lên đầu, import thư viện theo thứu tự nextjs/reactjs -> thư viện ngoài -> component - done
+logic like (cực kì ưu tiên) - done 
+Store UI - (hiện giỏ hàng khi bấm thanh toán) - done
+download app button bug reponsive - done 
+currency API - done 
+logic and api dislike, like - done
+dislike api - done
+nhắn anh Trí đổi ảnh benefit - done
+ịch đa ngôn ngữ - done
 
-logic like (cực kì ưu tiên)
-Store UI - (hiện giỏ hàng khi bấm thanh toán)
 
 
-download app button bug reponsive
-currency API
-logic and api dislike, like 
-dislike api
-nhắn anh Trí đổi ảnh benefit
+//17/12/2023
+reponsive promotion
 
+home blog loi logic skeleton
 bài viết nổi bật api (tạm thời ẩn)
 
-đưa các state lên đầu, import thư viện theo thứu tự nextjs/reactjs -> thư viện ngoài -> component
+
 
 React.memo (HOC) => higher order component: wrap component con không cần thiết bị re-render lại nếu không thay đổi bởi các state của thằng cha
 

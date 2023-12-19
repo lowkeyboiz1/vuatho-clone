@@ -20,8 +20,6 @@ import { Add, Global, SearchNormal1 } from 'iconsax-react'
 import { useGetAllQueryParams } from '@/hook/useGetAllQueryParams'
 import instance from '@/services/axiosConfig'
 import { normalizeKeyword } from '@/utils'
-// import { RootState } from '@/store'
-// import { currencyAction } from '@/store/slices/currencySlice'
 
 function LangsComp() {
   const t = useTranslations('Navbar')
@@ -76,7 +74,9 @@ function LangsComp() {
     try {
       const plainText = localStorage.getItem('currency') || '{}'
       const currencyStored = JSON.parse(plainText) || {}
-      dispatch({ type: 'currencyCurrent', payload: currencyStored })
+      if (currencyStored?.code) {
+        dispatch({ type: 'currencyCurrent', payload: currencyStored })
+      }
     } catch (error) {}
   }, [])
 
@@ -129,7 +129,7 @@ function LangsComp() {
 
   return (
     <>
-      <div className='hidden md:block '>
+      <div className='hidden lg:block '>
         <Popover
           placement='bottom-end'
           isOpen={isOpen}
@@ -207,7 +207,7 @@ function LangsComp() {
               <div className='col-span-1 flex flex-col gap-[8px]'>
                 <div className='flex flex-col justify-between gap-[16px]'>
                   <h5 className='text-[1.8rem] font-bold leading-normal text-primary-blue'>
-                    Tiền tệ
+                    {t('money')}
                   </h5>
                   <Input
                     variant='underlined'
@@ -261,7 +261,7 @@ function LangsComp() {
           </PopoverContent>
         </Popover>
       </div>
-      <div className='mb:pb-0 block w-full pb-80 md:hidden'>
+      <div className='mb:pb-0 block w-full pb-80 lg:hidden'>
         <div className='grid grid-cols-2 gap-[20px] overflow-y-scroll'>
           <div className=''>
             <div className='flex flex-col justify-between gap-[16px]'>
